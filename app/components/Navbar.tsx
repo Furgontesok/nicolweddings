@@ -3,12 +3,12 @@
 import { useState } from "react";
 
 const links = [
-  { label: "Kezdőoldal", href: "#kezdooldal" },
-  { label: "Szolgáltatások", href: "#szolgaltatasok" },
-  { label: "Galéria", href: "#galeria" },
-  { label: "Rólam", href: "#rolam" },
-  { label: "Referenciák", href: "#referenciak" },
-  { label: "Kapcsolat", href: "#kapcsolat" },
+  { label: "Kezdőoldal", href: "/" },
+  { label: "Szolgáltatások", href: "/szolgaltatasok" },
+  { label: "Galéria", href: "/#galeria" },
+  { label: "Rólam", href: "/#rolam" },
+  { label: "Referenciák", href: "/referenciak" },
+  { label: "Kapcsolat", href: "/kapcsolat" },
 ];
 
 export default function Navbar() {
@@ -18,7 +18,7 @@ export default function Navbar() {
     <nav className="fixed top-0 left-0 right-0 z-50 bg-[#363025]/90 backdrop-blur-sm">
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
         {/* Logo */}
-        <a href="#kezdooldal" className="text-white font-[family-name:var(--font-italianno)] text-3xl tracking-wide">
+        <a href="/" className="text-white font-[family-name:var(--font-italianno)] text-3xl tracking-wide">
           Nicol Weddings
         </a>
 
