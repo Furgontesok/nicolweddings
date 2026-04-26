@@ -1,4 +1,4 @@
-import Navbar from "../components/Navbar";
+import NavbarSimple from "../components/NavbarSimple";
 import Footer from "../components/Footer";
 import Image from "next/image";
 import type { Metadata } from "next";
@@ -43,7 +43,7 @@ const testimonials = [
 export default function Referenciak() {
   return (
     <>
-      <Navbar />
+      <NavbarSimple />
 
       {/* Hero */}
       <section className="bg-[#F5F3ED] pt-40 pb-24 px-6">

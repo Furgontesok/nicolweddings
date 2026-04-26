@@ -1,4 +1,4 @@
-import Navbar from "../components/Navbar";
+import NavbarSimple from "../components/NavbarSimple";
 import Footer from "../components/Footer";
 import type { Metadata } from "next";
 
@@ -60,7 +60,7 @@ const faqs = [
 export default function Szolgaltatasok() {
   return (
     <>
-      <Navbar />
+      <NavbarSimple />
 
       {/* Hero */}
       <section className="bg-[#363025] pt-40 pb-24 px-6">

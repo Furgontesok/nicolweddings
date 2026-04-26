@@ -11,16 +11,14 @@ const links = [
   { label: "Kapcsolat", href: "/kapcsolat" },
 ];
 
-export default function Navbar() {
+export default function NavbarSimple() {
   const [visible, setVisible] = useState(true);
-  const [atTop, setAtTop] = useState(true);
   const [open, setOpen] = useState(false);
   const lastY = useRef(0);
 
   useEffect(() => {
     const onScroll = () => {
       const y = window.scrollY;
-      setAtTop(y < 60);
       if (y < 60) {
         setVisible(true);
       } else if (y > lastY.current + 8) {
@@ -37,33 +35,29 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+      className={`fixed top-0 left-0 right-0 z-50 bg-[#363025] transition-transform duration-500 ${
         visible ? "translate-y-0" : "-translate-y-full"
-      } ${
-        atTop
-          ? "bg-transparent"
-          : "bg-[#363025]/90 backdrop-blur-md shadow-sm"
       }`}
     >
       {/* Desktop */}
-      <div className={`hidden md:flex flex-col items-center transition-all duration-500 ${atTop ? "gap-3 py-6" : "gap-2 py-3"}`}>
+      <div className="hidden md:flex items-center justify-between px-10 py-4">
         <a href="/">
           <Image
             src="/images/horizontal_white.svg"
             alt="Nicol Weddings and Events"
-            width={atTop ? 300 : 200}
-            height={atTop ? 90 : 60}
+            width={150}
+            height={46}
             priority
-            className="transition-all duration-500 object-contain"
-            style={{ width: atTop ? 300 : 200, height: "auto" }}
+            className="object-contain"
+            style={{ height: "auto" }}
           />
         </a>
-        <ul className="flex items-center gap-12">
+        <ul className="flex items-center gap-10">
           {links.map((l) => (
             <li key={l.href}>
               <a
                 href={l.href}
-                className="font-[family-name:var(--font-nunito)] text-white/90 text-[13px] tracking-[0.25em] uppercase hover:text-white transition-colors duration-300"
+                className="font-[family-name:var(--font-nunito)] text-white/80 text-[12px] tracking-[0.22em] uppercase hover:text-white transition-colors duration-300"
               >
                 {l.label}
               </a>
@@ -78,8 +72,8 @@ export default function Navbar() {
           <Image
             src="/images/horizontal_white.svg"
             alt="Nicol Weddings and Events"
-            width={130}
-            height={40}
+            width={120}
+            height={38}
             priority
             className="object-contain"
             style={{ height: "auto" }}
@@ -97,7 +91,7 @@ export default function Navbar() {
       </div>
 
       {open && (
-        <div className="md:hidden bg-[#363025] px-6 pb-6 pt-2">
+        <div className="md:hidden px-6 pb-6 pt-2 border-t border-white/10">
           <ul className="flex flex-col gap-5">
             {links.map((l) => (
               <li key={l.href}>
