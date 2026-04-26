@@ -79,16 +79,6 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* NICOL logó — felül középen */}
-      <div className="absolute top-10 left-0 right-0 flex flex-col items-center pointer-events-none z-10">
-        <p className="font-[family-name:var(--font-cormorant)] text-white text-6xl md:text-7xl tracking-[0.15em] font-light">
-          NICOL
-        </p>
-        <p className="font-[family-name:var(--font-nunito)] text-white/80 text-[10px] tracking-[0.4em] uppercase mt-1">
-          Weddings and Events
-        </p>
-      </div>
-
       {/* Szöveg — alul középen */}
       <div className="absolute bottom-20 left-0 right-0 text-center pointer-events-none px-6 z-10">
         <h1 className="font-[family-name:var(--font-cormorant)] text-white text-3xl md:text-4xl font-light leading-snug drop-shadow-lg">
