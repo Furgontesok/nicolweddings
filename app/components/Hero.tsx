@@ -1,20 +1,32 @@
+import Image from "next/image";
+
 export default function Hero() {
   return (
     <section id="kezdooldal" className="relative w-full min-h-screen flex flex-col md:flex-row overflow-hidden">
       {/* Bal oldali kép */}
-      <div className="w-full md:w-1/2 h-[50vh] md:h-screen bg-[#D6D6C9] relative overflow-hidden">
-        <div className="absolute inset-0 bg-[#363025]/20" />
-        <div className="absolute inset-0 flex items-center justify-center">
-          <span className="text-[#363025]/40 font-[family-name:var(--font-cormorant)] text-xl">Kép 1</span>
-        </div>
+      <div className="w-full md:w-1/2 h-[50vh] md:h-screen relative overflow-hidden">
+        <Image
+          src="/images/4K2A1978-2.jpg"
+          alt="Esküvői fotó"
+          fill
+          priority
+          className="object-cover object-center scale-105 hover:scale-100 transition-transform duration-700"
+          sizes="(max-width: 768px) 100vw, 50vw"
+        />
+        <div className="absolute inset-0 bg-[#363025]/30" />
       </div>
 
       {/* Jobb oldali kép */}
-      <div className="w-full md:w-1/2 h-[50vh] md:h-screen bg-[#EDEDE1] relative overflow-hidden">
-        <div className="absolute inset-0 bg-[#363025]/10" />
-        <div className="absolute inset-0 flex items-center justify-center">
-          <span className="text-[#363025]/40 font-[family-name:var(--font-cormorant)] text-xl">Kép 2</span>
-        </div>
+      <div className="w-full md:w-1/2 h-[50vh] md:h-screen relative overflow-hidden">
+        <Image
+          src="/images/5V5A0579-2.jpg"
+          alt="Esküvői fotó"
+          fill
+          priority
+          className="object-cover object-center scale-105 hover:scale-100 transition-transform duration-700"
+          sizes="(max-width: 768px) 100vw, 50vw"
+        />
+        <div className="absolute inset-0 bg-[#363025]/20" />
       </div>
 
       {/* Szöveg overlay — középen */}

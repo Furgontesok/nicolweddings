@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function About() {
   return (
     <section id="rolam" className="bg-[#F5F3ED] py-24 px-6">
@@ -27,7 +29,7 @@ export default function About() {
               </p>
             </div>
             <a
-              href="#kapcsolat"
+              href="/kapcsolat"
               className="inline-block mt-10 border border-[#363025] text-[#363025] font-[family-name:var(--font-nunito)] text-xs tracking-[0.2em] uppercase px-10 py-4 hover:bg-[#363025] hover:text-white transition-all duration-300"
             >
               Bővebben
@@ -37,14 +39,16 @@ export default function About() {
           {/* Kép — jobb */}
           <div className="order-1 md:order-2 shrink-0">
             <div
-              className="w-64 h-80 bg-[#D6D6C9] relative overflow-hidden"
+              className="w-64 h-80 relative overflow-hidden"
               style={{ borderRadius: "130px 130px 0 0" }}
             >
-              <div className="absolute inset-0 flex items-center justify-center">
-                <span className="font-[family-name:var(--font-cormorant)] text-[#363025]/40 text-sm">
-                  Profilkép
-                </span>
-              </div>
+              <Image
+                src="/images/R%C3%B3lam%20f%C5%91k%C3%A9p.jpg"
+                alt="Nicol — esküvőszervező"
+                fill
+                className="object-cover object-top"
+                sizes="256px"
+              />
             </div>
           </div>
         </div>

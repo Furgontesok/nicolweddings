@@ -1,5 +1,6 @@
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import Image from "next/image";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -8,33 +9,33 @@ export const metadata: Metadata = {
 };
 
 const couples = [
-  { name: "Vivi & Bence", year: "2024", initial: "V" },
-  { name: "Bia & Bence", year: "2024", initial: "B" },
-  { name: "Panni & Sanyi", year: "2023", initial: "P" },
-  { name: "Betti & Levi", year: "2023", initial: "B" },
-  { name: "Réka & Ádám", year: "2023", initial: "R" },
-  { name: "Ani & Peti", year: "2022", initial: "A" },
+  { name: "Vivi & Bence", year: "2024", cover: "/images/Vivi%20%26%20Bence/1..jpg" },
+  { name: "Bia & Bence", year: "2024", cover: "/images/Bia%20%26%20Bence/1.jpg" },
+  { name: "Panni & Sanyi", year: "2023", cover: "/images/Panni%20%26%20Sanyi/1.jpg" },
+  { name: "Betti & Levi", year: "2023", cover: "/images/Betti%20%26%20Levi/1.jpg" },
+  { name: "Réka & Ádám", year: "2023", cover: "/images/R%C3%A9ka%20%26%20%C3%81d%C3%A1m%20esk%C3%BCv%C5%91%20referenci%C3%A1k%20album/1.jpg" },
+  { name: "Ani & Peti", year: "2022", cover: "/images/Ani%20%26%20Peti%20esk%C3%BCv%C5%91%20referenci%C3%A1k%20album/1.jpg" },
 ];
 
 const testimonials = [
   {
     name: "Ani & Peti",
-    initial: "A",
+    photo: "/images/Ani%20%26%20Peti%20visszajelz%C3%A9s.jpg",
     text: "Biztonságban éreztük magunkat az egész tervezési folyamat alatt. Nicol mindig elérhető volt, mindig tudta a választ, és a nagy napon teljesen megbízhattunk benne. Nélküle nem lett volna ugyanaz.",
   },
   {
     name: "Dr. Pozsonyi Petra",
-    initial: "P",
+    photo: "/images/Pozsonyi%20Petra%20visszajelz%C3%A9s.jpg",
     text: "Pontossága, odafigyelése és a szállítókkal való kapcsolata felülmúlta az elvárásaimat. Az első konzultációtól a nagy napig minden percben éreztem, hogy profik kezében vagyok.",
   },
   {
     name: "Orsi & Krisz",
-    initial: "O",
+    photo: "/images/Orsi%20%26%20Krisz%20visszajelz%C3%A9s.jpg",
     text: "Mindenhol ott volt — a szállítókkal tárgyalt, a vendégeket fogadta, és mindig mosolyogva oldotta meg a felmerülő kérdéseket. Nekünk csak élvezni kellett a napot.",
   },
   {
     name: "Réka & Ádám",
-    initial: "R",
+    photo: "/images/R%C3%A9ka%20%26%20%C3%81d%C3%A1m%20visszajelz%C3%A9s_.jpg",
     text: "Kreatív ötletei és a stresszoldó jelenléte rengeteg terhet levett a vállunkról. Az esküvőnk pontosan olyan lett, amilyenről álmodtunk — sőt, még szebb.",
   },
 ];
@@ -66,14 +67,15 @@ export default function Referenciak() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {couples.map((c, i) => (
               <div key={i} className="group cursor-pointer">
-                {/* Kép placeholder */}
                 <div className="w-full aspect-[3/4] bg-[#D6D6C9] relative overflow-hidden mb-4">
+                  <Image
+                    src={c.cover}
+                    alt={c.name}
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  />
                   <div className="absolute inset-0 bg-[#363025]/0 group-hover:bg-[#363025]/20 transition-all duration-500" />
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <span className="font-[family-name:var(--font-italianno)] text-[#363025]/30 text-6xl">
-                      {c.initial}
-                    </span>
-                  </div>
                   <div className="absolute bottom-0 left-0 right-0 bg-[#363025]/80 py-4 px-5 translate-y-full group-hover:translate-y-0 transition-transform duration-500">
                     <p className="font-[family-name:var(--font-cormorant)] text-white text-sm tracking-widest uppercase">
                       Megtekintés
@@ -114,10 +116,8 @@ export default function Referenciak() {
                   {t.text}
                 </p>
                 <div className="flex items-center gap-4">
-                  <div className="w-10 h-10 rounded-full bg-[#D6D6C9] flex items-center justify-center shrink-0">
-                    <span className="font-[family-name:var(--font-cormorant)] text-[#363025] text-sm">
-                      {t.initial}
-                    </span>
+                  <div className="w-10 h-10 rounded-full overflow-hidden relative shrink-0">
+                    <Image src={t.photo} alt={t.name} fill className="object-cover object-top" sizes="40px" />
                   </div>
                   <span className="font-[family-name:var(--font-nunito)] text-[#363025] text-xs tracking-widest uppercase font-semibold">
                     {t.name}
