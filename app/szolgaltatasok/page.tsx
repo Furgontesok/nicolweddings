@@ -63,50 +63,30 @@ export default function Szolgaltatasok() {
     <>
       <NavbarSimple />
 
-      {/* Hero — photo mosaic */}
+      {/* Hero — 4 egyenlő fotó mozaik */}
       <section className="relative flex" style={{ height: "65vh", minHeight: 420 }}>
-        {/* Col 1 — 25% */}
-        <div className="relative shrink-0 overflow-hidden" style={{ width: "25%" }}>
-          <Image
-            src="/images/TheKilroyProject-24.jpg"
-            alt="Esküvői fotó"
-            fill
-            className="object-cover"
-            sizes="25vw"
-            priority
-          />
-          <div className="absolute inset-0 bg-black/40" />
-        </div>
+        {[
+          "/images/Betti%26Levi_SLW_001.jpg",
+          "/images/5V5A0670-2.jpg",
+          "/images/TheKilroyProject-286.jpg",
+          "/images/zsambek_wedding_styled_shoot-001_web.jpg",
+        ].map((src, i) => (
+          <div key={i} className="relative flex-1 overflow-hidden">
+            <Image
+              src={src}
+              alt="Esküvői fotó"
+              fill
+              className="object-cover"
+              sizes="25vw"
+              priority={i < 2}
+            />
+            <div className="absolute inset-0 bg-black/30" />
+          </div>
+        ))}
 
-        {/* Col 2 — 45% */}
-        <div className="relative shrink-0 overflow-hidden" style={{ width: "45%" }}>
-          <Image
-            src="/images/Betti%26Levi_SLW_001.jpg"
-            alt="Esküvői fotó"
-            fill
-            className="object-cover"
-            sizes="45vw"
-            priority
-          />
-          <div className="absolute inset-0 bg-black/40" />
-        </div>
-
-        {/* Col 3 — 30% */}
-        <div className="relative shrink-0 overflow-hidden" style={{ width: "30%" }}>
-          <Image
-            src="/images/zsambek_wedding_styled_shoot-052_web.jpg"
-            alt="Esküvői fotó"
-            fill
-            className="object-cover"
-            sizes="30vw"
-            priority
-          />
-          <div className="absolute inset-0 bg-black/40" />
-        </div>
-
-        {/* Text overlay — bottom center */}
-        <div className="absolute bottom-0 left-0 right-0 pb-10 px-6 text-center pointer-events-none">
-          <h1 className="font-[family-name:var(--font-cormorant)] text-7xl md:text-9xl font-light text-white tracking-widest uppercase">
+        {/* Text overlay — alul középen */}
+        <div className="absolute bottom-0 left-0 right-0 pb-8 px-6 text-center pointer-events-none">
+          <h1 className="font-[family-name:var(--font-cormorant)] text-7xl md:text-9xl font-light text-white tracking-widest uppercase drop-shadow-lg">
             SZOLGÁLTATÁSOK
           </h1>
         </div>

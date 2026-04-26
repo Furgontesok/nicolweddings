@@ -5,7 +5,7 @@ import { useState, useEffect } from "react";
 
 const links = [
   { label: "Főoldal", href: "/" },
-  { label: "Rólam", href: "/#rolam" },
+  { label: "Rólam", href: "/rolam" },
   { label: "Szolgáltatások", href: "/szolgaltatasok" },
   { label: "Referenciák", href: "/referenciak" },
   { label: "Kapcsolat", href: "/kapcsolat" },
