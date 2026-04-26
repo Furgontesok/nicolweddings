@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function Footer() {
   const navLinks = [
     { label: "Főoldal", href: "/" },
@@ -11,12 +13,16 @@ export default function Footer() {
     <footer className="bg-[#363025] py-16 px-6">
       <div className="max-w-5xl mx-auto flex flex-col items-center text-center gap-8">
         {/* Logo */}
-        <a href="/" className="font-[family-name:var(--font-cormorant)] text-white text-5xl tracking-[0.15em] font-light">
-          NICOL
+        <a href="/">
+          <Image
+            src="/images/horizontal_white.svg"
+            alt="Nicol Weddings and Events"
+            width={180}
+            height={56}
+            className="object-contain"
+            style={{ height: "auto" }}
+          />
         </a>
-        <p className="font-[family-name:var(--font-nunito)] text-white/50 text-[10px] tracking-[0.4em] uppercase -mt-6">
-          Weddings and Events
-        </p>
 
         <div className="w-16 h-px bg-white/20" />
 

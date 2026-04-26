@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Image from "next/image";
 
 const links = [
   { label: "Főoldal", href: "/" },
@@ -23,29 +24,26 @@ export default function Navbar() {
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        scrolled ? "bg-[#363025]/95 backdrop-blur-sm shadow-sm py-3" : "bg-transparent py-6"
+        scrolled ? "bg-[#363025]/95 backdrop-blur-sm shadow-sm py-3" : "bg-transparent py-5"
       }`}
     >
       {/* Desktop */}
-      <div className="hidden md:flex flex-col items-center gap-2">
-        {/* NICOL logó */}
-        <a href="/" className="flex flex-col items-center leading-none">
-          <span
-            className="font-[family-name:var(--font-cormorant)] text-white font-light tracking-[0.18em]"
-            style={{ fontSize: scrolled ? "2rem" : "3.5rem", transition: "font-size 0.5s" }}
-          >
-            NICOL
-          </span>
-          <span
-            className="font-[family-name:var(--font-nunito)] text-white/70 tracking-[0.45em] uppercase"
-            style={{ fontSize: scrolled ? "7px" : "9px", transition: "font-size 0.5s" }}
-          >
-            Weddings and Events
-          </span>
+      <div className="hidden md:flex flex-col items-center gap-3">
+        {/* Logo kép */}
+        <a href="/">
+          <Image
+            src="/images/horizontal_white.svg"
+            alt="Nicol Weddings and Events"
+            width={scrolled ? 160 : 220}
+            height={scrolled ? 50 : 70}
+            priority
+            className="transition-all duration-500 object-contain"
+            style={{ width: scrolled ? 160 : 220, height: "auto" }}
+          />
         </a>
 
         {/* Nav linkek */}
-        <ul className="flex items-center gap-10 mt-1">
+        <ul className="flex items-center gap-10">
           {links.map((l) => (
             <li key={l.href}>
               <a
@@ -61,13 +59,16 @@ export default function Navbar() {
 
       {/* Mobil */}
       <div className="md:hidden flex items-center justify-between px-6">
-        <a href="/" className="flex flex-col leading-none">
-          <span className="font-[family-name:var(--font-cormorant)] text-white font-light tracking-[0.18em] text-3xl">
-            NICOL
-          </span>
-          <span className="font-[family-name:var(--font-nunito)] text-white/70 tracking-[0.35em] uppercase text-[7px]">
-            Weddings and Events
-          </span>
+        <a href="/">
+          <Image
+            src="/images/horizontal_white.svg"
+            alt="Nicol Weddings and Events"
+            width={130}
+            height={40}
+            priority
+            className="object-contain"
+            style={{ height: "auto" }}
+          />
         </a>
         <button
           onClick={() => setOpen(!open)}
