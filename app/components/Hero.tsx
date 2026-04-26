@@ -28,18 +28,10 @@ const slides = [
 
 export default function Hero() {
   const [current, setCurrent] = useState(0);
-  const [visible, setVisible] = useState(true);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      // 1. Egyszerre fade ki mindkét kép
-      setVisible(false);
-      setTimeout(() => {
-        // 2. Mindkét kép egyszerre vált
-        setCurrent((prev) => (prev + 1) % slides.length);
-        // 3. Egyszerre fade be
-        setVisible(true);
-      }, 600);
+      setCurrent((prev) => (prev + 1) % slides.length);
     }, 3500);
     return () => clearInterval(interval);
   }, []);
@@ -47,41 +39,44 @@ export default function Hero() {
   return (
     <section id="kezdooldal" className="relative w-full h-screen overflow-hidden">
 
-      {/* Egyetlen fade wrapper — mindkét kép egyszerre vált */}
-      <div
-        className="absolute inset-0 flex transition-opacity duration-[600ms] ease-in-out"
-        style={{ opacity: visible ? 1 : 0 }}
-      >
-        {/* Bal kép */}
-        <div className="w-1/2 h-full relative">
-          <Image
-            src={slides[current].left}
-            alt="Esküvői fotó"
-            fill
-            priority
-            className="object-cover object-center"
-            sizes="50vw"
-          />
-          <div className="absolute inset-0 bg-black/25" />
-        </div>
+      {/* Összes slide egyszerre renderelve — CSS crossfade, nincs villanás */}
+      {slides.map((slide, i) => (
+        <div
+          key={i}
+          className="absolute inset-0 flex transition-opacity duration-[700ms] ease-in-out"
+          style={{ opacity: i === current ? 1 : 0 }}
+        >
+          {/* Bal kép */}
+          <div className="w-1/2 h-full relative">
+            <Image
+              src={slide.left}
+              alt="Esküvői fotó"
+              fill
+              priority={i === 0}
+              className="object-cover object-center"
+              sizes="50vw"
+            />
+            <div className="absolute inset-0 bg-black/25" />
+          </div>
 
-        {/* Jobb kép */}
-        <div className="w-1/2 h-full relative">
-          <Image
-            src={slides[current].right}
-            alt="Esküvői fotó"
-            fill
-            priority
-            className="object-cover object-center"
-            sizes="50vw"
-          />
-          <div className="absolute inset-0 bg-black/25" />
+          {/* Jobb kép */}
+          <div className="w-1/2 h-full relative">
+            <Image
+              src={slide.right}
+              alt="Esküvői fotó"
+              fill
+              priority={i === 0}
+              className="object-cover object-center"
+              sizes="50vw"
+            />
+            <div className="absolute inset-0 bg-black/25" />
+          </div>
         </div>
-      </div>
+      ))}
 
       {/* Szöveg — alul középen */}
       <div className="absolute bottom-20 left-0 right-0 text-center pointer-events-none px-6 z-10">
-        <h1 className="font-[family-name:var(--font-cormorant)] text-white text-3xl md:text-4xl font-light leading-snug drop-shadow-lg">
+        <h1 className="font-[family-name:var(--font-cormorant)] text-white text-3xl md:text-5xl font-light leading-snug drop-shadow-lg">
           Esküvők, amik nyomot hagynak.
           <br />
           Bennetek és másokban.

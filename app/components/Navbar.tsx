@@ -34,21 +34,21 @@ export default function Navbar() {
           <Image
             src="/images/horizontal_white.svg"
             alt="Nicol Weddings and Events"
-            width={scrolled ? 160 : 220}
-            height={scrolled ? 50 : 70}
+            width={scrolled ? 180 : 300}
+            height={scrolled ? 56 : 90}
             priority
             className="transition-all duration-500 object-contain"
-            style={{ width: scrolled ? 160 : 220, height: "auto" }}
+            style={{ width: scrolled ? 180 : 300, height: "auto" }}
           />
         </a>
 
         {/* Nav linkek */}
-        <ul className="flex items-center gap-10">
+        <ul className="flex items-center gap-12">
           {links.map((l) => (
             <li key={l.href}>
               <a
                 href={l.href}
-                className="font-[family-name:var(--font-nunito)] text-white/90 text-[11px] tracking-[0.28em] uppercase hover:text-white transition-colors duration-300"
+                className="font-[family-name:var(--font-nunito)] text-white/90 text-[13px] tracking-[0.25em] uppercase hover:text-white transition-colors duration-300"
               >
                 {l.label}
               </a>
