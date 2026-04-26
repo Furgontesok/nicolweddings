@@ -3,6 +3,14 @@
 import Image from "next/image";
 import { useState, useEffect } from "react";
 
+const links = [
+  { label: "Főoldal", href: "/" },
+  { label: "Rólam", href: "/#rolam" },
+  { label: "Szolgáltatások", href: "/szolgaltatasok" },
+  { label: "Referenciák", href: "/referenciak" },
+  { label: "Kapcsolat", href: "/kapcsolat" },
+];
+
 const slides = [
   {
     left: "/images/TheKilroyProject-51.jpg",
@@ -37,69 +45,114 @@ export default function Hero() {
   }, []);
 
   return (
-    <section id="kezdooldal" className="relative w-full h-screen overflow-hidden">
-
-      {/* Összes slide egyszerre renderelve — CSS crossfade, nincs villanás */}
-      {slides.map((slide, i) => (
-        <div
-          key={i}
-          className="absolute inset-0 flex transition-opacity duration-[700ms] ease-in-out"
-          style={{ opacity: i === current ? 1 : 0 }}
-        >
-          {/* Bal kép */}
-          <div className="w-1/2 h-full relative">
+    <>
+      {/* ── Fix logo + nav: mindig a képen, soha nem mozdul ── */}
+      <div className="fixed top-0 left-0 right-0 z-40">
+        {/* Desktop */}
+        <div className="hidden md:flex flex-col items-center gap-3 pt-5">
+          <a href="/">
             <Image
-              src={slide.left}
-              alt="Esküvői fotó"
-              fill
-              priority={i === 0}
-              className="object-cover object-center"
-              sizes="50vw"
+              src="/images/horizontal_white.svg"
+              alt="Nicol Weddings and Events"
+              width={320}
+              height={96}
+              priority
+              className="object-contain drop-shadow-lg"
+              style={{ height: "auto" }}
             />
-            <div className="absolute inset-0 bg-black/25" />
-          </div>
-
-          {/* Jobb kép */}
-          <div className="w-1/2 h-full relative">
-            <Image
-              src={slide.right}
-              alt="Esküvői fotó"
-              fill
-              priority={i === 0}
-              className="object-cover object-center"
-              sizes="50vw"
-            />
-            <div className="absolute inset-0 bg-black/25" />
-          </div>
+          </a>
+          <ul className="flex items-center gap-14">
+            {links.map((l) => (
+              <li key={l.href}>
+                <a
+                  href={l.href}
+                  className="font-[family-name:var(--font-nunito)] text-white text-[13px] tracking-[0.28em] uppercase hover:text-white/70 transition-colors duration-300 drop-shadow"
+                >
+                  {l.label}
+                </a>
+              </li>
+            ))}
+          </ul>
         </div>
-      ))}
 
-      {/* Szöveg — alul középen */}
-      <div className="absolute bottom-20 left-0 right-0 text-center pointer-events-none px-6 z-10">
-        <h1 className="font-[family-name:var(--font-cormorant)] text-white text-3xl md:text-5xl font-light leading-snug drop-shadow-lg">
-          Esküvők, amik nyomot hagynak.
-          <br />
-          Bennetek és másokban.
-        </h1>
+        {/* Mobil */}
+        <div className="md:hidden flex items-center justify-center pt-5">
+          <a href="/">
+            <Image
+              src="/images/horizontal_white.svg"
+              alt="Nicol Weddings and Events"
+              width={160}
+              height={50}
+              priority
+              className="object-contain drop-shadow-lg"
+              style={{ height: "auto" }}
+            />
+          </a>
+        </div>
       </div>
 
-      {/* Scroll vonal */}
-      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 pointer-events-none z-10">
-        <div className="w-px h-10 bg-white/50" />
-      </div>
+      {/* ── Hero képek ── */}
+      <section id="kezdooldal" className="relative w-full h-screen overflow-hidden">
 
-      {/* Pont navigáció */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-2 z-10">
-        {slides.map((_, i) => (
-          <button
+        {slides.map((slide, i) => (
+          <div
             key={i}
-            onClick={() => setCurrent(i)}
-            className={`h-1.5 rounded-full transition-all duration-300 ${
-              i === current ? "bg-white w-5" : "bg-white/40 w-1.5"
-            }`}
-          />
+            className="absolute inset-0 flex transition-opacity duration-[700ms] ease-in-out"
+            style={{ opacity: i === current ? 1 : 0 }}
+          >
+            <div className="w-1/2 h-full relative">
+              <Image
+                src={slide.left}
+                alt="Esküvői fotó"
+                fill
+                priority={i === 0}
+                className="object-cover object-center"
+                sizes="50vw"
+              />
+              <div className="absolute inset-0 bg-black/25" />
+            </div>
+
+            <div className="w-1/2 h-full relative">
+              <Image
+                src={slide.right}
+                alt="Esküvői fotó"
+                fill
+                priority={i === 0}
+                className="object-cover object-center"
+                sizes="50vw"
+              />
+              <div className="absolute inset-0 bg-black/25" />
+            </div>
+          </div>
         ))}
-      </div>
-    </section>
+
+        {/* Szöveg */}
+        <div className="absolute bottom-20 left-0 right-0 text-center pointer-events-none px-6 z-10">
+          <h1 className="font-[family-name:var(--font-cormorant)] text-white text-3xl md:text-5xl font-light leading-snug drop-shadow-lg">
+            Esküvők, amik nyomot hagynak.
+            <br />
+            Bennetek és másokban.
+          </h1>
+        </div>
+
+        {/* Scroll vonal */}
+        <div className="absolute bottom-6 left-1/2 -translate-x-1/2 pointer-events-none z-10">
+          <div className="w-px h-10 bg-white/50" />
+        </div>
+
+        {/* Pont navigáció */}
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-2 z-10">
+          {slides.map((_, i) => (
+            <button
+              key={i}
+              onClick={() => setCurrent(i)}
+              className={`h-1.5 rounded-full transition-all duration-300 ${
+                i === current ? "bg-white w-5" : "bg-white/40 w-1.5"
+              }`}
+            />
+          ))}
+        </div>
+      </section>
+    </>
   );
 }

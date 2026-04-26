@@ -31,106 +31,61 @@ export default function Navbar() {
   const creamVisible = scrollY > 80 && scrollDir === "up";
 
   return (
-    <>
-      {/* ── Átlátszó rész: mindig fix, nem mozdul, nem tűnik el ── */}
-      <div className="fixed top-0 left-0 right-0 z-40 pointer-events-none">
-        <div className="hidden md:flex flex-col items-center gap-2 pt-6 pointer-events-auto">
-          <a href="/">
-            <Image
-              src="/images/horizontal_white.svg"
-              alt="Nicol Weddings and Events"
-              width={270}
-              height={80}
-              priority
-              className="object-contain"
-              style={{ height: "auto" }}
-            />
-          </a>
-          <ul className="flex items-center gap-12">
-            {links.map((l) => (
-              <li key={l.href}>
-                <a
-                  href={l.href}
-                  className="font-[family-name:var(--font-nunito)] text-white/90 text-[12px] tracking-[0.25em] uppercase hover:text-white transition-colors duration-300"
-                >
-                  {l.label}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </div>
-
-        {/* Mobil: mindig látható */}
-        <div className="md:hidden flex items-center justify-between px-6 pt-4 pointer-events-auto">
-          <a href="/">
-            <Image
-              src="/images/horizontal_white.svg"
-              alt="Nicol Weddings and Events"
-              width={120}
-              height={38}
-              priority
-              className="object-contain"
-              style={{ height: "auto" }}
-            />
+    <div
+      className={`fixed top-0 left-0 right-0 z-50 bg-[#EDEDE1] border-b border-[#363025]/10 transition-transform duration-500 ${
+        creamVisible ? "translate-y-0" : "-translate-y-full"
+      }`}
+    >
+      {/* Desktop */}
+      <div className="hidden md:grid grid-cols-3 items-center px-10 py-1.5">
+        <a href="/" className="justify-self-start">
+          <Image
+            src="/images/horizontal_black.svg"
+            alt="Nicol Weddings and Events"
+            width={120}
+            height={36}
+            className="object-contain"
+            style={{ height: "auto" }}
+          />
+        </a>
+        <ul className="flex items-center justify-center gap-10">
+          {links.map((l) => (
+            <li key={l.href}>
+              <a
+                href={l.href}
+                className="font-[family-name:var(--font-nunito)] text-[#363025]/70 text-[11px] tracking-[0.25em] uppercase hover:text-[#363025] transition-colors duration-300"
+              >
+                {l.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+        <div className="justify-self-end">
+          <a
+            href="/kapcsolat"
+            className="font-[family-name:var(--font-italianno)] text-[#363025]/70 text-xl italic hover:text-[#363025] transition-colors duration-300"
+          >
+            Ingyenes konzultáció
           </a>
         </div>
       </div>
 
-      {/* ── Cream navbar: csak felfelé görgetésnél jön elő, takarja a transparens részt ── */}
-      <div
-        className={`fixed top-0 left-0 right-0 z-50 bg-[#EDEDE1] border-b border-[#363025]/10 transition-transform duration-500 ${
-          creamVisible ? "translate-y-0" : "-translate-y-full"
-        }`}
-      >
-        <div className="hidden md:grid grid-cols-3 items-center px-10 py-1.5">
-          <a href="/" className="justify-self-start">
-            <Image
-              src="/images/horizontal_black.svg"
-              alt="Nicol Weddings and Events"
-              width={120}
-              height={36}
-              className="object-contain"
-              style={{ height: "auto" }}
-            />
-          </a>
-          <ul className="flex items-center justify-center gap-10">
-            {links.map((l) => (
-              <li key={l.href}>
-                <a
-                  href={l.href}
-                  className="font-[family-name:var(--font-nunito)] text-[#363025]/70 text-[11px] tracking-[0.25em] uppercase hover:text-[#363025] transition-colors duration-300"
-                >
-                  {l.label}
-                </a>
-              </li>
-            ))}
-          </ul>
-          <div className="justify-self-end">
-            <a
-              href="/kapcsolat"
-              className="font-[family-name:var(--font-italianno)] text-[#363025]/70 text-xl italic hover:text-[#363025] transition-colors duration-300"
-            >
-              Ingyenes konzultáció
-            </a>
-          </div>
-        </div>
-
-        <div className="md:hidden flex items-center justify-between px-6 py-2">
-          <a href="/">
-            <Image
-              src="/images/horizontal_black.svg"
-              alt="Nicol Weddings and Events"
-              width={100}
-              height={32}
-              className="object-contain"
-              style={{ height: "auto" }}
-            />
-          </a>
-          <a href="/kapcsolat" className="font-[family-name:var(--font-italianno)] text-[#363025]/70 text-lg italic">
-            Konzultáció
-          </a>
-        </div>
+      {/* Mobil */}
+      <div className="md:hidden flex items-center justify-between px-6 py-2">
+        <a href="/">
+          <Image
+            src="/images/horizontal_black.svg"
+            alt="Nicol Weddings and Events"
+            width={100}
+            height={32}
+            className="object-contain"
+            style={{ height: "auto" }}
+          />
+        </a>
+        <a href="/kapcsolat" className="font-[family-name:var(--font-italianno)] text-[#363025]/70 text-lg italic">
+          Konzultáció
+        </a>
       </div>
-    </>
+    </div>
   );
 }
