@@ -37,18 +37,22 @@ export default function Navbar() {
       }`}
     >
       {/* Desktop */}
-      <div className="hidden md:grid grid-cols-3 items-center px-10 h-10">
-        <a href="/" className="justify-self-start">
-          <Image
-            src="/images/horizontal_black.svg"
-            alt="Nicol Weddings and Events"
-            width={85}
-            height={24}
-            className="object-contain"
-            style={{ height: "auto" }}
-          />
-        </a>
-        <ul className="flex items-center justify-center gap-10">
+      <div className="hidden md:flex items-center h-12 px-10">
+        {/* Bal: Logo */}
+        <div className="w-1/4">
+          <a href="/">
+            <Image
+              src="/images/horizontal_black.svg"
+              alt="Nicol Weddings and Events"
+              width={100}
+              height={30}
+              className="object-contain"
+              style={{ height: "auto" }}
+            />
+          </a>
+        </div>
+        {/* Közép: Nav linkek */}
+        <ul className="flex-1 flex items-center justify-center gap-10">
           {links.map((l) => (
             <li key={l.href}>
               <a
@@ -60,7 +64,8 @@ export default function Navbar() {
             </li>
           ))}
         </ul>
-        <div className="justify-self-end">
+        {/* Jobb: CTA */}
+        <div className="w-1/4 flex justify-end">
           <a
             href="/kapcsolat"
             className="font-[family-name:var(--font-italianno)] text-[#363025]/70 text-xl italic hover:text-[#363025] transition-colors duration-300"
