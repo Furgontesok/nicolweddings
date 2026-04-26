@@ -40,7 +40,7 @@ export default function NavbarSimple() {
       }`}
     >
       {/* Desktop */}
-      <div className="hidden md:grid grid-cols-3 items-center px-10 py-3">
+      <div className="hidden md:grid grid-cols-3 items-center px-10 py-2">
         {/* Bal: Logo */}
         <a href="/" className="justify-self-start">
           <Image
