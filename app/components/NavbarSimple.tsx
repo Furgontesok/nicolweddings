@@ -40,14 +40,14 @@ export default function NavbarSimple() {
       }`}
     >
       {/* Desktop */}
-      <div className="hidden md:grid grid-cols-3 items-center px-10 py-1.5">
+      <div className="hidden md:grid grid-cols-3 items-center px-10 py-1">
         {/* Bal: Logo */}
         <a href="/" className="justify-self-start">
           <Image
             src="/images/horizontal_black.svg"
             alt="Nicol Weddings and Events"
-            width={120}
-            height={36}
+            width={100}
+            height={28}
             priority
             className="object-contain"
             style={{ height: "auto" }}
