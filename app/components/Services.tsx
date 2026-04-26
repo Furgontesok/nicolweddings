@@ -13,7 +13,7 @@ const services = [
   },
   {
     title: "Eseményszervezés",
-    desc: "Esküvőn túl: eljegyzések, cross-baby shower, évfordulók és különleges eseményekre specializálódva.",
+    desc: "Esküvőn túl: eljegyzések, baby shower, évfordulók és különleges eseményekre specializálódva.",
   },
 ];
 
@@ -58,7 +58,7 @@ export default function Services() {
         {/* CTA gomb */}
         <div className="text-center mt-14">
           <a
-            href="#kapcsolat"
+            href="/kapcsolat"
             className="inline-block border border-[#363025] text-[#363025] font-[family-name:var(--font-nunito)] text-xs tracking-[0.2em] uppercase px-10 py-4 hover:bg-[#363025] hover:text-white transition-all duration-300"
           >
             Referenciákat szeretnék

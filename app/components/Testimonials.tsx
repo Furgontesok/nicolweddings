@@ -30,7 +30,7 @@ export default function Testimonials() {
   const [active, setActive] = useState(0);
 
   return (
-    <section id="referenciak" className="bg-[#D6D6C9] py-24 px-6">
+    <section id="velemenyek" className="bg-[#D6D6C9] py-24 px-6">
       <div className="max-w-3xl mx-auto text-center">
         <p className="font-[family-name:var(--font-nunito)] text-xs tracking-[0.3em] uppercase text-[#363025]/50 mb-3">
           Amit mondanak rólam

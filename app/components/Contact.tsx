@@ -20,8 +20,8 @@ export default function Contact() {
                 <span className="text-[#363025]/30 text-xl mt-0.5">✉</span>
                 <div>
                   <p className="text-xs uppercase tracking-widest text-[#363025]/40 mb-1">Email</p>
-                  <a href="mailto:info@nicolweddings.hu" className="hover:text-[#363025] transition-colors">
-                    info@nicolweddings.hu
+                  <a href="mailto:nicol.weddings@gmail.com" className="hover:text-[#363025] transition-colors">
+                    nicol.weddings@gmail.com
                   </a>
                 </div>
               </div>
@@ -29,8 +29,8 @@ export default function Contact() {
                 <span className="text-[#363025]/30 text-xl mt-0.5">✆</span>
                 <div>
                   <p className="text-xs uppercase tracking-widest text-[#363025]/40 mb-1">Telefon</p>
-                  <a href="tel:+36" className="hover:text-[#363025] transition-colors">
-                    +36 …
+                  <a href="tel:+36305444676" className="hover:text-[#363025] transition-colors">
+                    +36 30 544 4676
                   </a>
                 </div>
               </div>
@@ -74,7 +74,7 @@ export default function Contact() {
                 <input
                   type="tel"
                   className="w-full border-b border-[#D6D6C9] bg-transparent py-3 font-[family-name:var(--font-quicksand)] text-[#363025] outline-none focus:border-[#363025] transition-colors placeholder:text-[#363025]/30"
-                  placeholder="+36 …"
+                  placeholder="+36 30 …"
                 />
               </div>
               <div>
