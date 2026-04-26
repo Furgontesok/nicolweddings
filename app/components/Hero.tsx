@@ -47,7 +47,7 @@ export default function Hero() {
 
   useEffect(() => {
     const onScroll = () => {
-      setHeroVisible(window.scrollY < window.innerHeight * 0.6);
+      setHeroVisible(window.scrollY < 120);
     };
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
@@ -58,13 +58,13 @@ export default function Hero() {
       {/* ── Fix logo + nav: csak a hero felett látszik ── */}
       <div className={`fixed top-0 left-0 right-0 z-40 transition-opacity duration-300 ${heroVisible ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"}`}>
         {/* Desktop */}
-        <div className="hidden md:flex flex-col items-center gap-3 pt-5">
+        <div className="hidden md:flex flex-col items-center gap-3 pt-3">
           <a href="/">
             <Image
               src="/images/horizontal_white.svg"
               alt="Nicol Weddings and Events"
-              width={320}
-              height={96}
+              width={380}
+              height={114}
               priority
               className="object-contain drop-shadow-lg"
               style={{ height: "auto" }}
