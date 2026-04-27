@@ -13,8 +13,35 @@ export default function Rolam() {
     <>
       <NavbarSimple />
 
+      {/* ── Hero — 4 fotós mozaik ── */}
+      <section className="relative flex" style={{ height: "65vh", minHeight: 400 }}>
+        {[
+          "/images/R%C3%B3lam%20mell%C3%A9k1.jpg",
+          "/images/R%C3%B3lam%20f%C5%91k%C3%A9p.jpg",
+          "/images/R%C3%B3lam%20mell%C3%A9k2.jpg",
+          "/images/R%C3%B3lam%20mell%C3%A9k3.jpg",
+        ].map((src, i) => (
+          <div key={i} className="relative flex-1 overflow-hidden">
+            <Image
+              src={src}
+              alt="Nicol esküvőszervező"
+              fill
+              className="object-cover object-top"
+              sizes="25vw"
+              priority={i < 2}
+            />
+            <div className="absolute inset-0 bg-black/30" />
+          </div>
+        ))}
+        <div className="absolute bottom-0 left-0 right-0 pb-8 px-6 text-center pointer-events-none">
+          <h1 className="font-[family-name:var(--font-cormorant)] text-7xl md:text-9xl font-light text-white tracking-widest uppercase drop-shadow-lg">
+            RÓLAM
+          </h1>
+        </div>
+      </section>
+
       {/* ── 1. "Ez nem csupán egy esküvő..." ── */}
-      <section id="rolam-elso-szekcio" className="bg-[#F5F3ED] pt-28 pb-20 px-6">
+      <section id="rolam-elso-szekcio" className="bg-[#F5F3ED] pt-20 pb-20 px-6">
         <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-start gap-14">
 
           {/* Kör kép bal */}
