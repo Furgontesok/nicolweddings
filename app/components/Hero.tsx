@@ -73,12 +73,12 @@ export default function Hero() {
               style={{ height: "auto" }}
             />
           </a>
-          <ul className="flex items-center gap-14">
+          <ul className="flex items-center gap-8">
             {links.map((l) => (
               <li key={l.href}>
                 <a
                   href={l.href}
-                  className="font-[family-name:var(--font-nunito)] text-white text-[13px] tracking-[0.28em] uppercase hover:text-white/70 transition-colors duration-300 drop-shadow"
+                  className="font-[family-name:var(--font-nunito)] text-white text-[11px] tracking-[0.22em] uppercase hover:text-white/70 transition-colors duration-300 drop-shadow"
                 >
                   {l.label}
                 </a>
