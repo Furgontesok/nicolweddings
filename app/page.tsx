@@ -1,5 +1,6 @@
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
+import Fit from "./components/Fit";
 import Services from "./components/Services";
 import Gallery from "./components/Gallery";
 import Video from "./components/Video";
@@ -15,6 +16,7 @@ export default function Home() {
       <Navbar />
       <main>
         <Hero />
+        <Fit />
         <Services />
         <Gallery />
         <Video />
