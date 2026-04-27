@@ -37,7 +37,7 @@ export default function Navbar() {
       }`}
     >
       {/* Desktop */}
-      <div className="hidden md:flex items-center h-12 px-10">
+      <div className="hidden md:flex items-center h-16 px-10">
         {/* Bal: Logo */}
         <div className="w-1/4">
           <a href="/">
