@@ -61,13 +61,13 @@ export default function Hero() {
         className={`transition-opacity duration-300 ${heroVisible ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"}`}
       >
         {/* Desktop */}
-        <div className="hidden md:flex flex-col items-center gap-2">
+        <div className="hidden md:flex flex-col items-center gap-2 pt-5">
           <a href="/">
             <Image
               src="/images/horizontal_white.svg"
               alt="Nicol Weddings and Events"
-              width={380}
-              height={114}
+              width={190}
+              height={57}
               priority
               className="object-contain drop-shadow-lg"
               style={{ height: "auto" }}
@@ -139,7 +139,7 @@ export default function Hero() {
         ))}
 
         {/* Szöveg */}
-        <div className="absolute bottom-20 left-0 right-0 text-center pointer-events-none px-6 z-10">
+        <div className="absolute bottom-32 left-0 right-0 text-center pointer-events-none px-6 z-10">
           <h1 className="font-[family-name:var(--font-cormorant)] text-white text-3xl md:text-5xl font-light leading-snug drop-shadow-lg">
             Esküvők, amik nyomot hagynak.
             <br />
