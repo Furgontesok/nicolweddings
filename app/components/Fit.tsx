@@ -27,7 +27,7 @@ export default function Fit() {
         <div className="flex flex-col flex-1">
 
           {/* 4 kis fotó sor */}
-          <div className="flex h-44 md:h-52 shrink-0">
+          <div className="flex h-44 md:h-52 shrink-0 gap-1">
             {smallPhotos.map((src, i) => (
               <div key={i} className="relative flex-1 overflow-hidden">
                 <Image
