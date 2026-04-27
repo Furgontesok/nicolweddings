@@ -62,7 +62,7 @@ export default function NavbarSimple() {
             <li key={l.href}>
               <a
                 href={l.href}
-                className="font-[family-name:var(--font-nunito)] text-[#363025]/70 text-[11px] tracking-[0.25em] uppercase hover:text-[#363025] transition-colors duration-300"
+                className="font-[family-name:var(--font-nunito)] text-[#363025]/70 text-[11px] tracking-[0.25em] uppercase hover:text-[#363025] hover:font-semibold transition-all duration-200"
               >
                 {l.label}
               </a>

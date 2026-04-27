@@ -78,7 +78,7 @@ export default function Hero() {
               <li key={l.href}>
                 <a
                   href={l.href}
-                  className="font-[family-name:var(--font-cormorant)] text-white text-[13px] tracking-[0.3em] uppercase font-light hover:text-white/70 transition-colors duration-300 drop-shadow"
+                  className="font-[family-name:var(--font-cormorant)] text-white text-[13px] tracking-[0.3em] uppercase font-light hover:font-normal hover:text-white transition-all duration-200 drop-shadow"
                 >
                   {l.label}
                 </a>
@@ -133,7 +133,7 @@ export default function Hero() {
                 className="object-cover object-center"
                 sizes="50vw"
               />
-              <div className="absolute inset-0 bg-black/25" />
+              <div className="absolute inset-0 bg-black/40" />
             </div>
 
             <div className="w-1/2 h-full relative">
@@ -145,7 +145,7 @@ export default function Hero() {
                 className="object-cover object-center"
                 sizes="50vw"
               />
-              <div className="absolute inset-0 bg-black/25" />
+              <div className="absolute inset-0 bg-black/40" />
             </div>
           </div>
         ))}
