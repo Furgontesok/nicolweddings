@@ -13,7 +13,7 @@ export default function Rolam() {
     <>
       <NavbarSimple />
 
-      {/* Hero — 4 fotós mozaik */}
+      {/* ── 1. Hero — 4 fotós mozaik ── */}
       <section className="relative flex" style={{ height: "65vh", minHeight: 400 }}>
         {[
           "/images/R%C3%B3lam%20mell%C3%A9k1.jpg",
@@ -30,10 +30,9 @@ export default function Rolam() {
               sizes="25vw"
               priority={i < 2}
             />
-            <div className="absolute inset-0 bg-black/25" />
+            <div className="absolute inset-0 bg-black/30" />
           </div>
         ))}
-
         <div className="absolute bottom-0 left-0 right-0 pb-8 px-6 text-center pointer-events-none">
           <h1 className="font-[family-name:var(--font-cormorant)] text-7xl md:text-9xl font-light text-white tracking-widest uppercase drop-shadow-lg">
             RÓLAM
@@ -41,80 +40,148 @@ export default function Rolam() {
         </div>
       </section>
 
-      {/* Bemutatkozás */}
-      <section className="bg-[#F5F3ED] py-24 px-6">
+      {/* ── 2. "Ez nem csupán egy esküvő..." ── */}
+      <section id="rolam-elso-szekcio" className="bg-[#F5F3ED] py-24 px-6 overflow-hidden">
+        <div className="max-w-5xl mx-auto">
+
+          {/* Felső rész: ovális kép középen + fejléc */}
+          <div className="flex flex-col md:flex-row items-center gap-12 mb-16">
+
+            {/* Ovális kép */}
+            <div className="shrink-0">
+              <div
+                className="relative overflow-hidden"
+                style={{ width: 220, height: 290, borderRadius: "110px 110px 0 0" }}
+              >
+                <Image
+                  src="/images/R%C3%B3lam%20f%C5%91k%C3%A9p.jpg"
+                  alt="Nicol esküvőszervező"
+                  fill
+                  className="object-cover object-top"
+                  sizes="220px"
+                />
+              </div>
+            </div>
+
+            {/* Szöveg */}
+            <div className="flex-1">
+              <h2 className="font-[family-name:var(--font-cormorant)] text-[#363025] text-3xl md:text-4xl font-light leading-snug mb-6">
+                Ez nem csupán egy esküvő, hanem az örökkévalóságotok első fejezete.
+              </h2>
+              <div className="w-10 h-px bg-[#363025]/30 mb-6" />
+              <p className="font-[family-name:var(--font-quicksand)] text-[#363025]/70 leading-relaxed text-sm md:text-base">
+                Hiszem, hogy minden esküvő egyedi — olyan, ami valóban rólatok szól. A nagy pillanatok éppoly fontosak, mint a legapróbb részletek. Amikor a saját esküvőmet szerveztem, rájöttem, mennyire sokat jelent egy nyugodt, támogató jelenlét. Azóta minden pár oldalán ott vagyok az első ötlettől az utolsó tánclépésig.
+              </p>
+            </div>
+          </div>
+
+          {/* Alsó rész: extra kép jobb + "amiben hiszek" */}
+          <div className="flex flex-col md:flex-row items-start gap-12">
+            <div className="flex-1">
+              <p className="font-[family-name:var(--font-cormorant)] text-[#363025]/60 text-xl italic mb-2">
+                amiben hiszek
+              </p>
+              <div className="w-8 h-px bg-[#363025]/30 mb-6" />
+              <p className="font-[family-name:var(--font-quicksand)] text-[#363025]/70 leading-relaxed text-sm md:text-base">
+                Precizitás és melegség egyszerre. Minden döntésnél a ti személyiségetek és szerelmetek vezérel — a virágkötéstől a terítékig, a menetrendtől az utolsó percig. Az én dolgom, hogy ti csak egymásra figyelhessetek.
+              </p>
+            </div>
+            <div className="shrink-0 md:w-2/5">
+              <div className="relative w-full overflow-hidden" style={{ aspectRatio: "4/3" }}>
+                <Image
+                  src="/images/zsambek_wedding_styled_shoot-001_web.jpg"
+                  alt="Esküvői dekoráció"
+                  fill
+                  className="object-cover object-center"
+                  sizes="40vw"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── 3. Gőz-Csongrádi Nicol — személyes bemutatkozás ── */}
+      <section className="bg-white py-24 px-6">
         <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-start gap-16">
 
-          {/* Kép */}
+          {/* Szöveg bal */}
+          <div className="flex-1 pt-2">
+            <p className="font-[family-name:var(--font-nunito)] text-[10px] tracking-[0.3em] uppercase text-[#363025]/50 mb-4">
+              Alapító · Esküvőszervező · Magyarország
+            </p>
+            <h2 className="font-[family-name:var(--font-italianno)] text-5xl md:text-6xl text-[#363025] leading-tight mb-6">
+              Gőz-Csongrádi Nicol
+            </h2>
+            <div className="w-12 h-px bg-[#363025]/30 mb-8" />
+            <div className="font-[family-name:var(--font-quicksand)] text-[#363025]/70 leading-relaxed space-y-4 text-sm md:text-base">
+              <p>
+                2022 óta foglalkozom esküvők, születésnapok, lánybúcsúk és más különleges alkalmak szervezésével. A rendezvényszervezés számomra nem csupán munka — a részletek összehangolása, a koncepció megalkotása és a kivitelezés az, ami igazán szenvedélyem.
+              </p>
+              <p>
+                Családi hátterem szorosan kapcsolódik az esküvők világához, ami még mélyebb rálátást ad az iparágra. Megbízható, precíz szervezőként dolgozom, aki minden feladatot teljes odaadással végez el.
+              </p>
+              <p>
+                Nem sablonokat alkalmazok — minden párnál nulláról indulok, hogy az eredmény valóban a tietek legyen.
+              </p>
+            </div>
+            <a
+              href="/szolgaltatasok"
+              className="inline-block mt-10 border border-[#363025] text-[#363025] font-[family-name:var(--font-nunito)] text-[10px] tracking-[0.25em] uppercase px-10 py-4 hover:bg-[#363025] hover:text-white transition-all duration-300"
+            >
+              Dolgozzunk együtt
+            </a>
+          </div>
+
+          {/* Portré jobb */}
           <div className="shrink-0 md:w-2/5">
-            <div className="relative w-full overflow-hidden" style={{ aspectRatio: "3/4", borderRadius: "120px 120px 0 0" }}>
+            <div className="relative w-full overflow-hidden" style={{ aspectRatio: "3/4" }}>
               <Image
-                src="/images/R%C3%B3lam%20f%C5%91k%C3%A9p.jpg"
-                alt="Nicol — esküvőszervező"
+                src="/images/R%C3%B3lam%20mell%C3%A9k1.jpg"
+                alt="Gőz-Csongrádi Nicol"
                 fill
                 className="object-cover object-top"
                 sizes="40vw"
               />
             </div>
           </div>
+        </div>
+      </section>
 
-          {/* Szöveg */}
-          <div className="flex-1 pt-4">
-            <p className="font-[family-name:var(--font-nunito)] text-xs tracking-[0.3em] uppercase text-[#363025]/50 mb-4">
-              Bemutatkozás
-            </p>
-            <h2 className="font-[family-name:var(--font-italianno)] text-5xl md:text-6xl text-[#363025] leading-tight mb-6">
-              Szia, Nicol vagyok
+      {/* ── 4. Történet — 2024 ── */}
+      <section className="bg-[#F5F3ED] py-24 px-6">
+        <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-16">
+
+          {/* Szöveg bal */}
+          <div className="flex-1">
+            <h2 className="font-[family-name:var(--font-cormorant)] text-[#363025] text-3xl md:text-4xl font-light leading-snug mb-6">
+              Amikor 2024-ben a saját esküvőm szervezésébe kezdtem…
             </h2>
-            <div className="w-12 h-px bg-[#363025]/30 mb-8" />
-            <div className="font-[family-name:var(--font-quicksand)] text-[#363025]/70 leading-relaxed space-y-5 text-base">
+            <div className="w-10 h-px bg-[#363025]/30 mb-6" />
+            <div className="font-[family-name:var(--font-quicksand)] text-[#363025]/70 leading-relaxed space-y-4 text-sm md:text-base">
               <p>
-                Esküvőszervező és dekorátor vagyok, és mélyen hiszem, hogy minden esküvőnek egyedinek kell lennie — olyannak, ami valóban rólatok szól. Több éve kísérem végig a párokat az álmaik napjának megvalósításában.
+                …rájöttem, milyen sokat jelent, ha valaki valóban ott van melletted ebben a folyamatban. Nem csak szervez, hanem érti, mit álmodtál meg, és gondoskodik arról, hogy pontosan azt éljétek át.
               </p>
               <p>
-                A munkám nem csak koordinálásból áll: figyelem a részleteket, érzem a hangulatot, és minden döntésben a ti személyiségetek és szerelmetek vezérel. A virágkötéstől a terítékig, a menetrendtől az utolsó percig — ott vagyok.
-              </p>
-              <p>
-                Hiszek abban, hogy a szervezés nem kell, hogy stresszes legyen. Az a dolgom, hogy ti csak egymásra figyelhessetek azon a különleges napon.
-              </p>
-              <p>
-                Ha úgy érzed, hogy jól passzolnánk egymáshoz — írj bátran, az első konzultáció ingyenes és kötésmentes.
+                Ez az élmény ihlette a Nicol Weddings & Events megalapítását. Azt szeretném, hogy minden pár ugyanazt az örömöt és nyugalmat érezze, amit én éreztem — miközben én intézem a részleteket.
               </p>
             </div>
             <a
               href="/kapcsolat"
-              className="inline-block mt-10 border border-[#363025] text-[#363025] font-[family-name:var(--font-nunito)] text-xs tracking-[0.2em] uppercase px-10 py-4 hover:bg-[#363025] hover:text-white transition-all duration-300"
+              className="inline-block mt-10 border border-[#363025] text-[#363025] font-[family-name:var(--font-nunito)] text-[10px] tracking-[0.25em] uppercase px-10 py-4 hover:bg-[#363025] hover:text-white transition-all duration-300"
             >
-              Vegyük fel a kapcsolatot
+              Dolgozzunk együtt
             </a>
           </div>
-        </div>
-      </section>
 
-      {/* Munka közben fotó + idézet */}
-      <section className="bg-white py-24 px-6">
-        <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-16">
-
-          {/* Idézet bal */}
-          <div className="flex-1 text-center md:text-left">
-            <div className="font-[family-name:var(--font-cormorant)] text-7xl text-[#363025]/15 leading-none mb-4 select-none">"</div>
-            <p className="font-[family-name:var(--font-cormorant)] text-2xl md:text-3xl font-light text-[#363025] italic leading-relaxed">
-              Minden esküvő egy egyedi történet. Az én feladatom, hogy a tiétek tökéletesen szóljon.
-            </p>
-            <div className="w-12 h-px bg-[#363025]/30 mt-8 md:ml-0 mx-auto" />
-            <p className="font-[family-name:var(--font-nunito)] text-xs tracking-[0.25em] uppercase text-[#363025]/50 mt-4">
-              Nicol — esküvőszervező
-            </p>
-          </div>
-
-          {/* Kép jobb */}
+          {/* Fotó jobb */}
           <div className="shrink-0 md:w-2/5">
-            <div className="relative w-full overflow-hidden rounded-sm" style={{ aspectRatio: "4/5" }}>
+            <div className="relative w-full overflow-hidden" style={{ aspectRatio: "4/5" }}>
               <Image
-                src="/images/R%C3%B3lam%20munka%20k%C3%B6zben.JPG"
-                alt="Nicol munka közben"
+                src="/images/Nicol%26Roli-543.jpg"
+                alt="Nicol saját esküvője"
                 fill
-                className="object-cover"
+                className="object-cover object-center"
                 sizes="40vw"
               />
             </div>
@@ -122,47 +189,97 @@ export default function Rolam() {
         </div>
       </section>
 
-      {/* Értékeim */}
-      <section className="bg-[#F5F3ED] py-24 px-6">
-        <div className="max-w-4xl mx-auto text-center mb-16">
-          <p className="font-[family-name:var(--font-nunito)] text-xs tracking-[0.3em] uppercase text-[#363025]/50 mb-3">
-            Ami fontos nekem
-          </p>
-          <h2 className="font-[family-name:var(--font-italianno)] text-5xl md:text-6xl text-[#363025]">
-            Az én megközelítésem
-          </h2>
-          <div className="w-12 h-px bg-[#363025]/30 mx-auto mt-6" />
-        </div>
+      {/* ── 5. Érdekességek rólam ── */}
+      <section className="bg-white py-24 px-6">
+        <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-start gap-12">
 
-        <div className="max-w-4xl mx-auto grid md:grid-cols-3 gap-10 text-center">
-          {[
-            { num: "01", title: "Személyes figyelem", desc: "Minden pár más. Nem sablonokat alkalmazok, hanem rátok szabom az egész folyamatot." },
-            { num: "02", title: "Átlátható kommunikáció", desc: "Mindig tudni fogjátok, hol tartunk. Nincs rejtett díj, nincs meglepetés." },
-            { num: "03", title: "Nyugalom a nagy napon", desc: "A ti dolgotok az, hogy élvezzétek. Az enyém, hogy minden a helyén legyen." },
-          ].map((v, i) => (
-            <div key={i}>
-              <span className="font-[family-name:var(--font-cormorant)] text-5xl font-light text-[#363025]/20 block mb-4">{v.num}</span>
-              <h3 className="font-[family-name:var(--font-quicksand)] font-semibold text-[#363025] mb-3">{v.title}</h3>
-              <p className="font-[family-name:var(--font-quicksand)] text-[#363025]/60 text-sm leading-relaxed">{v.desc}</p>
+          {/* Bal: fotó hover effekttel */}
+          <div className="shrink-0 md:w-[38%] group">
+            <div className="relative w-full overflow-hidden" style={{ aspectRatio: "3/4" }}>
+              <Image
+                src="/images/R%C3%B3lam%20munka%20k%C3%B6zben.JPG"
+                alt="Nicol munka közben"
+                fill
+                className="object-cover object-center transition-opacity duration-500 group-hover:opacity-60"
+                sizes="38vw"
+              />
             </div>
-          ))}
+          </div>
+
+          {/* Jobb: Q&A dividerekkel */}
+          <div className="flex-1 pt-2">
+            <p className="font-[family-name:var(--font-nunito)] text-[10px] tracking-[0.3em] uppercase text-[#363025]/50 mb-3">
+              Egy kicsit közelebb
+            </p>
+            <h2 className="font-[family-name:var(--font-italianno)] text-5xl md:text-6xl text-[#363025] leading-tight mb-8">
+              Érdekességek rólam
+            </h2>
+
+            {[
+              {
+                q: "Egy apró érdekesség magamról",
+                a: "Három lánytestvér közül a középső vagyok — ami valószínűleg megmagyarázza, miért vagyok annyira jó a békítésben és a kompromisszumokban.",
+              },
+              {
+                q: "Mi az, ami feltölt egy hosszú nap után?",
+                a: "Ha pihenésre vágyom, olvasok. Egy jó könyv mindig kikapcsol, bárhogy telt is a napom.",
+              },
+              {
+                q: "Kedvenc helyem a világon?",
+                a: "Zanzibár mindig különleges hely marad számomra — ott töltöttük a nászutunkat, és az a varázslat máig velem van.",
+              },
+              {
+                q: "Mi az, amit mindig magammal viszek?",
+                a: "Kézfertőtlenítő, szájfény és egy kis cukorka. Az élet apró meglepetéseire mindig felkészülten várok.",
+              },
+              {
+                q: "Mi az, ami nélkül nem tudnék élni?",
+                a: "A rendszerezés. Számomra ez nemcsak rendet jelent, hanem szabadságot — ha minden a helyén van, a fejemben is tisztább lesz.",
+              },
+            ].map((item, i) => (
+              <div key={i}>
+                <div className="py-5">
+                  <p className="font-[family-name:var(--font-nunito)] text-[10px] tracking-[0.25em] uppercase text-[#363025]/50 mb-2">
+                    {item.q}
+                  </p>
+                  <p className="font-[family-name:var(--font-quicksand)] text-[#363025]/75 text-sm leading-relaxed">
+                    {item.a}
+                  </p>
+                </div>
+                {i < 4 && <div className="h-px bg-[#363025]/15" />}
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="bg-[#363025] py-20 px-6 text-center">
-        <p className="font-[family-name:var(--font-nunito)] text-xs tracking-[0.3em] uppercase text-white/40 mb-4">
-          Kezdjük el együtt
-        </p>
-        <h2 className="font-[family-name:var(--font-italianno)] text-5xl md:text-6xl text-white mb-10">
-          Ismerkedjünk meg!
-        </h2>
-        <a
-          href="/kapcsolat"
-          className="inline-block border border-white/60 text-white font-[family-name:var(--font-nunito)] text-xs tracking-[0.25em] uppercase px-12 py-4 hover:bg-white hover:text-[#363025] transition-all duration-300"
-        >
-          Ingyenes konzultáció
-        </a>
+      {/* ── 6. CTA szekcio ── */}
+      <section className="relative py-28 px-6 text-center overflow-hidden">
+        <Image
+          src="/images/zsambek_wedding_styled_shoot-052_web.jpg"
+          alt="Esküvői háttér"
+          fill
+          className="object-cover object-center"
+          sizes="100vw"
+        />
+        <div className="absolute inset-0 bg-black/55" />
+        <div className="relative z-10">
+          <p className="font-[family-name:var(--font-nunito)] text-[10px] tracking-[0.35em] uppercase text-white/50 mb-4">
+            Kezdjük el együtt
+          </p>
+          <h2 className="font-[family-name:var(--font-italianno)] text-5xl md:text-6xl text-white mb-4 leading-tight">
+            Tegyük együtt felejthetetlenné a napotokat!
+          </h2>
+          <p className="font-[family-name:var(--font-quicksand)] text-white/70 text-sm mb-10 max-w-md mx-auto">
+            Vedd fel velem a kapcsolatot, és kezdjük el a szervezést.
+          </p>
+          <a
+            href="/kapcsolat"
+            className="inline-block border border-white/60 text-white font-[family-name:var(--font-nunito)] text-[10px] tracking-[0.3em] uppercase px-12 py-4 hover:bg-white hover:text-[#363025] transition-all duration-300"
+          >
+            Keress bizalommal
+          </a>
+        </div>
       </section>
 
       <Footer />
