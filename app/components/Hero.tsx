@@ -78,7 +78,7 @@ export default function Hero() {
               <li key={l.href}>
                 <a
                   href={l.href}
-                  className="font-[family-name:var(--font-cormorant)] text-white text-[13px] tracking-[0.3em] uppercase font-light hover:font-normal hover:text-white transition-all duration-200 drop-shadow"
+                  className="font-[family-name:var(--font-cormorant)] text-white text-[13px] tracking-[0.3em] uppercase font-light hover:font-bold hover:text-white/80 transition-all duration-200 drop-shadow"
                 >
                   {l.label}
                 </a>
