@@ -61,24 +61,24 @@ export default function Hero() {
         className={`transition-opacity duration-300 ${heroVisible ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"}`}
       >
         {/* Desktop */}
-        <div className="hidden md:flex flex-col items-center gap-2 pt-5">
+        <div className="hidden md:flex flex-col items-center gap-4 pt-8">
           <a href="/">
             <Image
               src="/images/horizontal_white.svg"
               alt="Nicol Weddings and Events"
-              width={190}
-              height={57}
+              width={260}
+              height={78}
               priority
               className="object-contain drop-shadow-lg"
               style={{ height: "auto" }}
             />
           </a>
-          <ul className="flex items-center gap-8">
+          <ul className="flex items-center gap-10">
             {links.map((l) => (
               <li key={l.href}>
                 <a
                   href={l.href}
-                  className="font-[family-name:var(--font-cormorant)] text-white text-[15px] tracking-[0.35em] uppercase font-light hover:text-white/70 transition-colors duration-300 drop-shadow"
+                  className="font-[family-name:var(--font-cormorant)] text-white text-[13px] tracking-[0.3em] uppercase font-light hover:text-white/70 transition-colors duration-300 drop-shadow"
                 >
                   {l.label}
                 </a>
@@ -88,18 +88,30 @@ export default function Hero() {
         </div>
 
         {/* Mobil */}
-        <div className="md:hidden flex items-center justify-center pt-5">
+        <div className="md:hidden flex flex-col items-center gap-3 pt-6">
           <a href="/">
             <Image
               src="/images/horizontal_white.svg"
               alt="Nicol Weddings and Events"
-              width={160}
-              height={50}
+              width={200}
+              height={60}
               priority
               className="object-contain drop-shadow-lg"
               style={{ height: "auto" }}
             />
           </a>
+          <ul className="flex items-center gap-5">
+            {links.map((l) => (
+              <li key={l.href}>
+                <a
+                  href={l.href}
+                  className="font-[family-name:var(--font-cormorant)] text-white text-[10px] tracking-[0.2em] uppercase font-light drop-shadow"
+                >
+                  {l.label}
+                </a>
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
 
