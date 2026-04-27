@@ -10,7 +10,7 @@ const smallPhotos = [
 export default function Fit() {
   return (
     <section className="bg-[#F5F3ED] overflow-hidden">
-      <div className="flex flex-col md:flex-row min-h-[680px]">
+      <div className="flex flex-col md:flex-row min-h-[680px] gap-2">
 
         {/* Bal: nagy fotó */}
         <div className="relative w-full md:w-[42%] h-72 md:h-auto shrink-0">
@@ -27,7 +27,7 @@ export default function Fit() {
         <div className="flex flex-col flex-1">
 
           {/* 4 kis fotó sor */}
-          <div className="flex h-44 md:h-52 shrink-0 gap-1">
+          <div className="flex h-44 md:h-52 shrink-0 gap-2">
             {smallPhotos.map((src, i) => (
               <div key={i} className="relative flex-1 overflow-hidden">
                 <Image
