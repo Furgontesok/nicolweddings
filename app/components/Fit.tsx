@@ -64,7 +64,7 @@ export default function Fit() {
 
             <a
               href="/szolgaltatasok"
-              className="inline-block mt-10 self-start border border-[#363025]/50 text-[#363025] font-[family-name:var(--font-nunito)] text-[10px] tracking-[0.3em] uppercase px-10 py-4 hover:bg-[#363025] hover:text-white hover:border-[#363025] transition-all duration-300"
+              className="inline-block mt-8 self-start border border-[#363025]/50 text-[#363025] font-[family-name:var(--font-nunito)] text-[9px] tracking-[0.25em] uppercase px-7 py-3 hover:bg-[#363025] hover:text-white hover:border-[#363025] transition-all duration-300"
             >
               Ebben tudok nektek segíteni
             </a>
