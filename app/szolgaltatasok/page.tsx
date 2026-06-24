@@ -110,7 +110,7 @@ export default function Szolgaltatasok() {
 
         {/* Felirat — közvetlenül alatta, nincs felhúzás */}
         <div className="bg-[#F5F3ED] text-center pt-6 pb-2 relative z-10">
-          <h1 className="font-[family-name:var(--font-cormorant)] text-4xl md:text-5xl font-semibold text-[#363025] tracking-[0.05em] uppercase">
+          <h1 className="font-[family-name:var(--font-cormorant)] text-7xl md:text-[9rem] font-semibold text-[#363025] tracking-normal uppercase">
             SZOLGÁLTATÁSOK
           </h1>
         </div>
