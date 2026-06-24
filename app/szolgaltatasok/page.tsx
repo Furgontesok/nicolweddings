@@ -71,18 +71,18 @@ export default function Szolgaltatasok() {
       <NavbarSimple />
 
       {/* Hero — folyamatos CSS scroll */}
-      {/* Minden kép 28vw széles, 8 kép × 2 = 16, animáció: -224vw (8×28) */}
+      {/* 8 kép × 28vw = 224vw → animáció végpontja */}
       <style>{`
         @keyframes marquee {
           from { transform: translateX(0); }
           to   { transform: translateX(-224vw); }
         }
-        .hero-marquee { animation: marquee 32s linear infinite; }
+        .hero-marquee { animation: marquee 55s linear infinite; }
       `}</style>
 
       <div className="pt-16">
         {/* Képsáv */}
-        <div className="relative overflow-hidden" style={{ height: "52vh", minHeight: 340 }}>
+        <div className="relative overflow-hidden" style={{ height: "55vh", minHeight: 360 }}>
           <div className="hero-marquee flex h-full">
             {[...heroImages, ...heroImages].map((src, i) => (
               <div
@@ -101,16 +101,16 @@ export default function Szolgaltatasok() {
               </div>
             ))}
           </div>
-          {/* Alap gradient — képek aljának elfakulása */}
+          {/* Alap gradient — csak az utolsó 28% fadul el */}
           <div
             className="pointer-events-none absolute inset-x-0 bottom-0 z-10"
-            style={{ height: "50%", background: "linear-gradient(to bottom, transparent, #F5F3ED)" }}
+            style={{ height: "28%", background: "linear-gradient(to bottom, transparent, #F5F3ED)" }}
           />
         </div>
 
-        {/* Felirat — a fade alatt */}
-        <div className="bg-[#F5F3ED] text-center -mt-12 pb-4 relative z-10">
-          <h1 className="font-[family-name:var(--font-cormorant)] text-7xl md:text-9xl font-light text-[#363025] tracking-widest uppercase">
+        {/* Felirat — közvetlenül alatta, nincs felhúzás */}
+        <div className="bg-[#F5F3ED] text-center pt-6 pb-2 relative z-10">
+          <h1 className="font-[family-name:var(--font-cormorant)] text-7xl md:text-9xl font-semibold text-[#363025] tracking-[0.15em] uppercase">
             SZOLGÁLTATÁSOK
           </h1>
         </div>
