@@ -1,12 +1,17 @@
+"use client";
+
 import NavbarSimple from "../components/NavbarSimple";
 import Footer from "../components/Footer";
 import Image from "next/image";
-import type { Metadata } from "next";
+import { useState, useEffect } from "react";
 
-export const metadata: Metadata = {
-  title: "Szolgáltatások — Nicol Weddings and Events",
-  description: "Teljes körű esküvőszervezés, helyszíni koordináció, esküvői tanácsadás és egyéb szolgáltatások.",
-};
+const heroSlides = [
+  "/images/Betti%26Levi_SLW_001.jpg",
+  "/images/5V5A0670-2.jpg",
+  "/images/TheKilroyProject-286.jpg",
+  "/images/zsambek_wedding_styled_shoot-001_web.jpg",
+  "/images/Nicol%26Roli-543.jpg",
+];
 
 const services = [
   {
@@ -59,36 +64,57 @@ const faqs = [
 ];
 
 export default function Szolgaltatasok() {
+  const [current, setCurrent] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrent((prev) => (prev + 1) % heroSlides.length);
+    }, 3500);
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <>
       <NavbarSimple />
 
-      {/* Hero — 4 egyenlő fotó mozaik */}
-      <section className="relative flex" style={{ height: "65vh", minHeight: 420 }}>
-        {[
-          "/images/Betti%26Levi_SLW_001.jpg",
-          "/images/5V5A0670-2.jpg",
-          "/images/TheKilroyProject-286.jpg",
-          "/images/zsambek_wedding_styled_shoot-001_web.jpg",
-        ].map((src, i) => (
-          <div key={i} className="relative flex-1 overflow-hidden">
+      {/* Hero — slideshow */}
+      <section className="relative overflow-hidden" style={{ height: "65vh", minHeight: 420 }}>
+        {heroSlides.map((src, i) => (
+          <div
+            key={i}
+            className="absolute inset-0 transition-opacity duration-[700ms] ease-in-out"
+            style={{ opacity: i === current ? 1 : 0 }}
+          >
             <Image
               src={src}
               alt="Esküvői fotó"
               fill
-              className="object-cover"
-              sizes="25vw"
-              priority={i < 2}
+              className="object-cover object-center"
+              sizes="100vw"
+              priority={i === 0}
             />
-            <div className="absolute inset-0 bg-black/30" />
+            <div className="absolute inset-0 bg-black/40" />
           </div>
         ))}
 
-        {/* Text overlay — alul középen */}
-        <div className="absolute bottom-0 left-0 right-0 pb-8 px-6 text-center pointer-events-none">
+        {/* Felirat */}
+        <div className="absolute bottom-0 left-0 right-0 pb-14 px-6 text-center pointer-events-none z-10">
           <h1 className="font-[family-name:var(--font-cormorant)] text-7xl md:text-9xl font-light text-white tracking-widest uppercase drop-shadow-lg">
             SZOLGÁLTATÁSOK
           </h1>
+        </div>
+
+        {/* Pont navigáció */}
+        <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-10">
+          {heroSlides.map((_, i) => (
+            <button
+              key={i}
+              onClick={() => setCurrent(i)}
+              className={`h-1.5 rounded-full transition-all duration-300 ${
+                i === current ? "bg-white w-5" : "bg-white/40 w-1.5"
+              }`}
+            />
+          ))}
         </div>
       </section>
 
