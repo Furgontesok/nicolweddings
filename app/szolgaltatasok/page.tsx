@@ -98,52 +98,45 @@ function ServiceItem({ s, i, isOpen, onToggle }: {
         </div>
 
         {/* Jobb: tartalom */}
-        <div className="flex-1 flex flex-col">
+        <div className="flex-1 flex flex-col justify-between">
 
-          {/* Vékony dekor vonal + cím */}
-          <div className="mb-6">
-            <div className="flex items-center gap-3 mb-3">
-              <span className="w-6 h-px bg-[#363025]/30" />
-              <span className="font-[family-name:var(--font-nunito)] text-[9px] tracking-[0.35em] uppercase text-[#363025]/40">
-                {s.num}
-              </span>
-            </div>
-            <h2 className="font-[family-name:var(--font-cormorant)] text-3xl md:text-4xl font-light text-[#363025] leading-snug">
+          {/* Cím */}
+          <div>
+            <h2 className="font-[family-name:var(--font-cormorant)] text-4xl md:text-5xl font-light text-[#363025] leading-tight mb-8">
               {s.title}
             </h2>
+
+            {/* Leírás */}
+            <p className="font-[family-name:var(--font-quicksand)] text-[#363025]/65 text-[15px] leading-[1.9] mb-10">
+              {s.desc}
+            </p>
           </div>
 
-          {/* Leírás */}
-          <p className="font-[family-name:var(--font-quicksand)] text-[#363025]/60 text-sm leading-relaxed mb-7">
-            {s.desc}
-          </p>
-
-          {/* Árajánlat gomb */}
-          <div className="mt-auto pt-2 flex justify-end">
+          {/* Árajánlat gomb — jobb */}
+          <div className="flex justify-end">
             <a
               href="/kapcsolat"
-              className="group/btn2 relative inline-flex items-center gap-3 border border-[#363025]/30 text-[#363025] font-[family-name:var(--font-nunito)] text-[9px] tracking-[0.3em] uppercase px-8 py-3.5 overflow-hidden hover:border-[#363025] transition-colors duration-300"
+              className="group/btn2 relative inline-flex items-center border border-[#363025]/40 text-[#363025] font-[family-name:var(--font-nunito)] text-[10px] tracking-[0.3em] uppercase px-10 py-4 overflow-hidden hover:border-[#363025] transition-colors duration-300"
             >
               <span className="absolute inset-0 bg-[#363025] translate-y-full group-hover/btn2:translate-y-0 transition-transform duration-300 ease-in-out" />
               <span className="relative z-10 group-hover/btn2:text-white transition-colors duration-300">Árajánlat kérése</span>
-              <span className="relative z-10 w-4 h-px bg-[#363025] group-hover/btn2:bg-white transition-colors duration-300" />
             </a>
           </div>
         </div>
       </div>
 
-      {/* Accordion — teljes szélességben */}
-      <div className="border-t border-[#D6D6C9]/60 mt-8">
+      {/* Accordion — teljes szélességben, "Tartalma:" script betűvel */}
+      <div className="border-t border-[#D6D6C9] mt-6">
         <button
           onClick={onToggle}
-          className="w-full flex items-center justify-between py-4 text-left group/btn"
+          className="w-full flex items-center justify-between py-5 text-left group/btn"
         >
-          <span className="font-[family-name:var(--font-nunito)] text-[9px] tracking-[0.35em] uppercase text-[#363025]/40 group-hover/btn:text-[#363025] transition-colors duration-200">
-            Mit tartalmaz?
+          <span className="font-[family-name:var(--font-italianno)] text-[#363025]/70 text-2xl group-hover/btn:text-[#363025] transition-colors duration-200">
+            Tartalma:
           </span>
           <span
-            className="w-5 h-5 border border-[#363025]/30 rounded-full flex items-center justify-center text-[#363025]/40 text-sm transition-all duration-300 group-hover/btn:border-[#363025]/60 group-hover/btn:text-[#363025]"
-            style={{ transform: isOpen ? "rotate(45deg)" : "rotate(0deg)" }}
+            className="text-[#363025]/50 text-2xl font-light leading-none transition-transform duration-300 group-hover/btn:text-[#363025]"
+            style={{ transform: isOpen ? "rotate(45deg)" : "rotate(0deg)", display: "inline-block" }}
           >
             +
           </span>
