@@ -77,6 +77,131 @@ const faqs = [
   },
 ];
 
+function ServiceItem({ s, i, isOpen, onToggle }: {
+  s: typeof services[0]; i: number; isOpen: boolean; onToggle: () => void;
+}) {
+  return (
+    <div className="border-t border-[#D6D6C9]">
+      <div className="py-14 flex flex-col md:flex-row gap-12">
+
+        {/* Bal: kép 3D hover effekttel */}
+        <div className="shrink-0 md:w-[40%] group/img" style={{ perspective: "800px" }}>
+          <div
+            className="relative overflow-hidden transition-transform duration-500 ease-out group-hover/img:[transform:rotateY(-3deg)_rotateX(2deg)_scale(1.02)] shadow-md group-hover/img:shadow-2xl"
+            style={{ aspectRatio: "4/3" }}
+          >
+            <Image
+              src={s.image}
+              alt={s.title}
+              fill
+              className="object-cover object-center transition-transform duration-700 group-hover/img:scale-105"
+              sizes="40vw"
+            />
+            {/* Overlay shimmer on hover */}
+            <div className="absolute inset-0 bg-gradient-to-br from-white/0 via-white/0 to-white/0 group-hover/img:from-white/5 group-hover/img:via-white/10 group-hover/img:to-white/0 transition-all duration-500" />
+            {/* Dekoratív szám a képen */}
+            <span
+              className="absolute bottom-3 right-4 font-[family-name:var(--font-cormorant)] text-[6rem] font-light text-white/20 leading-none select-none pointer-events-none"
+            >
+              {s.num}
+            </span>
+          </div>
+        </div>
+
+        {/* Jobb: tartalom */}
+        <div className="flex-1 flex flex-col">
+
+          {/* Vékony dekor vonal + cím */}
+          <div className="mb-6">
+            <div className="flex items-center gap-3 mb-3">
+              <span className="w-6 h-px bg-[#363025]/30" />
+              <span className="font-[family-name:var(--font-nunito)] text-[9px] tracking-[0.35em] uppercase text-[#363025]/40">
+                {s.num}
+              </span>
+            </div>
+            <h2 className="font-[family-name:var(--font-cormorant)] text-3xl md:text-4xl font-light text-[#363025] leading-snug">
+              {s.title}
+            </h2>
+          </div>
+
+          {/* Leírás */}
+          <p className="font-[family-name:var(--font-quicksand)] text-[#363025]/60 text-sm leading-relaxed mb-7">
+            {s.desc}
+          </p>
+
+          {/* Accordion */}
+          <div className="border-t border-[#D6D6C9]/60">
+            <button
+              onClick={onToggle}
+              className="w-full flex items-center justify-between py-4 text-left group/btn"
+            >
+              <span className="font-[family-name:var(--font-nunito)] text-[9px] tracking-[0.35em] uppercase text-[#363025]/40 group-hover/btn:text-[#363025] transition-colors duration-200">
+                Mit tartalmaz?
+              </span>
+              <span
+                className="w-5 h-5 border border-[#363025]/30 rounded-full flex items-center justify-center text-[#363025]/40 text-sm transition-all duration-300 group-hover/btn:border-[#363025]/60 group-hover/btn:text-[#363025]"
+                style={{ transform: isOpen ? "rotate(45deg)" : "rotate(0deg)" }}
+              >
+                +
+              </span>
+            </button>
+
+            {/* Animált tartalom */}
+            <div
+              className="overflow-hidden transition-all duration-500 ease-in-out"
+              style={{ maxHeight: isOpen ? "800px" : "0px", opacity: isOpen ? 1 : 0 }}
+            >
+              <ul className="pb-6 space-y-0">
+                {s.items.map((item, j) => {
+                  const parts = item.split(" — ");
+                  const keyword = parts[0];
+                  const rest = parts.slice(1).join(" — ");
+                  return (
+                    <li
+                      key={j}
+                      className="flex gap-4 py-3 border-b border-[#D6D6C9]/40 last:border-0"
+                      style={{
+                        transitionDelay: isOpen ? `${j * 40}ms` : "0ms",
+                        opacity: isOpen ? 1 : 0,
+                        transform: isOpen ? "translateY(0)" : "translateY(6px)",
+                        transition: "opacity 0.3s ease, transform 0.3s ease",
+                      }}
+                    >
+                      <span className="w-1 shrink-0 rounded-full bg-[#363025]/15 self-stretch mt-1" />
+                      <div>
+                        <span className="font-[family-name:var(--font-cormorant)] text-[#363025] text-base font-semibold italic">
+                          {keyword}
+                        </span>
+                        {rest && (
+                          <span className="font-[family-name:var(--font-quicksand)] text-[#363025]/55 text-xs leading-relaxed">
+                            {" — "}{rest}
+                          </span>
+                        )}
+                      </div>
+                    </li>
+                  );
+                })}
+              </ul>
+            </div>
+          </div>
+
+          {/* Árajánlat gomb */}
+          <div className="mt-auto pt-5 flex justify-end">
+            <a
+              href="/kapcsolat"
+              className="group/btn2 relative inline-flex items-center gap-3 border border-[#363025]/30 text-[#363025] font-[family-name:var(--font-nunito)] text-[9px] tracking-[0.3em] uppercase px-8 py-3.5 overflow-hidden transition-all duration-400 hover:border-[#363025]"
+            >
+              <span className="absolute inset-0 bg-[#363025] translate-y-full group-hover/btn2:translate-y-0 transition-transform duration-300 ease-in-out" />
+              <span className="relative z-10 group-hover/btn2:text-white transition-colors duration-300">Árajánlat kérése</span>
+              <span className="relative z-10 w-4 h-px bg-[#363025] group-hover/btn2:bg-white transition-colors duration-300" />
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 function ServicesList() {
   const [open, setOpen] = useState<number | null>(null);
 
@@ -84,76 +209,13 @@ function ServicesList() {
     <section className="bg-[#F5F3ED] pt-12 pb-8 px-6">
       <div className="max-w-5xl mx-auto">
         {services.map((s, i) => (
-          <div key={i} className="border-t border-[#D6D6C9] py-14">
-            <div className="flex flex-col md:flex-row gap-10">
-
-              {/* Bal: kép */}
-              <div className="shrink-0 md:w-[38%]">
-                <div className="relative w-full overflow-hidden" style={{ aspectRatio: "4/3" }}>
-                  <Image
-                    src={s.image}
-                    alt={s.title}
-                    fill
-                    className="object-cover object-center"
-                    sizes="38vw"
-                  />
-                </div>
-              </div>
-
-              {/* Jobb: tartalom */}
-              <div className="flex-1 flex flex-col">
-                {/* Szám + cím */}
-                <div className="flex items-baseline gap-4 mb-5">
-                  <span className="font-[family-name:var(--font-cormorant)] text-5xl font-light text-[#D6D6C9] leading-none">
-                    {s.num}
-                  </span>
-                  <h2 className="font-[family-name:var(--font-cormorant)] text-2xl md:text-3xl font-light text-[#363025] leading-snug">
-                    {s.title}
-                  </h2>
-                </div>
-
-                {/* Leírás */}
-                <p className="font-[family-name:var(--font-quicksand)] text-[#363025]/65 text-sm leading-relaxed mb-6">
-                  {s.desc}
-                </p>
-
-                {/* Accordion */}
-                <div className="border-t border-[#D6D6C9]">
-                  <button
-                    onClick={() => setOpen(open === i ? null : i)}
-                    className="w-full flex items-center justify-between py-4 text-left group"
-                  >
-                    <span className="font-[family-name:var(--font-nunito)] text-[10px] tracking-[0.25em] uppercase text-[#363025]/50 group-hover:text-[#363025] transition-colors">
-                      Tartalom
-                    </span>
-                    <span className="text-[#363025]/40 text-lg leading-none transition-transform duration-300" style={{ transform: open === i ? "rotate(45deg)" : "rotate(0deg)" }}>
-                      +
-                    </span>
-                  </button>
-                  {open === i && (
-                    <ul className="pb-5 space-y-2.5">
-                      {s.items.map((item, j) => (
-                        <li key={j} className="flex items-center gap-3 font-[family-name:var(--font-quicksand)] text-[#363025]/60 text-sm">
-                          <span className="w-px h-4 bg-[#363025]/25 shrink-0" />
-                          {item}
-                        </li>
-                      ))}
-                    </ul>
-                  )}
-                </div>
-
-                {/* Árajánlat gomb — jobbra igazítva */}
-                <div className="mt-auto pt-6 flex justify-end">
-                  <a
-                    href="/kapcsolat"
-                    className="border border-[#363025]/40 text-[#363025] font-[family-name:var(--font-nunito)] text-[10px] tracking-[0.25em] uppercase px-8 py-3 hover:bg-[#363025] hover:text-white transition-all duration-300"
-                  >
-                    Árajánlat kérése
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
+          <ServiceItem
+            key={i}
+            s={s}
+            i={i}
+            isOpen={open === i}
+            onToggle={() => setOpen(open === i ? null : i)}
+          />
         ))}
         <div className="border-t border-[#D6D6C9]" />
       </div>
