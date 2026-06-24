@@ -3,6 +3,7 @@
 import NavbarSimple from "../components/NavbarSimple";
 import Footer from "../components/Footer";
 import Image from "next/image";
+import { useState } from "react";
 
 const heroImages = [
   "/images/Betti%26Levi_SLW_001.jpg",
@@ -19,30 +20,30 @@ const services = [
   {
     num: "01",
     title: "Teljes körű esküvőszervezés",
-    subtitle: "Komplett megoldás az Ön álom napjához",
     desc: "Az első konzultációtól az utolsó táncig minden részletet gondosan megtervezünk és koordinálunk. Helyszín keresés, vendéglátás, dekoráció, fotós, virágkötő — mindent egy kézből. Melletted vagyok minden lépésnél, hogy te csak a szerelemre koncentrálhass.",
-    items: ["Helyszín keresés és bejárás", "Szállítók koordinálása", "Költségvetés tervezés", "Menetrendkészítés", "Dekoráció tervezés és lebonyolítás", "Vendég koordináció"],
+    items: ["Helyszínkeresés és bejárás", "Szállítók koordinálása", "Költségvetés tervezés", "Menetrendkészítés", "Dekoráció tervezés és lebonyolítás", "Vendég koordináció"],
+    image: "/images/zsambek_wedding_styled_shoot-001_web.jpg",
   },
   {
     num: "02",
     title: "Helyszíni koordináció",
-    subtitle: "Professzionális koordináció a nagy napon",
     desc: "Már megvan a helyszín, a szállítók, az elképzelés — de valakinek kell, aki a nagy napon mindenre figyel. Ez az én feladatom. Koordinálom a szállítókat, kezelem a váratlan helyzeteket, és gondoskodom arról, hogy minden a tervek szerint haladjon.",
-    items: ["Szállítókkal való kommunikáció", "Menetrend felügyelete", "Vendégek fogadása", "Szükség esetén problémamegoldás", "Dekoráció felügyelete"],
+    items: ["Szállítókkal való kommunikáció", "Menetrend felügyelete", "Vendégek fogadása", "Problémamegoldás szükség esetén", "Dekoráció felügyelete"],
+    image: "/images/TheKilroyProject-286.jpg",
   },
   {
     num: "03",
     title: "Esküvői tanácsadás",
-    subtitle: "Segítség a tervezés során",
     desc: "Nem kell mindent egyedül kitalálni. Tapasztalatomra és kapcsolatrendszeremre támaszkodva segítek neked a legjobb döntéseket meghozni — legyen szó helyszínről, szállítókról, stílusról vagy bármi másról.",
     items: ["1-1 konzultációk", "Szállítói ajánlások", "Stílus és koncepció tanácsadás", "Árak és szerződések áttekintése"],
+    image: "/images/Betti%26Levi_SLW_001.jpg",
   },
   {
     num: "04",
     title: "Egyéb szolgáltatások",
-    subtitle: "Bridesmaids partyk, dekoráció és más események",
     desc: "Az esküvőn túl is számíthatsz rám. Lánybúcsúk, eljegyzések, baby shower-ek, keresztelők és egyéb különleges alkalmak tervezésében és lebonyolításában is szívesen segítek.",
     items: ["Lánybúcsú szervezés", "Eljegyzési party", "Baby shower", "Keresztelő", "Évfordulós rendezvény"],
+    image: "/images/5V5A0670-2.jpg",
   },
 ];
 
@@ -64,6 +65,90 @@ const faqs = [
     a: "Igen! Magyarország egész területén vállalok munkát, sőt, külföldön tartott esküvőkhöz is.",
   },
 ];
+
+function ServicesList() {
+  const [open, setOpen] = useState<number | null>(null);
+
+  return (
+    <section className="bg-[#F5F3ED] pt-12 pb-8 px-6">
+      <div className="max-w-5xl mx-auto">
+        {services.map((s, i) => (
+          <div key={i} className="border-t border-[#D6D6C9] py-14">
+            <div className="flex flex-col md:flex-row gap-10">
+
+              {/* Bal: kép */}
+              <div className="shrink-0 md:w-[38%]">
+                <div className="relative w-full overflow-hidden" style={{ aspectRatio: "4/3" }}>
+                  <Image
+                    src={s.image}
+                    alt={s.title}
+                    fill
+                    className="object-cover object-center"
+                    sizes="38vw"
+                  />
+                </div>
+              </div>
+
+              {/* Jobb: tartalom */}
+              <div className="flex-1 flex flex-col">
+                {/* Szám + cím */}
+                <div className="flex items-baseline gap-4 mb-5">
+                  <span className="font-[family-name:var(--font-cormorant)] text-5xl font-light text-[#D6D6C9] leading-none">
+                    {s.num}
+                  </span>
+                  <h2 className="font-[family-name:var(--font-cormorant)] text-2xl md:text-3xl font-light text-[#363025] leading-snug">
+                    {s.title}
+                  </h2>
+                </div>
+
+                {/* Leírás */}
+                <p className="font-[family-name:var(--font-quicksand)] text-[#363025]/65 text-sm leading-relaxed mb-6">
+                  {s.desc}
+                </p>
+
+                {/* Accordion */}
+                <div className="border-t border-[#D6D6C9]">
+                  <button
+                    onClick={() => setOpen(open === i ? null : i)}
+                    className="w-full flex items-center justify-between py-4 text-left group"
+                  >
+                    <span className="font-[family-name:var(--font-nunito)] text-[10px] tracking-[0.25em] uppercase text-[#363025]/50 group-hover:text-[#363025] transition-colors">
+                      Tartalom
+                    </span>
+                    <span className="text-[#363025]/40 text-lg leading-none transition-transform duration-300" style={{ transform: open === i ? "rotate(45deg)" : "rotate(0deg)" }}>
+                      +
+                    </span>
+                  </button>
+                  {open === i && (
+                    <ul className="pb-5 space-y-2.5">
+                      {s.items.map((item, j) => (
+                        <li key={j} className="flex items-center gap-3 font-[family-name:var(--font-quicksand)] text-[#363025]/60 text-sm">
+                          <span className="w-px h-4 bg-[#363025]/25 shrink-0" />
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </div>
+
+                {/* Árajánlat gomb — jobbra igazítva */}
+                <div className="mt-auto pt-6 flex justify-end">
+                  <a
+                    href="/kapcsolat"
+                    className="border border-[#363025]/40 text-[#363025] font-[family-name:var(--font-nunito)] text-[10px] tracking-[0.25em] uppercase px-8 py-3 hover:bg-[#363025] hover:text-white transition-all duration-300"
+                  >
+                    Árajánlat kérése
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
+        <div className="border-t border-[#D6D6C9]" />
+      </div>
+    </section>
+  );
+}
 
 export default function Szolgaltatasok() {
   return (
@@ -122,45 +207,7 @@ export default function Szolgaltatasok() {
       </section>
 
       {/* Szolgáltatások */}
-      <section className="bg-[#F5F3ED] pt-12 pb-8 px-6">
-        <div className="max-w-5xl mx-auto">
-          {services.map((s, i) => (
-            <div
-              key={i}
-              className="border-t border-[#D6D6C9] py-16 flex flex-col md:flex-row gap-12"
-            >
-              {/* Szám + cím */}
-              <div className="md:w-2/5 shrink-0">
-                <span className="font-[family-name:var(--font-cormorant)] text-[7rem] font-light text-[#D6D6C9] leading-none block">
-                  {s.num}
-                </span>
-                <h2 className="font-[family-name:var(--font-cormorant)] text-3xl md:text-4xl font-light text-[#363025] mt-1 leading-snug">
-                  {s.title}
-                </h2>
-                <p className="font-[family-name:var(--font-nunito)] text-[10px] tracking-[0.25em] uppercase text-[#363025]/40 mt-3">
-                  {s.subtitle}
-                </p>
-              </div>
-
-              {/* Leírás + lista */}
-              <div className="flex-1 flex flex-col justify-center">
-                <p className="font-[family-name:var(--font-quicksand)] text-[#363025]/65 leading-relaxed mb-8">
-                  {s.desc}
-                </p>
-                <ul className="space-y-2.5">
-                  {s.items.map((item, j) => (
-                    <li key={j} className="flex items-center gap-3 font-[family-name:var(--font-quicksand)] text-[#363025]/60 text-sm">
-                      <span className="w-px h-4 bg-[#363025]/25 shrink-0" />
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-          ))}
-          <div className="border-t border-[#D6D6C9]" />
-        </div>
-      </section>
+      <ServicesList />
 
       {/* GYIK */}
       <section className="bg-[#363025] py-24 px-6">
