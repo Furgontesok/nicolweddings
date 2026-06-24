@@ -3,7 +3,6 @@
 import NavbarSimple from "../components/NavbarSimple";
 import Footer from "../components/Footer";
 import Image from "next/image";
-import { useState, useEffect } from "react";
 
 const heroImages = [
   "/images/Betti%26Levi_SLW_001.jpg",
@@ -15,10 +14,6 @@ const heroImages = [
   "/images/4K2A1978-2.jpg",
   "/images/zsambek_wedding_styled_shoot-052_web.jpg",
 ];
-
-// 4 klón az elejéről a seamless loop-hoz
-const VISIBLE = 4;
-const allHeroImages = [...heroImages, ...heroImages.slice(0, VISIBLE)];
 
 const services = [
   {
@@ -71,64 +66,55 @@ const faqs = [
 ];
 
 export default function Szolgaltatasok() {
-  const [current, setCurrent] = useState(0);
-  const [animate, setAnimate] = useState(true);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrent((prev) => prev + 1);
-    }, 3000);
-    return () => clearInterval(interval);
-  }, []);
-
-  useEffect(() => {
-    if (current >= heroImages.length) {
-      const t = setTimeout(() => {
-        setAnimate(false);
-        setCurrent(0);
-        requestAnimationFrame(() => requestAnimationFrame(() => setAnimate(true)));
-      }, 700);
-      return () => clearTimeout(t);
-    }
-  }, [current]);
-
   return (
     <>
       <NavbarSimple />
 
-      {/* Hero — csúszó mozaik carousel */}
-      <section className="relative overflow-hidden" style={{ height: "65vh", minHeight: 420 }}>
-        {/* Csúszó sáv */}
-        <div
-          className="flex h-full"
-          style={{
-            width: `${allHeroImages.length * 25}vw`,
-            transform: `translateX(calc(-${current} * 25vw))`,
-            transition: animate ? "transform 700ms ease-in-out" : "none",
-          }}
-        >
-          {allHeroImages.map((src, i) => (
-            <div key={i} className="relative h-full flex-shrink-0" style={{ width: "25vw" }}>
-              <Image
-                src={src}
-                alt="Esküvői fotó"
-                fill
-                className="object-cover object-center"
-                sizes="25vw"
-                priority={i < 4}
-              />
-              <div className="absolute inset-0 bg-black/35" />
-            </div>
-          ))}
+      {/* Hero — folyamatos CSS scroll */}
+      {/* Minden kép 28vw széles, 8 kép × 2 = 16, animáció: -224vw (8×28) */}
+      <style>{`
+        @keyframes marquee {
+          from { transform: translateX(0); }
+          to   { transform: translateX(-224vw); }
+        }
+        .hero-marquee { animation: marquee 32s linear infinite; }
+      `}</style>
+
+      <div className="pt-16">
+        {/* Képsáv */}
+        <div className="relative overflow-hidden" style={{ height: "52vh", minHeight: 340 }}>
+          <div className="hero-marquee flex h-full">
+            {[...heroImages, ...heroImages].map((src, i) => (
+              <div
+                key={i}
+                className="relative h-full flex-shrink-0"
+                style={{ width: "28vw" }}
+              >
+                <Image
+                  src={src}
+                  alt="Esküvői fotó"
+                  fill
+                  className="object-cover object-center"
+                  sizes="28vw"
+                  priority={i < 4}
+                />
+              </div>
+            ))}
+          </div>
+          {/* Alap gradient — képek aljának elfakulása */}
+          <div
+            className="pointer-events-none absolute inset-x-0 bottom-0 z-10"
+            style={{ height: "50%", background: "linear-gradient(to bottom, transparent, #F5F3ED)" }}
+          />
         </div>
 
-        {/* Felirat */}
-        <div className="absolute bottom-0 left-0 right-0 pb-8 px-6 text-center pointer-events-none z-10">
-          <h1 className="font-[family-name:var(--font-cormorant)] text-7xl md:text-9xl font-light text-white tracking-widest uppercase drop-shadow-lg">
+        {/* Felirat — a fade alatt */}
+        <div className="bg-[#F5F3ED] text-center -mt-12 pb-4 relative z-10">
+          <h1 className="font-[family-name:var(--font-cormorant)] text-7xl md:text-9xl font-light text-[#363025] tracking-widest uppercase">
             SZOLGÁLTATÁSOK
           </h1>
         </div>
-      </section>
+      </div>
 
       {/* Subtitle ribbon */}
       <section className="bg-[#F5F3ED] py-12 px-6 text-center">
