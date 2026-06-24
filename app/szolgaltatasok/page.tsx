@@ -80,7 +80,7 @@ export default function Szolgaltatasok() {
         .hero-marquee { animation: marquee 55s linear infinite; }
       `}</style>
 
-      <div className="pt-16">
+      <div className="pt-16 bg-[#F5F3ED]">
         {/* Képsáv */}
         <div className="relative overflow-hidden" style={{ height: "55vh", minHeight: 360 }}>
           <div className="hero-marquee flex h-full">
