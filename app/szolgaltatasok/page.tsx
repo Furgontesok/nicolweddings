@@ -115,7 +115,7 @@ export default function Szolgaltatasok() {
       </div>
 
       {/* Subtitle ribbon */}
-      <section className="bg-[#F5F3ED] pt-4 pb-8 px-6 text-center">
+      <section className="bg-[#F5F3ED] pt-12 pb-4 px-6 text-center">
         <p className="font-[family-name:var(--font-quicksand)] text-lg md:text-xl italic text-[#363025]/70 max-w-2xl mx-auto leading-relaxed">
           Minden szolgáltatásom célja, hogy a Ti napotok valóban gondtalan és felejthetetlen legyen.
         </p>
