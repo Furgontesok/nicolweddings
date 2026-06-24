@@ -163,10 +163,12 @@ function ServiceItem({ s, i, isOpen, onToggle }: {
                   key={j}
                   className="flex gap-4 py-3.5 border-b border-[#D6D6C9]/40"
                   style={{
-                    transitionDelay: isOpen ? `${j * 40}ms` : "0ms",
                     opacity: isOpen ? 1 : 0,
                     transform: isOpen ? "translateY(0)" : "translateY(8px)",
-                    transition: "opacity 0.35s ease, transform 0.35s ease",
+                    transitionProperty: "opacity, transform",
+                    transitionDuration: "0.35s",
+                    transitionTimingFunction: "ease",
+                    transitionDelay: isOpen ? `${j * 40}ms` : "0ms",
                   }}
                 >
                   <span className="w-px shrink-0 bg-[#363025]/20 self-stretch" />
