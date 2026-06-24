@@ -20,8 +20,19 @@ const services = [
   {
     num: "01",
     title: "Teljes körű esküvőszervezés",
-    desc: "Az első konzultációtól az utolsó táncig minden részletet gondosan megtervezünk és koordinálunk. Helyszín keresés, vendéglátás, dekoráció, fotós, virágkötő — mindent egy kézből. Melletted vagyok minden lépésnél, hogy te csak a szerelemre koncentrálhass.",
-    items: ["Helyszínkeresés és bejárás", "Szállítók koordinálása", "Költségvetés tervezés", "Menetrendkészítés", "Dekoráció tervezés és lebonyolítás", "Vendég koordináció"],
+    desc: "Egy esküvő szervezése tele van izgalommal, álmodozással és rengeteg döntéssel. Olyan részletek is fontossá válnak, amikre talán elsőre nem is gondolnátok, mégis ezek adják meg azt a különleges, személyes hangulatot, amitől a nap valóban rólatok szól. Ugyanakkor a sok egyeztetés, időzítés és feladat könnyen feszültté teheti az előkészületeket. Éppen ezért jó, ha van mellettetek valaki, aki nemcsak tapasztalattal és jó ötletekkel segít, hanem végigkísér a szervezési folyamaton. Így Ti arra koncentrálhattok, ami a legfontosabb: egymásra és az élményre.",
+    items: [
+      "Ingyenes első konzultáció — Egy személyes vagy online találkozó során megismerjük egymást, és átbeszéljük az elképzeléseiteket.",
+      "Ajánlatadás — Az igényeitek alapján személyre szabott ajánlatot készítek.",
+      "Helyszínkeresés és helyszínbejárások egyeztetése — Segítek megtalálni a számotokra tökéletes helyszínt, és egyeztetem a bejárásokat.",
+      "Megbízható szolgáltatók ajánlása és szerződtetése minden területen — Az esküvőtök minden területére megbízható szolgáltatókat ajánlok, hogy a legjobb csapat segítse a napotokat.",
+      "Szolgáltatói találkozók leszervezése — A szolgáltatókkal való találkozókat leszervezem, és minden alkalommal mellettetek leszek, legyen az személyesen vagy online.",
+      "Koncepció és stílus kidolgozása — Segítek megtalálni a hozzátok illő színeket, tematikát és hangulatot.",
+      "Folyamatos kapcsolattartás — A szervezés teljes ideje alatt veletek és a szolgáltatókkal is folyamatosan tartom a kapcsolatot.",
+      "Költségvetés kezelése — Átlátható online táblázatban vezetem a kiadásokat és a költségeket.",
+      "Esküvői forgatókönyv összeállítása — Részletes menetrendet készítek, amit közösen átbeszélünk.",
+      "Esküvő lebonyolítása — A nagy napotok során ott vagyok a háttérben, koordinálom az előkészületeket és a szolgáltatókat, hogy minden a helyére kerüljön.",
+    ],
     image: "/images/zsambek_wedding_styled_shoot-001_web.jpg",
   },
   {
