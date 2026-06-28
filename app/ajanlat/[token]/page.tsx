@@ -186,21 +186,19 @@ export default async function AjanlatPage({ params }: { params: Promise<{ token:
         <div className="absolute inset-0 bg-[#363025]/70" />
         <div className="relative z-10 flex flex-col items-center">
           <Image src="/images/horizontal_white.svg" alt="Nicol Weddings and Events"
-            width={200} height={60} className="object-contain opacity-65 mb-16" style={{ height: "auto" }} />
-          <div className="w-12 h-px bg-white/15 mb-10" />
-          <p className="font-[family-name:var(--font-nunito)] text-[10px] tracking-[0.5em] uppercase text-white/35 mb-6">
+            width={260} height={60} className="object-contain opacity-65 mb-16" style={{ height: "auto" }} />
+          <p className="font-[family-name:var(--font-nunito)] text-[13px] tracking-[0.5em] uppercase text-white/35 mb-6">
             Személyre szabott
           </p>
           <h1 className="font-[family-name:var(--font-cormorant)] text-7xl md:text-8xl font-light text-white mb-10"
             style={{ letterSpacing: "0.06em" }}>
             ÁRAJÁNLAT
           </h1>
-          <div className="w-12 h-px bg-white/15 mb-10" />
           <p className="font-[family-name:var(--font-italianno)] text-4xl md:text-5xl text-white/75">
-            {p.couple_name.replace(" & ", " &  ")}
+            {p.couple_name.replace(" & ", " &   ").replace(" and ", " and   ")}
           </p>
           {p.wedding_date && (
-            <p className="font-[family-name:var(--font-nunito)] text-[10px] tracking-[0.3em] uppercase text-white/25 mt-5">
+            <p className="font-[family-name:var(--font-nunito)] text-[13px] tracking-[0.3em] uppercase text-white/25 mt-5">
               {p.wedding_date}
             </p>
           )}
