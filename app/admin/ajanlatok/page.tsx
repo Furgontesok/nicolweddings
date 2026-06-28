@@ -37,6 +37,7 @@ export default function AdminAjanlatok() {
   const [proposals, setProposals] = useState<Proposal[]>([]);
   const [loading, setLoading] = useState(true);
   const [showForm, setShowForm] = useState(false);
+  const [editingId, setEditingId] = useState<string | null>(null);
   const [form, setForm] = useState(emptyForm);
   const [saving, setSaving] = useState(false);
   const [newToken, setNewToken] = useState<string | null>(null);
@@ -60,6 +61,31 @@ export default function AdminAjanlatok() {
       .replace(/^-|-$/g, "");
   }
 
+  function openNew() {
+    setEditingId(null);
+    setForm(emptyForm);
+    setShowForm(true);
+    setNewToken(null);
+  }
+
+  function openEdit(p: Proposal) {
+    setEditingId(p.id);
+    setForm({
+      couple_name: p.couple_name ?? "",
+      wedding_date: p.wedding_date ?? "",
+      guest_count: p.guest_count ?? "",
+      service: p.service ?? "standard",
+      price_teljes: p.price_teljes ?? "",
+      price_30nap: p.price_30nap ?? "",
+      price_tanacsadas: p.price_tanacsadas ?? "",
+      price_egyeb: p.price_egyeb ?? "",
+      custom_note: p.custom_note ?? "",
+    });
+    setShowForm(true);
+    setNewToken(null);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+
   async function create(e: React.FormEvent) {
     e.preventDefault();
     if (!supabase) return;
@@ -74,6 +100,28 @@ export default function AdminAjanlatok() {
       setShowForm(false);
       load();
     }
+    setSaving(false);
+  }
+
+  async function update(e: React.FormEvent) {
+    e.preventDefault();
+    if (!supabase || !editingId) return;
+    setSaving(true);
+    await supabase.from("proposals").update({
+      couple_name: form.couple_name,
+      wedding_date: form.wedding_date,
+      guest_count: form.guest_count,
+      service: form.service,
+      price_teljes: form.price_teljes,
+      price_30nap: form.price_30nap,
+      price_tanacsadas: form.price_tanacsadas,
+      price_egyeb: form.price_egyeb,
+      custom_note: form.custom_note,
+    }).eq("id", editingId);
+    setShowForm(false);
+    setEditingId(null);
+    setForm(emptyForm);
+    load();
     setSaving(false);
   }
 
@@ -99,7 +147,7 @@ export default function AdminAjanlatok() {
           <h1 className="font-[family-name:var(--font-cormorant)] text-4xl font-light text-[#363025]">Ajánlatok</h1>
         </div>
         <button
-          onClick={() => { setShowForm(!showForm); setNewToken(null); }}
+          onClick={openNew}
           className="font-[family-name:var(--font-nunito)] text-[11px] tracking-[0.2em] uppercase px-8 py-3 border border-[#363025]/50 text-[#363025] hover:bg-[#363025] hover:text-white transition-all duration-300"
         >
           + Új ajánlat
@@ -123,7 +171,9 @@ export default function AdminAjanlatok() {
       {/* Form */}
       {showForm && (
         <div className="bg-white border border-[#363025]/10 p-8 mb-10">
-          <h2 className="font-[family-name:var(--font-cormorant)] text-2xl font-light text-[#363025] mb-8">Új ajánlat készítése</h2>
+          <h2 className="font-[family-name:var(--font-cormorant)] text-2xl font-light text-[#363025] mb-8">
+            {editingId ? "Ajánlat szerkesztése" : "Új ajánlat készítése"}
+          </h2>
 
           {/* Típus választó */}
           <div className="flex gap-3 mb-8">
@@ -143,8 +193,7 @@ export default function AdminAjanlatok() {
             ))}
           </div>
 
-          <form onSubmit={create} className="grid grid-cols-1 md:grid-cols-2 gap-5">
-            {/* Alap adatok */}
+          <form onSubmit={editingId ? update : create} className="grid grid-cols-1 md:grid-cols-2 gap-5">
             <div>
               <label className={labelCls}>Pár neve *</label>
               <input required className={inputCls} value={form.couple_name}
@@ -164,7 +213,6 @@ export default function AdminAjanlatok() {
                 placeholder="80–100 fő" />
             </div>
 
-            {/* Árak — standard mód */}
             {!isEgyeb && (
               <>
                 <div className="md:col-span-2">
@@ -192,7 +240,6 @@ export default function AdminAjanlatok() {
               </>
             )}
 
-            {/* Ár — egyéb mód */}
             {isEgyeb && (
               <div>
                 <label className={labelCls}>Egyéb rendezvény díja</label>
@@ -212,9 +259,9 @@ export default function AdminAjanlatok() {
             <div className="md:col-span-2 flex gap-4 items-center">
               <button type="submit" disabled={saving}
                 className="font-[family-name:var(--font-nunito)] text-[11px] tracking-[0.2em] uppercase px-10 py-3 bg-[#363025] text-white hover:bg-[#363025]/80 transition-colors disabled:opacity-50">
-                {saving ? "Generálás..." : "Ajánlat generálása"}
+                {saving ? "Mentés..." : editingId ? "Mentés" : "Ajánlat generálása"}
               </button>
-              <button type="button" onClick={() => setShowForm(false)}
+              <button type="button" onClick={() => { setShowForm(false); setEditingId(null); setForm(emptyForm); }}
                 className="font-[family-name:var(--font-nunito)] text-[11px] tracking-wide text-[#363025]/40 hover:text-[#363025] transition-colors">
                 Mégsem
               </button>
@@ -255,6 +302,10 @@ export default function AdminAjanlatok() {
                   className="font-[family-name:var(--font-nunito)] text-[10px] tracking-widest uppercase text-[#363025]/50 hover:text-[#363025] transition-colors">
                   Megtekint
                 </a>
+                <button onClick={() => openEdit(p)}
+                  className="font-[family-name:var(--font-nunito)] text-[10px] tracking-widest uppercase text-[#363025]/50 hover:text-[#363025] transition-colors">
+                  Szerkeszt
+                </button>
                 <button onClick={() => deleteProposal(p.id)}
                   className="font-[family-name:var(--font-nunito)] text-[10px] tracking-widest uppercase text-red-400/40 hover:text-red-500 transition-colors">
                   Törlés
