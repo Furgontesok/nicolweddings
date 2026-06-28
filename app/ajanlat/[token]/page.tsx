@@ -195,7 +195,7 @@ export default async function AjanlatPage({ params }: { params: Promise<{ token:
             ÁRAJÁNLAT
           </h1>
           <p className="font-[family-name:var(--font-italianno)] text-4xl md:text-5xl text-white/75">
-            {p.couple_name.replace(" & ", " &   ").replace(" and ", " and   ")}
+            {p.couple_name.replace(" & ", " &  ").replace(" and ", " and  ")}
           </p>
           {p.wedding_date && (
             <p className="font-[family-name:var(--font-nunito)] text-[13px] tracking-[0.3em] uppercase text-white/25 mt-5">
