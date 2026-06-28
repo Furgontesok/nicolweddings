@@ -228,26 +228,26 @@ export default async function AjanlatPage({ params }: { params: Promise<{ token:
       </section>
 
       {/* 3. Esemény adatai */}
-      <section className="bg-[#363025] py-16 px-8">
+      <section className="bg-[#C8D5C0] py-16 px-8">
         <div className="max-w-sm mx-auto">
-          <p className="font-[family-name:var(--font-nunito)] text-[12px] tracking-[0.4em] uppercase text-white/25 mb-10 text-center">
+          <p className="font-[family-name:var(--font-nunito)] text-[12px] tracking-[0.4em] uppercase text-[#363025]/40 mb-10 text-center">
             Esküvő részletei
           </p>
-          <div className="divide-y divide-white/6">
+          <div className="divide-y divide-[#363025]/10">
             <div className="flex items-baseline gap-12 py-5">
-              <span className="font-[family-name:var(--font-nunito)] text-[11px] tracking-[0.2em] uppercase text-white/30 shrink-0 w-36">Pár neve</span>
-              <span className="font-[family-name:var(--font-cormorant)] text-xl font-light text-white">{p.couple_name}</span>
+              <span className="font-[family-name:var(--font-nunito)] text-[11px] tracking-[0.2em] uppercase text-[#363025]/40 shrink-0 w-36">Pár neve</span>
+              <span className="font-[family-name:var(--font-cormorant)] text-xl font-light text-[#363025]">{p.couple_name}</span>
             </div>
             {p.wedding_date && (
               <div className="flex items-baseline gap-12 py-5">
-                <span className="font-[family-name:var(--font-nunito)] text-[11px] tracking-[0.2em] uppercase text-white/30 shrink-0 w-36">Tervezett dátum</span>
-                <span className="font-[family-name:var(--font-cormorant)] text-xl font-light text-white">{p.wedding_date}</span>
+                <span className="font-[family-name:var(--font-nunito)] text-[11px] tracking-[0.2em] uppercase text-[#363025]/40 shrink-0 w-36">Tervezett dátum</span>
+                <span className="font-[family-name:var(--font-cormorant)] text-xl font-light text-[#363025]">{p.wedding_date}</span>
               </div>
             )}
             {p.guest_count && (
               <div className="flex items-baseline gap-12 py-5">
-                <span className="font-[family-name:var(--font-nunito)] text-[11px] tracking-[0.2em] uppercase text-white/30 shrink-0 w-36">Létszám</span>
-                <span className="font-[family-name:var(--font-cormorant)] text-xl font-light text-white">{p.guest_count}</span>
+                <span className="font-[family-name:var(--font-nunito)] text-[11px] tracking-[0.2em] uppercase text-[#363025]/40 shrink-0 w-36">Létszám</span>
+                <span className="font-[family-name:var(--font-cormorant)] text-xl font-light text-[#363025]">{p.guest_count}</span>
               </div>
             )}
           </div>
