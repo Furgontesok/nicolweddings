@@ -228,7 +228,7 @@ export default async function AjanlatPage({ params }: { params: Promise<{ token:
       </section>
 
       {/* 3. Esemény adatai */}
-      <section className="bg-[#EDEDE1] py-16 px-8">
+      <section className="bg-[#D6D8CA] py-16 px-8">
         <div className="max-w-sm mx-auto">
           <p className="font-[family-name:var(--font-nunito)] text-[12px] tracking-[0.4em] uppercase text-[#363025]/40 mb-10 text-center">
             Esküvő részletei
