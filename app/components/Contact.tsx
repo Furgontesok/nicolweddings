@@ -1,99 +1,163 @@
 "use client";
 
-export default function Contact() {
-  return (
-    <section id="kapcsolat" className="bg-white py-24 px-6">
-      <div className="max-w-5xl mx-auto">
-        <div className="flex flex-col md:flex-row gap-16">
-          {/* Bal — info */}
-          <div className="flex-1">
-            <p className="font-[family-name:var(--font-nunito)] text-xs tracking-[0.3em] uppercase text-[#363025]/50 mb-3">
-              Lépj kapcsolatba
-            </p>
-            <h2 className="font-[family-name:var(--font-italianno)] text-5xl md:text-6xl text-[#363025] mb-6">
-              Írj nekem
-            </h2>
-            <div className="w-12 h-px bg-[#363025]/30 mb-10" />
+import { useState } from "react";
+import Image from "next/image";
 
-            <div className="space-y-6 font-[family-name:var(--font-quicksand)] text-[#363025]/70">
-              <div className="flex items-start gap-4">
-                <span className="text-[#363025]/30 text-xl mt-0.5">✉</span>
-                <div>
-                  <p className="text-xs uppercase tracking-widest text-[#363025]/40 mb-1">Email</p>
-                  <a href="mailto:nicol.weddings@gmail.com" className="hover:text-[#363025] transition-colors">
-                    nicol.weddings@gmail.com
-                  </a>
-                </div>
+export default function Contact() {
+  const [nev, setNev] = useState("");
+  const [email, setEmail] = useState("");
+  const [telefon, setTelefon] = useState("");
+  const [datum, setDatum] = useState("");
+  const [letszam, setLetszam] = useState("");
+  const [szolgaltatas, setSzolgaltatas] = useState("");
+  const [honnan, setHonnan] = useState("");
+  const [uzenet, setUzenet] = useState("");
+  const [sent, setSent] = useState(false);
+
+  const inputClass =
+    "w-full bg-[#EEECEA] px-4 py-3 font-[family-name:var(--font-nunito)] text-[11px] tracking-[0.2em] uppercase text-[#000000] placeholder:text-[#000000]/50 focus:outline-none focus:bg-[#E5E3E0] transition-colors duration-200";
+
+  return (
+    <section id="kapcsolat" className="bg-white py-10 md:py-12 px-6">
+      <div className="max-w-5xl mx-auto">
+
+        {/* Mobil fejléc + kép */}
+        <div className="md:hidden text-center mb-8">
+          <p className="font-[family-name:var(--font-nunito)] text-[12px] tracking-[0.3em] uppercase text-[#363025]/40 mb-7">
+            Lépj kapcsolatba velem
+          </p>
+          {/* Ovális kép mobilon — cím alatt, középre */}
+          <div
+            className="relative overflow-hidden mx-auto mb-6"
+            style={{ width: 160, height: 220, borderRadius: "9999px" }}
+          >
+            <Image
+              src="/images/egyeb-8.jpg"
+              alt="Esküvői pillanat"
+              fill
+              className="object-cover object-center"
+              sizes="160px"
+            />
+          </div>
+
+          {/* Elérhetőségek mobilon — vízszintesen */}
+          <div className="flex justify-center gap-8 font-[family-name:var(--font-quicksand)] text-[#363025]/60 text-[15px] mb-8">
+            <a href="mailto:nicol.weddings@gmail.com" className="flex flex-col items-center gap-1.5 hover:text-[#363025] transition-colors">
+              <span className="font-[family-name:var(--font-nunito)] text-[11px] tracking-widest uppercase text-[#363025]/35">Email</span>
+              nicol.weddings@gmail.com
+            </a>
+            <a href="tel:+36305444676" className="flex flex-col items-center gap-1.5 hover:text-[#363025] transition-colors">
+              <span className="font-[family-name:var(--font-nunito)] text-[11px] tracking-widest uppercase text-[#363025]/35">Telefon</span>
+              +36 30 544 4676
+            </a>
+          </div>
+        </div>
+
+        {/* Fejléc — desktop */}
+        <div className="hidden md:block text-center mb-12">
+          <h2 className="font-[family-name:var(--font-cormorant)] italic text-[42px] md:text-[58px] font-light text-[#363025]">
+            Alig várom, hogy megismerjük egymást!
+          </h2>
+          <p className="font-[family-name:var(--font-quicksand)] text-[#363025]/55 text-[16px] mt-5">
+            Írj nekem, és 48 órán belül visszajelzek!
+          </p>
+        </div>
+
+        {/* Desktop + form */}
+        <div className="flex flex-col md:flex-row gap-16 items-start">
+
+          {/* Bal — info (desktop only) */}
+          <div className="hidden md:block flex-shrink-0 md:w-[38%]">
+            <p className="font-[family-name:var(--font-nunito)] text-[12px] tracking-[0.3em] uppercase text-[#363025]/40 mb-2">
+              Lépj kapcsolatba velem
+            </p>
+            <div className="w-10 h-px bg-[#363025]/20 mb-5" />
+            <div className="space-y-5 font-[family-name:var(--font-quicksand)] text-[#363025]/60 text-sm">
+              <div>
+                <p className="font-[family-name:var(--font-nunito)] text-[10px] tracking-widest uppercase text-[#363025]/35 mb-1">Email</p>
+                <a href="mailto:nicol.weddings@gmail.com" className="hover:text-[#363025] transition-colors">
+                  nicol.weddings@gmail.com
+                </a>
               </div>
-              <div className="flex items-start gap-4">
-                <span className="text-[#363025]/30 text-xl mt-0.5">✆</span>
-                <div>
-                  <p className="text-xs uppercase tracking-widest text-[#363025]/40 mb-1">Telefon</p>
-                  <a href="tel:+36305444676" className="hover:text-[#363025] transition-colors">
-                    +36 30 544 4676
-                  </a>
-                </div>
+              <div>
+                <p className="font-[family-name:var(--font-nunito)] text-[10px] tracking-widest uppercase text-[#363025]/35 mb-1">Telefon</p>
+                <a href="tel:+36305444676" className="hover:text-[#363025] transition-colors">
+                  +36 30 544 4676
+                </a>
               </div>
-              <div className="flex items-start gap-4">
-                <span className="text-[#363025]/30 text-xl mt-0.5">◎</span>
-                <div>
-                  <p className="text-xs uppercase tracking-widest text-[#363025]/40 mb-1">Helyszín</p>
-                  <p>Magyarország</p>
-                </div>
-              </div>
+            </div>
+            <div
+              className="relative overflow-hidden mt-8 mx-auto"
+              style={{ width: 220, height: 300, borderRadius: "50%" }}
+            >
+              <Image
+                src="/images/egyeb-8.jpg"
+                alt="Esküvői pillanat"
+                fill
+                className="object-cover object-center"
+                sizes="220px"
+              />
             </div>
           </div>
 
-          {/* Jobb — form */}
-          <div className="flex-1">
-            <form className="space-y-5" onSubmit={(e) => e.preventDefault()}>
-              <div>
-                <label className="block font-[family-name:var(--font-nunito)] text-xs tracking-widest uppercase text-[#363025]/50 mb-2">
-                  Neved
-                </label>
-                <input
-                  type="text"
-                  className="w-full border-b border-[#D6D6C9] bg-transparent py-3 font-[family-name:var(--font-quicksand)] text-[#363025] outline-none focus:border-[#363025] transition-colors placeholder:text-[#363025]/30"
-                  placeholder="Pl. Kiss Anna"
-                />
+          {/* Form */}
+          <div className="flex-1 w-full">
+            {sent ? (
+              <div className="flex flex-col items-center justify-center h-full text-center py-16 gap-4">
+                <p className="font-[family-name:var(--font-italianno)] text-6xl text-[#363025]">Köszönöm!</p>
+                <p className="font-[family-name:var(--font-quicksand)] text-[#363025]/60 text-sm leading-relaxed">
+                  Hamarosan felveszem veled a kapcsolatot.
+                </p>
               </div>
-              <div>
-                <label className="block font-[family-name:var(--font-nunito)] text-xs tracking-widest uppercase text-[#363025]/50 mb-2">
-                  Email
-                </label>
-                <input
-                  type="email"
-                  className="w-full border-b border-[#D6D6C9] bg-transparent py-3 font-[family-name:var(--font-quicksand)] text-[#363025] outline-none focus:border-[#363025] transition-colors placeholder:text-[#363025]/30"
-                  placeholder="anna@example.com"
-                />
-              </div>
-              <div>
-                <label className="block font-[family-name:var(--font-nunito)] text-xs tracking-widest uppercase text-[#363025]/50 mb-2">
-                  Telefonszám
-                </label>
-                <input
-                  type="tel"
-                  className="w-full border-b border-[#D6D6C9] bg-transparent py-3 font-[family-name:var(--font-quicksand)] text-[#363025] outline-none focus:border-[#363025] transition-colors placeholder:text-[#363025]/30"
-                  placeholder="+36 30 …"
-                />
-              </div>
-              <div>
-                <label className="block font-[family-name:var(--font-nunito)] text-xs tracking-widest uppercase text-[#363025]/50 mb-2">
-                  Üzenet
-                </label>
-                <textarea
-                  rows={4}
-                  className="w-full border-b border-[#D6D6C9] bg-transparent py-3 font-[family-name:var(--font-quicksand)] text-[#363025] outline-none focus:border-[#363025] transition-colors placeholder:text-[#363025]/30 resize-none"
-                  placeholder="Miben segíthetek?"
-                />
-              </div>
-              <button
-                type="submit"
-                className="mt-4 w-full border border-[#363025] text-[#363025] font-[family-name:var(--font-nunito)] text-xs tracking-[0.2em] uppercase py-4 hover:bg-[#363025] hover:text-white transition-all duration-300"
+            ) : (
+              <form
+                className="space-y-3"
+                onSubmit={async (e) => {
+                  e.preventDefault();
+                  const { supabase } = await import("@/lib/supabase");
+                  if (supabase) {
+                    await supabase.from("contact_submissions").insert({
+                      nev, email, telefon, datum, letszam, szolgaltatas, honnan, uzenet, forras: "fooldal"
+                    });
+                  }
+                  setSent(true);
+                }}
               >
-                Üzenetet küldenék
-              </button>
-            </form>
+                <input required type="text" value={nev} onChange={(e) => setNev(e.target.value)} className={inputClass} placeholder="Teljes név *" />
+                <input required type="email" value={email} onChange={(e) => setEmail(e.target.value)} className={inputClass} placeholder="Email cím *" />
+                <input required type="tel" value={telefon} onChange={(e) => setTelefon(e.target.value)} className={inputClass} placeholder="Telefonszám *" />
+                <input required type="date" value={datum} onChange={(e) => setDatum(e.target.value)} className={inputClass} style={{ color: datum ? "#363025" : "rgba(54,48,37,0.4)" }} />
+                <input type="text" inputMode="numeric" value={letszam} onChange={(e) => setLetszam(e.target.value)} className={inputClass} placeholder="Vendégek létszáma" />
+                <select required value={szolgaltatas} onChange={(e) => setSzolgaltatas(e.target.value)} className={`${inputClass} cursor-pointer`}>
+                  <option value="" disabled>Szolgáltatás *</option>
+                  <option value="teljes">Teljes körű esküvőszervezés</option>
+                  <option value="30nap">30 nap a nagy napig</option>
+                  <option value="tanacsadas">Esküvői tanácsadás</option>
+                  <option value="egyeb">Egyéb rendezvények</option>
+                </select>
+                <select required value={honnan} onChange={(e) => setHonnan(e.target.value)} className={`${inputClass} cursor-pointer`}>
+                  <option value="" disabled>Honnan hallottál rólam? *</option>
+                  <option value="instagram">Instagram</option>
+                  <option value="facebook">Facebook</option>
+                  <option value="google">Google</option>
+                  <option value="ismeros">Ismerős ajánlott</option>
+                  <option value="szolgaltato">Szolgáltató ajánlott</option>
+                  <option value="egyeb">Egyéb</option>
+                </select>
+                <textarea required rows={5} value={uzenet} onChange={(e) => setUzenet(e.target.value)} className={`${inputClass} resize-none`} placeholder="Üzenet — meséljetek az elképzeléseitekről... *" />
+
+                <p className="font-[family-name:var(--font-quicksand)] text-[#363025]/35 text-[11px] leading-relaxed pt-1">
+                  Az űrlap beküldésével elfogadod az adatkezelési tájékoztatót.
+                </p>
+
+                <button
+                  type="submit"
+                  className="w-full bg-[#363025] text-white font-[family-name:var(--font-nunito)] text-[11px] tracking-[0.25em] uppercase py-4 hover:bg-[#363025]/80 transition-colors duration-300"
+                >
+                  Küldés
+                </button>
+              </form>
+            )}
           </div>
         </div>
       </div>

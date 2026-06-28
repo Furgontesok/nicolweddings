@@ -6,14 +6,14 @@ import Image from "next/image";
 import { useState } from "react";
 
 const heroImages = [
-  "/images/Betti%26Levi_SLW_001.jpg",
-  "/images/5V5A0670-2.jpg",
-  "/images/TheKilroyProject-286.jpg",
-  "/images/zsambek_wedding_styled_shoot-001_web.jpg",
-  "/images/Nicol%26Roli-543.jpg",
-  "/images/JE5A0336.jpg",
-  "/images/4K2A1978-2.jpg",
-  "/images/zsambek_wedding_styled_shoot-052_web.jpg",
+  "/images/szolgaltatasok-header-1.jpg",
+  "/images/szolgaltatasok-header-2.jpg",
+  "/images/szolgaltatasok-header-3.jpg",
+  "/images/szolgaltatasok-header-4.jpg",
+  "/images/szolgaltatasok-header-5.jpg",
+  "/images/szolgaltatasok-header-6.jpg",
+  "/images/szolgaltatasok-header-7.jpg",
+  "/images/szolgaltatasok-header-8.jpg",
 ];
 
 const services = [
@@ -33,58 +33,98 @@ const services = [
       "Esküvői forgatókönyv összeállítása — Részletes menetrendet készítek, amit közösen átbeszélünk.",
       "Esküvő lebonyolítása — A nagy napotok során ott vagyok a háttérben, koordinálom az előkészületeket és a szolgáltatókat, hogy minden a helyére kerüljön.",
     ],
-    image: "/images/zsambek_wedding_styled_shoot-001_web.jpg",
+    image: "/images/szolgaltatas-01-teljes-koru.jpg",
   },
   {
     num: "02",
-    title: "Helyszíni koordináció",
-    desc: "Már megvan a helyszín, a szállítók, az elképzelés — de valakinek kell, aki a nagy napon mindenre figyel. Ez az én feladatom. Koordinálom a szállítókat, kezelem a váratlan helyzeteket, és gondoskodom arról, hogy minden a tervek szerint haladjon.",
-    items: ["Szállítókkal való kommunikáció", "Menetrend felügyelete", "Vendégek fogadása", "Problémamegoldás szükség esetén", "Dekoráció felügyelete"],
-    image: "/images/TheKilroyProject-286.jpg",
+    title: "30 nap a nagy napig",
+    desc: "Az 1 hónapos esküvői koordináció tökéletes választás azoknak a pároknak, akik saját maguk szervezik az esküvőt, de a nagy napra szeretnének egy tapasztalt szakembert maguk mellé. Az esküvő előtti utolsó hónapban kapcsolódom be: segítek a részletes forgatókönyv összeállításában, egyeztetek a szolgáltatókkal és koordinálom a feladatokat. A nagy napon végig jelen vagyok a helyszínen, figyelem a menetrendet, kezelem a felmerülő helyzeteket, és gondoskodom róla, hogy minden a terveitek szerint alakuljon. Így Ti valóban megélhetitek a pillanatot, miközben én a háttérből gondoskodom a zavartalan lebonyolításról.",
+    items: [
+      "Első konzultáció — Egy személyes vagy online találkozó során megismerkedünk és átbeszéljük az esküvőtök főbb elképzeléseit.",
+      "Ajánlatadás — Az ajánlat elfogadása után kezdetét veszi a közös munka.",
+      "Helyszínbejárás — Személyesen is bejárjuk a helyszínt, ahol minden részletet egyeztetünk a gördülékeny lebonyolítás érdekében.",
+      "Szolgáltatókkal való kapcsolatfelvétel — Felveszem a kapcsolatot az általatok választott szolgáltatókkal, egyeztetem velük a pontos menetrendet, a technikai igényeket és az érkezési időpontokat.",
+      "Forgatókönyv elkészítése és átbeszélése — Összeállítom az esküvőtök teljes programtervét, majd közösen átbeszéljük, hogy minden a Ti elképzeléseitek szerint valósuljon meg.",
+      "Esküvő teljes koordinálása — Az esküvő napján jelen vagyok a helyszínen, figyelek az előkészületekre, segítem a szolgáltatókat, és gondoskodom róla, hogy minden a megbeszéltek szerint alakuljon.",
+    ],
+    image: "/images/szolgaltatas-02-30nap.jpg",
   },
   {
     num: "03",
     title: "Esküvői tanácsadás",
-    desc: "Nem kell mindent egyedül kitalálni. Tapasztalatomra és kapcsolatrendszeremre támaszkodva segítek neked a legjobb döntéseket meghozni — legyen szó helyszínről, szállítókról, stílusról vagy bármi másról.",
-    items: ["1-1 konzultációk", "Szállítói ajánlások", "Stílus és koncepció tanácsadás", "Árak és szerződések áttekintése"],
-    image: "/images/Betti%26Levi_SLW_001.jpg",
+    desc: "Amennyiben saját magatok szervezitek az esküvőtöket, de bizonyos pontokon elakadtok, vagy kérdések merülnek fel a szervezési folyamat során, lehetőségetek van alkalmi tanácsadás igénybevételére. Segítséget nyújtok a szolgáltatók kiválasztásában, programok megtervezésében, eligazítalak benneteket a teendők között, és gyakorlati tippekkel támogatom az esküvőtök sikeres megvalósítását.",
+    items: [
+      "Egyéni konzultáció — Személyesen vagy online átbeszéljük, hol tartotok a szervezésben, és pontosan mely területeken van szükségetek támogatásra.",
+      "Checklista és idővonal áttekintése — Közösen végigmegyünk a feladatokon, hogy biztosan semmi se maradjon ki a szervezésből.",
+      "Szolgáltatókkal kapcsolatos kérdések — Megbeszéljük a fontos szempontokat és kérdéseket, hogy könnyebb legyen megtalálni a hozzátok illő szolgáltatókat.",
+      "Költségkeret optimalizálása — Segítek átlátni a kiadásokat, és priorizálni a legfontosabb tételeket.",
+      "Általános útmutatás és bátorítás — Támogatást és iránymutatást kaptok, hogy magabiztosan haladjatok tovább a szervezésben.",
+    ],
+    image: "/images/szolgaltatas-03-tanacsadas.jpg",
   },
   {
     num: "04",
-    title: "Egyéb szolgáltatások",
-    desc: "Az esküvőn túl is számíthatsz rám. Lánybúcsúk, eljegyzések, baby shower-ek, keresztelők és egyéb különleges alkalmak tervezésében és lebonyolításában is szívesen segítek.",
-    items: ["Lánybúcsú szervezés", "Eljegyzési party", "Baby shower", "Keresztelő", "Évfordulós rendezvény"],
-    image: "/images/5V5A0670-2.jpg",
+    title: "Egyéb rendezvények",
+    desc: "Az igazán emlékezetes pillanatok mögött mindig gondos tervezés és szeretettel végzett munka áll. Esküvők mellett örömmel vállalok születésnapok, lánybúcsúk, babavárók vagy más privát rendezvények teljes körű megszervezését is. Célom, hogy minden esemény tükrözze az egyéniségeteket és az alkalom különlegességét, miközben Ti nyugodtan megélhetitek a pillanatot. Inspiráló ötletekkel, letisztult stílussal és precíz lebonyolítással gondoskodom arról, hogy minden teljesen hozzátok passzoljon.",
+    items: [
+      "Első konzultáció — Egy kötetlen beszélgetés személyesen vagy online, ahol átbeszéljük az esemény típusát, időpontját, helyszínét és az alapelképzeléseiteket.",
+      "Ajánlatadás — A megbeszéltek alapján személyre szabott ajánlatot készítek.",
+      "Koncepciótervezés — Közösen kialakítjuk a rendezvény stílusát, tematikáját és színvilágát, valamint egyeztetjük a szükséges szolgáltatókat.",
+      "Szervezési szakasz — Lefoglalom a helyszínt, egyeztetek a szolgáltatókkal, és gondoskodom minden részlet összehangolásáról.",
+      "Forgatókönyv elkészítése és átbeszélése — Részletes menetrendet állítok össze, majd közösen átbeszéljük a zavartalan lebonyolítás érdekében.",
+      "Az esemény napja — Teljes körű lebonyolítást, koordinációt és háttértámogatást biztosítok, hogy a nap valóban gondtalan és emlékezetes legyen.",
+    ],
+    image: "/images/szolgaltatas-04-rendezveny.jpg",
   },
 ];
 
 const faqs = [
   {
-    q: "Mikor érdemes felvenni a kapcsolatot?",
-    a: "Minél hamarabb, annál jobb! A legjobb helyszínek és szállítók gyorsan foglalódnak — ideális esetben legalább 12-18 hónappal az esküvő előtt.",
+    q: "Miben tud segíteni egy esküvőszervező?",
+    a: "Esküvőszervezőként az első ötlettől a nagy nap utolsó pillanatáig mellettetek vagyok. Segítek az elképzelések megvalósításában, a költségvetés megtervezésében, a szolgáltatók kiválasztásában, és a helyszínen mindent kézben tartok. Nektek csak annyi a dolgotok, hogy megéljétek a nap varázsát.",
   },
   {
-    q: "Milyen méretű esküvőkkel dolgoztok?",
-    a: "Minden méretű esküvővel foglalkozom, az intim 20 fős ceremóniától a nagyszabású 200+ fős buliig. Minden esküvő egyedi figyelmet kap.",
+    q: "Mennyi idővel az esküvő előtt érdemes felkérni?",
+    a: "Egy esküvő megszervezésére általában 12 hónap elegendő, a nagyobb népszerűségnek örvendő helyszíneknél azonban már 18 hónappal korábban is célszerű elkezdeni a foglalást. Rövidebb határidő mellett is megvalósítható a nagy nap, de a korai kezdés nagyobb nyugalmat és több választási lehetőséget ad.",
   },
   {
-    q: "Hogyan zajlik az első konzultáció?",
-    a: "Az első találkozó ingyenes és kötésmentes. Megismerkedünk, elmeséltek az elképzeléseiteket, és én felvázolom, hogyan tudok segíteni.",
+    q: "Miért érdemes esküvőszervezőt felkérni?",
+    a: "Egy esküvő megszervezése rengeteg időt, energiát és utánajárást igényel. Szervezőként leveszem a vállatokról a terhet, hogy ne a stressz, hanem a boldog készülődés határozza meg ezt az időszakot. Célom, hogy ne csupán egy szépen megszervezett napotok legyen, hanem egy örök emlék, amely mindig mosolyt csal az arcotokra.",
   },
   {
-    q: "Dolgozol Budapest határain kívül is?",
-    a: "Igen! Magyarország egész területén vállalok munkát, sőt, külföldön tartott esküvőkhöz is.",
+    q: "Vállalsz részleges szervezést is, vagy csak teljes körűt?",
+    a: "Rugalmasan alkalmazkodom az igényeitekhez, lehet szó teljes szervezésről, vagy akár csak a nagy nap koordinációjáról. Mindenben számíthattok rám.",
+  },
+  {
+    q: "Hogyan történik a közös munka?",
+    a: "Az első, díjmentes konzultáción megismerem a történeteteket és elképzeléseiteket. Ezt követően készítek egy személyre szabott ajánlatot, és ha elfogadjátok, kezdetét veszi a közös munka. Lépésről lépésre haladunk, amíg minden részlet a helyére kerül, hogy a nagy nap pontosan olyan legyen, amilyennek megálmodtátok.",
+  },
+  {
+    q: "Segítesz szolgáltatók kiválasztásában is?",
+    a: "Ez a munkám egyik legfontosabb része. Olyan szolgáltatókat ajánlok Nektek, akikről tudom, hogy szívvel-lélekkel dolgoznak, és gördülékennyé teszik az esküvőtöket. A végső döntés mindig a Tiétek.",
+  },
+  {
+    q: "Hogyan alakul a díjazásod?",
+    a: "A díjazás mindig személyre szabott, az elképzeléseitektől és a szervezés részleteitől függ. Az első konzultáció után készítek egy átlátható ajánlatot, így pontosan tudjátok majd, mire számíthattok.",
+  },
+  {
+    q: "Mi történik, ha már van lefoglalt szolgáltatóm?",
+    a: "Ez természetesen nem probléma, szívesen dolgozom együtt az általatok választott szolgáltatókkal. Fontos azonban tudnotok, hogy ha korábban nem dolgoztam velük, teljes felelősséget nem tudok vállalni a munkájukért, ugyanakkor mindent megteszek, hogy a közös munka zökkenőmentes legyen.",
+  },
+  {
+    q: "Vállalsz más eseményeket is az esküvők mellett?",
+    a: "Az esküvők mellett örömmel szervezek születésnapokat, lánybúcsúkat, lánykéréseket vagy babaváró ünnepségeket, hogy még szebbé tegyük ezeket a különleges alkalmakat.",
   },
 ];
 
-function ServiceItem({ s, i, isOpen, onToggle }: {
-  s: typeof services[0]; i: number; isOpen: boolean; onToggle: () => void;
-}) {
+function ServiceItem({ s, i }: { s: typeof services[0]; i: number }) {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
-    <div className="border-t border-[#D6D6C9]">
+    <div id={`service-${s.num}`} className="border-t border-[#D6D6C9]">
       <div className="py-14 flex flex-col md:flex-row gap-12">
 
-        {/* Bal: álló kép, effekt nélkül */}
+        {/* Bal: álló kép + szám */}
         <div className="shrink-0 md:w-[40%]">
           <div className="relative w-full overflow-hidden" style={{ aspectRatio: "3/4" }}>
             <Image
@@ -97,26 +137,21 @@ function ServiceItem({ s, i, isOpen, onToggle }: {
           </div>
         </div>
 
-        {/* Jobb: tartalom */}
-        <div className="flex-1 flex flex-col justify-between">
-
-          {/* Cím */}
-          <div>
-            <h2 className="font-[family-name:var(--font-cormorant)] text-4xl md:text-5xl font-light text-[#363025] leading-tight mb-8">
-              {s.title}
-            </h2>
-
-            {/* Leírás */}
-            <p className="font-[family-name:var(--font-quicksand)] text-[#363025]/65 text-[15px] leading-[1.9] mb-10">
-              {s.desc}
-            </p>
-          </div>
-
-          {/* Árajánlat gomb — jobb */}
-          <div className="flex justify-end">
+        {/* Jobb: szám + cím + leírás */}
+        <div className="flex-1 flex flex-col">
+          <p className="font-[family-name:var(--font-cormorant)] text-[#363025]/20 text-6xl font-light leading-none mb-4 select-none">
+            {s.num}
+          </p>
+          <h2 className="font-[family-name:var(--font-cormorant)] text-4xl md:text-5xl font-light text-[#363025] leading-tight mb-8">
+            {s.title}
+          </h2>
+          <p className="font-[family-name:var(--font-quicksand)] text-[#363025]/65 text-[15px] leading-[1.9]">
+            {s.desc}
+          </p>
+          <div className="flex justify-end mt-8">
             <a
               href="/kapcsolat"
-              className="group/btn2 relative inline-flex items-center border border-[#363025]/40 text-[#363025] font-[family-name:var(--font-nunito)] text-[10px] tracking-[0.3em] uppercase px-10 py-4 overflow-hidden hover:border-[#363025] transition-colors duration-300"
+              className="group/btn2 relative inline-flex items-center border border-[#363025]/40 text-[#363025] font-[family-name:var(--font-nunito)] text-[11px] tracking-[0.25em] uppercase px-12 py-4 overflow-hidden hover:border-[#363025] transition-colors duration-300"
             >
               <span className="absolute inset-0 bg-[#363025] translate-y-full group-hover/btn2:translate-y-0 transition-transform duration-300 ease-in-out" />
               <span className="relative z-10 group-hover/btn2:text-white transition-colors duration-300">Árajánlat kérése</span>
@@ -125,23 +160,26 @@ function ServiceItem({ s, i, isOpen, onToggle }: {
         </div>
       </div>
 
-      {/* Accordion — teljes szélességben, "Tartalma:" script betűvel */}
-      <div className="border-t border-[#D6D6C9] mt-6">
-        <button
-          onClick={onToggle}
-          className="w-full flex items-center justify-between py-5 text-left group/btn"
-        >
-          <span className="font-[family-name:var(--font-italianno)] text-[#363025]/70 text-2xl group-hover/btn:text-[#363025] transition-colors duration-200">
-            Tartalma:
-          </span>
-          <span
-            className="text-[#363025]/50 text-2xl font-light leading-none transition-transform duration-300 group-hover/btn:text-[#363025]"
-            style={{ transform: isOpen ? "rotate(45deg)" : "rotate(0deg)", display: "inline-block" }}
+      {/* Sor: "Tartalma:" — klikk nyitja az accordiont */}
+      <div className="border-t border-[#D6D6C9]">
+        <div className="flex items-center py-5">
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className="group/tartalma flex items-center gap-3 cursor-pointer"
           >
-            +
-          </span>
-        </button>
+            <span className="font-[family-name:var(--font-nunito)] text-[11px] tracking-[0.35em] uppercase text-[#363025]/50 group-hover/tartalma:text-[#363025] transition-colors duration-200">
+              Tartalma
+            </span>
+            <span
+              className="text-[#363025]/50 text-lg font-light leading-none group-hover/tartalma:text-[#363025] transition-all duration-300"
+              style={{ transform: isOpen ? "rotate(45deg)" : "rotate(0deg)", display: "inline-block" }}
+            >
+              +
+            </span>
+          </button>
+        </div>
 
+        {/* Accordion tartalom */}
         <div
           className="overflow-hidden transition-all duration-500 ease-in-out"
           style={{ maxHeight: isOpen ? "1200px" : "0px", opacity: isOpen ? 1 : 0 }}
@@ -170,7 +208,7 @@ function ServiceItem({ s, i, isOpen, onToggle }: {
                       {keyword}
                     </p>
                     {rest && (
-                      <p className="font-[family-name:var(--font-quicksand)] text-[#363025]/50 text-xs leading-relaxed mt-0.5">
+                      <p className="font-[family-name:var(--font-quicksand)] text-[#363025]/50 text-[15px] leading-[1.9] mt-0.5">
                         {rest}
                       </p>
                     )}
@@ -186,19 +224,11 @@ function ServiceItem({ s, i, isOpen, onToggle }: {
 }
 
 function ServicesList() {
-  const [open, setOpen] = useState<number | null>(null);
-
   return (
     <section className="bg-[#F5F3ED] pt-12 pb-8 px-6">
       <div className="max-w-5xl mx-auto">
         {services.map((s, i) => (
-          <ServiceItem
-            key={i}
-            s={s}
-            i={i}
-            isOpen={open === i}
-            onToggle={() => setOpen(open === i ? null : i)}
-          />
+          <ServiceItem key={i} s={s} i={i} />
         ))}
         <div className="border-t border-[#D6D6C9]" />
       </div>
@@ -257,7 +287,7 @@ export default function Szolgaltatasok() {
 
       {/* Subtitle ribbon */}
       <section className="bg-[#F5F3ED] pt-12 pb-10 px-6 text-center">
-        <p className="font-[family-name:var(--font-quicksand)] text-lg md:text-xl italic text-[#363025]/70 max-w-2xl mx-auto leading-relaxed">
+        <p className="font-[family-name:var(--font-quicksand)] text-[15px] text-[#363025]/65 max-w-2xl mx-auto leading-[1.9]">
           Minden szolgáltatásom célja, hogy a Ti napotok valóban gondtalan és felejthetetlen legyen.
         </p>
       </section>
@@ -270,11 +300,14 @@ export default function Szolgaltatasok() {
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16">
             <p className="font-[family-name:var(--font-nunito)] text-xs tracking-[0.3em] uppercase text-white/35 mb-3">
-              Kérdéseid vannak?
+              Gyakran ismételt kérdések
             </p>
             <h2 className="font-[family-name:var(--font-cormorant)] text-5xl md:text-6xl font-light text-white tracking-wide">
-              Gyakori kérdések
+              Van kérdésed?
             </h2>
+            <p className="font-[family-name:var(--font-quicksand)] text-white/50 text-sm mt-4">
+              Összegyűjtöttem a leggyakrabban feltett kérdéseket. Ha nem találod köztük a választ, írj nekem bátran.
+            </p>
             <div className="w-12 h-px bg-white/20 mx-auto mt-6" />
           </div>
 
@@ -294,7 +327,7 @@ export default function Szolgaltatasok() {
           <div className="text-center mt-16">
             <a
               href="/kapcsolat"
-              className="inline-block border border-white/60 text-white font-[family-name:var(--font-nunito)] text-xs tracking-[0.25em] uppercase px-12 py-4 hover:bg-white hover:text-[#363025] transition-all duration-300"
+              className="inline-block border border-white/60 text-white font-[family-name:var(--font-nunito)] text-[11px] tracking-[0.25em] uppercase px-12 py-4 hover:bg-white hover:text-[#363025] transition-all duration-300"
             >
               Írj nekem
             </a>

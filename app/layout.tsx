@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Italianno, Quicksand, Nunito_Sans, Cormorant_Garamond } from "next/font/google";
+import { Italianno, Raleway, Nunito_Sans, Cormorant_Garamond } from "next/font/google";
 import "./globals.css";
 
 const italianno = Italianno({
@@ -8,7 +8,7 @@ const italianno = Italianno({
   subsets: ["latin"],
 });
 
-const quicksand = Quicksand({
+const quicksand = Raleway({
   weight: ["400", "500", "600", "700"],
   variable: "--font-quicksand",
   subsets: ["latin"],

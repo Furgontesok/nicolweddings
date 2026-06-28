@@ -1,78 +1,136 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 
 const testimonials = [
   {
-    name: "Ani és Peti",
-    photo: "/images/Ani%20%26%20Peti%20visszajelz%C3%A9s.jpg",
-    text: "Nicol nélkül nem tudtuk volna megvalósítani az álomesküvőnket. Minden apró részletről gondoskodott, mi csak élvezhettük a napot. Örökre hálásak vagyunk!",
+    name: "Ani & Peti",
+    photo: "/images/visszajelzes-ani-peti.jpg",
+    objectPosition: "center top",
+    quote: "Ha valaki elbizonytalanodna az esküvőszervező szükségessége miatt, szeretnénk megerősíteni abban, hogy óriási terhet vesz le az ember válláról.",
+    text: "Végtelenül hálásak vagyunk azért a sok-sok segítségért, támogatásért, amit az elmúlt félévben Nicol nyújtott nekünk. Határozott, ugyanakkor mindig kedves volt velünk. Magabiztosan kezelte az esküvő napján is a különböző helyzeteket. Biztonságban éreztük magunkat, hiszen ott volt velünk az összes bejáráson, ruhapróbán, vagy fontosabb megbeszélésen. Pozitív kisugárzása mindig erőt és hitet adott, hogy a nagy napon minden rendben lesz. Ha valaki elbizonytalanodna az esküvőszervező szükségessége miatt, szeretnénk megerősíteni abban, hogy óriási terhet vesz le az ember válláról.",
   },
   {
     name: "Dr. Pozsonyi Petra",
-    photo: "/images/Pozsonyi%20Petra%20visszajelz%C3%A9s.jpg",
-    text: "Profizmus és szívvel végzett munka — ez jellemzi Nicolt. Az egész szervezési folyamat alatt biztonságban éreztem magam, tudtam, hogy minden a legjobb kezekben van.",
+    photo: "/images/visszajelzes-pozsonyi-petra.jpg",
+    objectPosition: "center top",
+    quote: "Pontossága, precizitása, odafigyelése és kedvessége az első egyeztetéstől az utolsó vendég távozásáig jellemezte munkáját.",
+    text: "Nicol egy számomra nagyon fontos személy születésnapját szervezte meg és koordinálta. Pontossága, precizitása, odafigyelése és kedvessége az első egyeztetéstől az utolsó vendég távozásáig jellemezte munkáját. Segített rátalálni a megfelelő szolgáltatókra, végig lelkiismeretesen egyeztetett velük, majd az esemény napján a közös munkájuk is maximálisan gördülékenyen ment. Nekünk, résztvevőknek csupán egy feladatunk volt, igazán jól érezni magunkat. Nem is kérdés, ha egyszer férjhez megyek kire fogom rábízni az esküvőmet. Köszönünk mindent!",
   },
   {
-    name: "Orsi és Krisz",
-    photo: "/images/Orsi%20%26%20Krisz%20visszajelz%C3%A9s.jpg",
-    text: "Csodás nap volt, minden tökéletesen ment. Nicol energiája és lelkesedése sugárzott belőle az egész nap — ez nekünk is erőt adott. Szívből ajánljuk mindenkinek!",
+    name: "Orsi & Krisz",
+    photo: "/images/visszajelzes-orsi-krisz.jpg",
+    objectPosition: "center top",
+    quote: "Aztán a saját bőrünkön tapasztaltuk meg, mekkora segítséget nyújt, és milyen hihetetlen terhet vesz le rólunk.",
+    text: "Őszintén, mi először nem gondoltuk, hogy az esküvőszervező must have szolgáltató… Aztán a saját bőrünkön tapasztaltuk meg, mekkora segítséget nyújt, és milyen hihetetlen terhet vesz le rólunk. Nicol rengeteg kreatív ötlettel látott el minket már a legelején, amik hozzájárultak ahhoz, hogy a végeredmény ízléses, stílusos és teljesen ránk szabott legyen. Minden apró részletre gondolt, mindig kedves, figyelmes és határozott volt. Kéz a kézben készültünk a nagy napra, és amikor elérkezett a pillanat, teljesen elengedhettük magunkat. Hálásan köszönjük, Nicol!",
   },
   {
-    name: "Réka és Ádám",
-    photo: "/images/R%C3%A9ka%20%26%20%C3%81d%C3%A1m%20visszajelz%C3%A9s_.jpg",
-    text: "Mesebeli esküvőnk volt, teljesen Nicol érdeme. Figyelt minden apró részletre és mindig mosolyogva megoldott minden felmerülő kérdést. Köszönjük szépen!",
+    name: "Réka & Ádám",
+    photo: "/images/visszajelzes-reka-adam.jpg",
+    objectPosition: "center top",
+    quote: "A nagy napunkon minden gördülékenyen zajlott, Nicol mindenhol ott volt és odafigyelt, hogy ne csússzon hiba a terveinkbe.",
+    text: "Nicol óriási segítség volt számunkra, és nagyon örülünk, hogy ő kísért végig az esküvőnk szervezésén. Nemcsak a feladatokban segített, hanem tartotta a kapcsolatot a szolgáltatókkal is, ami nagy terhet vett le a vállunkról. A nagy napunkon minden gördülékenyen zajlott, Nicol mindenhol ott volt és odafigyelt, hogy ne csússzon hiba a terveinkbe. Nagyon lelkiismeretes, precíz, és mindenben lehet rá számítani. Őszintén ajánljuk mindenkinek.",
   },
 ];
 
 export default function Testimonials() {
   const [active, setActive] = useState(0);
+  const [fading, setFading] = useState(false);
+
+  const goTo = (i: number) => {
+    setFading(true);
+    setTimeout(() => { setActive(i); setFading(false); }, 350);
+  };
+
+  const prev = () => goTo((active - 1 + testimonials.length) % testimonials.length);
+  const next = () => goTo((active + 1) % testimonials.length);
+
+  useEffect(() => {
+    const t = setInterval(next, 8000);
+    return () => clearInterval(t);
+  }, [active]);
+
+  const t = testimonials[active];
 
   return (
-    <section id="velemenyek" className="bg-[#D6D6C9] py-24 px-6">
-      <div className="max-w-3xl mx-auto text-center">
-        <p className="font-[family-name:var(--font-nunito)] text-xs tracking-[0.3em] uppercase text-[#363025]/50 mb-3">
-          Amit mondanak rólam
-        </p>
-        <h2 className="font-[family-name:var(--font-italianno)] text-6xl md:text-7xl text-[#363025] mb-12">
-          Kedves szavak
-        </h2>
-
-        <div className="font-[family-name:var(--font-cormorant)] text-7xl text-[#363025]/20 leading-none mb-6 select-none">
-          "
+    <section id="velemenyek" className="pt-3 pb-2 md:pb-20 px-6" style={{ backgroundColor: "#D6D8CA" }}>
+      <div className="max-w-5xl mx-auto">
+        <div className="mb-8">
+          <p className="font-[family-name:var(--font-nunito)] text-[12px] tracking-[0.3em] uppercase text-[#363025]/40 mb-3">Visszajelzések</p>
+          <h2 className="font-[family-name:var(--font-italianno)] text-4xl md:text-5xl lg:text-6xl text-[#363025]">Emlékezetes napok, hálás szívek</h2>
         </div>
+        <div
+          style={{ opacity: fading ? 0 : 1, transition: "opacity 0.35s" }}
+        >
+          <div className="flex flex-col md:flex-row items-start">
+            {/* Fehér kártya — 58% szélesség */}
+            <div
+              className="relative bg-white flex flex-col px-6 md:px-12 pt-8 pb-8 md:py-10 w-full"
+              style={{ flex: "0 0 58%", minHeight: "514px" }}
+            >
+              {/* Mobilos boltíves kép — kártyán belül */}
+              <div
+                className="md:hidden relative overflow-hidden w-full mx-auto mb-6"
+                style={{ height: "380px", borderRadius: "9999px 9999px 0 0" }}
+              >
+                <Image
+                  src={t.photo}
+                  alt={t.name}
+                  fill
+                  className="object-cover"
+                  style={{ objectPosition: t.objectPosition ?? "center top" }}
+                  sizes="65vw"
+                />
+              </div>
+              <p className="font-[family-name:var(--font-cormorant)] text-[#363025] text-2xl font-light leading-snug mb-7 italic">
+                &bdquo;{t.quote}&rdquo;
+              </p>
+              <p className="font-[family-name:var(--font-quicksand)] text-[#363025]/60 text-[14px] leading-relaxed mb-6">
+                {t.text}
+              </p>
 
-        <p className="font-[family-name:var(--font-quicksand)] text-[#363025]/80 text-lg leading-relaxed italic min-h-[6rem] transition-all duration-500">
-          {testimonials[active].text}
-        </p>
+              {/* Név + nyilak */}
+              <div className="flex items-end justify-between pr-0 md:pr-16 mt-auto">
+                <p className="font-[family-name:var(--font-italianno)] text-[#363025] text-3xl" style={{ wordSpacing: "0.25em" }}>
+                  {t.name}
+                </p>
+                <div className="flex items-center gap-7">
+                  <button
+                    onClick={prev}
+                    className="text-[#363025]/40 hover:text-[#363025] transition-colors duration-200 text-xl leading-none"
+                  >
+                    ←
+                  </button>
+                  <button
+                    onClick={next}
+                    className="text-[#363025]/40 hover:text-[#363025] transition-colors duration-200 text-xl leading-none"
+                  >
+                    →
+                  </button>
+                </div>
+              </div>
+            </div>
 
-        <div className="mt-10 flex flex-col items-center gap-3">
-          <div className="w-16 h-16 relative rounded-full overflow-hidden">
-            <Image
-              src={testimonials[active].photo}
-              alt={testimonials[active].name}
-              fill
-              className="object-cover object-top"
-              sizes="64px"
-            />
+            {/* Boltíves fotó — desktop only */}
+            <div
+              className="hidden md:block relative overflow-hidden flex-shrink-0 -ml-10"
+              style={{
+                flex: "0 0 38%",
+                borderRadius: "9999px 9999px 0 0",
+                marginTop: "-82px",
+                minHeight: "616px",
+              }}
+            >
+              <Image
+                src={t.photo}
+                alt={t.name}
+                fill
+                className="object-cover object-top"
+                sizes="42vw"
+              />
+            </div>
           </div>
-          <span className="font-[family-name:var(--font-nunito)] text-[#363025] text-sm tracking-widest uppercase font-semibold">
-            {testimonials[active].name}
-          </span>
-        </div>
-
-        <div className="flex justify-center gap-3 mt-10">
-          {testimonials.map((_, i) => (
-            <button
-              key={i}
-              onClick={() => setActive(i)}
-              className={`h-2 rounded-full transition-all duration-300 ${
-                i === active ? "bg-[#363025] w-6" : "bg-[#363025]/30 w-2"
-              }`}
-              aria-label={`${i + 1}. vélemény`}
-            />
-          ))}
         </div>
       </div>
     </section>
