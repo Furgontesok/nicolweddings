@@ -145,13 +145,9 @@ function ServiceItem({ s, i }: { s: typeof services[0]; i: number }) {
           <h2 className="font-[family-name:var(--font-cormorant)] text-4xl md:text-5xl font-light text-[#363025] leading-tight mb-8">
             {s.title}
           </h2>
-          <div className="space-y-4">
-            {s.desc.split("\n\n").map((para, j) => (
-              <p key={j} className="font-[family-name:var(--font-quicksand)] text-[#363025]/65 text-[15px] leading-[1.9]">
-                {para}
-              </p>
-            ))}
-          </div>
+          <p className="font-[family-name:var(--font-quicksand)] text-[#363025]/65 text-[15px] leading-[1.9] whitespace-pre-line">
+            {s.desc}
+          </p>
           <div className="flex justify-end mt-8">
             <a
               href="/kapcsolat"
