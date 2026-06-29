@@ -153,7 +153,8 @@ export default function Rolam() {
                 src="/images/betti-levi-10.jpg"
                 alt="Esküvői dekoráció"
                 fill
-                className="object-cover object-center"
+                className="object-cover"
+                style={{ objectPosition: "center 20%" }}
                 sizes="35vw"
               />
             </div>
