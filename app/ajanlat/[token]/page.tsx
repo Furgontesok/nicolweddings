@@ -14,7 +14,7 @@ const services = {
       { title: "Ingyenes első konzultáció", desc: "Egy személyes vagy online találkozó során megismerjük egymást, és átbeszéljük az elképzeléseiteket." },
       { title: "Ajánlatadás", desc: "Az igényeitek alapján személyre szabott ajánlatot készítek." },
       { title: "Helyszínkeresés és helyszínbejárások egyeztetése", desc: "Segítek megtalálni a számotokra tökéletes helyszínt, és egyeztetem a bejárásokat." },
-      { title: "Megbízható szolgáltatók ajánlása és szerződtetése minden területen", desc: "Az esküvőtök minden területére megbízható szolgáltatókat ajánlok, hogy a legjobb csapat segítse a napotokat." },
+      { title: "Megbízható szolgáltatók ajánlása és szerződtetése", desc: "Az esküvőtök minden területére megbízható szolgáltatókat ajánlok, hogy a legjobb csapat segítse a napotokat." },
       { title: "Szolgáltatói találkozók leszervezése", desc: "A szolgáltatókkal való találkozókat leszervezem, és minden alkalommal mellettetek leszek, legyen az személyesen vagy online." },
       { title: "Koncepció és stílus kidolgozása", desc: "Segítek megtalálni a hozzátok illő színeket, tematikát és hangulatot." },
       { title: "Folyamatos kapcsolattartás", desc: "A szervezés teljes ideje alatt veletek és a szolgáltatókkal is folyamatosan tartom a kapcsolatot." },
