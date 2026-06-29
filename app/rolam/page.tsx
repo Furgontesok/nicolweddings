@@ -97,7 +97,8 @@ export default function Rolam() {
                 src="/images/nicol-roli-21.jpg"
                 alt="Nicol és Roli esküvője"
                 fill
-                className="object-cover object-center"
+                className="object-cover"
+                style={{ objectPosition: "center 20%" }}
                 sizes="42vw"
               />
             </div>
