@@ -93,7 +93,7 @@ export default function Testimonials() {
               {/* Név + nyilak */}
               <div className="flex items-end justify-between pr-0 md:pr-16 mt-auto">
                 <p className="font-[family-name:var(--font-italianno)] text-[#363025] text-3xl" style={{ wordSpacing: "0.25em" }}>
-                  {t.name}
+                  {t.name.replace(" & ", " & ")}
                 </p>
                 <div className="flex items-center gap-7">
                   <button
