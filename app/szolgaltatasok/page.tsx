@@ -282,19 +282,12 @@ export default function Szolgaltatasok() {
             </div>
           </div>
 
-          {/* Mobil: 2 sor */}
-          <div className="md:hidden flex flex-col gap-1.5" style={{ height: "50vh", minHeight: 320 }}>
-            <div className="hero-row-1 flex flex-1">
+          {/* Mobil: 1 sor */}
+          <div className="md:hidden" style={{ height: "50vh", minHeight: 320 }}>
+            <div className="hero-row-1 flex h-full">
               {[...heroImages, ...heroImages].map((src, i) => (
-                <div key={i} className="hero-img-wrap relative flex-shrink-0" style={{ width: "55vw", height: "100%" }}>
+                <div key={i} className="hero-img-wrap relative flex-shrink-0 h-full" style={{ width: "55vw" }}>
                   <Image src={src} alt="Esküvői fotó" fill className="object-cover object-center" sizes="55vw" priority={i < 4} />
-                </div>
-              ))}
-            </div>
-            <div className="hero-row-2 flex flex-1">
-              {[...heroImages, ...heroImages].map((src, i) => (
-                <div key={i} className="hero-img-wrap relative flex-shrink-0" style={{ width: "55vw", height: "100%" }}>
-                  <Image src={src} alt="Esküvői fotó" fill className="object-cover object-center" sizes="55vw" />
                 </div>
               ))}
             </div>
