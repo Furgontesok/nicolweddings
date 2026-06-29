@@ -222,9 +222,6 @@ export default function Rolam() {
         />
         <div className="absolute inset-0 bg-black/55" />
         <div className="relative z-10">
-          <p className="font-[family-name:var(--font-nunito)] text-[10px] tracking-[0.35em] uppercase text-white/50 mb-4">
-            Kezdjük el együtt
-          </p>
           <h2 className="font-[family-name:var(--font-italianno)] text-5xl md:text-6xl text-white mb-4 leading-tight">
             Tegyük együtt felejthetetlenné a napotokat!
           </h2>
