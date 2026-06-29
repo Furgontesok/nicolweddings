@@ -122,7 +122,7 @@ function ServiceItem({ s, i }: { s: typeof services[0]; i: number }) {
 
   return (
     <div id={`service-${s.num}`} className="border-t border-[#D6D6C9]">
-      <div className="py-14 flex flex-col md:flex-row gap-12">
+      <div className="py-8 flex flex-col md:flex-row gap-12">
 
         {/* Bal: álló kép + szám */}
         <div className="shrink-0 md:w-[40%]">
@@ -225,7 +225,7 @@ function ServiceItem({ s, i }: { s: typeof services[0]; i: number }) {
 
 function ServicesList() {
   return (
-    <section className="bg-[#F5F3ED] pt-12 pb-8 px-6">
+    <section className="bg-[#F5F3ED] pt-4 pb-8 px-6">
       <div className="max-w-5xl mx-auto">
         {services.map((s, i) => (
           <ServiceItem key={i} s={s} i={i} />
@@ -307,7 +307,7 @@ export default function Szolgaltatasok() {
       </div>
 
       {/* Subtitle ribbon */}
-      <section className="bg-[#F5F3ED] pt-12 pb-10 px-6 text-center">
+      <section className="bg-[#F5F3ED] pt-6 pb-4 px-6 text-center">
         <p className="font-[family-name:var(--font-quicksand)] text-[15px] text-[#363025]/65 max-w-2xl mx-auto leading-[1.9]">
           Minden szolgáltatásom célja, hogy a Ti napotok valóban gondtalan és felejthetetlen legyen.
         </p>
