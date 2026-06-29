@@ -20,7 +20,8 @@ export default function Rolam() {
             src="/images/vivi-bence-15.jpg"
             alt="Rólam"
             fill
-            className="object-cover object-top"
+            className="object-cover"
+            style={{ objectPosition: "center 10%" }}
             sizes="100vw"
             priority
           />
