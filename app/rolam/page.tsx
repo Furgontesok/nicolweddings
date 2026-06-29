@@ -116,8 +116,8 @@ export default function Rolam() {
               <p>
                 …még nem tudtam, hogy ezzel egy új fejezet indul az életemben. Imádtam minden pillanatát, és ekkor született meg bennem az elhatározás, hogy másoknak is segítsek átélni ugyanezt az örömöt. Így jött létre a Nicol Weddings & Events, az első saját vállalkozásom.
               </p>
-              <p>
-                Számomra a legfontosabb, hogy ne csak megszervezzem a napotokat, hanem valódi támaszotok legyek. Egy nyugodt jelenlét a kulisszák mögött, aki gondoskodik arról, hogy Ti csak megéljétek a pillanatot.
+              <p className="whitespace-pre-line">
+                Számomra a legfontosabb, hogy ne csak megszervezzem a napotokat, hanem valódi támaszotok legyek. Egy nyugodt jelenlét a kulisszák mögött,{"\n"}aki gondoskodik arról, hogy Ti csak megéljétek a pillanatot.
               </p>
             </div>
           </div>
