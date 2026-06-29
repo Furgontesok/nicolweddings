@@ -326,10 +326,10 @@ export default function Szolgaltatasok() {
             <h2 className="font-[family-name:var(--font-cormorant)] text-5xl md:text-6xl font-light text-white tracking-wide">
               Van kérdésed?
             </h2>
-            <p className="font-[family-name:var(--font-quicksand)] text-white/50 text-sm mt-4">
+            <div className="w-12 h-px bg-white/20 mx-auto mt-6" />
+            <p className="font-[family-name:var(--font-quicksand)] text-white/50 text-sm mt-6">
               Összegyűjtöttem a leggyakrabban feltett kérdéseket. Ha nem találod köztük a választ, írj nekem bátran.
             </p>
-            <div className="w-12 h-px bg-white/20 mx-auto mt-6" />
           </div>
 
           <div className="grid md:grid-cols-2 gap-10">
