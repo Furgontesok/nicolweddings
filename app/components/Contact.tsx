@@ -126,16 +126,16 @@ export default function Contact() {
                 <input required type="text" value={nev} onChange={(e) => setNev(e.target.value)} className={inputClass} placeholder="Teljes név *" />
                 <input required type="email" value={email} onChange={(e) => setEmail(e.target.value)} className={inputClass} placeholder="Email cím *" />
                 <input required type="tel" value={telefon} onChange={(e) => setTelefon(e.target.value)} className={inputClass} placeholder="Telefonszám *" />
-                <input required type="date" value={datum} onChange={(e) => setDatum(e.target.value)} className={inputClass} style={{ color: datum ? "#363025" : "rgba(54,48,37,0.4)" }} />
+                <input required type="date" value={datum} onChange={(e) => setDatum(e.target.value)} className={inputClass} style={{ color: datum ? "#363025" : "rgba(54,48,37,0.5)" }} />
                 <input type="text" inputMode="numeric" value={letszam} onChange={(e) => setLetszam(e.target.value)} className={inputClass} placeholder="Vendégek létszáma" />
-                <select required value={szolgaltatas} onChange={(e) => setSzolgaltatas(e.target.value)} className={`${inputClass} cursor-pointer`}>
+                <select required value={szolgaltatas} onChange={(e) => setSzolgaltatas(e.target.value)} className={`${inputClass} cursor-pointer`} style={{ color: szolgaltatas ? "#363025" : "rgba(54,48,37,0.5)" }}>
                   <option value="" disabled>Szolgáltatás *</option>
                   <option value="teljes">Teljes körű esküvőszervezés</option>
                   <option value="30nap">30 nap a nagy napig</option>
                   <option value="tanacsadas">Esküvői tanácsadás</option>
                   <option value="egyeb">Egyéb rendezvények</option>
                 </select>
-                <select required value={honnan} onChange={(e) => setHonnan(e.target.value)} className={`${inputClass} cursor-pointer`}>
+                <select required value={honnan} onChange={(e) => setHonnan(e.target.value)} className={`${inputClass} cursor-pointer`} style={{ color: honnan ? "#363025" : "rgba(54,48,37,0.5)" }}>
                   <option value="" disabled>Honnan hallottál rólam? *</option>
                   <option value="instagram">Instagram</option>
                   <option value="facebook">Facebook</option>

@@ -127,7 +127,7 @@ export default function Kapcsolat() {
                   value={datum}
                   onChange={(e) => setDatum(e.target.value)}
                   className={inputClass}
-                  style={{ color: datum ? "#000000" : "rgba(0,0,0,0.4)" }}
+                  style={{ color: datum ? "#000000" : "rgba(0,0,0,0.5)" }}
                 />
 
                 <input
@@ -144,6 +144,7 @@ export default function Kapcsolat() {
                   value={szolgaltatas}
                   onChange={(e) => setSzolgaltatas(e.target.value)}
                   className={`${inputClass} cursor-pointer`}
+                  style={{ color: szolgaltatas ? "#000000" : "rgba(0,0,0,0.5)" }}
                 >
                   <option value="" disabled>Szolgáltatás *</option>
                   <option value="teljes">Teljes körű esküvőszervezés</option>
@@ -157,6 +158,7 @@ export default function Kapcsolat() {
                   value={honnan}
                   onChange={(e) => setHonnan(e.target.value)}
                   className={`${inputClass} cursor-pointer`}
+                  style={{ color: honnan ? "#000000" : "rgba(0,0,0,0.5)" }}
                 >
                   <option value="" disabled>Honnan hallottál rólam? *</option>
                   <option value="instagram">Instagram</option>
