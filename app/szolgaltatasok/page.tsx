@@ -242,45 +242,65 @@ export default function Szolgaltatasok() {
       <NavbarSimple />
 
       {/* Hero — folyamatos CSS scroll */}
-      {/* 8 kép × 28vw = 224vw desktop, 8 kép × 60vw = 480vw mobil */}
       <style>{`
-        @keyframes marquee-desktop {
+        @keyframes marquee-left {
           from { transform: translateX(0); }
           to   { transform: translateX(-224vw); }
         }
-        @keyframes marquee-mobile {
-          from { transform: translateX(0); }
-          to   { transform: translateX(-480vw); }
+        @keyframes marquee-right {
+          from { transform: translateX(-224vw); }
+          to   { transform: translateX(0); }
         }
-        .hero-marquee { animation: marquee-desktop 55s linear infinite; }
+        @keyframes marquee-left-mobile {
+          from { transform: translateX(0); }
+          to   { transform: translateX(-400vw); }
+        }
+        @keyframes marquee-right-mobile {
+          from { transform: translateX(-400vw); }
+          to   { transform: translateX(0); }
+        }
+        .hero-row-1 { animation: marquee-left 55s linear infinite; }
+        .hero-row-2 { animation: marquee-right 55s linear infinite; }
         @media (max-width: 767px) {
-          .hero-marquee { animation: marquee-mobile 55s linear infinite; }
-          .hero-img-wrap { width: 60vw !important; }
+          .hero-row-1 { animation: marquee-left-mobile 55s linear infinite; }
+          .hero-row-2 { animation: marquee-right-mobile 55s linear infinite; }
+          .hero-img-wrap { width: 55vw !important; }
         }
       `}</style>
 
       <div className="pt-16 bg-[#F5F3ED]">
-        {/* Képsáv */}
-        <div className="relative overflow-hidden" style={{ height: "55vh", minHeight: 360 }}>
-          <div className="hero-marquee flex h-full">
-            {[...heroImages, ...heroImages].map((src, i) => (
-              <div
-                key={i}
-                className="hero-img-wrap relative h-full flex-shrink-0"
-                style={{ width: "28vw" }}
-              >
-                <Image
-                  src={src}
-                  alt="Esküvői fotó"
-                  fill
-                  className="object-cover object-center"
-                  sizes="(max-width: 767px) 60vw, 28vw"
-                  priority={i < 4}
-                />
-              </div>
-            ))}
+        {/* Képsáv — desktop: 1 sor, mobil: 2 sor */}
+        <div className="relative overflow-hidden">
+          {/* Desktop: 1 sor */}
+          <div className="hidden md:block" style={{ height: "55vh", minHeight: 360 }}>
+            <div className="hero-row-1 flex h-full">
+              {[...heroImages, ...heroImages].map((src, i) => (
+                <div key={i} className="relative h-full flex-shrink-0" style={{ width: "28vw" }}>
+                  <Image src={src} alt="Esküvői fotó" fill className="object-cover object-center" sizes="28vw" priority={i < 4} />
+                </div>
+              ))}
+            </div>
           </div>
-          {/* Alap gradient — csak az utolsó 28% fadul el */}
+
+          {/* Mobil: 2 sor */}
+          <div className="md:hidden flex flex-col gap-1.5" style={{ height: "50vh", minHeight: 320 }}>
+            <div className="hero-row-1 flex flex-1">
+              {[...heroImages, ...heroImages].map((src, i) => (
+                <div key={i} className="hero-img-wrap relative flex-shrink-0" style={{ width: "55vw", height: "100%" }}>
+                  <Image src={src} alt="Esküvői fotó" fill className="object-cover object-center" sizes="55vw" priority={i < 4} />
+                </div>
+              ))}
+            </div>
+            <div className="hero-row-2 flex flex-1">
+              {[...heroImages, ...heroImages].map((src, i) => (
+                <div key={i} className="hero-img-wrap relative flex-shrink-0" style={{ width: "55vw", height: "100%" }}>
+                  <Image src={src} alt="Esküvői fotó" fill className="object-cover object-center" sizes="55vw" />
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Gradient */}
           <div
             className="pointer-events-none absolute inset-x-0 bottom-0 z-10"
             style={{ height: "28%", background: "linear-gradient(to bottom, transparent, #F5F3ED)" }}
