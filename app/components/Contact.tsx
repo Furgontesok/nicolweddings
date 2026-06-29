@@ -20,8 +20,8 @@ export default function Contact() {
   return (
     <>
       <style>{`
-        input[type="date"]::-webkit-datetime-edit { color: rgba(0,0,0,0.5); }
-        input[type="date"]::-webkit-datetime-edit-fields-wrapper { color: rgba(0,0,0,0.5); }
+        input[type="date"]::-webkit-datetime-edit { color: rgba(0,0,0,0.7); }
+        input[type="date"]::-webkit-datetime-edit-fields-wrapper { color: rgba(0,0,0,0.7); }
         input[type="date"].has-value::-webkit-datetime-edit,
         input[type="date"].has-value::-webkit-datetime-edit-fields-wrapper { color: #000000; }
       `}</style>
