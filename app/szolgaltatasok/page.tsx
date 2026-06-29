@@ -52,7 +52,7 @@ const services = [
   {
     num: "03",
     title: "Esküvői tanácsadás",
-    desc: "Amennyiben saját magatok szervezitek az esküvőtöket, de bizonyos pontokon elakadtok, vagy kérdések merülnek fel a szervezési folyamat során, lehetőségetek van alkalmi tanácsadás igénybevételére.\nSegítséget nyújtok a szolgáltatók kiválasztásában, programok megtervezésében, eligazítalak benneteket a teendők között, és gyakorlati tippekkel támogatom az esküvőtök sikeres megvalósítását.",
+    desc: "Amennyiben saját magatok szervezitek az esküvőtöket, de bizonyos pontokon elakadtok, vagy kérdések merülnek fel a szervezési folyamat során, lehetőségetek van alkalmi tanácsadás igénybevételére. Segítséget nyújtok a szolgáltatók kiválasztásában, programok megtervezésében, eligazítalak benneteket a teendők között, és gyakorlati tippekkel támogatom az esküvőtök sikeres megvalósítását.",
     items: [
       "Egyéni konzultáció — Személyesen vagy online átbeszéljük, hol tartotok a szervezésben, és pontosan mely területeken van szükségetek támogatásra.",
       "Checklista és idővonal áttekintése — Közösen végigmegyünk a feladatokon, hogy biztosan semmi se maradjon ki a szervezésből.",
