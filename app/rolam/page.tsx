@@ -17,7 +17,7 @@ export default function Rolam() {
       <div className="pt-16 bg-[#F5F3ED]">
         <div className="relative overflow-hidden" style={{ height: "55vh", minHeight: 360 }}>
           <Image
-            src="/images/vivi-bence-15.jpg"
+            src="/images/nicol-roli-15.jpg"
             alt="Rólam"
             fill
             className="object-cover"
