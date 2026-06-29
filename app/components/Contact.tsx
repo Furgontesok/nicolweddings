@@ -146,7 +146,7 @@ export default function Contact() {
                 </select>
                 <textarea required rows={5} value={uzenet} onChange={(e) => setUzenet(e.target.value)} className={`${inputClass} resize-none`} placeholder="Üzenet — meséljetek az elképzeléseitekről... *" />
 
-                <p className="font-[family-name:var(--font-quicksand)] text-[#363025]/35 text-[11px] leading-relaxed pt-1">
+                <p className="font-[family-name:var(--font-quicksand)] text-[#363025]/35 text-[13px] leading-relaxed pt-1">
                   Az űrlap beküldésével elfogadod az adatkezelési tájékoztatót.
                 </p>
 

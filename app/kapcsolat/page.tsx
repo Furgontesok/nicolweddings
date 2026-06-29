@@ -176,7 +176,7 @@ export default function Kapcsolat() {
                   placeholder="Üzenet — meséljetek az elképzeléseitekről... *"
                 />
 
-                <p className="font-[family-name:var(--font-quicksand)] text-[#363025]/35 text-[11px] leading-relaxed pt-1">
+                <p className="font-[family-name:var(--font-quicksand)] text-[#363025]/35 text-[13px] leading-relaxed pt-1">
                   Az űrlap beküldésével elfogadod az adatkezelési tájékoztatót.
                 </p>
 
