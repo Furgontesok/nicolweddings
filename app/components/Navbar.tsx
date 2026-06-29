@@ -92,12 +92,12 @@ export default function Navbar() {
         </a>
         <button
           onClick={() => setOpen(!open)}
-          className="flex flex-col gap-1.5 p-2"
+          className="p-1 text-[#363025]"
           aria-label="Menü"
         >
-          <span className={`block w-10 h-[1.5px] bg-[#363025] transition-all duration-300 ${open ? "rotate-45 translate-y-[7px]" : ""}`} />
-          <span className={`block w-10 h-[1.5px] bg-[#363025] transition-all duration-300 ${open ? "opacity-0" : ""}`} />
-          <span className={`block w-10 h-[1.5px] bg-[#363025] transition-all duration-300 ${open ? "-rotate-45 -translate-y-[7px]" : ""}`} />
+          <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round">
+            <line x1="3" y1="7" x2="21" y2="7"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="17" x2="21" y2="17"/>
+          </svg>
         </button>
       </div>
 
