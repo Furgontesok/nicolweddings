@@ -154,7 +154,7 @@ export default function Rolam() {
                 alt="Esküvői dekoráció"
                 fill
                 className="object-cover"
-                style={{ objectPosition: "center 90%" }}
+                style={{ objectPosition: "center 100%" }}
                 sizes="35vw"
               />
             </div>
