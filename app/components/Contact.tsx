@@ -18,7 +18,14 @@ export default function Contact() {
     "w-full bg-[#EEECEA] px-4 py-3 font-[family-name:var(--font-nunito)] text-[11px] tracking-[0.2em] uppercase text-[#000000] placeholder:text-[#000000]/50 focus:outline-none focus:bg-[#E5E3E0] transition-colors duration-200";
 
   return (
-    <section id="kapcsolat" className="bg-white py-10 md:py-12 px-6">
+    <>
+      <style>{`
+        input[type="date"]::-webkit-datetime-edit { color: rgba(0,0,0,0.5); }
+        input[type="date"]::-webkit-datetime-edit-fields-wrapper { color: rgba(0,0,0,0.5); }
+        input[type="date"].has-value::-webkit-datetime-edit,
+        input[type="date"].has-value::-webkit-datetime-edit-fields-wrapper { color: #000000; }
+      `}</style>
+      <section id="kapcsolat" className="bg-white py-10 md:py-12 px-6">
       <div className="max-w-5xl mx-auto">
 
         {/* Mobil fejléc + kép */}
@@ -126,7 +133,7 @@ export default function Contact() {
                 <input required type="text" value={nev} onChange={(e) => setNev(e.target.value)} className={inputClass} placeholder="Teljes név *" />
                 <input required type="email" value={email} onChange={(e) => setEmail(e.target.value)} className={inputClass} placeholder="Email cím *" />
                 <input required type="tel" value={telefon} onChange={(e) => setTelefon(e.target.value)} className={inputClass} placeholder="Telefonszám *" />
-                <input required type="date" value={datum} onChange={(e) => setDatum(e.target.value)} className={inputClass} style={{ color: datum ? "#363025" : "rgba(54,48,37,0.75)" }} />
+                <input required type="date" value={datum} onChange={(e) => setDatum(e.target.value)} className={`${inputClass} ${datum ? "has-value" : ""}`} />
                 <input type="text" inputMode="numeric" value={letszam} onChange={(e) => setLetszam(e.target.value)} className={inputClass} placeholder="Vendégek létszáma" />
                 <select required value={szolgaltatas} onChange={(e) => setSzolgaltatas(e.target.value)} className={`${inputClass} cursor-pointer`} style={{ color: szolgaltatas ? "#363025" : "rgba(54,48,37,0.5)" }}>
                   <option value="" disabled>Szolgáltatás *</option>
@@ -162,5 +169,6 @@ export default function Contact() {
         </div>
       </div>
     </section>
+    </>
   );
 }
