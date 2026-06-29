@@ -36,11 +36,11 @@ export default function Referenciak() {
           <h2 className="font-[family-name:var(--font-cormorant)] text-5xl md:text-7xl font-light text-white mb-4 leading-tight tracking-[-0.02em]">
             Váltsuk valóra álmaitok esküvőjét!
           </h2>
-          <p className="font-[family-name:var(--font-quicksand)] text-white text-[16px] mb-4 max-w-xl">
+          <p className="font-[family-name:var(--font-quicksand)] text-white text-[16px] mb-10 max-w-xl">
             Kezdjük el a szervezést, és alkossunk meg valami igazán különlegeset.
           </p>
 
-          <a
+          <
             href="/kapcsolat"
             className="inline-block border border-white text-white font-[family-name:var(--font-nunito)] text-[11px] tracking-[0.25em] uppercase px-12 py-4 hover:bg-white hover:text-[#363025] transition-all duration-300"
           >
