@@ -25,7 +25,7 @@ const services = [
       "Ingyenes első konzultáció — Egy személyes vagy online találkozó során megismerjük egymást, és átbeszéljük az elképzeléseiteket.",
       "Ajánlatadás — Az igényeitek alapján személyre szabott ajánlatot készítek.",
       "Helyszínkeresés és helyszínbejárások egyeztetése — Segítek megtalálni a számotokra tökéletes helyszínt, és egyeztetem a bejárásokat.",
-      "Szolgáltatók ajánlása és szerződtetése — Az esküvőtök minden területére megbízható szolgáltatókat ajánlok, hogy a legjobb csapat segítse a napotokat.",
+      "Megbízható szolgáltatók ajánlása és szerződtetése — Az esküvőtök minden területére megbízható szolgáltatókat ajánlok, hogy a legjobb csapat segítse a napotokat.",
       "Szolgáltatói találkozók leszervezése — A szolgáltatókkal való találkozókat leszervezem, és minden alkalommal mellettetek leszek, legyen az személyesen vagy online.",
       "Koncepció és stílus kidolgozása — Segítek megtalálni a hozzátok illő színeket, tematikát és hangulatot.",
       "Folyamatos kapcsolattartás — A szervezés teljes ideje alatt veletek és a szolgáltatókkal is folyamatosan tartom a kapcsolatot.",
