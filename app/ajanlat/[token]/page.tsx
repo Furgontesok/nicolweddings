@@ -206,7 +206,7 @@ export default async function AjanlatPage({ params }: { params: Promise<{ token:
       </section>
 
       {/* 2. Üdvözlő */}
-      <section className="max-w-2xl mx-auto py-24 px-8 text-center">
+      <section className="max-w-2xl mx-auto pt-14 pb-24 px-8 text-center">
         <p className="font-[family-name:var(--font-nunito)] text-[12px] tracking-[0.4em] uppercase text-[#363025]/30 mb-8">
           Gratulálok az eljegyzésetekhez!
         </p>
