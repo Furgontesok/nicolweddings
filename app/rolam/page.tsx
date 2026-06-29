@@ -21,7 +21,7 @@ export default function Rolam() {
             alt="Rólam"
             fill
             className="object-cover"
-            style={{ objectPosition: "center 50%" }}
+            style={{ objectPosition: "center 75%" }}
             sizes="100vw"
             priority
           />
