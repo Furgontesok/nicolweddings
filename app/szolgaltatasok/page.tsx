@@ -20,7 +20,7 @@ const services = [
   {
     num: "01",
     title: "Teljes körű esküvőszervezés",
-    desc: "Egy esküvő szervezése tele van izgalommal, álmodozással és rengeteg döntéssel. Olyan részletek is fontossá válnak, amikre talán elsőre nem is gondolnátok, mégis ezek adják meg azt a különleges, személyes hangulatot, amitől a nap valóban rólatok szól.\nUgyanakkor a sok egyeztetés, időzítés és feladat könnyen feszültté teheti az előkészületeket.\nÉppen ezért jó, ha van mellettetek valaki, aki nemcsak tapasztalattal és jó ötletekkel segít, hanem végigkísér a szervezési folyamaton. Így Ti arra koncentrálhattok, ami a legfontosabb: egymásra és az élményre.",
+    desc: "Egy esküvő szervezése tele van izgalommal, álmodozással és rengeteg döntéssel. Olyan részletek is fontossá válnak, amikre talán elsőre nem is gondolnátok, mégis ezek adják meg azt a különleges, személyes hangulatot, amitől a nap valóban rólatok szól. Ugyanakkor a sok egyeztetés, időzítés és feladat könnyen feszültté teheti az előkészületeket.\nÉppen ezért jó, ha van mellettetek valaki, aki nemcsak tapasztalattal és jó ötletekkel segít, hanem végigkísér a szervezési folyamaton. Így Ti arra koncentrálhattok, ami a legfontosabb: egymásra és az élményre.",
     items: [
       "Ingyenes első konzultáció — Egy személyes vagy online találkozó során megismerjük egymást, és átbeszéljük az elképzeléseiteket.",
       "Ajánlatadás — Az igényeitek alapján személyre szabott ajánlatot készítek.",
