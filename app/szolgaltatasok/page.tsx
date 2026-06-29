@@ -139,17 +139,16 @@ function ServiceItem({ s, i }: { s: typeof services[0]; i: number }) {
 
         {/* Jobb: szám + cím + leírás */}
         <div className="flex-1 flex flex-col">
-          <p className="font-[family-name:var(--font-nunito)] text-[10px] tracking-[0.3em] uppercase text-[#363025]/35 mb-3 select-none">
+          <p className="font-[family-name:var(--font-cormorant)] text-[#363025]/20 text-6xl font-light leading-none mb-2 select-none">
             {s.num}
           </p>
-          <h2 className="font-[family-name:var(--font-cormorant)] text-4xl md:text-5xl font-light text-[#363025] leading-tight mb-4">
+          <h2 className="font-[family-name:var(--font-cormorant)] text-4xl md:text-5xl font-light text-[#363025] leading-tight mb-8">
             {s.title}
           </h2>
-          <div className="w-8 h-px bg-[#363025]/20 mb-4" />
-          <p className="font-[family-name:var(--font-quicksand)] text-[#363025]/65 text-[14px] leading-[1.9]">
+          <p className="font-[family-name:var(--font-quicksand)] text-[#363025]/65 text-[15px] leading-[1.9]">
             {s.desc}
           </p>
-          <div className="flex justify-end mt-6">
+          <div className="flex justify-end mt-8">
             <a
               href="/kapcsolat"
               className="group/btn2 relative inline-flex items-center border border-[#363025]/40 text-[#363025] font-[family-name:var(--font-nunito)] text-[11px] tracking-[0.25em] uppercase px-12 py-4 overflow-hidden hover:border-[#363025] transition-colors duration-300"
