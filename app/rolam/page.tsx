@@ -213,7 +213,7 @@ export default function Rolam() {
       </section>
 
       {/* ── CTA ── */}
-      <section className="relative w-full overflow-hidden" style={{ height: "70vh", minHeight: 420 }}>
+      <section className="relative py-28 px-6 text-center overflow-hidden">
         <Image
           src="/images/rolam-hosszu-kep.jpg"
           alt="Esküvői háttér"
@@ -221,17 +221,17 @@ export default function Rolam() {
           className="object-cover object-bottom"
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-black/40" />
-        <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-6">
-          <h2 className="font-[family-name:var(--font-cormorant)] text-5xl md:text-7xl font-light text-white mb-4 leading-tight tracking-[-0.02em]">
+        <div className="absolute inset-0 bg-black/55" />
+        <div className="relative z-10">
+          <h2 className="font-[family-name:var(--font-italianno)] text-5xl md:text-6xl text-white mb-4 leading-tight">
             Tegyük együtt felejthetetlenné a napotokat!
           </h2>
-          <p className="font-[family-name:var(--font-quicksand)] text-white text-[16px] mb-10 max-w-xl mx-auto">
+          <p className="font-[family-name:var(--font-quicksand)] text-white/70 text-sm mb-10 max-w-md mx-auto">
             Vedd fel velem a kapcsolatot, és kezdjük el a szervezést.
           </p>
           <a
             href="/kapcsolat"
-            className="inline-block border border-white text-white font-[family-name:var(--font-nunito)] text-[11px] tracking-[0.25em] uppercase px-12 py-4 hover:bg-white hover:text-[#363025] transition-all duration-300"
+            className="inline-block border border-white/60 text-white font-[family-name:var(--font-nunito)] text-[11px] tracking-[0.25em] uppercase px-12 py-4 hover:bg-white hover:text-[#363025] transition-all duration-300"
           >
             Keress bizalommal
           </a>
