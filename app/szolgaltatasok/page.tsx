@@ -302,7 +302,7 @@ export default function Szolgaltatasok() {
 
         {/* Felirat — a gradient zónában */}
         <div className="text-center relative z-10 -mt-[2.5rem] pb-4">
-          <h1 className="font-[family-name:var(--font-cormorant)] text-5xl md:text-[6.3rem] font-light text-[#363025] tracking-[0.01em] uppercase">SZOLGÁLTATÁSOK</h1>
+          <h1 className="font-[family-name:var(--font-cormorant)] text-4xl md:text-[6.3rem] font-light text-[#363025] tracking-[0.01em] uppercase">SZOLGÁLTATÁSOK</h1>
         </div>
       </div>
 
