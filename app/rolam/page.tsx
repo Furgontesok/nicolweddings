@@ -150,7 +150,7 @@ export default function Rolam() {
           <div className="shrink-0 md:w-[35%]">
             <div className="relative w-full overflow-hidden" style={{ aspectRatio: "3/4" }}>
               <Image
-                src="/images/nicol-roli-1.jpg"
+                src="/images/betti-levi-10.jpg"
                 alt="Esküvői dekoráció"
                 fill
                 className="object-cover object-center"
