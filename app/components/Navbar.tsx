@@ -95,9 +95,9 @@ export default function Navbar() {
           className="flex flex-col gap-1.5 p-2"
           aria-label="Menü"
         >
-          <span className={`block w-6 h-0.5 bg-[#363025] transition-all duration-300 ${open ? "rotate-45 translate-y-2" : ""}`} />
-          <span className={`block w-6 h-0.5 bg-[#363025] transition-all duration-300 ${open ? "opacity-0" : ""}`} />
-          <span className={`block w-6 h-0.5 bg-[#363025] transition-all duration-300 ${open ? "-rotate-45 -translate-y-2" : ""}`} />
+          <span className={`block w-8 h-0.5 bg-[#363025] transition-all duration-300 ${open ? "rotate-45 translate-y-2" : ""}`} />
+          <span className={`block w-8 h-0.5 bg-[#363025] transition-all duration-300 ${open ? "opacity-0" : ""}`} />
+          <span className={`block w-8 h-0.5 bg-[#363025] transition-all duration-300 ${open ? "-rotate-45 -translate-y-2" : ""}`} />
         </button>
       </div>
 
