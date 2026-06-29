@@ -125,16 +125,14 @@ export default function Rolam() {
 
       {/* ── Amiben hiszek ── */}
       <section className="bg-[#F5F3ED] py-12 px-6">
-        <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-start gap-10">
-          <div className="md:w-[58%] pt-2">
+        <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-start gap-12">
+          <div className="flex-1 pt-2">
             <p className="font-[family-name:var(--font-cormorant)] text-[#363025]/40 text-xl italic mb-5">
               amiben hiszek
             </p>
-            <h2 className="font-[family-name:var(--font-cormorant)] text-[#363025] text-4xl md:text-[46px] font-light leading-none italic">
+            <h2 className="font-[family-name:var(--font-cormorant)] text-[#363025] text-4xl md:text-[46px] font-light leading-none italic mb-8">
               Ez nem csupán egy esküvő, hanem az örökkévalóságotok első fejezete.
             </h2>
-          </div>
-          <div className="md:w-[42%] pt-4 md:pt-8">
             <div className="font-[family-name:var(--font-quicksand)] text-[#363025]/65 leading-relaxed text-[15px] space-y-4">
               <p>
                 Hiszek abban, hogy minden esküvő egyedi, és a párok történetéhez kell illeszkednie. Számomra ugyanolyan fontosak az apró részletek, mint a nagy pillanatok, mert ezek együtt teszik a napot harmonikussá és felejthetetlenné.
@@ -147,6 +145,17 @@ export default function Rolam() {
             <p className="font-[family-name:var(--font-cormorant)] text-[#363025] text-xl font-light italic">
               Ez az, amiért a Nicol Weddings & Events több, mint egy szervezői szolgáltatás.
             </p>
+          </div>
+          <div className="shrink-0 md:w-[35%]">
+            <div className="relative w-full overflow-hidden" style={{ aspectRatio: "3/4" }}>
+              <Image
+                src="/images/egyeb-9.jpg"
+                alt="Menyasszony"
+                fill
+                className="object-cover object-center"
+                sizes="35vw"
+              />
+            </div>
           </div>
         </div>
       </section>
