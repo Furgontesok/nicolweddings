@@ -122,7 +122,7 @@ function ServiceItem({ s, i }: { s: typeof services[0]; i: number }) {
 
   return (
     <div id={`service-${s.num}`} className="border-t border-[#D6D6C9]">
-      <div className="py-8 flex flex-col md:flex-row gap-12">
+      <div className="py-8 flex flex-col md:flex-row gap-4 md:gap-12">
 
         {/* Bal: álló kép + szám */}
         <div className="shrink-0 md:w-[40%]">
@@ -139,7 +139,7 @@ function ServiceItem({ s, i }: { s: typeof services[0]; i: number }) {
 
         {/* Jobb: szám + cím + leírás */}
         <div className="flex-1 flex flex-col">
-          <p className="font-[family-name:var(--font-cormorant)] text-[#363025]/20 text-6xl font-light leading-none mb-4 select-none">
+          <p className="font-[family-name:var(--font-cormorant)] text-[#363025]/20 text-6xl font-light leading-none mb-2 select-none">
             {s.num}
           </p>
           <h2 className="font-[family-name:var(--font-cormorant)] text-4xl md:text-5xl font-light text-[#363025] leading-tight mb-8">
