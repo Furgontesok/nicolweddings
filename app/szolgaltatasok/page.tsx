@@ -242,13 +242,21 @@ export default function Szolgaltatasok() {
       <NavbarSimple />
 
       {/* Hero — folyamatos CSS scroll */}
-      {/* 8 kép × 28vw = 224vw → animáció végpontja */}
+      {/* 8 kép × 28vw = 224vw desktop, 8 kép × 60vw = 480vw mobil */}
       <style>{`
-        @keyframes marquee {
+        @keyframes marquee-desktop {
           from { transform: translateX(0); }
           to   { transform: translateX(-224vw); }
         }
-        .hero-marquee { animation: marquee 55s linear infinite; }
+        @keyframes marquee-mobile {
+          from { transform: translateX(0); }
+          to   { transform: translateX(-480vw); }
+        }
+        .hero-marquee { animation: marquee-desktop 55s linear infinite; }
+        @media (max-width: 767px) {
+          .hero-marquee { animation: marquee-mobile 55s linear infinite; }
+          .hero-img-wrap { width: 60vw !important; }
+        }
       `}</style>
 
       <div className="pt-16 bg-[#F5F3ED]">
@@ -258,7 +266,7 @@ export default function Szolgaltatasok() {
             {[...heroImages, ...heroImages].map((src, i) => (
               <div
                 key={i}
-                className="relative h-full flex-shrink-0"
+                className="hero-img-wrap relative h-full flex-shrink-0"
                 style={{ width: "28vw" }}
               >
                 <Image
@@ -266,7 +274,7 @@ export default function Szolgaltatasok() {
                   alt="Esküvői fotó"
                   fill
                   className="object-cover object-center"
-                  sizes="28vw"
+                  sizes="(max-width: 767px) 60vw, 28vw"
                   priority={i < 4}
                 />
               </div>
