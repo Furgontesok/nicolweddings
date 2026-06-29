@@ -128,7 +128,7 @@ export default function Rolam() {
       <section className="bg-[#F5F3ED] py-12 px-6">
         <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-start gap-12">
           <div className="flex-1 pt-2">
-            <p className="font-[family-name:var(--font-cormorant)] text-[#363025]/40 text-xl italic mb-5">
+            <p className="font-[family-name:var(--font-nunito)] text-[10px] tracking-[0.3em] uppercase text-[#363025]/50 mb-5">
               amiben hiszek
             </p>
             <h2 className="font-[family-name:var(--font-cormorant)] text-[#363025] text-4xl md:text-[46px] font-light leading-none italic mb-8">
