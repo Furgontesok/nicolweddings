@@ -283,7 +283,7 @@ export default function Szolgaltatasok() {
           </div>
 
           {/* Mobil: 1 sor */}
-          <div className="md:hidden" style={{ height: "25vh", minHeight: 160 }}>
+          <div className="md:hidden" style={{ height: "35vh", minHeight: 200 }}>
             <div className="hero-row-1 flex h-full">
               {[...heroImages, ...heroImages].map((src, i) => (
                 <div key={i} className="hero-img-wrap relative flex-shrink-0 h-full" style={{ width: "55vw" }}>
