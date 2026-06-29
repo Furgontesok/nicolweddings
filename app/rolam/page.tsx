@@ -37,34 +37,6 @@ export default function Rolam() {
         </div>
       </div>
 
-      {/* ── Amiben hiszek ── */}
-      <section className="bg-[#F5F3ED] py-20 px-6">
-        <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-start gap-10">
-          <div className="md:w-[58%] pt-2">
-            <p className="font-[family-name:var(--font-cormorant)] text-[#363025]/40 text-xl italic mb-5">
-              amiben hiszek
-            </p>
-            <h2 className="font-[family-name:var(--font-cormorant)] text-[#363025] text-4xl md:text-[46px] font-light leading-none italic">
-              Ez nem csupán egy esküvő, hanem az örökkévalóságotok első fejezete.
-            </h2>
-          </div>
-          <div className="md:w-[42%] pt-4 md:pt-8">
-            <div className="font-[family-name:var(--font-quicksand)] text-[#363025]/65 leading-relaxed text-[15px] space-y-4">
-              <p>
-                Hiszek abban, hogy minden esküvő egyedi, és a párok történetéhez kell illeszkednie. Számomra ugyanolyan fontosak az apró részletek, mint a nagy pillanatok, mert ezek együtt teszik a napot harmonikussá és felejthetetlenné.
-              </p>
-              <p>
-                A saját esküvőm szervezése közben tanultam meg igazán, mennyit számít egy támogató, nyugodt jelenlét a háttérben. Ezért ma már nemcsak szervezőként, hanem biztonságot adó társaként kísérem végig a párokat – a legelső ötlettől az utolsó táncig.
-              </p>
-            </div>
-            <div className="w-10 h-px bg-[#363025]/20 mt-7 mb-5" />
-            <p className="font-[family-name:var(--font-cormorant)] text-[#363025] text-xl font-light italic">
-              Ez az, amiért a Nicol Weddings & Events több, mint egy szervezői szolgáltatás.
-            </p>
-          </div>
-        </div>
-      </section>
-
       {/* ── Bemutatkozás: szöveg bal + portré jobb ── */}
       <section className="bg-[#F5F3ED] py-20 px-6">
         <div className="max-w-5xl mx-auto flex flex-col md:flex-row-reverse gap-14 items-start">
@@ -147,6 +119,34 @@ export default function Rolam() {
                 Számomra a legfontosabb, hogy ne csak megszervezzem a napotokat, hanem valódi támaszotok legyek. Egy nyugodt jelenlét a kulisszák mögött, aki gondoskodik arról, hogy Ti csak megéljétek a pillanatot.
               </p>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Amiben hiszek ── */}
+      <section className="bg-[#F5F3ED] py-20 px-6">
+        <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-start gap-10">
+          <div className="md:w-[58%] pt-2">
+            <p className="font-[family-name:var(--font-cormorant)] text-[#363025]/40 text-xl italic mb-5">
+              amiben hiszek
+            </p>
+            <h2 className="font-[family-name:var(--font-cormorant)] text-[#363025] text-4xl md:text-[46px] font-light leading-none italic">
+              Ez nem csupán egy esküvő, hanem az örökkévalóságotok első fejezete.
+            </h2>
+          </div>
+          <div className="md:w-[42%] pt-4 md:pt-8">
+            <div className="font-[family-name:var(--font-quicksand)] text-[#363025]/65 leading-relaxed text-[15px] space-y-4">
+              <p>
+                Hiszek abban, hogy minden esküvő egyedi, és a párok történetéhez kell illeszkednie. Számomra ugyanolyan fontosak az apró részletek, mint a nagy pillanatok, mert ezek együtt teszik a napot harmonikussá és felejthetetlenné.
+              </p>
+              <p>
+                A saját esküvőm szervezése közben tanultam meg igazán, mennyit számít egy támogató, nyugodt jelenlét a háttérben. Ezért ma már nemcsak szervezőként, hanem biztonságot adó társaként kísérem végig a párokat – a legelső ötlettől az utolsó táncig.
+              </p>
+            </div>
+            <div className="w-10 h-px bg-[#363025]/20 mt-7 mb-5" />
+            <p className="font-[family-name:var(--font-cormorant)] text-[#363025] text-xl font-light italic">
+              Ez az, amiért a Nicol Weddings & Events több, mint egy szervezői szolgáltatás.
+            </p>
           </div>
         </div>
       </section>
