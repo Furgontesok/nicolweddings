@@ -38,7 +38,7 @@ export default function Rolam() {
       </div>
 
       {/* ── Bemutatkozás: szöveg bal + portré jobb ── */}
-      <section className="bg-[#F5F3ED] py-20 px-6">
+      <section className="bg-[#F5F3ED] py-12 px-6">
         <div className="max-w-5xl mx-auto flex flex-col md:flex-row-reverse gap-14 items-start">
 
           {/* Portré */}
@@ -88,7 +88,7 @@ export default function Rolam() {
       </section>
 
       {/* ── 2024 történet: kép bal + szöveg jobb ── */}
-      <section className="bg-[#F5F3ED] py-20 px-6">
+      <section className="bg-[#F5F3ED] py-12 px-6">
         <div className="max-w-5xl mx-auto flex flex-col md:flex-row gap-14 items-center">
 
           <div className="shrink-0 md:w-[42%]">
@@ -124,7 +124,7 @@ export default function Rolam() {
       </section>
 
       {/* ── Amiben hiszek ── */}
-      <section className="bg-[#F5F3ED] py-20 px-6">
+      <section className="bg-[#F5F3ED] py-12 px-6">
         <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-start gap-10">
           <div className="md:w-[58%] pt-2">
             <p className="font-[family-name:var(--font-cormorant)] text-[#363025]/40 text-xl italic mb-5">
@@ -152,7 +152,7 @@ export default function Rolam() {
       </section>
 
       {/* ── Érdekességek rólam ── */}
-      <section className="bg-[#EDEDE1] py-20 px-6">
+      <section className="bg-[#EDEDE1] py-12 px-6">
         <div className="max-w-5xl mx-auto">
 
           {/* Fejléc: ovális kép + cím */}
