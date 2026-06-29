@@ -126,7 +126,7 @@ export default function Contact() {
                 <input required type="text" value={nev} onChange={(e) => setNev(e.target.value)} className={inputClass} placeholder="Teljes név *" />
                 <input required type="email" value={email} onChange={(e) => setEmail(e.target.value)} className={inputClass} placeholder="Email cím *" />
                 <input required type="tel" value={telefon} onChange={(e) => setTelefon(e.target.value)} className={inputClass} placeholder="Telefonszám *" />
-                <input required type="date" value={datum} onChange={(e) => setDatum(e.target.value)} className={inputClass} style={{ color: datum ? "#363025" : "rgba(54,48,37,0.5)" }} />
+                <input required type="date" value={datum} onChange={(e) => setDatum(e.target.value)} className={inputClass} style={{ color: datum ? "#363025" : "rgba(54,48,37,0.75)" }} />
                 <input type="text" inputMode="numeric" value={letszam} onChange={(e) => setLetszam(e.target.value)} className={inputClass} placeholder="Vendégek létszáma" />
                 <select required value={szolgaltatas} onChange={(e) => setSzolgaltatas(e.target.value)} className={`${inputClass} cursor-pointer`} style={{ color: szolgaltatas ? "#363025" : "rgba(54,48,37,0.5)" }}>
                   <option value="" disabled>Szolgáltatás *</option>

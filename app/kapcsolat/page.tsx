@@ -127,7 +127,7 @@ export default function Kapcsolat() {
                   value={datum}
                   onChange={(e) => setDatum(e.target.value)}
                   className={inputClass}
-                  style={{ color: datum ? "#000000" : "rgba(0,0,0,0.5)" }}
+                  style={{ color: datum ? "#000000" : "rgba(0,0,0,0.75)" }}
                 />
 
                 <input
