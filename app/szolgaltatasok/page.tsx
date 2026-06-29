@@ -38,7 +38,7 @@ const services = [
   {
     num: "02",
     title: "30 nap a nagy napig",
-    desc: "Az 1 hónapos esküvői koordináció tökéletes választás azoknak a pároknak, akik saját maguk szervezik az esküvőt, de a nagy napra szeretnének egy tapasztalt szakembert maguk mellé.\nAz esküvő előtti utolsó hónapban kapcsolódom be: segítek a részletes forgatókönyv összeállításában, egyeztetek a szolgáltatókkal és koordinálom a feladatokat.\nA nagy napon végig jelen vagyok a helyszínen, figyelem a menetrendet, kezelem a felmerülő helyzeteket, és gondoskodom róla, hogy minden a terveitek szerint alakuljon. Így Ti valóban megélhetitek a pillanatot, miközben én a háttérből gondoskodom a zavartalan lebonyolításról.",
+    desc: "Az 1 hónapos esküvői koordináció tökéletes választás azoknak a pároknak, akik saját maguk szervezik az esküvőt, de a nagy napra szeretnének egy tapasztalt szakembert maguk mellé. Az esküvő előtti utolsó hónapban kapcsolódom be: segítek a részletes forgatókönyv összeállításában, egyeztetek a szolgáltatókkal és koordinálom a feladatokat. A nagy napon végig jelen vagyok a helyszínen, figyelem a menetrendet, kezelem a felmerülő helyzeteket, és gondoskodom róla, hogy minden a terveitek szerint alakuljon. Így Ti valóban megélhetitek a pillanatot, miközben én a háttérből gondoskodom a zavartalan lebonyolításról.",
     items: [
       "Első konzultáció — Egy személyes vagy online találkozó során megismerkedünk és átbeszéljük az esküvőtök főbb elképzeléseit.",
       "Ajánlatadás — Az ajánlat elfogadása után kezdetét veszi a közös munka.",
