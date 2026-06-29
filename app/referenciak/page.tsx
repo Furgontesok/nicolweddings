@@ -40,7 +40,7 @@ export default function Referenciak() {
             Kezdjük el a szervezést, és alkossunk meg valami igazán különlegeset.
           </p>
 
-          <
+          <a
             href="/kapcsolat"
             className="inline-block border border-white text-white font-[family-name:var(--font-nunito)] text-[11px] tracking-[0.25em] uppercase px-12 py-4 hover:bg-white hover:text-[#363025] transition-all duration-300"
           >
