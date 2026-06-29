@@ -147,7 +147,7 @@ export default function Rolam() {
               Ez az, amiért a Nicol Weddings & Events több, mint egy szervezői szolgáltatás.
             </p>
           </div>
-          <div className="shrink-0 md:w-[42%]">
+          <div className="shrink-0 md:w-[35%]">
             <div className="relative w-full overflow-hidden" style={{ aspectRatio: "3/4" }}>
               <Image
                 src="/images/nicol-roli-1.jpg"
