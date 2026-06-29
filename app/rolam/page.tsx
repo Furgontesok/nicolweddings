@@ -94,7 +94,7 @@ export default function Rolam() {
           <div className="shrink-0 md:w-[42%]">
             <div className="relative w-full overflow-hidden" style={{ aspectRatio: "4/5" }}>
               <Image
-                src="/images/nicol-roli-19.jpg"
+                src="/images/nicol-roli-21.jpg"
                 alt="Nicol és Roli esküvője"
                 fill
                 className="object-cover object-center"
