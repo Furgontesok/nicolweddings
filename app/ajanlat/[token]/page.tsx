@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import { createClient } from "@supabase/supabase-js";
+import AjanlatAccept from "./AjanlatAccept";
 
 const services = {
   teljes: {
@@ -301,7 +302,21 @@ export default async function AjanlatPage({ params }: { params: Promise<{ token:
         </div>
       </section>
 
-      {/* 6. Zárólap */}
+      {/* 6. Elfogadás */}
+      <AjanlatAccept
+        token={token}
+        packages={
+          isEgyeb
+            ? (p.price_egyeb ? [{ key: "egyeb", title: services.egyeb.title, price: p.price_egyeb }] : [])
+            : [
+                ...(p.price_teljes ? [{ key: "teljes", title: services.teljes.title, price: p.price_teljes }] : []),
+                ...(p.price_30nap ? [{ key: "30nap", title: services["30nap"].title, price: p.price_30nap }] : []),
+                ...(p.price_tanacsadas ? [{ key: "tanacsadas", title: services.tanacsadas.title, price: p.price_tanacsadas }] : []),
+              ]
+        }
+      />
+
+      {/* 7. Zárólap */}
       <section className="bg-[#363025] pt-12 pb-16 px-8">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row gap-12 items-stretch">
 
