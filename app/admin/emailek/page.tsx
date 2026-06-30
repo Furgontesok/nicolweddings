@@ -27,6 +27,12 @@ export default function AdminEmailek() {
     navigator.clipboard.writeText(text);
   };
 
+  const deleteEmail = async (id: string) => {
+    if (!supabase || !confirm("Biztosan törlöd?")) return;
+    await supabase.from("ebook_downloads").delete().eq("id", id);
+    setEmails(prev => prev.filter(e => e.id !== id));
+  };
+
   return (
     <div className="p-10">
       <div className="flex items-end justify-between mb-10">
@@ -82,18 +88,25 @@ export default function AdminEmailek() {
 
       {supabaseConfigured && !loading && emails.length > 0 && (
         <div className="bg-white border border-[#363025]/8">
-          <div className="grid grid-cols-3 px-6 py-3 border-b border-[#363025]/8">
+          <div className="grid grid-cols-4 px-6 py-3 border-b border-[#363025]/8">
             <span className="font-[family-name:var(--font-nunito)] text-[9px] tracking-[0.25em] uppercase text-[#363025]/35">E-mail</span>
             <span className="font-[family-name:var(--font-nunito)] text-[9px] tracking-[0.25em] uppercase text-[#363025]/35">Név</span>
             <span className="font-[family-name:var(--font-nunito)] text-[9px] tracking-[0.25em] uppercase text-[#363025]/35">Dátum</span>
+            <span />
           </div>
           {emails.map((row) => (
-            <div key={row.id} className="grid grid-cols-3 px-6 py-4 border-b border-[#363025]/5 hover:bg-[#F5F3ED]/50 transition-colors">
+            <div key={row.id} className="grid grid-cols-4 px-6 py-4 border-b border-[#363025]/5 hover:bg-[#F5F3ED]/50 transition-colors items-center">
               <span className="font-[family-name:var(--font-nunito)] text-[12px] text-[#363025]">{row.email}</span>
               <span className="font-[family-name:var(--font-nunito)] text-[12px] text-[#363025]/60">{row.name ?? "—"}</span>
               <span className="font-[family-name:var(--font-nunito)] text-[11px] text-[#363025]/40">
                 {new Date(row.downloaded_at).toLocaleDateString("hu-HU")}
               </span>
+              <div className="flex justify-end">
+                <button onClick={() => deleteEmail(row.id)}
+                  className="font-[family-name:var(--font-nunito)] text-[10px] tracking-widest uppercase text-red-400/40 hover:text-red-500 transition-colors">
+                  Törlés
+                </button>
+              </div>
             </div>
           ))}
           <div className="px-6 py-3 border-t border-[#363025]/8">
