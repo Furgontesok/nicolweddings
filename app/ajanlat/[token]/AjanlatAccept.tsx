@@ -25,6 +25,7 @@ export default function AjanlatAccept({ token, packages }: Props) {
   const [lakcim, setLakcim] = useState("");
   const [telefon, setTelefon] = useState("");
   const [email, setEmail] = useState("");
+  const [megjegyzes, setMegjegyzes] = useState("");
   const [sent, setSent] = useState(false);
   const [loading, setLoading] = useState(false);
 
@@ -42,6 +43,7 @@ export default function AjanlatAccept({ token, packages }: Props) {
         lakcim,
         telefon,
         email,
+        megjegyzes,
       });
     }
     setSent(true);
@@ -142,6 +144,10 @@ export default function AjanlatAccept({ token, packages }: Props) {
                   className={inputClass} placeholder="Telefonszám *" />
                 <input required type="email" value={email} onChange={(e) => setEmail(e.target.value)}
                   className={inputClass} placeholder="E-mail cím *" />
+                <textarea value={megjegyzes} onChange={(e) => setMegjegyzes(e.target.value)}
+                  className={`${inputClass} resize-none normal-case tracking-normal`}
+                  rows={3}
+                  placeholder="Megjegyzés (opcionális)" />
               </div>
             </div>
 
