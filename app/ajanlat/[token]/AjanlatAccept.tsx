@@ -78,7 +78,7 @@ export default function AjanlatAccept({ token, packages }: Props) {
           <button
             onClick={() => setOpen(true)}
             disabled={open}
-            className="bg-[#363025] text-white font-[family-name:var(--font-nunito)] text-[11px] tracking-[0.3em] uppercase px-16 py-4 hover:bg-[#363025]/80 transition-colors duration-300 disabled:pointer-events-none disabled:opacity-0"
+            className="bg-[#EEECEA] text-[#363025] font-[family-name:var(--font-nunito)] text-[11px] tracking-[0.3em] uppercase px-28 py-4 hover:bg-[#363025] hover:text-white transition-colors duration-300 disabled:pointer-events-none disabled:opacity-0"
           >
             Elfogadom
           </button>
