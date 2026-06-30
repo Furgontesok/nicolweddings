@@ -7,6 +7,7 @@ const navLinks = [
   { label: "Referenciák", href: "/referenciak" },
   { label: "Kapcsolat", href: "/kapcsolat" },
   { label: "Blog", href: "/blog" },
+  { label: "GYIK", href: "/gyik" },
 ];
 
 const igPreviews = [
