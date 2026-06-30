@@ -78,12 +78,9 @@ export default function AjanlatAccept({ token, packages }: Props) {
           <button
             onClick={() => setOpen(true)}
             disabled={open}
-            className="group relative inline-block border border-[#363025]/40 text-[#363025] px-16 py-5 overflow-hidden transition-all duration-500 hover:border-[#363025] disabled:pointer-events-none disabled:opacity-0"
+            className="bg-[#363025] text-white font-[family-name:var(--font-nunito)] text-[11px] tracking-[0.3em] uppercase px-16 py-4 hover:bg-[#363025]/80 transition-colors duration-300 disabled:pointer-events-none disabled:opacity-0"
           >
-            <span className="absolute inset-0 bg-[#363025] translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-in-out" />
-            <span className="relative font-[family-name:var(--font-nunito)] text-[11px] tracking-[0.35em] uppercase transition-colors duration-500 group-hover:text-white">
-              Elfogadom
-            </span>
+            Elfogadom
           </button>
         </div>
 
