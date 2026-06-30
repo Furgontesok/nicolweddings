@@ -65,101 +65,130 @@ export default function AjanlatAccept({ token, packages }: Props) {
     <section className="bg-[#F5F3ED] py-20 px-8">
       <div className="max-w-xl mx-auto">
 
-        {!open ? (
-          <div className="text-center">
-            <p className="font-[family-name:var(--font-nunito)] text-[12px] tracking-[0.4em] uppercase text-[#363025]/30 mb-6">
-              Döntésre jutottatok?
-            </p>
-            <h2 className="font-[family-name:var(--font-cormorant)] text-3xl md:text-4xl font-light text-[#363025] italic mb-10 leading-snug">
-              Elfogadom az ajánlatot
-            </h2>
-            <button
-              onClick={() => setOpen(true)}
-              className="inline-block bg-[#363025] text-white font-[family-name:var(--font-nunito)] text-[11px] tracking-[0.3em] uppercase px-14 py-4 hover:bg-[#363025]/80 transition-colors duration-300"
-            >
-              Elfogadom
-            </button>
-          </div>
-        ) : (
-          <form onSubmit={handleSubmit} className="space-y-6">
-            <div className="text-center mb-8">
-              <p className="font-[family-name:var(--font-nunito)] text-[12px] tracking-[0.4em] uppercase text-[#363025]/30 mb-3">
-                Ajánlat elfogadása
-              </p>
-              <div className="w-10 h-px bg-[#363025]/15 mx-auto" />
-            </div>
+        {/* Fejléc + gomb — mindig látszik */}
+        <div className="text-center mb-12">
+          <p className="font-[family-name:var(--font-nunito)] text-[11px] tracking-[0.45em] uppercase text-[#363025]/30 mb-5">
+            Döntésre jutottatok?
+          </p>
+          <h2 className="font-[family-name:var(--font-cormorant)] text-4xl md:text-5xl font-light text-[#363025] italic mb-10 leading-snug">
+            Elfogadom az ajánlatot
+          </h2>
 
-            {/* Csomag kiválasztása */}
-            {packages.length > 1 && (
+          {/* Gomb */}
+          <button
+            onClick={() => setOpen(true)}
+            disabled={open}
+            className="group relative inline-flex items-center gap-4 border border-[#363025]/40 text-[#363025] px-16 py-5 overflow-hidden transition-all duration-500 hover:border-[#363025] disabled:pointer-events-none disabled:opacity-0"
+          >
+            {/* Háttér sweep effekt */}
+            <span className="absolute inset-0 bg-[#363025] translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-in-out" />
+            <span className="relative font-[family-name:var(--font-nunito)] text-[11px] tracking-[0.35em] uppercase transition-colors duration-500 group-hover:text-white">
+              Elfogadom
+            </span>
+            <span className="relative text-[#363025]/30 group-hover:text-white/50 transition-colors duration-500 text-sm">
+              ↓
+            </span>
+          </button>
+        </div>
+
+        {/* Form — legördül */}
+        <div
+          style={{
+            maxHeight: open ? "2000px" : "0px",
+            opacity: open ? 1 : 0,
+            overflow: "hidden",
+            transition: open
+              ? "max-height 0.8s cubic-bezier(0.4,0,0.2,1), opacity 0.5s ease 0.15s"
+              : "max-height 0.4s ease, opacity 0.2s ease",
+          }}
+        >
+          <div className="pt-2 pb-2">
+            <div className="w-10 h-px bg-[#363025]/15 mx-auto mb-10" />
+
+            <form onSubmit={handleSubmit} className="space-y-6">
+              {/* Csomag kiválasztása */}
+              {packages.length > 1 && (
+                <div>
+                  <p className="font-[family-name:var(--font-nunito)] text-[10px] tracking-[0.35em] uppercase text-[#363025]/40 mb-3">
+                    Kért csomag *
+                  </p>
+                  <div className="space-y-2">
+                    {packages.map((pkg) => (
+                      <label
+                        key={pkg.key}
+                        className={`flex items-center justify-between gap-4 px-5 py-4 cursor-pointer transition-all duration-300 ${
+                          selectedPkg === pkg.key
+                            ? "bg-[#363025] text-white"
+                            : "bg-[#EEECEA] text-[#363025] hover:bg-[#E5E3E0]"
+                        }`}
+                      >
+                        <div className="flex items-center gap-3">
+                          <input
+                            type="radio"
+                            name="package"
+                            value={pkg.key}
+                            checked={selectedPkg === pkg.key}
+                            onChange={() => setSelectedPkg(pkg.key)}
+                            required
+                            className="sr-only"
+                          />
+                          <span
+                            className={`w-3 h-3 rounded-full border flex-shrink-0 transition-all duration-300 ${
+                              selectedPkg === pkg.key ? "bg-white border-white" : "border-[#363025]/30"
+                            }`}
+                          />
+                          <span className="font-[family-name:var(--font-nunito)] text-[11px] tracking-[0.15em] uppercase">
+                            {pkg.title}
+                          </span>
+                        </div>
+                        <span className="font-[family-name:var(--font-cormorant)] text-lg font-light shrink-0">
+                          {pkg.price}
+                        </span>
+                      </label>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {/* Személyes adatok */}
               <div>
-                <p className="font-[family-name:var(--font-nunito)] text-[11px] tracking-[0.3em] uppercase text-[#363025]/40 mb-3">
-                  Kért csomag *
+                <p className="font-[family-name:var(--font-nunito)] text-[10px] tracking-[0.35em] uppercase text-[#363025]/40 mb-3">
+                  Személyes adatok
                 </p>
                 <div className="space-y-2">
-                  {packages.map((pkg) => (
-                    <label
-                      key={pkg.key}
-                      className={`flex items-center justify-between gap-4 px-4 py-3 cursor-pointer transition-colors duration-200 ${
-                        selectedPkg === pkg.key ? "bg-[#363025] text-white" : "bg-[#EEECEA] text-[#363025]"
-                      }`}
-                    >
-                      <div className="flex items-center gap-3">
-                        <input
-                          type="radio"
-                          name="package"
-                          value={pkg.key}
-                          checked={selectedPkg === pkg.key}
-                          onChange={() => setSelectedPkg(pkg.key)}
-                          required
-                          className="sr-only"
-                        />
-                        <span className="font-[family-name:var(--font-nunito)] text-[11px] tracking-[0.15em] uppercase">
-                          {pkg.title}
-                        </span>
-                      </div>
-                      <span className="font-[family-name:var(--font-cormorant)] text-lg font-light shrink-0">
-                        {pkg.price}
-                      </span>
-                    </label>
-                  ))}
+                  <input required type="text" value={nev} onChange={(e) => setNev(e.target.value)}
+                    className={inputClass} placeholder="Teljes név *" />
+                  <input required type="text" value={szulHely} onChange={(e) => setSzulHely(e.target.value)}
+                    className={inputClass} placeholder="Születési hely *" />
+                  <input required type="date" value={szulIdo} onChange={(e) => setSzulIdo(e.target.value)}
+                    className={inputClass} />
+                  <input required type="text" value={lakcim} onChange={(e) => setLakcim(e.target.value)}
+                    className={inputClass} placeholder="Lakcím *" />
+                  <input required type="tel" value={telefon} onChange={(e) => setTelefon(e.target.value)}
+                    className={inputClass} placeholder="Telefonszám *" />
+                  <input required type="email" value={email} onChange={(e) => setEmail(e.target.value)}
+                    className={inputClass} placeholder="E-mail cím *" />
+                  <textarea value={megjegyzes} onChange={(e) => setMegjegyzes(e.target.value)}
+                    className={`${inputClass} resize-none normal-case tracking-normal`}
+                    rows={3}
+                    placeholder="Megjegyzés (opcionális)" />
                 </div>
               </div>
-            )}
 
-            {/* Személyes adatok */}
-            <div>
-              <p className="font-[family-name:var(--font-nunito)] text-[11px] tracking-[0.3em] uppercase text-[#363025]/40 mb-3">
-                Személyes adatok
-              </p>
-              <div className="space-y-2">
-                <input required type="text" value={nev} onChange={(e) => setNev(e.target.value)}
-                  className={inputClass} placeholder="Teljes név *" />
-                <input required type="text" value={szulHely} onChange={(e) => setSzulHely(e.target.value)}
-                  className={inputClass} placeholder="Születési hely *" />
-                <input required type="date" value={szulIdo} onChange={(e) => setSzulIdo(e.target.value)}
-                  className={inputClass} />
-                <input required type="text" value={lakcim} onChange={(e) => setLakcim(e.target.value)}
-                  className={inputClass} placeholder="Lakcím *" />
-                <input required type="tel" value={telefon} onChange={(e) => setTelefon(e.target.value)}
-                  className={inputClass} placeholder="Telefonszám *" />
-                <input required type="email" value={email} onChange={(e) => setEmail(e.target.value)}
-                  className={inputClass} placeholder="E-mail cím *" />
-                <textarea value={megjegyzes} onChange={(e) => setMegjegyzes(e.target.value)}
-                  className={`${inputClass} resize-none normal-case tracking-normal`}
-                  rows={3}
-                  placeholder="Megjegyzés (opcionális)" />
-              </div>
-            </div>
+              <button
+                type="submit"
+                disabled={loading || !selectedPkg}
+                className="group relative w-full overflow-hidden border border-[#363025] py-4 transition-all duration-300 disabled:opacity-40"
+              >
+                <span className="absolute inset-0 bg-[#363025] translate-x-[-100%] group-hover:translate-x-0 group-disabled:translate-x-[-100%] transition-transform duration-500 ease-in-out" />
+                <span className="relative font-[family-name:var(--font-nunito)] text-[11px] tracking-[0.3em] uppercase text-[#363025] group-hover:text-white transition-colors duration-500">
+                  {loading ? "Küldés..." : "Ajánlat véglegesítése"}
+                </span>
+              </button>
+            </form>
+          </div>
+        </div>
 
-            <button
-              type="submit"
-              disabled={loading || !selectedPkg}
-              className="w-full bg-[#363025] text-white font-[family-name:var(--font-nunito)] text-[11px] tracking-[0.3em] uppercase py-4 hover:bg-[#363025]/80 transition-colors duration-300 disabled:opacity-40"
-            >
-              {loading ? "Küldés..." : "Ajánlat véglegesítése"}
-            </button>
-          </form>
-        )}
       </div>
     </section>
   );
