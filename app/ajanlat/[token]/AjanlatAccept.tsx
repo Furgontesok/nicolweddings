@@ -67,7 +67,7 @@ export default function AjanlatAccept({ token, packages }: Props) {
 
         {/* Fejléc + gomb — mindig látszik */}
         <div className="text-center mb-12">
-          <p className="font-[family-name:var(--font-nunito)] text-[11px] tracking-[0.45em] uppercase text-[#363025]/30 mb-5">
+          <p className="font-[family-name:var(--font-nunito)] text-[10px] tracking-[0.35em] uppercase text-[#363025]/40 mb-5">
             Döntésre jutottatok?
           </p>
           <h2 className="font-[family-name:var(--font-cormorant)] text-4xl md:text-5xl font-light text-[#363025] italic mb-10 leading-snug">
