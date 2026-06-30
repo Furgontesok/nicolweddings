@@ -125,11 +125,6 @@ export default function AjanlatAccept({ token, packages }: Props) {
                             required
                             className="sr-only"
                           />
-                          <span
-                            className={`w-3 h-3 rounded-full border flex-shrink-0 transition-all duration-300 ${
-                              selectedPkg === pkg.key ? "bg-white border-white" : "border-[#363025]/30"
-                            }`}
-                          />
                           <span className="font-[family-name:var(--font-nunito)] text-[11px] tracking-[0.15em] uppercase">
                             {pkg.title}
                           </span>
