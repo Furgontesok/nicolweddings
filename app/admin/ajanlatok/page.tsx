@@ -124,6 +124,12 @@ export default function AdminAjanlatok() {
     setProposals(prev => prev.filter(p => p.id !== id));
   }
 
+  async function deleteAcceptance(id: string) {
+    if (!supabase || !confirm("Biztosan törlöd ezt az elfogadást?")) return;
+    await supabase.from("proposal_acceptances").delete().eq("id", id);
+    setAcceptances(prev => prev.filter(a => a.id !== id));
+  }
+
   function copyLink(token: string) {
     navigator.clipboard.writeText(`${window.location.origin}/ajanlat/${token}`);
     setCopied(true); setTimeout(() => setCopied(false), 2000);
@@ -327,6 +333,14 @@ export default function AdminAjanlatok() {
                             <p className="font-[family-name:var(--font-quicksand)] text-[14px] text-[#363025]/70 leading-relaxed italic">{a.megjegyzes}</p>
                           </div>
                         )}
+                        <div className="md:col-span-3 pt-2 border-t border-[#363025]/8 flex justify-end">
+                          <button
+                            onClick={() => deleteAcceptance(a.id)}
+                            className="font-[family-name:var(--font-nunito)] text-[10px] tracking-widest uppercase text-red-400/40 hover:text-red-500 transition-colors"
+                          >
+                            Törlés
+                          </button>
+                        </div>
                       </div>
                     </div>
                   )}
