@@ -52,7 +52,7 @@ export default function AjanlatAccept({ token, packages }: Props) {
 
   if (sent) {
     return (
-      <section className="bg-[#F5F3ED] py-24 px-8 text-center">
+      <section className="bg-[#F5F3ED] pt-14 pb-24 px-8 text-center">
         <p className="font-[family-name:var(--font-italianno)] text-6xl text-[#363025] mb-5">Köszönöm!</p>
         <p className="font-[family-name:var(--font-quicksand)] text-[#363025]/55 text-[15px]">
           Hamarosan felveszem veled a kapcsolatot a következő lépésekkel kapcsolatban.
