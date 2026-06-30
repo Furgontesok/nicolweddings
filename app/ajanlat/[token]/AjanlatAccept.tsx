@@ -174,12 +174,9 @@ export default function AjanlatAccept({ token, packages }: Props) {
               <button
                 type="submit"
                 disabled={loading || !selectedPkg}
-                className="group relative w-full overflow-hidden border border-[#363025] py-4 transition-all duration-300 disabled:opacity-40"
+                className="w-full bg-[#363025] text-white font-[family-name:var(--font-nunito)] text-[11px] tracking-[0.3em] uppercase py-4 hover:bg-[#363025]/80 transition-colors duration-300 disabled:opacity-40"
               >
-                <span className="absolute inset-0 bg-[#363025] translate-x-[-100%] group-hover:translate-x-0 group-disabled:translate-x-[-100%] transition-transform duration-500 ease-in-out" />
-                <span className="relative font-[family-name:var(--font-nunito)] text-[11px] tracking-[0.3em] uppercase text-[#363025] group-hover:text-white transition-colors duration-500">
-                  {loading ? "Küldés..." : "Ajánlat véglegesítése"}
-                </span>
+                {loading ? "Küldés..." : "Ajánlat véglegesítése"}
               </button>
             </form>
           </div>
