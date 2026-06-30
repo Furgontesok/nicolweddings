@@ -95,8 +95,8 @@ export default function AjanlatAccept({ token, packages }: Props) {
               : "max-height 0.4s ease, opacity 0.2s ease",
           }}
         >
-          <div className="pt-2 pb-2">
-            <div className="w-10 h-px bg-[#363025]/15 mx-auto mb-10" />
+          <div className="pb-2">
+            <div className="w-10 h-px bg-[#363025]/15 mx-auto mt-2 mb-10" />
 
             <form onSubmit={handleSubmit} className="space-y-6">
               {/* Csomag kiválasztása */}
