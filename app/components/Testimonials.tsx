@@ -32,6 +32,13 @@ const testimonials = [
     quote: "A nagy napunkon minden gördülékenyen zajlott, Nicol mindenhol ott volt és odafigyelt, hogy ne csússzon hiba a terveinkbe.",
     text: "Nicol óriási segítség volt számunkra, és nagyon örülünk, hogy ő kísért végig az esküvőnk szervezésén. Nemcsak a feladatokban segített, hanem tartotta a kapcsolatot a szolgáltatókkal is, ami nagy terhet vett le a vállunkról. A nagy napunkon minden gördülékenyen zajlott, Nicol mindenhol ott volt és odafigyelt, hogy ne csússzon hiba a terveinkbe. Nagyon lelkiismeretes, precíz, és mindenben lehet rá számítani. Őszintén ajánljuk mindenkinek.",
   },
+  {
+    name: "Szerus & Andris",
+    photo: "/images/visszajelzes-szerus-andris.jpg",
+    objectPosition: "center top",
+    quote: "A szervezés első pillanatától kezdve a lagzi végéig teljes biztonságban éreztük magunkat.",
+    text: "Szívből hálásak vagyunk a közös munkáért, egyszerűen fantasztikus volt minden! A szervezés első pillanatától kezdve a lagzi végéig teljes biztonságban éreztük magunkat, mert Nicol mindent maximálisan a kezében tartott, így mi és a családunk is felhőtlenül megélhettük a pillanatot. Kiváló szakembereket és szolgáltatókat ajánlott nekünk, amiért külön köszönet jár! Hihetetlenül magas szépérzéke van, a dekoráció és a hangulat minden elemében visszaköszönt a stílusossága. A vendégeinktől is rengeteg olyan visszajelzést kaptunk, hogy minden apró részlet tökéletes volt. Tiszta szívből, bátran ajánljuk mindenkinek, akik stresszmentes és álomszép esküvőt szeretnének, amire egész hátralévő életükben örömmel emlékeznek majd vissza!",
+  },
 ];
 
 export default function Testimonials() {

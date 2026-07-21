@@ -44,6 +44,7 @@ export default function AdminReferenciak() {
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);
   const [uploading, setUploading] = useState(false);
+  const [uploadError, setUploadError] = useState<string | null>(null);
   const [tab, setTab] = useState<"images" | "info" | "vendors">("images");
   const [dragOver, setDragOver] = useState(false);
   const [form, setForm] = useState({
@@ -135,13 +136,21 @@ export default function AdminReferenciak() {
   async function uploadFiles(files: FileList) {
     if (!supabase || !selected || !files.length) return;
     setUploading(true);
+    setUploadError(null);
     const maxOrder = images.length > 0 ? Math.max(...images.map(i => i.display_order)) + 1 : 0;
-    for (let i = 0; i < files.length; i++) {
-      const file = files[i];
+    const sorted = Array.from(files).sort((a, b) =>
+      a.name.localeCompare(b.name, undefined, { numeric: true, sensitivity: "base" })
+    );
+    for (let i = 0; i < sorted.length; i++) {
+      const file = sorted[i];
       const ext = file.name.split(".").pop() ?? "jpg";
       const path = `${selected.slug}/${Date.now()}-${i}.${ext}`;
       const { error } = await supabase.storage.from("referenciak").upload(path, file);
-      if (error) continue;
+      if (error) {
+        setUploadError(`Feltöltési hiba: ${error.message}`);
+        setUploading(false);
+        return;
+      }
       const { data: { publicUrl } } = supabase.storage.from("referenciak").getPublicUrl(path);
       const isFirst = images.length === 0 && i === 0;
       await supabase.from("couple_images").insert({
@@ -352,7 +361,10 @@ export default function AdminReferenciak() {
                   onDrop={e => { e.preventDefault(); setDragOver(false); if (e.dataTransfer.files) uploadFiles(e.dataTransfer.files); }}
                 >
                   <div className="text-center py-8 px-6">
-                    {uploading ? (
+                    {uploadError && (
+                      <p className="font-[family-name:var(--font-nunito)] text-[11px] text-red-500 mb-4 bg-red-50 border border-red-200 px-4 py-3">{uploadError}</p>
+                    )}
+                {uploading ? (
                       <p className="font-[family-name:var(--font-nunito)] text-[11px] tracking-widest uppercase text-[#363025]/40 animate-pulse">Feltöltés folyamatban...</p>
                     ) : (
                       <>

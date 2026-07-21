@@ -1,8 +1,11 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { supabase } from "@/lib/supabase";
 
-const testimonials = [
+type Testimonial = { name: string; photo: string; quote: string; text: string };
+
+const hardcoded: Testimonial[] = [
   {
     name: "Ani & Peti",
     photo: "/images/Ani%20%26%20Peti%20visszajelz%C3%A9s.jpg",
@@ -27,31 +30,61 @@ const testimonials = [
     quote: "A nagy napunkon minden gördülékenyen zajlott, Nicol mindenhol ott volt és odafigyelt, hogy ne csússzon hiba a terveinkbe.",
     text: "Nicol óriási segítség volt számunkra, és nagyon örülünk, hogy ő kísért végig az esküvőnk szervezésén. Nemcsak a feladatokban segített, hanem tartotta a kapcsolatot a szolgáltatókkal is, ami nagy terhet vett le a vállunkról. A nagy napunkon minden gördülékenyen zajlott, Nicol mindenhol ott volt és odafigyelt, hogy ne csússzon hiba a terveinkbe. Nagyon lelkiismeretes, precíz, és mindenben lehet rá számítani. Őszintén ajánljuk mindenkinek.",
   },
+  {
+    name: "Szerus & Andris",
+    photo: "/images/visszajelzes-szerus-andris.jpg",
+    quote: "A szervezés első pillanatától kezdve a lagzi végéig teljes biztonságban éreztük magunkat.",
+    text: "Szívből hálásak vagyunk a közös munkáért, egyszerűen fantasztikus volt minden! A szervezés első pillanatától kezdve a lagzi végéig teljes biztonságban éreztük magunkat, mert Nicol mindent maximálisan a kezében tartott, így mi és a családunk is felhőtlenül megélhettük a pillanatot. Kiváló szakembereket és szolgáltatókat ajánlott nekünk, amiért külön köszönet jár! Hihetetlenül magas szépérzéke van, a dekoráció és a hangulat minden elemében visszaköszönt a stílusossága. A vendégeinktől is rengeteg olyan visszajelzést kaptunk, hogy minden apró részlet tökéletes volt. Tiszta szívből, bátran ajánljuk mindenkinek, akik stresszmentes és álomszép esküvőt szeretnének, amire egész hátralévő életükben örömmel emlékeznek majd vissza!",
+  },
 ];
 
 export default function TestimonialsSlider() {
+  const [testimonials, setTestimonials] = useState<Testimonial[]>(hardcoded);
   const [active, setActive] = useState(0);
   const prev = () => setActive((i) => (i - 1 + testimonials.length) % testimonials.length);
   const next = () => setActive((i) => (i + 1) % testimonials.length);
   const t = testimonials[active];
 
   useEffect(() => {
+    if (!supabase) return;
+    supabase
+      .from("couples")
+      .select("name, testimonial_quote, testimonial_text")
+      .not("testimonial_quote", "is", null)
+      .not("testimonial_text", "is", null)
+      .then(({ data }) => {
+        if (!data?.length) return;
+        const hardcodedNames = new Set(hardcoded.map(h => h.name.toLowerCase()));
+        const extra = data
+          .filter(c => !hardcodedNames.has(c.name.toLowerCase()))
+          .map(c => ({
+            name: c.name,
+            photo: "",
+            quote: c.testimonial_quote,
+            text: c.testimonial_text,
+          }));
+        if (extra.length > 0) setTestimonials([...hardcoded, ...extra]);
+      });
+  }, []);
+
+  useEffect(() => {
     const timer = setInterval(() => {
       setActive((i) => (i + 1) % testimonials.length);
     }, 20000);
     return () => clearInterval(timer);
-  }, []);
+  }, [testimonials.length]);
 
   return (
-    <section className="bg-[#F5F3ED] py-14 px-6">
+    <section className="bg-[#F5F3ED] pt-8 md:pt-14 pb-4 md:pb-14 px-6">
       <div className="max-w-3xl mx-auto text-center">
 
         {/* Fejléc */}
-        <p className="font-[family-name:var(--font-nunito)] text-[13px] tracking-[0.35em] uppercase text-[#363025]/40 mb-10">
+        <p className="font-[family-name:var(--font-nunito)] text-[13px] tracking-[0.35em] uppercase text-[#363025]/40 mb-5 md:mb-10">
           Kedves szavak
         </p>
 
         {/* Kiemelt idézet */}
+
         <p className="font-[family-name:var(--font-cormorant)] text-3xl md:text-4xl italic text-[#363025] leading-tight mb-8">
           „{t.quote}"
         </p>
@@ -62,7 +95,7 @@ export default function TestimonialsSlider() {
         </p>
 
         {/* Név */}
-        <div className="mb-12">
+        <div className="mb-6 md:mb-12">
           <p className="font-[family-name:var(--font-italianno)] text-4xl text-[#363025]/80">
             {t.name.replace('&', '& ')}
           </p>

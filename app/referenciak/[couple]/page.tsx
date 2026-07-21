@@ -4,6 +4,9 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import GalleryWithLightbox from "./GalleryWithLightbox";
+import { createClient } from "@supabase/supabase-js";
+
+export const dynamic = "force-dynamic";
 
 type Vendor = { label: string; handle?: string; handles?: string[]; plain?: string };
 type Testimonial = { quote: string; text: string };
@@ -183,25 +186,76 @@ const coupleData: Record<string, {
   },
 };
 
-export async function generateStaticParams() {
-  return Object.keys(coupleData).map((couple) => ({ couple }));
+async function getSupabaseData(slug: string) {
+  const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
+  const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+  if (!url || !key) return null;
+
+  const sb = createClient(url, key);
+
+  const { data: couple } = await sb
+    .from("couples")
+    .select("*")
+    .eq("slug", slug)
+    .single();
+
+  if (!couple) return null;
+
+  const [{ data: imgs }, { data: vends }] = await Promise.all([
+    sb.from("couple_images").select("*").eq("couple_id", couple.id).order("display_order"),
+    sb.from("couple_vendors").select("*").eq("couple_id", couple.id).order("display_order"),
+  ]);
+
+  return { couple, images: imgs ?? [], vendors: vends ?? [] };
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ couple: string }> }): Promise<Metadata> {
   const { couple } = await params;
-  const data = coupleData[couple];
-  if (!data) return {};
-  return { title: `${data.name} — Nicol Weddings and Events` };
+  const sb = await getSupabaseData(couple);
+  const name = sb?.couple?.name ?? coupleData[couple]?.name;
+  if (!name) return {};
+  return { title: `${name} — Nicol Weddings and Events` };
 }
 
 export default async function CouplePage({ params }: { params: Promise<{ couple: string }> }) {
   const { couple } = await params;
-  const data = coupleData[couple];
-  if (!data) notFound();
 
-  const images = Array.from({ length: data.count }, (_, i) =>
-    `/images/${data.folder}/${i + 1}${data.ext}`
-  );
+  const sbData = await getSupabaseData(couple);
+  const fallback = coupleData[couple];
+
+  if (!sbData && !fallback) notFound();
+
+  // Determine what to render
+  const name = sbData?.couple?.name ?? fallback?.name ?? "";
+  const headerPosition = sbData?.couple?.header_position ?? fallback?.headerPosition ?? "center";
+
+  // Header image: prefer Supabase header image, then fallback hardcoded
+  const headerImg = sbData?.images?.find((i: { is_header: boolean }) => i.is_header)?.url
+    ?? sbData?.couple?.header_image_url
+    ?? fallback?.headerImage
+    ?? sbData?.images?.[0]?.url;
+
+  // Gallery images
+  const galleryImages: string[] = sbData && sbData.images.length > 0
+    ? sbData.images.map((i: { url: string }) => i.url)
+    : fallback
+      ? Array.from({ length: fallback.count }, (_, i) => `/images/${fallback.folder}/${i + 1}${fallback.ext}`)
+      : [];
+
+  // Vendors
+  const vendors: Vendor[] = sbData && sbData.vendors.length > 0
+    ? sbData.vendors.map((v: { label: string; handle?: string; plain?: string }) => ({
+        label: v.label,
+        handle: v.handle || undefined,
+        plain: v.plain || undefined,
+      }))
+    : fallback?.vendors ?? [];
+
+  // Testimonial
+  const testimonial: Testimonial | undefined =
+    (sbData?.couple?.testimonial_quote && sbData?.couple?.testimonial_text)
+      ? { quote: sbData.couple.testimonial_quote, text: sbData.couple.testimonial_text }
+      : fallback?.testimonial;
 
   return (
     <>
@@ -209,33 +263,36 @@ export default async function CouplePage({ params }: { params: Promise<{ couple:
 
       {/* Header */}
       <div className="pt-16 relative h-[55vh] overflow-hidden">
-        <Image
-          src={data.headerImage ?? images[0]}
-          alt={data.name}
-          fill
-          className="object-cover"
-          style={{ objectPosition: data.headerPosition ?? "center" }}
-          sizes="100vw"
-          priority
-        />
+        {headerImg && (
+          <Image
+            src={headerImg}
+            alt={name}
+            fill
+            className="object-cover"
+            style={{ objectPosition: headerPosition }}
+            sizes="100vw"
+            priority
+            unoptimized={headerImg.startsWith("https://")}
+          />
+        )}
         <div className="absolute inset-0 bg-black/45" />
         <div className="absolute inset-0 flex flex-col items-center justify-center text-center">
           <p className="font-[family-name:var(--font-nunito)] text-[13px] tracking-[0.35em] uppercase text-white/60 mb-3">
             Galéria
           </p>
           <h1 className="font-[family-name:var(--font-italianno)] text-6xl md:text-7xl text-white">
-            {data.name.replace(' & ', ' &  ')}
+            {name.replace(' & ', ' &  ')}
           </h1>
         </div>
       </div>
 
       {/* Gallery grid */}
       <section className="bg-[#F5F3ED] py-16 px-6">
-        <GalleryWithLightbox images={images} name={data.name} />
+        <GalleryWithLightbox images={galleryImages} name={name} />
       </section>
 
       {/* Vendors */}
-      {data.vendors && data.vendors.length > 0 && (
+      {vendors.length > 0 && (
         <section className="bg-[#F5F3ED] pb-20 px-6">
           <div className="max-w-xl mx-auto text-center">
             <div className="w-12 h-px bg-[#363025]/20 mx-auto mb-10" />
@@ -243,7 +300,7 @@ export default async function CouplePage({ params }: { params: Promise<{ couple:
               Szolgáltatók
             </h2>
             <div className="space-y-3">
-              {data.vendors.map((v, i) => (
+              {vendors.map((v, i) => (
                 <p key={i} className="font-[family-name:var(--font-quicksand)] text-[18px] text-[#363025]">
                   {v.label}:{" "}
                   {v.plain && <span>{v.plain}</span>}
@@ -268,9 +325,9 @@ export default async function CouplePage({ params }: { params: Promise<{ couple:
       )}
 
       {/* Back link */}
-      <section className="bg-[#F5F3ED] pb-16 text-center">
+      <section className="bg-[#F5F3ED] pb-6 text-center">
         <a
-          href="/referenciak"
+          href={`/referenciak#${couple}`}
           className="inline-block font-[family-name:var(--font-nunito)] text-[11px] tracking-[0.3em] uppercase text-[#363025]/50 hover:text-[#363025] transition-colors duration-300"
         >
           ← Vissza a referenciákhoz
