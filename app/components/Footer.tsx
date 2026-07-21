@@ -24,7 +24,7 @@ export default function Footer() {
     <footer className="bg-[#F5F3ED]">
 
       {/* Follow Along sáv */}
-      <div className="px-6 pt-16 pb-10 text-center">
+      <div className="px-6 pt-8 md:pt-16 pb-10 text-center">
         <h2 className="font-[family-name:var(--font-cormorant)] text-2xl md:text-3xl tracking-[0.05em] uppercase text-[#363025] whitespace-nowrap">
           Follow me on Instagram
         </h2>
@@ -161,8 +161,8 @@ export default function Footer() {
         <a href="/impresszum" className="font-[family-name:var(--font-nunito)] text-[10px] tracking-[0.15em] uppercase text-[#363025]/30 hover:text-[#363025]/60 transition-colors duration-300">
           Impresszum
         </a>
-        <a href="/adatvedelmi-nyilatkozat" className="font-[family-name:var(--font-nunito)] text-[10px] tracking-[0.15em] uppercase text-[#363025]/30 hover:text-[#363025]/60 transition-colors duration-300">
-          Adatvédelmi nyilatkozat
+        <a href="/adatvedelmi-tajekoztato" className="font-[family-name:var(--font-nunito)] text-[10px] tracking-[0.15em] uppercase text-[#363025]/30 hover:text-[#363025]/60 transition-colors duration-300">
+          Adatvédelmi tájékoztató
         </a>
       </div>
 
