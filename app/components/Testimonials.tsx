@@ -2,8 +2,17 @@
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
+import { supabase } from "@/lib/supabase";
 
-const testimonials = [
+type TestimonialItem = {
+  name: string;
+  photo: string;
+  objectPosition: string;
+  quote: string;
+  text: string;
+};
+
+const hardcoded: TestimonialItem[] = [
   {
     name: "Ani & Peti",
     photo: "/images/visszajelzes-ani-peti.jpg",
@@ -42,23 +51,46 @@ const testimonials = [
 ];
 
 export default function Testimonials() {
+  const [items, setItems] = useState<TestimonialItem[]>(hardcoded);
   const [active, setActive] = useState(0);
   const [fading, setFading] = useState(false);
+
+  useEffect(() => {
+    if (!supabase) return;
+    supabase
+      .from("testimonials")
+      .select("*")
+      .order("display_order")
+      .then(({ data }) => {
+        if (!data?.length) return;
+        const hardcodedNames = new Set(hardcoded.map(h => h.name.toLowerCase()));
+        const extra: TestimonialItem[] = data
+          .filter(r => !hardcodedNames.has(r.name.toLowerCase()))
+          .map(r => ({
+            name: r.name,
+            photo: r.photo_url ?? "",
+            objectPosition: r.object_position ?? "center top",
+            quote: r.quote,
+            text: r.text,
+          }));
+        if (extra.length > 0) setItems([...hardcoded, ...extra]);
+      });
+  }, []);
 
   const goTo = (i: number) => {
     setFading(true);
     setTimeout(() => { setActive(i); setFading(false); }, 350);
   };
 
-  const prev = () => goTo((active - 1 + testimonials.length) % testimonials.length);
-  const next = () => goTo((active + 1) % testimonials.length);
+  const prev = () => goTo((active - 1 + items.length) % items.length);
+  const next = () => goTo((active + 1) % items.length);
 
   useEffect(() => {
     const t = setInterval(next, 8000);
     return () => clearInterval(t);
-  }, [active]);
+  }, [active, items.length]);
 
-  const t = testimonials[active];
+  const t = items[active];
 
   return (
     <section id="velemenyek" className="pt-3 pb-2 md:pb-20 px-6" style={{ backgroundColor: "#D6D8CA" }}>
