@@ -50,13 +50,12 @@ export default function Impresszum() {
 
             <section>
               <h2 className="text-[9px] tracking-[0.3em] uppercase text-[#363025]/40 mb-3">Tárhelyszolgáltató</h2>
-              <p className="font-medium">Vercel Inc.</p>
-              <p>440 N Barranca Ave #4133</p>
-              <p>Covina, CA 91723</p>
-              <p>Egyesült Államok</p>
+              <p className="font-medium">RACKFOREST ZRT.</p>
+              <p>1132 Budapest, Victor Hugo utca 11. 5. em. B05001.</p>
+              <p>Magyarország</p>
               <p className="mt-1">
-                <a href="https://vercel.com" className="underline underline-offset-2 hover:text-[#363025] transition-colors">
-                  https://vercel.com
+                <a href="https://rackforest.hu" className="underline underline-offset-2 hover:text-[#363025] transition-colors">
+                  https://rackforest.hu
                 </a>
               </p>
             </section>
