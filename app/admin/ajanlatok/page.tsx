@@ -144,12 +144,18 @@ export default function AdminAjanlatok() {
           <p className={labelCls}>Admin</p>
           <h1 className="font-[family-name:var(--font-cormorant)] text-4xl font-light text-[#363025]">Ajánlatok</h1>
         </div>
-        {tab === "ajanlatok" && (
-          <button onClick={openNew}
-            className="font-[family-name:var(--font-nunito)] text-[11px] tracking-[0.2em] uppercase px-8 py-3 border border-[#363025]/50 text-[#363025] hover:bg-[#363025] hover:text-white transition-all duration-300">
-            + Új ajánlat
+        <div className="flex gap-3">
+          <button onClick={() => load()}
+            className="font-[family-name:var(--font-nunito)] text-[11px] tracking-[0.2em] uppercase px-6 py-3 border border-[#363025]/25 text-[#363025]/50 hover:text-[#363025] hover:border-[#363025]/50 transition-all duration-300">
+            ↻ Frissítés
           </button>
-        )}
+          {tab === "ajanlatok" && (
+            <button onClick={openNew}
+              className="font-[family-name:var(--font-nunito)] text-[11px] tracking-[0.2em] uppercase px-8 py-3 border border-[#363025]/50 text-[#363025] hover:bg-[#363025] hover:text-white transition-all duration-300">
+              + Új ajánlat
+            </button>
+          )}
+        </div>
       </div>
 
       {/* Tabok */}
@@ -244,24 +250,27 @@ export default function AdminAjanlatok() {
             </div>
           ) : (
             <div className="bg-white border border-[#363025]/8">
-              <div className="grid grid-cols-4 px-6 py-3 border-b border-[#363025]/8">
-                {["Pár neve", "Típus", "Létrehozva", "Műveletek"].map(h => (
-                  <span key={h} className="font-[family-name:var(--font-nunito)] text-[9px] tracking-[0.25em] uppercase text-[#363025]/35">{h}</span>
+              <div className="grid px-6 py-3 border-b border-[#363025]/8" style={{gridTemplateColumns: "0.5fr 1.4fr 0.9fr 0.5fr 2.6fr"}}>
+                {["Pár neve", "Típus", "Létrehozva", "Elfogadva", "Műveletek"].map(h => (
+                  <span key={h} className={`font-[family-name:var(--font-nunito)] text-[9px] tracking-[0.25em] uppercase text-[#363025]/35 ${h === "Műveletek" || h === "Típus" ? "text-center" : ""} ${h === "Elfogadva" ? "pl-8" : ""}`}>{h}</span>
                 ))}
               </div>
-              {proposals.map(p => (
-                <div key={p.id} className="grid grid-cols-4 px-6 py-4 border-b border-[#363025]/5 hover:bg-[#F5F3ED]/40 transition-colors items-center">
+              {proposals.map(p => {
+                const accepted = acceptances.some(a => a.token === p.token);
+                return (
+                <div key={p.id} className="grid px-6 py-4 border-b border-[#363025]/5 hover:bg-[#F5F3ED]/40 transition-colors items-center" style={{gridTemplateColumns: "0.5fr 1.4fr 0.9fr 0.5fr 2.6fr"}}>
                   <span className="font-[family-name:var(--font-nunito)] text-[12px] text-[#363025]">{p.couple_name}</span>
-                  <span className="font-[family-name:var(--font-nunito)] text-[11px] text-[#363025]/50">{p.service === "egyeb" ? "Egyéb rendezvény" : "3 fő szolgáltatás"}</span>
+                  <div className="font-[family-name:var(--font-nunito)] text-[11px] text-[#363025]/50 text-center">{p.service === "egyeb" ? "Egyéb rendezvény" : "3 fő szolgáltatás"}</div>
                   <span className="font-[family-name:var(--font-nunito)] text-[11px] text-[#363025]/40">{new Date(p.created_at).toLocaleDateString("hu-HU")}</span>
-                  <div className="flex items-center gap-4">
+                  <span className="flex justify-center pl-8">{accepted ? <span className="text-green-600 text-base">✓</span> : <span className="font-[family-name:var(--font-nunito)] text-[11px] text-[#363025]/20">—</span>}</span>
+                  <div className="flex items-center gap-4 justify-center">
                     <button onClick={() => copyLink(p.token)} className="font-[family-name:var(--font-nunito)] text-[10px] tracking-widest uppercase text-[#363025]/50 hover:text-[#363025] transition-colors">Link</button>
                     <a href={`/ajanlat/${p.token}`} target="_blank" className="font-[family-name:var(--font-nunito)] text-[10px] tracking-widest uppercase text-[#363025]/50 hover:text-[#363025] transition-colors">Megtekint</a>
                     <button onClick={() => openEdit(p)} className="font-[family-name:var(--font-nunito)] text-[10px] tracking-widest uppercase text-[#363025]/50 hover:text-[#363025] transition-colors">Szerkeszt</button>
                     <button onClick={() => deleteProposal(p.id)} className="font-[family-name:var(--font-nunito)] text-[10px] tracking-widest uppercase text-red-400/40 hover:text-red-500 transition-colors">Törlés</button>
                   </div>
                 </div>
-              ))}
+              ); })}
             </div>
           )}
         </>

@@ -12,27 +12,32 @@ const links = [
   { label: "Blog", href: "/blog" },
 ];
 
-const slides: { left: string; right: string; leftPos?: string; rightPos?: string; leftTransform?: string; rightTransform?: string }[] = [
+const slides: { left: string; right: string; mobileImg: string; mobilePos?: string; leftPos?: string; rightPos?: string; leftTransform?: string; rightTransform?: string }[] = [
   {
-    left: "/images/header2/fokep1-bal.jpg",
-    right: "/images/header2/fokep1-jobb.jpg",
+    left: "/images/header2/fokep1-bal-uj.jpg",
+    right: "/images/header2/fokep1-jobb-uj.jpg",
+    mobileImg: "/images/hero-mobile-1.jpg",
   },
   {
-    left: "/images/header2/fokep2-bal.jpg",
-    right: "/images/header2/fokep2-jobb.jpg",
+    left: "/images/header2/fokep2-bal-uj.jpg",
+    right: "/images/header2/fokep2-jobb-uj.jpg",
+    mobileImg: "/images/hero-mobile-2.jpg",
+    mobilePos: "35% center",
   },
   {
-    left: "/images/header2/fokep3-bal.jpg",
-    right: "/images/header2/fokep3-jobb.jpg",
+    left: "/images/header2/fokep3-bal-uj.jpg",
+    right: "/images/header2/fokep3-jobb-uj.jpg",
+    mobileImg: "/images/hero-mobile-3b.jpg",
   },
   {
-    left: "/images/header2/fokep4-bal.jpg",
-    right: "/images/header2/fokep4-jobb.jpg",
-    rightPos: "0% 80%",
+    left: "/images/header2/fokep4-bal-uj.jpg",
+    right: "/images/header2/fokep4-jobb-uj.jpg",
+    mobileImg: "/images/hero-mobile-4.jpg",
   },
   {
-    left: "/images/header2/fokep5-bal.jpg",
-    right: "/images/header2/fokep5-jobb.jpg",
+    left: "/images/header2/fokep5-bal-uj.jpg",
+    right: "/images/header2/fokep5-jobb-uj.jpg",
+    mobileImg: "/images/hero-mobile-5.jpg",
   },
 ];
 
@@ -177,12 +182,12 @@ export default function Hero() {
             {/* Mobil: egy teljes kép */}
             <div className="md:hidden absolute inset-0">
               <Image
-                src={slide.left}
+                src={slide.mobileImg}
                 alt="Esküvői fotó"
                 fill
                 priority={i === 0}
                 className="object-cover"
-                style={{ objectPosition: slide.leftPos ?? "center" }}
+                style={{ objectPosition: slide.mobilePos ?? "center" }}
                 sizes="100vw"
               />
               <div className="absolute inset-0 bg-black/40" />
@@ -219,8 +224,17 @@ export default function Hero() {
 
         {/* Szöveg */}
         <div className="absolute bottom-32 left-0 right-0 text-center pointer-events-none px-6 z-10">
-          <h1 className="font-[family-name:var(--font-cormorant)] text-white text-3xl md:text-5xl font-light leading-snug drop-shadow-lg">
-            Egy nap, ami örökre a tiétek.
+          <h1 className="font-[family-name:var(--font-cormorant)] text-white font-light leading-snug drop-shadow-lg" style={{ fontSize: "clamp(1.5rem, 7vw, 1.8rem)" }}>
+            <span className="md:hidden">
+              <span className="whitespace-nowrap">Esküvők, amik nyomot hagynak.</span>
+              <br />
+              Bennetek és másokban.
+            </span>
+            <span className="hidden md:inline text-5xl">
+              Esküvők, amik nyomot hagynak.
+              <br />
+              Bennetek és másokban.
+            </span>
           </h1>
         </div>
 

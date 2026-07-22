@@ -15,7 +15,7 @@ export default function Rolam() {
 
       {/* ── Hero ── */}
       <div className="pt-16 bg-[#F5F3ED]">
-        <div className="relative overflow-hidden" style={{ height: "55vh", minHeight: 360 }}>
+        <div className="relative overflow-hidden md:h-[55vh] h-[35vh]" style={{ minHeight: 200 }}>
           <Image
             src="/images/nicol-roli-15.jpg"
             alt="Rólam"
@@ -30,33 +30,33 @@ export default function Rolam() {
             style={{ height: "40%", background: "linear-gradient(to bottom, transparent, rgba(245,243,237,0.9))" }}
           />
         </div>
-        <div className="text-center relative z-10 -mt-[2.5rem] pb-4">
-          <h1 className="font-[family-name:var(--font-cormorant)] text-5xl md:text-[6.3rem] font-light text-[#363025] tracking-[0.01em] uppercase">
+        <div className="text-center relative z-10 -mt-[2rem] md:-mt-[5rem] pb-4">
+          <h1 className="font-[family-name:var(--font-cormorant)] text-[2.5rem] md:text-[6.3rem] font-light text-[#363025] tracking-[0.01em] uppercase">
             Rólam
           </h1>
         </div>
       </div>
 
       {/* ── Bemutatkozás: szöveg bal + portré jobb ── */}
-      <section className="bg-[#F5F3ED] py-12 px-6">
+      <section className="bg-[#F5F3ED] pt-4 md:pt-12 pb-0 md:pb-12 px-6">
         <div className="max-w-5xl mx-auto flex flex-col md:flex-row-reverse gap-14 items-start">
 
           {/* Portré */}
-          <div className="shrink-0 md:w-[38%]">
+          <div className="shrink-0 w-full md:w-[38%] order-last md:order-none">
             <div className="relative w-full overflow-hidden" style={{ aspectRatio: "1/2" }}>
               <Image
                 src="/images/R%C3%B3lam%20mell%C3%A9k1.jpg"
                 alt="Gőz-Csongrádi Nicol"
                 fill
                 className="object-cover object-top"
-                sizes="38vw"
+                sizes="(max-width: 768px) 100vw, 38vw"
               />
             </div>
           </div>
 
           {/* Szöveg */}
-          <div className="flex-1 pt-4">
-            <p className="font-[family-name:var(--font-nunito)] text-[10px] tracking-[0.3em] uppercase text-[#363025]/50 mb-3">
+          <div className="flex-1 pt-4 md:pt-0">
+            <p className="font-[family-name:var(--font-nunito)] text-[10px] tracking-[0.3em] uppercase text-[#363025]/50 mb-3 whitespace-nowrap md:whitespace-normal">
               Alapító · Esküvőszervező · Magyarország
             </p>
             <h2 className="font-[family-name:var(--font-italianno)] text-5xl md:text-6xl text-[#363025] leading-tight mb-6">
@@ -88,10 +88,10 @@ export default function Rolam() {
       </section>
 
       {/* ── 2024 történet: kép bal + szöveg jobb ── */}
-      <section className="bg-[#F5F3ED] py-12 px-6">
-        <div className="max-w-5xl mx-auto flex flex-col md:flex-row gap-14 items-center">
+      <section className="bg-[#F5F3ED] pt-0 md:pt-12 pb-4 md:pb-12 px-6">
+        <div className="max-w-5xl mx-auto flex flex-col md:flex-row gap-8 md:gap-14 items-center">
 
-          <div className="shrink-0 md:w-[42%]">
+          <div className="shrink-0 w-full md:w-[42%] order-last md:order-none">
             <div className="relative w-full overflow-hidden" style={{ aspectRatio: "4/5" }}>
               <Image
                 src="/images/nicol-roli-21.jpg"
@@ -117,7 +117,7 @@ export default function Rolam() {
                 …még nem tudtam, hogy ezzel egy új fejezet indul az életemben. Imádtam minden pillanatát, és ekkor született meg bennem az elhatározás, hogy másoknak is segítsek átélni ugyanezt az örömöt. Így jött létre a Nicol Weddings & Events, az első saját vállalkozásom.
               </p>
               <p className="whitespace-pre-line">
-                Számomra a legfontosabb, hogy ne csak megszervezzem a napotokat, hanem valódi támaszotok legyek. Egy nyugodt jelenlét a kulisszák mögött,{"\n"}aki gondoskodik arról, hogy Ti csak megéljétek a pillanatot.
+                Számomra a legfontosabb, hogy ne csak megszervezzem a napotokat, hanem valódi támaszotok legyek. Egy nyugodt jelenlét a kulisszák mögött, aki gondoskodik arról, hogy Ti csak megéljétek a pillanatot.
               </p>
             </div>
           </div>
@@ -147,14 +147,14 @@ export default function Rolam() {
               Ez az, amiért a Nicol Weddings & Events több, mint egy szervezői szolgáltatás.
             </p>
           </div>
-          <div className="shrink-0 md:w-[35%]">
+          <div className="shrink-0 w-full md:w-[35%]">
             <div className="relative w-full overflow-hidden" style={{ aspectRatio: "3/4" }}>
               <Image
-                src="/images/betti-levi-10.jpg"
+                src="/images/egyeb-13.jpg"
                 alt="Esküvői dekoráció"
                 fill
                 className="object-cover"
-                style={{ objectPosition: "center 100%" }}
+                style={{ objectPosition: "center 50%" }}
                 sizes="35vw"
               />
             </div>
@@ -163,11 +163,11 @@ export default function Rolam() {
       </section>
 
       {/* ── Érdekességek rólam ── */}
-      <section className="bg-[#EDEDE1] py-12 px-6">
+      <section className="bg-[#EDEDE1] pt-6 md:pt-12 pb-4 md:pb-12 px-6">
         <div className="max-w-5xl mx-auto">
 
           {/* Fejléc: ovális kép + cím */}
-          <div className="flex flex-col md:flex-row items-end gap-8 mb-14">
+          <div className="flex flex-col md:flex-row items-center md:items-end gap-8 mb-6 md:mb-14">
             <div
               className="relative overflow-hidden shrink-0"
               style={{ width: 120, height: 160, borderRadius: "50%" }}
@@ -176,11 +176,11 @@ export default function Rolam() {
                 src="/images/R%C3%B3lam%20mell%C3%A9k3.jpg"
                 alt="Nicol"
                 fill
-                className="object-cover object-center"
+                className="object-cover object-top"
                 sizes="120px"
               />
             </div>
-            <div>
+            <div className="text-center md:text-left">
               <p className="font-[family-name:var(--font-nunito)] text-[10px] tracking-[0.3em] uppercase text-[#363025]/35 mb-3">
                 Személyes
               </p>
@@ -213,7 +213,7 @@ export default function Rolam() {
       </section>
 
       {/* ── CTA ── */}
-      <section className="relative py-28 px-6 text-center overflow-hidden">
+      <section className="relative pt-14 md:pt-28 pb-28 px-6 text-center overflow-hidden">
         <Image
           src="/images/rolam-hosszu-kep.jpg"
           alt="Esküvői háttér"

@@ -67,7 +67,7 @@ export default async function BlogPostPage({
       <main className="bg-[#F5F3ED] min-h-screen pt-[92px]">
 
         {/* Borítókép */}
-        <div className="relative w-full h-[55vh] overflow-hidden">
+        <div className="relative w-full h-[30vh] md:h-[55vh] overflow-hidden">
           <Image
             src={post.cover}
             alt={post.title}
@@ -80,7 +80,7 @@ export default async function BlogPostPage({
         </div>
 
         {/* Tartalom */}
-        <article className="max-w-2xl mx-auto px-6 py-14">
+        <article className="max-w-2xl mx-auto px-6 pt-14 pb-6">
 
           {/* Meta */}
           <p className="font-[family-name:var(--font-nunito)] text-[10px] tracking-[0.3em] uppercase text-[#363025]/35 mb-4">
@@ -133,9 +133,9 @@ export default async function BlogPostPage({
           )}
 
           {/* Vissza */}
-          <div className="mt-12 text-center">
+          <div className="mt-6 md:mt-12 text-center">
             <a
-              href="/blog"
+              href={`/blog#${post.slug}`}
               className="font-[family-name:var(--font-nunito)] text-[10px] tracking-[0.2em] uppercase text-[#363025]/35 hover:text-[#363025] transition-colors duration-300"
             >
               ← Vissza a bloghoz

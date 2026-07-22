@@ -60,22 +60,26 @@ function MobileSlider({ images, current, onAdvance, onBack, onGoTo }: {
 }
 
 const images = [
-  "/images/fooldal-referenciak/1..jpg",
-  "/images/fooldal-referenciak/2..jpg",
-  "/images/fooldal-referenciak/3..jpeg",
-  "/images/fooldal-referenciak/4..jpg",
-  "/images/fooldal-referenciak/5..jpg",
-  "/images/fooldal-referenciak/6..jpg",
-  "/images/fooldal-referenciak/7..jpg",
-  "/images/fooldal-referenciak/8..jpg",
-  "/images/fooldal-referenciak/9..jpg",
-  "/images/fooldal-referenciak/10..jpg",
-  "/images/fooldal-referenciak/11..jpg",
-  "/images/fooldal-referenciak/12..jpg",
-  "/images/fooldal-referenciak/13..jpg",
-  "/images/fooldal-referenciak/14..jpg",
-  "/images/fooldal-referenciak/15..jpg",
-  "/images/fooldal-referenciak/16..jpg",
+  "/images/fooldal-referenciak/1..jpg",   // álló  - SZEMÉLY
+  "/images/fooldal-referenciak/7..jpg",   // álló  - DEKOR
+  "/images/fooldal-referenciak/19..jpg",  // álló  - SZEMÉLY (H88A4879 — ÚJ)
+  "/images/fooldal-referenciak/3..jpeg",  // fekvő - DEKOR
+  "/images/fooldal-referenciak/2..jpg",   // álló  - SZEMÉLY
+  "/images/fooldal-referenciak/9..jpg",   // álló  - DEKOR
+  "/images/fooldal-referenciak/4..jpg",   // álló  - SZEMÉLY
+  "/images/fooldal-referenciak/17..jpg",  // álló  - DEKOR  (JE5A4187 — ÚJ)
+  "/images/fooldal-referenciak/6..jpg",   // álló  - SZEMÉLY
+  "/images/fooldal-referenciak/5..jpg",   // fekvő - DEKOR
+  "/images/fooldal-referenciak/10..jpg",  // álló  - SZEMÉLY
+  "/images/fooldal-referenciak/16..jpg",  // álló  - DEKOR
+  "/images/fooldal-referenciak/8..jpg",   // fekvő - SZEMÉLY
+  "/images/fooldal-referenciak/14..jpg",  // álló  - DEKOR
+  "/images/fooldal-referenciak/18..jpg",  // álló  - SZEMÉLY (JE5A3912 — ÚJ)
+  "/images/fooldal-referenciak/11..jpg",  // fekvő - DEKOR
+  "/images/fooldal-referenciak/12..jpg",  // álló  - SZEMÉLY
+  "/images/fooldal-referenciak/15..jpg",  // fekvő - DEKOR
+  "/images/fooldal-referenciak/13..jpg",  // álló  - SZEMÉLY
+  "/images/fooldal-referenciak/20..jpg",  // fekvő - DEKOR  (H88A2251 — ÚJ)
 ];
 
 // Klón az elejére (last image) + végére (first 3) → az első kép középen indul (current=0)

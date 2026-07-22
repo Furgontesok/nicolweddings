@@ -8,11 +8,11 @@ export default function Fit() {
         {/* Bal: kép */}
         <div className="relative w-full md:w-1/2 h-80 md:h-auto shrink-0">
           <Image
-            src="/images/Vivi%20%26%20Bence/11..jpg"
+            src="/images/proba/H88A4354b.jpg"
             alt="Esküvői dekoráció"
             fill
             className="object-cover"
-            style={{ objectPosition: "center 20%" }}
+            style={{ objectPosition: "center 65%" }}
             sizes="48vw"
           />
         </div>

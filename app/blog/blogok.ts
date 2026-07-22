@@ -14,7 +14,7 @@ export const blogok: BlogPost[] = [
     slug: "eskuvoszervezo-luxus-vagy-szukseglet",
     title: `Esküvőszervező: luxus vagy szükséglet? Amit minden menyasszonynak tudnia kellene`,
     description: `Felmerül a kérdés: kell-e esküvőszervező? Összefoglaltuk, mire számíthatsz, mikor érdemes szakembert fogadni, és miért mondja szinte minden pár, hogy megérte.`,
-    date: "2026-06-25",
+    date: "2026-07-08",
     cover: "/images/zsambek_wedding_styled_shoot-052_web.jpg",
     intro: `Amikor az esküvőtervezés elkezdődik, az egyik legelső kérdés, ami felmerül: kell-e esküvőszervező? Sokan luxusnak tartják, mások már az első pillanattól fogva nélkülözhetetlennek. Az igazság valahol a kettő között van – de ha valaki egyszer megtapasztalja, mit jelent ez a fajta segítség, ritkán gondol vissza úgy, hogy felesleges volt.`,
     sections: [
@@ -66,7 +66,7 @@ Dr. Pozsonyi Petra így fogalmazott: "Nekünk, résztvevőknek csupán egy felad
     slug: "mit-kerdezz-eskuvoszervezotol-elso-talalkozoan",
     title: `Mit kérdezz meg a leendő esküvőszervezőtől az első találkozón?`,
     description: `Az első konzultáció nem csak bemutatkozás. Ez az a pillanat, amikor eldől, hogy valóban rátaláltatok-e a megfelelő emberre. Összegyűjtöttem a legfontosabb kérdéseket, amelyeket érdemes feltenni.`,
-    date: "2026-06-26",
+    date: "2026-07-14",
     cover: "/images/fooldal-referenciak/8..jpg",
     intro: `Az első személyes konzultáció egy nagyon fontos pillanat. Nemcsak azért, mert ekkor dől el, hogy valóban a megfelelő személyre bízzátok-e az egyik legfontosabb napotokat, hanem azért is, mert az ott feltett kérdések alapján sokkal biztosabbak lehettek a döntésetekben. Összeállítottam azokat a kérdéseket, amelyeket én magam is fontosnak tartok, hogy egy pár megkérdezzen, akár éppen engem, akár bármely más esküvőszervezőt.`,
     sections: [
@@ -113,7 +113,7 @@ Ha az első találkozó után azt érzitek, hogy megértettük egymást, hogy me
     slug: "hogyan-valassz-eskuvoi-helyszint",
     title: `Hogyan válassz esküvői helyszínt? Az 5 legfontosabb szempont`,
     description: `A helyszín az esküvő alapköve. Minden más ehhez igazodik. Összeszedtem az 5 szempontot, amelyet esküvőszervezőként mindig megnézünk, mielőtt javaslatot teszünk egy párnak.`,
-    date: "2026-06-26",
+    date: "2026-07-20",
     cover: "/images/fooldal-referenciak/3..jpeg",
     intro: `A helyszín az esküvő alapköve. A dekoráció, a catering, a fotós látásmódja, az esti hangulat mind ehhez igazodik. Ezért a helyszínválasztás az egyik első és legfontosabb döntés, amit meg kell hoznotok. Összeszedtem azt az 5 szempontot, amelyet mi esküvőszervezőként mindig végiggondolunk, mielőtt egy párt helyszínbejárásra viszünk.`,
     sections: [

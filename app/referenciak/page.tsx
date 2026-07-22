@@ -23,7 +23,7 @@ export default function Referenciak() {
       <TestimonialsSlider />
 
       {/* Section 4 — CTA képpel */}
-      <section className="relative w-full overflow-hidden" style={{ height: "70vh", minHeight: 420 }}>
+      <section className="relative w-full overflow-hidden h-[50vh] md:h-[70vh] min-h-[320px] md:min-h-[420px]">
         <Image
           src="/images/Nicol%20%26%20Roli/12.-min.jpg"
           alt="Váltsuk valóra álmaitok esküvőjét"

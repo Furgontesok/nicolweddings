@@ -9,6 +9,14 @@ export const metadata: Metadata = {
 
 const faqs = [
   {
+    q: "Miben tud segíteni egy esküvőszervező?",
+    a: "Esküvőszervezőként az első ötlettől a nagy nap utolsó pillanatáig mellettetek vagyok. Segítek az elképzelések megvalósításában, a költségvetés megtervezésében, a szolgáltatók kiválasztásában, és a helyszínen mindent kézben tartok. Nektek csak annyi a dolgotok, hogy megéljétek a nap varázsát.",
+  },
+  {
+    q: "Mennyi idővel az esküvő előtt érdemes felkérni?",
+    a: "Egy esküvő megszervezésére általában 12 hónap elegendő, a nagyobb népszerűségnek örvendő helyszíneknél azonban már 18 hónappal korábban is célszerű elkezdeni a foglalást. Rövidebb határidő mellett is megvalósítható a nagy nap, de a korai kezdés nagyobb nyugalmat és több választási lehetőséget ad.",
+  },
+  {
     q: "Miért érdemes esküvőszervezőt felkérni?",
     a: "Egy esküvő megszervezése rengeteg időt, energiát és utánajárást igényel. Szervezőként leveszem a vállatokról a terhet, hogy ne a stressz, hanem a boldog készülődés határozza meg ezt az időszakot. Célom, hogy ne csupán egy szépen megszervezett napotok legyen, hanem egy örök emlék, amely mindig mosolyt csal az arcotokra.",
   },
@@ -44,7 +52,7 @@ export default function Gyik() {
       <NavbarSimple />
 
       {/* Hero */}
-      <section className="bg-[#F5F3ED] pt-32 pb-16 px-6 text-center">
+      <section className="bg-[#F5F3ED] pt-32 pb-4 md:pb-10 px-6 text-center">
         <p className="font-[family-name:var(--font-nunito)] text-[11px] tracking-[0.4em] uppercase text-[#363025]/35 mb-4">
           Gyakran ismételt kérdések
         </p>
@@ -58,15 +66,15 @@ export default function Gyik() {
       </section>
 
       {/* FAQ grid */}
-      <section className="bg-[#363025] py-24 px-6">
+      <section className="bg-[#363025] pt-4 md:pt-12 pb-14 px-6">
         <div className="max-w-4xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-10">
+          <div className="grid md:grid-cols-2 gap-x-10 gap-y-3">
             {faqs.map((faq, i) => (
               <div key={i} className="border-t border-white/10 pt-8">
-                <h3 className="font-[family-name:var(--font-cormorant)] text-xl font-light text-white mb-4 leading-snug">
+                <h3 className="font-[family-name:var(--font-cormorant)] text-[19px] font-light text-white mb-4 leading-snug">
                   {faq.q}
                 </h3>
-                <p className="font-[family-name:var(--font-quicksand)] text-white/45 text-sm leading-relaxed">
+                <p className="font-[family-name:var(--font-quicksand)] text-white/45 text-[15px] leading-relaxed">
                   {faq.a}
                 </p>
               </div>

@@ -27,7 +27,7 @@ export default function BlogPage() {
 
         {/* Hero fejléc */}
         <div className="pt-16 bg-[#F5F3ED]">
-          <div className="relative overflow-hidden" style={{ height: "55vh", minHeight: 360 }}>
+          <div className="relative overflow-hidden md:h-[55vh] h-[25vh]" style={{ minHeight: 150 }}>
             <Image
               src="/images/fooldal-referenciak/5..jpg"
               alt="Blog"
@@ -41,20 +41,21 @@ export default function BlogPage() {
               style={{ height: "40%", background: "linear-gradient(to bottom, transparent, rgba(245,243,237,0.9))" }}
             />
           </div>
-          <div className="text-center relative z-10 -mt-[2.5rem] pb-4">
-            <h1 className="font-[family-name:var(--font-cormorant)] text-5xl md:text-[6.3rem] font-light text-[#363025] tracking-[0.01em] uppercase">
+          <div className="text-center relative z-10 -mt-[2rem] md:-mt-[5rem] pb-4">
+            <h1 className="font-[family-name:var(--font-cormorant)] text-[2.5rem] md:text-[6.3rem] font-light text-[#363025] tracking-[0.01em] uppercase">
               Blog
             </h1>
           </div>
         </div>
 
         {/* Bejegyzések */}
-        <section className="max-w-5xl mx-auto px-6 pt-10 pb-24 grid grid-cols-1 md:grid-cols-2 gap-10">
+        <section className="max-w-5xl mx-auto px-6 pt-4 md:pt-10 pb-4 grid grid-cols-1 md:grid-cols-2 gap-10">
           {[...blogok].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()).map((post) => (
             <a
               key={post.slug}
+              id={post.slug}
               href={`/blog/${post.slug}`}
-              className="group block bg-white overflow-hidden hover:shadow-md transition-shadow duration-300"
+              className="group block bg-white overflow-hidden hover:shadow-md transition-shadow duration-300 outline-none focus:outline-none"
             >
               <div className="relative w-full aspect-[16/9] overflow-hidden">
                 <Image

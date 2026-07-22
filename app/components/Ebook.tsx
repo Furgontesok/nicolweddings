@@ -118,7 +118,7 @@ export default function Ebook() {
                 type="email"
                 value={email}
                 onChange={e => setEmail(e.target.value)}
-                placeholder="Email cím"
+                placeholder="E-mail cím"
                 required
                 className="bg-white/8 border border-white/20 px-5 py-3.5 font-[family-name:var(--font-nunito)] text-[12px] tracking-[0.05em] text-white placeholder:text-white/30 focus:outline-none focus:border-white/50 transition-colors duration-200"
               />
@@ -132,9 +132,6 @@ export default function Ebook() {
               >
                 {loading ? "Küldés..." : "Kérem az e-bookot"}
               </button>
-              <p className="font-[family-name:var(--font-nunito)] text-white/25 text-[13px] tracking-wide text-center md:text-left">
-                Adataidat csak az e-book küldéséhez használom, harmadik félnek nem adom ki.
-              </p>
             </form>
           )}
         </div>

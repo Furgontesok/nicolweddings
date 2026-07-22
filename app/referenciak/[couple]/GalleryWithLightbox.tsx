@@ -29,7 +29,7 @@ export default function GalleryWithLightbox({ images, name }: { images: string[]
   return (
     <>
       {/* Masonry grid */}
-      <div className="max-w-6xl mx-auto columns-1 md:columns-2 lg:columns-3 gap-4 space-y-4">
+      <div className="max-w-6xl mx-auto columns-3 lg:columns-3 gap-2 space-y-2">
         {images.map((src, i) => (
           <div
             key={i}

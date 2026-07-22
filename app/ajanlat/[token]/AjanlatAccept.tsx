@@ -62,26 +62,27 @@ export default function AjanlatAccept({ token, packages }: Props) {
   }
 
   return (
-    <section className="bg-[#F5F3ED] py-20 px-8">
+    <section className="bg-[#F5F3ED] pt-10 pb-10 px-8">
       <div className="max-w-xl mx-auto">
 
         {/* Fejléc + gomb — mindig látszik */}
-        <div className="text-center mb-12">
+        <div className="text-center mb-6">
           <p className="font-[family-name:var(--font-nunito)] text-[10px] tracking-[0.35em] uppercase text-[#363025]/40 mb-5">
             Döntésre jutottatok?
           </p>
-          <h2 className="font-[family-name:var(--font-cormorant)] text-4xl md:text-5xl font-light text-[#363025] italic mb-10 leading-snug">
+          <h2 className="font-[family-name:var(--font-cormorant)] text-4xl md:text-5xl font-light text-[#363025] italic mb-3 leading-snug">
             Elfogadom az ajánlatot
           </h2>
 
           {/* Gomb */}
-          <button
-            onClick={() => setOpen(true)}
-            disabled={open}
-            className="inline-block border border-[#363025] text-[#363025] font-[family-name:var(--font-nunito)] text-[11px] tracking-[0.25em] uppercase w-80 py-4 text-center hover:bg-[#363025] hover:text-white transition-all duration-300 disabled:pointer-events-none disabled:opacity-0"
-          >
-            Elfogadom
-          </button>
+          {!open && (
+            <button
+              onClick={() => setOpen(true)}
+              className="inline-block border border-[#363025] text-[#363025] font-[family-name:var(--font-nunito)] text-[11px] tracking-[0.25em] uppercase w-80 py-4 text-center hover:bg-[#363025] hover:text-white transition-all duration-300"
+            >
+              Elfogadom
+            </button>
+          )}
         </div>
 
         {/* Form — legördül */}
@@ -100,7 +101,7 @@ export default function AjanlatAccept({ token, packages }: Props) {
 
             <form onSubmit={handleSubmit} className="space-y-6">
               {/* Csomag kiválasztása */}
-              {packages.length > 1 && (
+              {packages.length >= 1 && (
                 <div>
                   <p className="font-[family-name:var(--font-nunito)] text-[10px] tracking-[0.35em] uppercase text-[#363025]/40 mb-3">
                     Kért csomag *
@@ -125,7 +126,7 @@ export default function AjanlatAccept({ token, packages }: Props) {
                             required
                             className="sr-only"
                           />
-                          <span className="font-[family-name:var(--font-nunito)] text-[11px] tracking-[0.15em] uppercase">
+<span className="font-[family-name:var(--font-nunito)] text-[11px] tracking-[0.15em] uppercase">
                             {pkg.title}
                           </span>
                         </div>

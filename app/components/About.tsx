@@ -35,7 +35,7 @@ export default function About() {
           <div className="order-3 md:col-start-1 md:row-start-2">
             <div className="font-[family-name:var(--font-quicksand)] text-[#363025]/70 leading-relaxed space-y-4">
               <p>
-                <strong>Szia, Nicol vagyok</strong> 2022 óta tevékenykedem az esküvőszervezés világában, emellett számos ünnepi alkalom – születésnap, lánybúcsú, babaváró lebonyolításában is tapasztalatot szereztem. A részletek összehangolása, a koncepció megálmodása és a rendezvény napjának zavartalan levezetése számomra igazi szenvedély. Hiszek abban, hogy minden esküvő egyedi, és a párok történetéhez kell illeszkednie. Precízen, megbízhatóan és szívvel-lélekkel kísérem végig az előkészületeket, hogy a nap valódi élménnyé váljon.
+                <strong>Szia, Nicol vagyok</strong> 2022 óta tevékenykedem az esküvőszervezés világában, emellett számos ünnepi alkalom – születésnap, lánybúcsú, babaváró lebonyolításában is tapasztalatot szereztem. A részletek összehangolása, a koncepció megálmodása és a rendezvény napjának zavartalan levezetése számomra igazi szenvedély.<br className="md:hidden" /> Hiszek abban, hogy minden esküvő egyedi,<br className="md:hidden" /> és a párok történetéhez kell illeszkednie. Precízen, megbízhatóan és szívvel-lélekkel kísérem végig az előkészületeket, hogy a nap valódi élménnyé váljon.
               </p>
             </div>
             <a

@@ -3,17 +3,21 @@
 import NavbarSimple from "../components/NavbarSimple";
 import Footer from "../components/Footer";
 import Image from "next/image";
-import { useState } from "react";
+import { useState, Fragment } from "react";
 
 const heroImages = [
-  "/images/szolgaltatasok-header-1.jpg",
-  "/images/szolgaltatasok-header-2.jpg",
-  "/images/szolgaltatasok-header-3.jpg",
-  "/images/szolgaltatasok-header-4.jpg",
-  "/images/szolgaltatasok-header-5.jpg",
-  "/images/szolgaltatasok-header-6.jpg",
-  "/images/szolgaltatasok-header-7.jpg",
-  "/images/szolgaltatasok-header-8.jpg",
+  "/images/szolgaltatasok-header-4.jpg",   // SZEMÉLY F-F  ← első
+  "/images/proba/H88A3995-3.jpg",          // DEKOR  szín
+  "/images/proba/H88A4720.jpg",            // SZEMÉLY szín
+  "/images/szolgaltatasok-header-8.jpg",   // DEKOR  szín
+  "/images/proba/H88A4451copy.jpg",        // SZEMÉLY F-F
+  "/images/szolgaltatasok-header-2.jpg",   // DEKOR  szín
+  "/images/szolgaltatasok-header-7.jpg",   // SZEMÉLY szín
+  "/images/proba/H88A4819.jpg",            // SZEMÉLY szín
+  "/images/szolgaltatasok-header-3.jpg",   // SZEMÉLY szín
+  "/images/szolgaltatasok-header-1.jpg",   // DEKOR  szín
+  "/images/szolgaltatasok-header-5.jpg",   // SZEMÉLY szín
+  "/images/szolgaltatasok-header-6.jpg",   // DEKOR  szín
 ];
 
 const services = [
@@ -38,7 +42,7 @@ const services = [
   {
     num: "02",
     title: "30 nap a nagy napig",
-    desc: "Az 1 hónapos esküvői koordináció tökéletes választás azoknak a pároknak, akik saját maguk szervezik az esküvőt, de a nagy napra szeretnének egy tapasztalt szakembert maguk mellé. Az esküvő előtti utolsó hónapban kapcsolódom be: segítek a részletes forgatókönyv összeállításában, egyeztetek a szolgáltatókkal és koordinálom a feladatokat. A nagy napon végig jelen vagyok a helyszínen, figyelem a menetrendet, kezelem a felmerülő helyzeteket, és gondoskodom róla, hogy minden a terveitek szerint alakuljon. Így Ti valóban megélhetitek a pillanatot, miközben én a háttérből gondoskodom a zavartalan lebonyolításról.",
+    desc: "Az 1 hónapos esküvői koordináció tökéletes választás azoknak a pároknak, akik saját maguk szervezik az esküvőt, de a nagy napra szeretnének egy tapasztalt szakembert maguk mellé. Az esküvő előtti utolsó hónapban kapcsolódom be: segítek a részletes forgatókönyv összeállításában, egyeztetek a szolgáltatókkal és koordinálom a feladatokat. ||A nagy napon végig jelen vagyok a helyszínen, figyelem a menetrendet, kezelem a felmerülő helyzeteket, és gondoskodom róla, hogy minden a terveitek szerint alakuljon. Így Ti valóban megélhetitek a pillanatot, miközben én a háttérből gondoskodom a zavartalan lebonyolításról.",
     items: [
       "Első konzultáció — Egy személyes vagy online találkozó során megismerkedünk és átbeszéljük az esküvőtök főbb elképzeléseit.",
       "Ajánlatadás — Az ajánlat elfogadása után kezdetét veszi a közös munka.",
@@ -67,7 +71,7 @@ const services = [
     title: "Egyéb rendezvények",
     desc: "Az igazán emlékezetes pillanatok mögött mindig gondos tervezés és szeretettel végzett munka áll. Esküvők mellett örömmel vállalok születésnapok, lánybúcsúk, babavárók vagy más privát rendezvények teljes körű megszervezését is. Célom, hogy minden esemény tükrözze az egyéniségeteket és az alkalom különlegességét, miközben Ti nyugodtan megélhetitek a pillanatot. Inspiráló ötletekkel, letisztult stílussal és precíz lebonyolítással gondoskodom arról, hogy minden teljesen hozzátok passzoljon.",
     items: [
-      "Első konzultáció — Egy kötetlen beszélgetés személyesen vagy online, ahol átbeszéljük az esemény típusát, időpontját, helyszínét és az alapelképzeléseiteket.",
+      "Első konzultáció — Egy kötetlen beszélgetés személyesen vagy online, ahol átbeszéljük az esemény típusát, időpontját, helyszínét és az elképzeléseiteket.",
       "Ajánlatadás — A megbeszéltek alapján személyre szabott ajánlatot készítek.",
       "Koncepciótervezés — Közösen kialakítjuk a rendezvény stílusát, tematikáját és színvilágát, valamint egyeztetjük a szükséges szolgáltatókat.",
       "Szervezési szakasz — Lefoglalom a helyszínt, egyeztetek a szolgáltatókkal, és gondoskodom minden részlet összehangolásáról.",
@@ -146,7 +150,7 @@ function ServiceItem({ s, i }: { s: typeof services[0]; i: number }) {
             {s.title}
           </h2>
           <p className="font-[family-name:var(--font-quicksand)] text-[#363025]/65 text-[15px] leading-[1.9] whitespace-pre-line">
-            {s.desc}
+            {s.desc.split("||").map((part, i) => i === 0 ? part : <Fragment key={i}><br className="md:hidden" />{part}</Fragment>)}
           </p>
           <div className="flex justify-end mt-8">
             <a
@@ -182,7 +186,7 @@ function ServiceItem({ s, i }: { s: typeof services[0]; i: number }) {
         {/* Accordion tartalom */}
         <div
           className="overflow-hidden transition-all duration-500 ease-in-out"
-          style={{ maxHeight: isOpen ? "1200px" : "0px", opacity: isOpen ? 1 : 0 }}
+          style={{ maxHeight: isOpen ? "3000px" : "0px", opacity: isOpen ? 1 : 0 }}
         >
           <ul className="pb-6 grid md:grid-cols-2 gap-x-12">
             {s.items.map((item, j) => {
@@ -245,25 +249,25 @@ export default function Szolgaltatasok() {
       <style>{`
         @keyframes marquee-left {
           from { transform: translateX(0); }
-          to   { transform: translateX(-224vw); }
+          to   { transform: translateX(-336vw); }
         }
         @keyframes marquee-right {
-          from { transform: translateX(-224vw); }
+          from { transform: translateX(-336vw); }
           to   { transform: translateX(0); }
         }
         @keyframes marquee-left-mobile {
           from { transform: translateX(0); }
-          to   { transform: translateX(-400vw); }
+          to   { transform: translateX(-660vw); }
         }
         @keyframes marquee-right-mobile {
-          from { transform: translateX(-400vw); }
+          from { transform: translateX(-660vw); }
           to   { transform: translateX(0); }
         }
-        .hero-row-1 { animation: marquee-left 55s linear infinite; }
-        .hero-row-2 { animation: marquee-right 55s linear infinite; }
+        .hero-row-1 { animation: marquee-left 82s linear infinite; }
+        .hero-row-2 { animation: marquee-right 82s linear infinite; }
         @media (max-width: 767px) {
-          .hero-row-1 { animation: marquee-left-mobile 55s linear infinite; }
-          .hero-row-2 { animation: marquee-right-mobile 55s linear infinite; }
+          .hero-row-1 { animation: marquee-left-mobile 91s linear infinite; }
+          .hero-row-2 { animation: marquee-right-mobile 91s linear infinite; }
           .hero-img-wrap { width: 55vw !important; }
         }
       `}</style>
@@ -301,14 +305,14 @@ export default function Szolgaltatasok() {
         </div>
 
         {/* Felirat — a gradient zónában */}
-        <div className="text-center relative z-10 -mt-[2rem] pb-4">
-          <h1 className="font-[family-name:var(--font-cormorant)] text-[2.8rem] md:text-[6.3rem] font-light text-[#363025] tracking-[0.01em] uppercase">SZOLGÁLTATÁSOK</h1>
+        <div className="text-center relative z-10 -mt-[2rem] md:-mt-[5rem] pb-4">
+          <h1 className="font-[family-name:var(--font-cormorant)] text-[2.5rem] md:text-[6.3rem] font-light text-[#363025] tracking-[0.01em] uppercase">SZOLGÁLTATÁSOK</h1>
         </div>
       </div>
 
       {/* Subtitle ribbon */}
-      <section className="bg-[#F5F3ED] -mt-3 pb-4 px-6 text-center">
-        <p className="font-[family-name:var(--font-quicksand)] text-[15px] text-[#363025]/65 max-w-2xl mx-auto leading-[1.9]">
+      <section className="bg-[#F5F3ED] -mt-3 pt-4 md:pt-0 pb-4 px-6 text-center">
+        <p className="font-[family-name:var(--font-quicksand)] text-[13px] md:text-[15px] text-[#363025]/65 max-w-2xl mx-auto leading-[1.9]">
           Minden szolgáltatásom célja, hogy a Ti napotok valóban gondtalan és felejthetetlen legyen.
         </p>
       </section>
@@ -317,7 +321,7 @@ export default function Szolgaltatasok() {
       <ServicesList />
 
       {/* GYIK */}
-      <section className="bg-[#363025] py-24 px-6">
+      <section className="bg-[#363025] pt-12 pb-14 px-6">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16">
             <p className="font-[family-name:var(--font-nunito)] text-xs tracking-[0.3em] uppercase text-white/35 mb-3">
@@ -327,7 +331,7 @@ export default function Szolgaltatasok() {
               Van kérdésed?
             </h2>
             <div className="w-12 h-px bg-white/20 mx-auto mt-6" />
-            <p className="font-[family-name:var(--font-quicksand)] text-white/50 text-sm mt-6">
+            <p className="font-[family-name:var(--font-quicksand)] text-white/50 text-[15px] mt-6">
               Összegyűjtöttem a leggyakrabban feltett kérdéseket. Ha nem találod köztük a választ, írj nekem bátran.
             </p>
           </div>
@@ -335,10 +339,10 @@ export default function Szolgaltatasok() {
           <div className="grid md:grid-cols-2 gap-10">
             {faqs.map((faq, i) => (
               <div key={i} className="border-t border-white/10 pt-8">
-                <h3 className="font-[family-name:var(--font-cormorant)] text-xl font-light text-white mb-4 leading-snug">
+                <h3 className="font-[family-name:var(--font-cormorant)] text-[19px] font-light text-white mb-4 leading-snug">
                   {faq.q}
                 </h3>
-                <p className="font-[family-name:var(--font-quicksand)] text-white/45 text-sm leading-relaxed">
+                <p className="font-[family-name:var(--font-quicksand)] text-white/45 text-[15px] leading-relaxed">
                   {faq.a}
                 </p>
               </div>

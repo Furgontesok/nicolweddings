@@ -11,12 +11,13 @@ const SEEN_KEY = "admin_last_seen";
 type SeenMap = Record<string, string>; // href -> ISO timestamp
 
 const nav = [
-  { label: "Referenciák", href: "/admin/referenciak", icon: "◇" },
   { label: "Ajánlatok", href: "/admin/ajanlatok", icon: "◈", table: "proposal_acceptances", timeField: "created_at" },
   { label: "Megkeresések", href: "/admin/megkeresesek", icon: "◁", table: "contact_submissions", timeField: "created_at" },
-  { label: "Statisztika", href: "/admin/statisztika", icon: "◻" },
   { label: "E-book e-mailek", href: "/admin/emailek", icon: "◻", table: "ebook_downloads", timeField: "downloaded_at" },
   { label: "Visszajelzések", href: "/admin/visszajelzesek", icon: "◻" },
+  { label: "Referenciák", href: "/admin/referenciak", icon: "◇" },
+  { label: "Statisztika", href: "/admin/statisztika", icon: "◻" },
+  { label: "Save the Date", href: "/admin/save-the-date", icon: "◇" },
   { label: "Studio", href: "/admin/studio", icon: "◈" },
 ];
 

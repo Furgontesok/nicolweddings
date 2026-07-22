@@ -31,7 +31,7 @@ export default function Contact() {
         {/* Mobil fejléc + kép */}
         <div className="md:hidden text-center mb-8">
           <p className="font-[family-name:var(--font-nunito)] text-[12px] tracking-[0.3em] uppercase text-[#363025]/40 mb-7">
-            Lépj kapcsolatba velem
+            Alig várom, hogy megismerjük egymást!
           </p>
           {/* Ovális kép mobilon — cím alatt, középre */}
           <div
@@ -50,7 +50,7 @@ export default function Contact() {
           {/* Elérhetőségek mobilon — vízszintesen */}
           <div className="flex justify-center gap-8 font-[family-name:var(--font-quicksand)] text-[#363025]/60 text-[15px] mb-8">
             <a href="mailto:nicol.weddings@gmail.com" className="flex flex-col items-center gap-1.5 hover:text-[#363025] transition-colors">
-              <span className="font-[family-name:var(--font-nunito)] text-[11px] tracking-widest uppercase text-[#363025]/35">Email</span>
+              <span className="font-[family-name:var(--font-nunito)] text-[11px] tracking-widest uppercase text-[#363025]/35">E-mail</span>
               nicol.weddings@gmail.com
             </a>
             <a href="tel:+36305444676" className="flex flex-col items-center gap-1.5 hover:text-[#363025] transition-colors">
@@ -65,7 +65,7 @@ export default function Contact() {
           <h2 className="font-[family-name:var(--font-cormorant)] italic text-[42px] md:text-[58px] font-light text-[#363025]">
             Alig várom, hogy megismerjük egymást!
           </h2>
-          <p className="font-[family-name:var(--font-quicksand)] text-[#363025]/55 text-[16px] mt-5">
+          <p className="md:hidden font-[family-name:var(--font-quicksand)] text-[#363025]/55 text-[16px] mt-5">
             Írj nekem, és 48 órán belül visszajelzek!
           </p>
         </div>
@@ -81,7 +81,7 @@ export default function Contact() {
             <div className="w-10 h-px bg-[#363025]/20 mb-5" />
             <div className="space-y-5 font-[family-name:var(--font-quicksand)] text-[#363025]/60 text-sm">
               <div>
-                <p className="font-[family-name:var(--font-nunito)] text-[10px] tracking-widest uppercase text-[#363025]/35 mb-1">Email</p>
+                <p className="font-[family-name:var(--font-nunito)] text-[10px] tracking-widest uppercase text-[#363025]/35 mb-1">E-mail</p>
                 <a href="mailto:nicol.weddings@gmail.com" className="hover:text-[#363025] transition-colors">
                   nicol.weddings@gmail.com
                 </a>
@@ -131,7 +131,7 @@ export default function Contact() {
                 }}
               >
                 <input required type="text" value={nev} onChange={(e) => setNev(e.target.value)} className={inputClass} placeholder="Teljes név *" />
-                <input required type="email" value={email} onChange={(e) => setEmail(e.target.value)} className={inputClass} placeholder="Email cím *" />
+                <input required type="email" value={email} onChange={(e) => setEmail(e.target.value)} className={inputClass} placeholder="E-mail cím *" />
                 <input required type="tel" value={telefon} onChange={(e) => setTelefon(e.target.value)} className={inputClass} placeholder="Telefonszám *" />
                 <input required type="date" value={datum} onChange={(e) => setDatum(e.target.value)} className={`${inputClass} ${datum ? "has-value" : ""}`} />
                 <input type="text" inputMode="numeric" value={letszam} onChange={(e) => setLetszam(e.target.value)} className={inputClass} placeholder="Vendégek létszáma" />

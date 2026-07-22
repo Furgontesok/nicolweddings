@@ -38,18 +38,18 @@ export default function AdminMegkeresesek() {
   const [loading, setLoading] = useState(true);
   const [selected, setSelected] = useState<Submission | null>(null);
 
-  useEffect(() => {
-    async function load() {
-      if (!supabase || !supabaseConfigured) { setLoading(false); return; }
-      const { data } = await supabase
-        .from("contact_submissions")
-        .select("*")
-        .order("created_at", { ascending: false });
-      setRows(data ?? []);
-      setLoading(false);
-    }
-    load();
-  }, []);
+  async function load() {
+    if (!supabase || !supabaseConfigured) { setLoading(false); return; }
+    setLoading(true);
+    const { data } = await supabase
+      .from("contact_submissions")
+      .select("*")
+      .order("created_at", { ascending: false });
+    setRows(data ?? []);
+    setLoading(false);
+  }
+
+  useEffect(() => { load(); }, []);
 
   return (
     <div className="p-10 min-h-full">
@@ -58,11 +58,17 @@ export default function AdminMegkeresesek() {
           <p className="font-[family-name:var(--font-nunito)] text-[10px] tracking-[0.3em] uppercase text-[#363025]/40 mb-2">Admin</p>
           <h1 className="font-[family-name:var(--font-cormorant)] text-4xl font-light text-[#363025]">Megkeresések</h1>
         </div>
-        {rows.length > 0 && (
-          <span className="font-[family-name:var(--font-nunito)] text-[10px] tracking-widest uppercase text-[#363025]/30">
-            {rows.length} beérkezett
-          </span>
-        )}
+        <div className="flex items-center gap-4">
+          {rows.length > 0 && (
+            <span className="font-[family-name:var(--font-nunito)] text-[10px] tracking-widest uppercase text-[#363025]/30">
+              {rows.length} beérkezett
+            </span>
+          )}
+          <button onClick={() => load()}
+            className="font-[family-name:var(--font-nunito)] text-[11px] tracking-[0.2em] uppercase px-6 py-3 border border-[#363025]/25 text-[#363025]/50 hover:text-[#363025] hover:border-[#363025]/50 transition-all duration-300">
+            ↻ Frissítés
+          </button>
+        </div>
       </div>
 
       {!supabaseConfigured && (
@@ -94,17 +100,18 @@ export default function AdminMegkeresesek() {
         <div className="flex gap-6">
           {/* Lista */}
           <div className="flex-1 bg-white border border-[#363025]/8">
-            <div className="grid grid-cols-4 px-6 py-3 border-b border-[#363025]/8">
+            <div className="grid grid-cols-5 px-6 py-3 border-b border-[#363025]/8">
               <span className="font-[family-name:var(--font-nunito)] text-[9px] tracking-[0.25em] uppercase text-[#363025]/35">Név</span>
               <span className="font-[family-name:var(--font-nunito)] text-[9px] tracking-[0.25em] uppercase text-[#363025]/35">Szolgáltatás</span>
               <span className="font-[family-name:var(--font-nunito)] text-[9px] tracking-[0.25em] uppercase text-[#363025]/35">Forrás</span>
               <span className="font-[family-name:var(--font-nunito)] text-[9px] tracking-[0.25em] uppercase text-[#363025]/35">Dátum</span>
+              <span />
             </div>
             {rows.map((row) => (
               <div
                 key={row.id}
                 onClick={() => setSelected(selected?.id === row.id ? null : row)}
-                className={`grid grid-cols-4 px-6 py-4 border-b border-[#363025]/5 cursor-pointer transition-colors ${
+                className={`grid grid-cols-5 px-6 py-4 border-b border-[#363025]/5 cursor-pointer transition-colors items-center ${
                   selected?.id === row.id ? "bg-[#363025]/5" : "hover:bg-[#F5F3ED]/50"
                 }`}
               >
@@ -118,6 +125,22 @@ export default function AdminMegkeresesek() {
                 <span className="font-[family-name:var(--font-nunito)] text-[11px] text-[#363025]/40">
                   {new Date(row.created_at).toLocaleDateString("hu-HU")}
                 </span>
+                <div className="flex justify-end">
+                  <button
+                    onClick={async (e) => {
+                      e.stopPropagation();
+                      if (!supabase || !confirm("Biztosan törlöd?")) return;
+                      const { error, count } = await supabase.from("contact_submissions").delete({ count: "exact" }).eq("id", row.id);
+                      if (error) { alert("Törlés sikertelen: " + error.message); return; }
+                      if (count === 0) { alert("Nem törölt sort (RLS policy tiltja)."); return; }
+                      setRows(prev => prev.filter(r => r.id !== row.id));
+                      if (selected?.id === row.id) setSelected(null);
+                    }}
+                    className="font-[family-name:var(--font-nunito)] text-[10px] tracking-widest uppercase text-red-400/40 hover:text-red-500 transition-colors"
+                  >
+                    Törlés
+                  </button>
+                </div>
               </div>
             ))}
           </div>
@@ -156,6 +179,19 @@ export default function AdminMegkeresesek() {
               >
                 Válasz küldése
               </a>
+              <button
+                onClick={async () => {
+                  if (!supabase || !confirm("Biztosan törlöd?")) return;
+                  const { error, count } = await supabase.from("contact_submissions").delete({ count: "exact" }).eq("id", selected.id);
+                  if (error) { alert("Törlés sikertelen: " + error.message); return; }
+                  if (count === 0) { alert("Nem törölt sort (RLS policy tiltja)."); return; }
+                  setRows(prev => prev.filter(r => r.id !== selected.id));
+                  setSelected(null);
+                }}
+                className="mt-2 block w-full text-center font-[family-name:var(--font-nunito)] text-[11px] tracking-[0.2em] uppercase px-6 py-3 border border-red-300/50 text-red-400/60 hover:text-red-500 hover:border-red-400 transition-colors duration-300"
+              >
+                Törlés
+              </button>
             </div>
           )}
         </div>
