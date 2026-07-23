@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { supabase, supabaseConfigured } from "@/lib/supabase";
+import { adminDelete } from "@/lib/admin-delete";
 
 type EmailRow = { id: string; email: string; name?: string; downloaded_at: string };
 
@@ -28,10 +29,9 @@ export default function AdminEmailek() {
   };
 
   const deleteEmail = async (id: string) => {
-    if (!supabase || !confirm("Biztosan törlöd?")) return;
-    const { error, count } = await supabase.from("ebook_downloads").delete({ count: "exact" }).eq("id", id);
-    if (error) { alert("Törlés sikertelen: " + error.message); return; }
-    if (count === 0) { alert("Nem törölt sort (RLS policy tiltja). Engedélyezd a delete policy-t Supabase-ben az ebook_downloads táblán."); return; }
+    if (!confirm("Biztosan törlöd?")) return;
+    const err = await adminDelete("ebook_downloads", id);
+    if (err) { alert("Törlés sikertelen: " + err); return; }
     setEmails(prev => prev.filter(e => e.id !== id));
   };
 

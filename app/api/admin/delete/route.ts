@@ -12,6 +12,7 @@ const ALLOWED_TABLES = [
   "proposals",
   "proposal_acceptances",
   "save_the_dates",
+  "ebook_downloads",
 ];
 
 export async function DELETE(req: NextRequest) {
