@@ -3,6 +3,7 @@ import Hero from "./components/Hero";
 import Fit from "./components/Fit";
 import Services from "./components/Services";
 import ReferencesPreview from "./components/ReferencesPreview";
+import InstagramFeed from "./components/InstagramFeed";
 import Video from "./components/Video";
 import About from "./components/About";
 import Testimonials from "./components/Testimonials";
@@ -25,6 +26,7 @@ export default function Home() {
         <div className="h-6 md:h-16 bg-[#D6D8CA]" />
         <Testimonials />
         <ReferencesPreview />
+        <InstagramFeed />
         <Ebook />
         <Contact />
       </main>
