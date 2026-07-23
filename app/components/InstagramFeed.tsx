@@ -19,6 +19,10 @@ export default function InstagramFeed() {
           <p className="font-[family-name:var(--font-nunito)] text-[12px] tracking-[0.3em] uppercase text-[#363025]/40 mb-3">Instagram</p>
           <h2 className="font-[family-name:var(--font-italianno)] text-4xl md:text-5xl lg:text-6xl text-[#363025]">Kövess minket</h2>
         </div>
+        <style>{`
+          behold-widget { --columns: 3; --rows: 2; }
+          @media (min-width: 768px) { behold-widget { --columns: 6; --rows: 1; } }
+        `}</style>
         <div dangerouslySetInnerHTML={{ __html: '<behold-widget feed-id="zGSeoX5yXQWaM1H0QDI5"></behold-widget>' }} />
       </div>
     </section>
