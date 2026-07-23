@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Szolgáltatások — Esküvőszervezés és koordináció",
-  description: "Teljes körű esküvőszervezés, 30 napos koordináció és esküvői tanácsadás. Nézd meg milyen csomagokkal tudok segíteni az álmai esküvő megvalósításában.",
+  title: "Esküvőszervezés Budapest — Csomagok és árak | Nicol Weddings",
+  description: "Teljes körű esküvőszervezés, 30 napos koordináció és esküvői tanácsadás Budapesten és Magyarország szerte. Nézd meg milyen csomagokkal tudok segíteni.",
   alternates: { canonical: "https://www.nicolweddings.hu/szolgaltatasok" },
 };
 

@@ -34,10 +34,10 @@ const BASE_URL = "https://www.nicolweddings.hu";
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
   title: {
-    default: "Nicol Weddings and Events — Esküvőszervező Magyarország",
+    default: "Nicol Weddings — Esküvőszervező Budapest és Magyarország",
     template: "%s | Nicol Weddings and Events",
   },
-  description: "Gőz-Csongrádi Nicol esküvőszervező és dekorátor. Teljes körű esküvőszervezés, 30 napos koordináció és tanácsadás Magyarországon.",
+  description: "Gőz-Csongrádi Nicol esküvőszervező Budapest és Magyarország szerte. Teljes körű esküvőszervezés, 30 napos koordináció, díjmentes konzultáció. Álmai esküvője valóra válik.",
   keywords: ["esküvőszervező", "esküvő szervező", "esküvő koordinátor", "esküvő dekorátor", "Nicol Weddings", "magyarország esküvőszervező", "Budapest esküvőszervező"],
   authors: [{ name: "Gőz-Csongrádi Nicol" }],
   creator: "Nicol Weddings and Events",
@@ -46,8 +46,8 @@ export const metadata: Metadata = {
     locale: "hu_HU",
     url: BASE_URL,
     siteName: "Nicol Weddings and Events",
-    title: "Nicol Weddings and Events — Esküvőszervező Magyarország",
-    description: "Gőz-Csongrádi Nicol esküvőszervező és dekorátor. Álmai esküvője valóra válik.",
+    title: "Nicol Weddings — Esküvőszervező Budapest és Magyarország",
+    description: "Gőz-Csongrádi Nicol esküvőszervező Budapest és Magyarország szerte. Álmai esküvője valóra válik.",
     images: [{ url: "/images/og-image.jpg", width: 1200, height: 630, alt: "Nicol Weddings and Events" }],
   },
   twitter: {

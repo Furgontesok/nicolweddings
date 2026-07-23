@@ -241,6 +241,9 @@ export default function Hero() {
               Bennetek és másokban.
             </span>
           </h1>
+          <p className="font-[family-name:var(--font-nunito)] text-white/55 text-[10px] tracking-[0.3em] uppercase mt-4 drop-shadow">
+            Esküvőszervező Budapest
+          </p>
         </div>
 
 
