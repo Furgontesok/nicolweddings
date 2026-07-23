@@ -23,14 +23,14 @@ const hardcoded: TestimonialItem[] = [
   {
     name: "Dr. Pozsonyi Petra",
     photo: "/images/visszajelzes-pozsonyi-petra.jpg",
-    objectPosition: "center top",
+    objectPosition: "center 20%",
     quote: "Pontossága, precizitása, odafigyelése és kedvessége az első egyeztetéstől az utolsó vendég távozásáig jellemezte munkáját.",
     text: "Nicol egy számomra nagyon fontos személy születésnapját szervezte meg és koordinálta. Pontossága, precizitása, odafigyelése és kedvessége az első egyeztetéstől az utolsó vendég távozásáig jellemezte munkáját. Segített rátalálni a megfelelő szolgáltatókra, végig lelkiismeretesen egyeztetett velük, majd az esemény napján a közös munkájuk is maximálisan gördülékenyen ment. Nekünk, résztvevőknek csupán egy feladatunk volt, igazán jól érezni magunkat. Nem is kérdés, ha egyszer férjhez megyek kire fogom rábízni az esküvőmet. Köszönünk mindent!",
   },
   {
     name: "Orsi & Krisz",
     photo: "/images/visszajelzes-orsi-krisz.jpg",
-    objectPosition: "center top",
+    objectPosition: "center 35%",
     quote: "Aztán a saját bőrünkön tapasztaltuk meg, mekkora segítséget nyújt, és milyen hihetetlen terhet vesz le rólunk.",
     text: "Őszintén, mi először nem gondoltuk, hogy az esküvőszervező must have szolgáltató… Aztán a saját bőrünkön tapasztaltuk meg, mekkora segítséget nyújt, és milyen hihetetlen terhet vesz le rólunk. Nicol rengeteg kreatív ötlettel látott el minket már a legelején, amik hozzájárultak ahhoz, hogy a végeredmény ízléses, stílusos és teljesen ránk szabott legyen. Minden apró részletre gondolt, mindig kedves, figyelmes és határozott volt. Kéz a kézben készültünk a nagy napra, és amikor elérkezett a pillanat, teljesen elengedhettük magunkat. Hálásan köszönjük, Nicol!",
   },
@@ -44,7 +44,7 @@ const hardcoded: TestimonialItem[] = [
   {
     name: "Szerus & Andris",
     photo: "/images/visszajelzes-szerus-andris.jpg",
-    objectPosition: "center top",
+    objectPosition: "center 35%",
     quote: "A szervezés első pillanatától kezdve a lagzi végéig teljes biztonságban éreztük magunkat.",
     text: "Szívből hálásak vagyunk a közös munkáért, egyszerűen fantasztikus volt minden! A szervezés első pillanatától kezdve a lagzi végéig teljes biztonságban éreztük magunkat, mert Nicol mindent maximálisan a kezében tartott, így mi és a családunk is felhőtlenül megélhettük a pillanatot. Kiváló szakembereket és szolgáltatókat ajánlott nekünk, amiért külön köszönet jár! Hihetetlenül magas szépérzéke van, a dekoráció és a hangulat minden elemében visszaköszönt a stílusossága. A vendégeinktől is rengeteg olyan visszajelzést kaptunk, hogy minden apró részlet tökéletes volt. Tiszta szívből, bátran ajánljuk mindenkinek, akik stresszmentes és álomszép esküvőt szeretnének, amire egész hátralévő életükben örömmel emlékeznek majd vissza!",
   },
