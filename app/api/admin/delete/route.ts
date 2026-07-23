@@ -16,7 +16,7 @@ const ALLOWED_TABLES = [
 
 export async function DELETE(req: NextRequest) {
   const cookieStore = await cookies();
-  const adminCookie = cookieStore.get("admin_session");
+  const adminCookie = cookieStore.get("admin_auth");
   if (!adminCookie?.value) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
