@@ -29,9 +29,35 @@ const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
 });
 
+const BASE_URL = "https://www.nicolweddings.hu";
+
 export const metadata: Metadata = {
-  title: "Nicol Weddings and Events",
-  description: "Esküvőszervező és dekorátor — álmai esküvője valóra válik",
+  metadataBase: new URL(BASE_URL),
+  title: {
+    default: "Nicol Weddings and Events — Esküvőszervező Magyarország",
+    template: "%s | Nicol Weddings and Events",
+  },
+  description: "Gőz-Csongrádi Nicol esküvőszervező és dekorátor. Teljes körű esküvőszervezés, 30 napos koordináció és tanácsadás Magyarországon.",
+  keywords: ["esküvőszervező", "esküvő szervező", "esküvő koordinátor", "esküvő dekorátor", "Nicol Weddings", "magyarország esküvőszervező", "Budapest esküvőszervező"],
+  authors: [{ name: "Gőz-Csongrádi Nicol" }],
+  creator: "Nicol Weddings and Events",
+  openGraph: {
+    type: "website",
+    locale: "hu_HU",
+    url: BASE_URL,
+    siteName: "Nicol Weddings and Events",
+    title: "Nicol Weddings and Events — Esküvőszervező Magyarország",
+    description: "Gőz-Csongrádi Nicol esküvőszervező és dekorátor. Álmai esküvője valóra válik.",
+    images: [{ url: "/images/og-image.jpg", width: 1200, height: 630, alt: "Nicol Weddings and Events" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Nicol Weddings and Events",
+    description: "Esküvőszervező és dekorátor Magyarországon.",
+    images: ["/images/og-image.jpg"],
+  },
+  robots: { index: true, follow: true },
+  alternates: { canonical: BASE_URL },
 };
 
 export default function RootLayout({

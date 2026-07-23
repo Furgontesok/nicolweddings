@@ -1,12 +1,12 @@
 import Image from "next/image";
 
 const igPreviews = [
-  "/images/Bia%20%26%20Bence/3.jpg",
-  "/images/Betti%20%26%20Levi/4.jpg",
-  "/images/Nicol%20%26%20Roli/5.-min.jpg",
-  "/images/Vivi%20%26%20Bence/2..jpg",
-  "/images/Panni%20%26%20Sanyi/6.jpg",
-  "/images/R%C3%A9ka%20%26%20%C3%81d%C3%A1m/7.jpg",
+  { src: "/images/Bia%20%26%20Bence/3.jpg", alt: "Bia & Bence esküvői fotó — Nicol Weddings" },
+  { src: "/images/Betti%20%26%20Levi/4.jpg", alt: "Betti & Levi esküvői fotó — Nicol Weddings" },
+  { src: "/images/Nicol%20%26%20Roli/5.-min.jpg", alt: "Nicol & Roli esküvői fotó — Nicol Weddings" },
+  { src: "/images/Vivi%20%26%20Bence/2..jpg", alt: "Vivi & Bence esküvői fotó — Nicol Weddings" },
+  { src: "/images/Panni%20%26%20Sanyi/6.jpg", alt: "Panni & Sanyi esküvői fotó — Nicol Weddings" },
+  { src: "/images/R%C3%A9ka%20%26%20%C3%81d%C3%A1m/7.jpg", alt: "Réka & Ádám esküvői fotó — Nicol Weddings" },
 ];
 
 const navLinks = [
@@ -30,7 +30,7 @@ export default function Footer() {
         </h2>
         <div className="mb-8" />
         <div className="grid grid-cols-3 md:grid-cols-6 w-full gap-1">
-          {igPreviews.map((src, i) => (
+          {igPreviews.map((item, i) => (
             <a
               key={i}
               href="https://www.instagram.com/nicolweddings"
@@ -40,8 +40,8 @@ export default function Footer() {
               style={{ aspectRatio: "1/1" }}
             >
               <Image
-                src={src}
-                alt="Instagram"
+                src={item.src}
+                alt={item.alt}
                 fill
                 className="object-cover group-hover:scale-105 transition-transform duration-500"
                 sizes="(max-width: 768px) 33vw, 17vw"
