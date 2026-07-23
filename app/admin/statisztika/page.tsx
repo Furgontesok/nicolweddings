@@ -60,11 +60,11 @@ export default function AdminStatisztika() {
   }
 
   return (
-    <div className="p-10">
-      <div className="flex items-end justify-between mb-10">
+    <div className="p-4 md:p-10">
+      <div className="flex items-start justify-between mb-6 md:mb-10 gap-3">
         <div>
           <p className="font-[family-name:var(--font-nunito)] text-[10px] tracking-[0.3em] uppercase text-[#363025]/40 mb-2">Admin</p>
-          <h1 className="font-[family-name:var(--font-cormorant)] text-4xl font-light text-[#363025]">Statisztika</h1>
+          <h1 className="font-[family-name:var(--font-cormorant)] text-3xl md:text-4xl font-light text-[#363025]">Statisztika</h1>
         </div>
         <div className="flex gap-2">
           {([7, 30, 90] as const).map(d => (

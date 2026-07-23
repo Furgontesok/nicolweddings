@@ -36,16 +36,16 @@ export default function AdminEmailek() {
   };
 
   return (
-    <div className="p-10">
-      <div className="flex items-end justify-between mb-10">
+    <div className="p-4 md:p-10">
+      <div className="flex items-end justify-between mb-6 md:mb-10">
         <div>
           <p className="font-[family-name:var(--font-nunito)] text-[10px] tracking-[0.3em] uppercase text-[#363025]/40 mb-2">Admin</p>
-          <h1 className="font-[family-name:var(--font-cormorant)] text-4xl font-light text-[#363025]">E-book letöltők</h1>
+          <h1 className="font-[family-name:var(--font-cormorant)] text-3xl md:text-4xl font-light text-[#363025]">E-book letöltők</h1>
         </div>
         {emails.length > 0 && (
           <button
             onClick={copyAll}
-            className="font-[family-name:var(--font-nunito)] text-[11px] tracking-[0.2em] uppercase px-8 py-3 border border-[#363025]/50 text-[#363025] hover:bg-[#363025] hover:text-white transition-all duration-300"
+            className="font-[family-name:var(--font-nunito)] text-[11px] tracking-[0.2em] uppercase px-5 md:px-8 py-2.5 md:py-3 border border-[#363025]/50 text-[#363025] hover:bg-[#363025] hover:text-white transition-all duration-300"
           >
             Másolás
           </button>
@@ -90,28 +90,45 @@ export default function AdminEmailek() {
 
       {supabaseConfigured && !loading && emails.length > 0 && (
         <div className="bg-white border border-[#363025]/8">
-          <div className="grid grid-cols-4 px-6 py-3 border-b border-[#363025]/8">
+          {/* Desktop fejléc */}
+          <div className="hidden md:grid grid-cols-4 px-6 py-3 border-b border-[#363025]/8">
             <span className="font-[family-name:var(--font-nunito)] text-[9px] tracking-[0.25em] uppercase text-[#363025]/35">E-mail</span>
             <span className="font-[family-name:var(--font-nunito)] text-[9px] tracking-[0.25em] uppercase text-[#363025]/35">Név</span>
             <span className="font-[family-name:var(--font-nunito)] text-[9px] tracking-[0.25em] uppercase text-[#363025]/35">Dátum</span>
             <span />
           </div>
           {emails.map((row) => (
-            <div key={row.id} className="grid grid-cols-4 px-6 py-4 border-b border-[#363025]/5 hover:bg-[#F5F3ED]/50 transition-colors items-center">
-              <span className="font-[family-name:var(--font-nunito)] text-[12px] text-[#363025]">{row.email}</span>
-              <span className="font-[family-name:var(--font-nunito)] text-[12px] text-[#363025]/60">{row.name ?? "—"}</span>
-              <span className="font-[family-name:var(--font-nunito)] text-[11px] text-[#363025]/40">
-                {new Date(row.downloaded_at).toLocaleDateString("hu-HU")}
-              </span>
-              <div className="flex justify-end">
+            <div key={row.id} className="border-b border-[#363025]/5 hover:bg-[#F5F3ED]/50 transition-colors">
+              {/* Mobile layout */}
+              <div className="md:hidden px-4 py-3 flex items-start justify-between gap-2">
+                <div className="min-w-0">
+                  <p className="font-[family-name:var(--font-nunito)] text-[12px] text-[#363025] break-all">{row.email}</p>
+                  <p className="font-[family-name:var(--font-nunito)] text-[11px] text-[#363025]/50 mt-0.5">
+                    {row.name ?? ""}{row.name ? " · " : ""}{new Date(row.downloaded_at).toLocaleDateString("hu-HU")}
+                  </p>
+                </div>
                 <button onClick={() => deleteEmail(row.id)}
-                  className="font-[family-name:var(--font-nunito)] text-[10px] tracking-widest uppercase text-red-400/40 hover:text-red-500 transition-colors">
-                  Törlés
+                  className="shrink-0 font-[family-name:var(--font-nunito)] text-[10px] uppercase text-red-400/40 hover:text-red-500 transition-colors">
+                  ×
                 </button>
+              </div>
+              {/* Desktop layout */}
+              <div className="hidden md:grid grid-cols-4 px-6 py-4 items-center">
+                <span className="font-[family-name:var(--font-nunito)] text-[12px] text-[#363025]">{row.email}</span>
+                <span className="font-[family-name:var(--font-nunito)] text-[12px] text-[#363025]/60">{row.name ?? "—"}</span>
+                <span className="font-[family-name:var(--font-nunito)] text-[11px] text-[#363025]/40">
+                  {new Date(row.downloaded_at).toLocaleDateString("hu-HU")}
+                </span>
+                <div className="flex justify-end">
+                  <button onClick={() => deleteEmail(row.id)}
+                    className="font-[family-name:var(--font-nunito)] text-[10px] tracking-widest uppercase text-red-400/40 hover:text-red-500 transition-colors">
+                    Törlés
+                  </button>
+                </div>
               </div>
             </div>
           ))}
-          <div className="px-6 py-3 border-t border-[#363025]/8">
+          <div className="px-4 md:px-6 py-3 border-t border-[#363025]/8">
             <span className="font-[family-name:var(--font-nunito)] text-[10px] tracking-widest uppercase text-[#363025]/30">
               Összesen: {emails.length} letöltő
             </span>

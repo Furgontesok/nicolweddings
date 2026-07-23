@@ -121,8 +121,8 @@ export default function AdminVissza() {
   const sorted = [...rows].sort((a, b) => a.display_order - b.display_order);
 
   return (
-    <div className="p-10 min-h-full max-w-3xl">
-      <div className="mb-10">
+    <div className="p-4 md:p-10 min-h-full max-w-3xl">
+      <div className="mb-6 md:mb-10">
         <p className="font-[family-name:var(--font-nunito)] text-[10px] tracking-[0.3em] uppercase text-[#363025]/40 mb-2">Admin</p>
         <h1 className="font-[family-name:var(--font-cormorant)] text-4xl font-light text-[#363025]">Visszajelzések</h1>
         <p className="font-[family-name:var(--font-nunito)] text-[11px] text-[#363025]/40 mt-2">A főoldalon és a referenciák oldalon jelenik meg.</p>

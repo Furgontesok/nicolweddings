@@ -275,83 +275,110 @@ export default function AdminReferenciak() {
   const sortedImages = [...images].sort((a, b) => a.display_order - b.display_order);
   const sortedVendors = [...vendors].sort((a, b) => a.display_order - b.display_order);
 
-  return (
-    <div className="flex h-screen overflow-hidden">
-      {/* Bal panel */}
-      <div className="w-72 shrink-0 bg-white border-r border-[#363025]/8 flex flex-col">
-        <div className="px-6 pt-8 pb-4 border-b border-[#363025]/8">
+  const CoupleList = () => (
+    <>
+      <div className="px-6 pt-6 pb-4 border-b border-[#363025]/8 flex items-center justify-between">
+        <div>
           <p className={labelCls}>Admin</p>
           <h1 className="font-[family-name:var(--font-cormorant)] text-2xl font-light text-[#363025]">Referenciák</h1>
         </div>
+      </div>
+      <div className="flex-1 overflow-y-auto">
+        {loading ? (
+          <p className="font-[family-name:var(--font-nunito)] text-[10px] tracking-widest uppercase text-[#363025]/30 text-center py-8">Betöltés...</p>
+        ) : couples.length === 0 ? (
+          <p className="font-[family-name:var(--font-nunito)] text-[10px] tracking-wide text-[#363025]/30 text-center py-8 px-4">
+            Még nincsenek párok.
+          </p>
+        ) : (
+          <ul>
+            {couples.map((c, idx) => (
+              <li key={c.id}
+                className={`flex items-center gap-2 px-4 py-3 border-b border-[#363025]/5 cursor-pointer transition-colors ${selected?.id === c.id ? "bg-[#363025]/5" : "hover:bg-[#F5F3ED]/60"}`}
+                onClick={() => { selectCouple(c); }}
+              >
+                <div className="flex-1 min-w-0">
+                  <p className="font-[family-name:var(--font-nunito)] text-[11px] text-[#363025] truncate">{c.name}</p>
+                  <p className="font-[family-name:var(--font-nunito)] text-[9px] text-[#363025]/30 tracking-wide truncate">{c.slug}</p>
+                </div>
+                <div className="flex flex-col gap-0.5 shrink-0">
+                  <button onClick={e => { e.stopPropagation(); moveCouple(c, -1); }} disabled={idx === 0}
+                    className="text-[#363025]/25 hover:text-[#363025]/60 disabled:opacity-20 text-[10px] leading-none px-1">▲</button>
+                  <button onClick={e => { e.stopPropagation(); moveCouple(c, 1); }} disabled={idx === couples.length - 1}
+                    className="text-[#363025]/25 hover:text-[#363025]/60 disabled:opacity-20 text-[10px] leading-none px-1">▼</button>
+                </div>
+              </li>
+            ))}
+          </ul>
+        )}
+      </div>
+      <div className="p-4 border-t border-[#363025]/8">
+        <button onClick={createCouple}
+          className="w-full font-[family-name:var(--font-nunito)] text-[10px] tracking-[0.2em] uppercase py-3 border border-[#363025]/25 text-[#363025]/50 hover:border-[#363025]/50 hover:text-[#363025] transition-all duration-200">
+          + Új pár
+        </button>
+      </div>
+    </>
+  );
 
-        <div className="flex-1 overflow-y-auto">
-          {loading ? (
-            <p className="font-[family-name:var(--font-nunito)] text-[10px] tracking-widest uppercase text-[#363025]/30 text-center py-8">Betöltés...</p>
-          ) : couples.length === 0 ? (
-            <p className="font-[family-name:var(--font-nunito)] text-[10px] tracking-wide text-[#363025]/30 text-center py-8 px-4">
-              Még nincsenek párok. Hozz létre egyet, vagy futtasd a seed SQL-t.
-            </p>
-          ) : (
-            <ul>
-              {couples.map((c, idx) => (
-                <li key={c.id}
-                  className={`flex items-center gap-2 px-4 py-3 border-b border-[#363025]/5 cursor-pointer transition-colors ${selected?.id === c.id ? "bg-[#363025]/5" : "hover:bg-[#F5F3ED]/60"}`}
-                  onClick={() => selectCouple(c)}
-                >
-                  <div className="flex-1 min-w-0">
-                    <p className="font-[family-name:var(--font-nunito)] text-[11px] text-[#363025] truncate">{c.name}</p>
-                    <p className="font-[family-name:var(--font-nunito)] text-[9px] text-[#363025]/30 tracking-wide truncate">{c.slug}</p>
-                  </div>
-                  <div className="flex flex-col gap-0.5 shrink-0">
-                    <button onClick={e => { e.stopPropagation(); moveCouple(c, -1); }} disabled={idx === 0}
-                      className="text-[#363025]/25 hover:text-[#363025]/60 disabled:opacity-20 text-[10px] leading-none px-1">▲</button>
-                    <button onClick={e => { e.stopPropagation(); moveCouple(c, 1); }} disabled={idx === couples.length - 1}
-                      className="text-[#363025]/25 hover:text-[#363025]/60 disabled:opacity-20 text-[10px] leading-none px-1">▼</button>
-                  </div>
-                </li>
-              ))}
-            </ul>
-          )}
-        </div>
-
-        <div className="p-4 border-t border-[#363025]/8">
-          <button onClick={createCouple}
-            className="w-full font-[family-name:var(--font-nunito)] text-[10px] tracking-[0.2em] uppercase py-3 border border-[#363025]/25 text-[#363025]/50 hover:border-[#363025]/50 hover:text-[#363025] transition-all duration-200">
-            + Új pár
-          </button>
-        </div>
+  return (
+    <div className="flex h-[calc(100vh-3.5rem)] md:h-screen overflow-hidden">
+      {/* Desktop: bal panel */}
+      <div className="hidden md:flex w-72 shrink-0 bg-white border-r border-[#363025]/8 flex-col">
+        <CoupleList />
       </div>
 
-      {/* Jobb panel */}
-      {!selected ? (
-        <div className="flex-1 flex items-center justify-center">
+      {/* Mobile: lista nézet (ha nincs selected) */}
+      {!selected && (
+        <div className="md:hidden flex flex-col flex-1 bg-white overflow-hidden">
+          <CoupleList />
+        </div>
+      )}
+
+      {/* Desktop: jobb panel (ha nincs selected) */}
+      {!selected && (
+        <div className="hidden md:flex flex-1 items-center justify-center">
           <p className="font-[family-name:var(--font-cormorant)] text-2xl font-light text-[#363025]/25 italic">Válassz ki egy párt a szerkesztéshez</p>
         </div>
-      ) : (
+      )}
+
+      {selected && (
         <div className="flex-1 flex flex-col overflow-hidden">
           {/* Fejléc + tabok */}
-          <div className="px-8 pt-6 pb-0 border-b border-[#363025]/8 bg-white shrink-0">
-            <div className="flex items-center justify-between mb-4">
-              <div>
-                <p className={labelCls}>Szerkesztés</p>
-                <h2 className="font-[family-name:var(--font-cormorant)] text-3xl font-light text-[#363025]">{selected.name}</h2>
+          <div className="px-4 md:px-8 pt-4 md:pt-6 pb-0 border-b border-[#363025]/8 bg-white shrink-0">
+            <div className="flex items-center justify-between mb-3 md:mb-4">
+              <div className="flex items-center gap-3">
+                {/* Mobile: vissza gomb */}
+                <button
+                  onClick={() => setSelected(null)}
+                  className="md:hidden text-[#363025]/40 hover:text-[#363025] transition-colors"
+                  aria-label="Vissza"
+                >
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round">
+                    <line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/>
+                  </svg>
+                </button>
+                <div>
+                  <p className={labelCls}>Szerkesztés</p>
+                  <h2 className="font-[family-name:var(--font-cormorant)] text-2xl md:text-3xl font-light text-[#363025]">{selected.name}</h2>
+                </div>
               </div>
               <button onClick={deleteCouple}
                 className="font-[family-name:var(--font-nunito)] text-[10px] tracking-widest uppercase text-red-400/40 hover:text-red-500 transition-colors">
                 Törlés
               </button>
             </div>
-            <div className="flex gap-6">
+            <div className="flex gap-4 md:gap-6 overflow-x-auto">
               {(["images", "info", "vendors"] as const).map(t => (
                 <button key={t} onClick={() => setTab(t)}
-                  className={`font-[family-name:var(--font-nunito)] text-[10px] tracking-[0.2em] uppercase pb-3 border-b-2 transition-colors ${tab === t ? "border-[#363025] text-[#363025]" : "border-transparent text-[#363025]/35 hover:text-[#363025]/60"}`}>
-                  {t === "images" ? `Képek (${images.length})` : t === "info" ? "Adatok" : `Szolgáltatók (${vendors.length})`}
+                  className={`font-[family-name:var(--font-nunito)] text-[10px] tracking-[0.2em] uppercase pb-3 border-b-2 transition-colors whitespace-nowrap ${tab === t ? "border-[#363025] text-[#363025]" : "border-transparent text-[#363025]/35 hover:text-[#363025]/60"}`}>
+                  {t === "images" ? `Képek (${images.length})` : t === "info" ? "Adatok" : `Szoláltatók (${vendors.length})`}
                 </button>
               ))}
             </div>
           </div>
 
-          <div className="flex-1 overflow-y-auto p-8">
+          <div className="flex-1 overflow-y-auto p-4 md:p-8">
 
             {/* KÉPEK */}
             {tab === "images" && (

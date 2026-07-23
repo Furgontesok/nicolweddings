@@ -53,28 +53,28 @@ export default function AdminMegkeresesek() {
   useEffect(() => { load(); }, []);
 
   return (
-    <div className="p-10 min-h-full">
-      <div className="flex items-end justify-between mb-10">
+    <div className="p-4 md:p-10 min-h-full">
+      <div className="flex items-end justify-between mb-6 md:mb-10">
         <div>
           <p className="font-[family-name:var(--font-nunito)] text-[10px] tracking-[0.3em] uppercase text-[#363025]/40 mb-2">Admin</p>
-          <h1 className="font-[family-name:var(--font-cormorant)] text-4xl font-light text-[#363025]">Megkeresések</h1>
+          <h1 className="font-[family-name:var(--font-cormorant)] text-3xl md:text-4xl font-light text-[#363025]">Megkeresések</h1>
         </div>
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-3">
           {rows.length > 0 && (
-            <span className="font-[family-name:var(--font-nunito)] text-[10px] tracking-widest uppercase text-[#363025]/30">
-              {rows.length} beérkezett
+            <span className="hidden sm:inline font-[family-name:var(--font-nunito)] text-[10px] tracking-widest uppercase text-[#363025]/30">
+              {rows.length} db
             </span>
           )}
           <button onClick={() => load()}
-            className="font-[family-name:var(--font-nunito)] text-[11px] tracking-[0.2em] uppercase px-6 py-3 border border-[#363025]/25 text-[#363025]/50 hover:text-[#363025] hover:border-[#363025]/50 transition-all duration-300">
-            ↻ Frissítés
+            className="font-[family-name:var(--font-nunito)] text-[11px] tracking-[0.2em] uppercase px-4 md:px-6 py-2.5 md:py-3 border border-[#363025]/25 text-[#363025]/50 hover:text-[#363025] hover:border-[#363025]/50 transition-all duration-300">
+            ↻
           </button>
         </div>
       </div>
 
       {!supabaseConfigured && (
-        <div className="bg-white border border-[#363025]/10 p-10 text-center">
-          <p className="font-[family-name:var(--font-cormorant)] text-2xl font-light text-[#363025]/50 mb-3 italic">
+        <div className="bg-white border border-[#363025]/10 p-8 text-center">
+          <p className="font-[family-name:var(--font-cormorant)] text-2xl font-light text-[#363025]/50 italic">
             Supabase nincs konfigurálva
           </p>
         </div>
@@ -87,113 +87,162 @@ export default function AdminMegkeresesek() {
       )}
 
       {supabaseConfigured && !loading && rows.length === 0 && (
-        <div className="bg-white border border-[#363025]/10 p-10 text-center">
-          <p className="font-[family-name:var(--font-cormorant)] text-2xl font-light text-[#363025]/40 italic">
-            Még nincs megkeresés
-          </p>
-          <p className="font-[family-name:var(--font-nunito)] text-[11px] tracking-wide text-[#363025]/30 mt-3">
-            A kapcsolati űrlap kitöltése után jelennek meg itt a megkeresések.
-          </p>
+        <div className="bg-white border border-[#363025]/10 p-8 text-center">
+          <p className="font-[family-name:var(--font-cormorant)] text-2xl font-light text-[#363025]/40 italic">Még nincs megkeresés</p>
         </div>
       )}
 
       {supabaseConfigured && !loading && rows.length > 0 && (
-        <div className="flex gap-6">
-          {/* Lista */}
-          <div className="flex-1 bg-white border border-[#363025]/8">
-            <div className="grid grid-cols-5 px-6 py-3 border-b border-[#363025]/8">
-              <span className="font-[family-name:var(--font-nunito)] text-[9px] tracking-[0.25em] uppercase text-[#363025]/35">Név</span>
-              <span className="font-[family-name:var(--font-nunito)] text-[9px] tracking-[0.25em] uppercase text-[#363025]/35">Szolgáltatás</span>
-              <span className="font-[family-name:var(--font-nunito)] text-[9px] tracking-[0.25em] uppercase text-[#363025]/35">Forrás</span>
-              <span className="font-[family-name:var(--font-nunito)] text-[9px] tracking-[0.25em] uppercase text-[#363025]/35">Dátum</span>
-              <span />
-            </div>
+        <>
+          {/* Mobile: kártya lista */}
+          <div className="md:hidden space-y-2">
             {rows.map((row) => (
-              <div
-                key={row.id}
-                onClick={() => setSelected(selected?.id === row.id ? null : row)}
-                className={`grid grid-cols-5 px-6 py-4 border-b border-[#363025]/5 cursor-pointer transition-colors items-center ${
-                  selected?.id === row.id ? "bg-[#363025]/5" : "hover:bg-[#F5F3ED]/50"
-                }`}
-              >
-                <span className="font-[family-name:var(--font-nunito)] text-[12px] text-[#363025]">{row.nev}</span>
-                <span className="font-[family-name:var(--font-nunito)] text-[11px] text-[#363025]/60">
-                  {row.szolgaltatas ? (szolgaltatasLabel[row.szolgaltatas] ?? row.szolgaltatas) : "—"}
-                </span>
-                <span className="font-[family-name:var(--font-nunito)] text-[11px] text-[#363025]/40">
-                  {row.forras === "kapcsolat-oldal" ? "Kapcsolat oldal" : "Főoldal"}
-                </span>
-                <span className="font-[family-name:var(--font-nunito)] text-[11px] text-[#363025]/40">
-                  {new Date(row.created_at).toLocaleDateString("hu-HU")}
-                </span>
-                <div className="flex justify-end">
-                  <button
-                    onClick={async (e) => {
-                      e.stopPropagation();
-                      if (!confirm("Biztosan törlöd?")) return;
-                      const err = await adminDelete("contact_submissions", row.id);
-                      if (err) { alert("Törlés sikertelen: " + err); return; }
-                      setRows(prev => prev.filter(r => r.id !== row.id));
-                      if (selected?.id === row.id) setSelected(null);
-                    }}
-                    className="font-[family-name:var(--font-nunito)] text-[10px] tracking-widest uppercase text-red-400/40 hover:text-red-500 transition-colors"
-                  >
-                    Törlés
-                  </button>
-                </div>
+              <div key={row.id} className="bg-white border border-[#363025]/8">
+                <button
+                  onClick={() => setSelected(selected?.id === row.id ? null : row)}
+                  className="w-full text-left px-4 py-4 flex items-start justify-between"
+                >
+                  <div className="flex-1 min-w-0">
+                    <p className="font-[family-name:var(--font-nunito)] text-[13px] text-[#363025] font-semibold">{row.nev}</p>
+                    <p className="font-[family-name:var(--font-nunito)] text-[11px] text-[#363025]/50 mt-0.5">
+                      {row.szolgaltatas ? (szolgaltatasLabel[row.szolgaltatas] ?? row.szolgaltatas) : "—"}
+                    </p>
+                    <p className="font-[family-name:var(--font-nunito)] text-[10px] text-[#363025]/35 mt-0.5">
+                      {new Date(row.created_at).toLocaleDateString("hu-HU")}
+                    </p>
+                  </div>
+                  <span className="text-[#363025]/30 text-sm ml-3 mt-0.5">{selected?.id === row.id ? "▲" : "▼"}</span>
+                </button>
+
+                {selected?.id === row.id && (
+                  <div className="border-t border-[#363025]/8 px-4 py-4 space-y-3">
+                    <Field label="Email" value={<a href={`mailto:${row.email}`} className="underline break-all">{row.email}</a>} />
+                    <Field label="Telefon" value={<a href={`tel:${row.telefon}`} className="underline">{row.telefon}</a>} />
+                    {row.datum && <Field label="Esküvő dátuma" value={new Date(row.datum).toLocaleDateString("hu-HU")} />}
+                    {row.letszam && <Field label="Létszám" value={`${row.letszam} fő`} />}
+                    {row.honnan && <Field label="Honnan hallott" value={honnanLabel[row.honnan] ?? row.honnan} />}
+                    {row.uzenet && (
+                      <div>
+                        <p className="font-[family-name:var(--font-nunito)] text-[9px] tracking-[0.25em] uppercase text-[#363025]/35 mb-1">Üzenet</p>
+                        <p className="font-[family-name:var(--font-quicksand)] text-[12px] text-[#363025]/70 leading-relaxed">{row.uzenet}</p>
+                      </div>
+                    )}
+                    <div className="flex gap-2 pt-2">
+                      <a href={`mailto:${row.email}`}
+                        className="flex-1 text-center font-[family-name:var(--font-nunito)] text-[11px] tracking-[0.15em] uppercase py-3 bg-[#363025] text-white">
+                        Válasz küldése
+                      </a>
+                      <button
+                        onClick={async () => {
+                          if (!confirm("Biztosan törlöd?")) return;
+                          const err = await adminDelete("contact_submissions", row.id);
+                          if (err) { alert("Törlés sikertelen: " + err); return; }
+                          setRows(prev => prev.filter(r => r.id !== row.id));
+                          setSelected(null);
+                        }}
+                        className="px-4 font-[family-name:var(--font-nunito)] text-[11px] uppercase border border-red-300/50 text-red-400/60">
+                        Törlés
+                      </button>
+                    </div>
+                  </div>
+                )}
               </div>
             ))}
           </div>
 
-          {/* Részletek panel */}
-          {selected && (
-            <div className="w-80 shrink-0 bg-white border border-[#363025]/8 p-6 self-start">
-              <div className="flex items-start justify-between mb-6">
-                <div>
-                  <p className="font-[family-name:var(--font-nunito)] text-[9px] tracking-[0.25em] uppercase text-[#363025]/35 mb-1">Megkereső</p>
-                  <p className="font-[family-name:var(--font-cormorant)] text-2xl font-light text-[#363025]">{selected.nev}</p>
-                </div>
-                <button onClick={() => setSelected(null)} className="text-[#363025]/30 hover:text-[#363025] transition-colors text-lg">×</button>
+          {/* Desktop: két oszlopos elrendezés */}
+          <div className="hidden md:flex gap-6">
+            <div className="flex-1 bg-white border border-[#363025]/8">
+              <div className="grid grid-cols-5 px-6 py-3 border-b border-[#363025]/8">
+                <span className="font-[family-name:var(--font-nunito)] text-[9px] tracking-[0.25em] uppercase text-[#363025]/35">Név</span>
+                <span className="font-[family-name:var(--font-nunito)] text-[9px] tracking-[0.25em] uppercase text-[#363025]/35">Szolgáltatás</span>
+                <span className="font-[family-name:var(--font-nunito)] text-[9px] tracking-[0.25em] uppercase text-[#363025]/35">Forrás</span>
+                <span className="font-[family-name:var(--font-nunito)] text-[9px] tracking-[0.25em] uppercase text-[#363025]/35">Dátum</span>
+                <span />
               </div>
-
-              <div className="space-y-4">
-                <Field label="Email" value={<a href={`mailto:${selected.email}`} className="underline">{selected.email}</a>} />
-                <Field label="Telefon" value={<a href={`tel:${selected.telefon}`} className="underline">{selected.telefon}</a>} />
-                {selected.datum && <Field label="Esküvő dátuma" value={new Date(selected.datum).toLocaleDateString("hu-HU")} />}
-                {selected.letszam && <Field label="Létszám" value={`${selected.letszam} fő`} />}
-                {selected.szolgaltatas && <Field label="Szolgáltatás" value={szolgaltatasLabel[selected.szolgaltatas] ?? selected.szolgaltatas} />}
-                {selected.honnan && <Field label="Honnan hallott" value={honnanLabel[selected.honnan] ?? selected.honnan} />}
-                {selected.uzenet && (
-                  <div>
-                    <p className="font-[family-name:var(--font-nunito)] text-[9px] tracking-[0.25em] uppercase text-[#363025]/35 mb-1">Üzenet</p>
-                    <p className="font-[family-name:var(--font-quicksand)] text-[12px] text-[#363025]/70 leading-relaxed">{selected.uzenet}</p>
+              {rows.map((row) => (
+                <div
+                  key={row.id}
+                  onClick={() => setSelected(selected?.id === row.id ? null : row)}
+                  className={`grid grid-cols-5 px-6 py-4 border-b border-[#363025]/5 cursor-pointer transition-colors items-center ${
+                    selected?.id === row.id ? "bg-[#363025]/5" : "hover:bg-[#F5F3ED]/50"
+                  }`}
+                >
+                  <span className="font-[family-name:var(--font-nunito)] text-[12px] text-[#363025]">{row.nev}</span>
+                  <span className="font-[family-name:var(--font-nunito)] text-[11px] text-[#363025]/60">
+                    {row.szolgaltatas ? (szolgaltatasLabel[row.szolgaltatas] ?? row.szolgaltatas) : "—"}
+                  </span>
+                  <span className="font-[family-name:var(--font-nunito)] text-[11px] text-[#363025]/40">
+                    {row.forras === "kapcsolat-oldal" ? "Kapcsolat oldal" : "Főoldal"}
+                  </span>
+                  <span className="font-[family-name:var(--font-nunito)] text-[11px] text-[#363025]/40">
+                    {new Date(row.created_at).toLocaleDateString("hu-HU")}
+                  </span>
+                  <div className="flex justify-end">
+                    <button
+                      onClick={async (e) => {
+                        e.stopPropagation();
+                        if (!confirm("Biztosan törlöd?")) return;
+                        const err = await adminDelete("contact_submissions", row.id);
+                        if (err) { alert("Törlés sikertelen: " + err); return; }
+                        setRows(prev => prev.filter(r => r.id !== row.id));
+                        if (selected?.id === row.id) setSelected(null);
+                      }}
+                      className="font-[family-name:var(--font-nunito)] text-[10px] tracking-widest uppercase text-red-400/40 hover:text-red-500 transition-colors"
+                    >
+                      Törlés
+                    </button>
                   </div>
-                )}
-                <Field label="Beérkezett" value={new Date(selected.created_at).toLocaleString("hu-HU")} />
-                <Field label="Forrás" value={selected.forras === "kapcsolat-oldal" ? "Kapcsolat oldal" : "Főoldal"} />
-              </div>
-
-              <a
-                href={`mailto:${selected.email}`}
-                className="mt-8 block text-center font-[family-name:var(--font-nunito)] text-[11px] tracking-[0.2em] uppercase px-6 py-3 bg-[#363025] text-white hover:bg-[#363025]/80 transition-colors duration-300"
-              >
-                Válasz küldése
-              </a>
-              <button
-                onClick={async () => {
-                  if (!confirm("Biztosan törlöd?")) return;
-                  const err = await adminDelete("contact_submissions", selected.id);
-                  if (err) { alert("Törlés sikertelen: " + err); return; }
-                  setRows(prev => prev.filter(r => r.id !== selected.id));
-                  setSelected(null);
-                }}
-                className="mt-2 block w-full text-center font-[family-name:var(--font-nunito)] text-[11px] tracking-[0.2em] uppercase px-6 py-3 border border-red-300/50 text-red-400/60 hover:text-red-500 hover:border-red-400 transition-colors duration-300"
-              >
-                Törlés
-              </button>
+                </div>
+              ))}
             </div>
-          )}
-        </div>
+
+            {selected && (
+              <div className="w-80 shrink-0 bg-white border border-[#363025]/8 p-6 self-start">
+                <div className="flex items-start justify-between mb-6">
+                  <div>
+                    <p className="font-[family-name:var(--font-nunito)] text-[9px] tracking-[0.25em] uppercase text-[#363025]/35 mb-1">Megkereső</p>
+                    <p className="font-[family-name:var(--font-cormorant)] text-2xl font-light text-[#363025]">{selected.nev}</p>
+                  </div>
+                  <button onClick={() => setSelected(null)} className="text-[#363025]/30 hover:text-[#363025] transition-colors text-lg">×</button>
+                </div>
+
+                <div className="space-y-4">
+                  <Field label="Email" value={<a href={`mailto:${selected.email}`} className="underline">{selected.email}</a>} />
+                  <Field label="Telefon" value={<a href={`tel:${selected.telefon}`} className="underline">{selected.telefon}</a>} />
+                  {selected.datum && <Field label="Esküvő dátuma" value={new Date(selected.datum).toLocaleDateString("hu-HU")} />}
+                  {selected.letszam && <Field label="Létszám" value={`${selected.letszam} fő`} />}
+                  {selected.szolgaltatas && <Field label="Szolgáltatás" value={szolgaltatasLabel[selected.szolgaltatas] ?? selected.szolgaltatas} />}
+                  {selected.honnan && <Field label="Honnan hallott" value={honnanLabel[selected.honnan] ?? selected.honnan} />}
+                  {selected.uzenet && (
+                    <div>
+                      <p className="font-[family-name:var(--font-nunito)] text-[9px] tracking-[0.25em] uppercase text-[#363025]/35 mb-1">Üzenet</p>
+                      <p className="font-[family-name:var(--font-quicksand)] text-[12px] text-[#363025]/70 leading-relaxed">{selected.uzenet}</p>
+                    </div>
+                  )}
+                  <Field label="Beérkezett" value={new Date(selected.created_at).toLocaleString("hu-HU")} />
+                  <Field label="Forrás" value={selected.forras === "kapcsolat-oldal" ? "Kapcsolat oldal" : "Főoldal"} />
+                </div>
+
+                <a href={`mailto:${selected.email}`}
+                  className="mt-8 block text-center font-[family-name:var(--font-nunito)] text-[11px] tracking-[0.2em] uppercase px-6 py-3 bg-[#363025] text-white hover:bg-[#363025]/80 transition-colors duration-300">
+                  Válasz küldése
+                </a>
+                <button
+                  onClick={async () => {
+                    if (!confirm("Biztosan törlöd?")) return;
+                    const err = await adminDelete("contact_submissions", selected.id);
+                    if (err) { alert("Törlés sikertelen: " + err); return; }
+                    setRows(prev => prev.filter(r => r.id !== selected.id));
+                    setSelected(null);
+                  }}
+                  className="mt-2 block w-full text-center font-[family-name:var(--font-nunito)] text-[11px] tracking-[0.2em] uppercase px-6 py-3 border border-red-300/50 text-red-400/60 hover:text-red-500 hover:border-red-400 transition-colors duration-300">
+                  Törlés
+                </button>
+              </div>
+            )}
+          </div>
+        </>
       )}
     </div>
   );
