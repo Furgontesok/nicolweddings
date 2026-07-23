@@ -6,7 +6,7 @@ export default function Fit() {
       <div className="flex flex-col md:flex-row min-h-[680px]">
 
         {/* Bal: kép */}
-        <div className="relative w-full md:w-1/2 h-80 md:h-auto shrink-0">
+        <div className="relative w-full md:w-1/2 h-[420px] md:h-auto shrink-0">
           <Image
             src="/images/proba/H88A4354b.jpg"
             alt="Esküvői dekoráció"
