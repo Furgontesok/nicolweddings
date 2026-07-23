@@ -39,7 +39,7 @@ export default function Navbar() {
       }`}
     >
       {/* Desktop */}
-      <div className="hidden md:flex items-center h-[72px] lg:h-[92px] px-6 lg:px-10">
+      <div className="hidden md:flex items-center h-[72px] lg:h-[86px] 2xl:h-[76px] px-6 lg:px-10">
         <div className="w-1/4">
           <a href="/">
             <Image
@@ -52,7 +52,7 @@ export default function Navbar() {
             />
           </a>
         </div>
-        <ul className="flex-1 flex items-center justify-center gap-6 lg:gap-10">
+        <ul className="flex-1 flex items-center justify-center gap-6 lg:gap-10 2xl:gap-7">
           {links.map((l) => (
             <li key={l.href}>
               <a
