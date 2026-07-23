@@ -31,7 +31,8 @@ export async function DELETE(req: NextRequest) {
     return NextResponse.json({ error: "Invalid table" }, { status: 400 });
   }
 
-  const { error } = await supabaseAdmin.from(table).delete().eq(column, id);
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const { error } = await (supabaseAdmin as any).from(table).delete().eq(column, id);
 
   if (error) {
     return NextResponse.json({ error: error.message }, { status: 500 });
