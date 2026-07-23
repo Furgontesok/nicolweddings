@@ -19,7 +19,7 @@ export default function About() {
 
           {/* 2. Kép — mobilon második, desktopon jobb (2 sort átfog) */}
           <div className="order-2 md:col-start-2 md:row-start-1 md:row-span-2 flex justify-center md:block my-6 md:my-0">
-            <div className="w-[90%] md:w-full max-w-[440px] h-[420px] md:h-[620px] relative overflow-hidden">
+            <div className="w-[90%] md:w-full max-w-[440px] h-[520px] md:h-[620px] relative overflow-hidden">
               <Image
                 src="/images/R%C3%B3lam%20f%C5%91oldal.jpg"
                 alt="Nicol — esküvőszervező"
