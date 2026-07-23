@@ -88,7 +88,7 @@ export default function Rolam() {
       </section>
 
       {/* ── 2024 történet: kép bal + szöveg jobb ── */}
-      <section className="bg-[#F5F3ED] pt-0 md:pt-12 pb-4 md:pb-12 px-6">
+      <section className="bg-[#F5F3ED] pt-10 md:pt-12 pb-4 md:pb-12 px-6">
         <div className="max-w-5xl mx-auto flex flex-col md:flex-row gap-8 md:gap-14 items-center">
 
           <div className="shrink-0 w-full md:w-[42%] order-last md:order-none">
