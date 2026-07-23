@@ -1,5 +1,13 @@
 import Image from "next/image";
-import InstagramFeed from "./InstagramFeed";
+
+const igPreviews = [
+  "/images/Bia%20%26%20Bence/3.jpg",
+  "/images/Betti%20%26%20Levi/4.jpg",
+  "/images/Nicol%20%26%20Roli/5.-min.jpg",
+  "/images/Vivi%20%26%20Bence/2..jpg",
+  "/images/Panni%20%26%20Sanyi/6.jpg",
+  "/images/R%C3%A9ka%20%26%20%C3%81d%C3%A1m/7.jpg",
+];
 
 const navLinks = [
   { label: "Főoldal", href: "/" },
@@ -15,7 +23,34 @@ export default function Footer() {
   return (
     <footer className="bg-[#F5F3ED]">
 
-      <InstagramFeed />
+      {/* Follow Along sáv */}
+      <div className="px-6 pt-8 md:pt-16 pb-10 text-center">
+        <h2 className="font-[family-name:var(--font-cormorant)] text-2xl md:text-3xl tracking-[0.05em] uppercase text-[#363025] whitespace-nowrap">
+          Follow me on Instagram
+        </h2>
+        <div className="mb-8" />
+        <div className="grid grid-cols-3 md:grid-cols-6 w-full gap-1">
+          {igPreviews.map((src, i) => (
+            <a
+              key={i}
+              href="https://www.instagram.com/nicolweddings"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group relative overflow-hidden"
+              style={{ aspectRatio: "1/1" }}
+            >
+              <Image
+                src={src}
+                alt="Instagram"
+                fill
+                className="object-cover group-hover:scale-105 transition-transform duration-500"
+                sizes="(max-width: 768px) 33vw, 17vw"
+              />
+              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300" />
+            </a>
+          ))}
+        </div>
+      </div>
 
       {/* Elválasztó */}
       <div className="border-t border-[#363025]/10" />
