@@ -69,7 +69,7 @@ export default function Navbar() {
           <a href="https://www.instagram.com/nicolweddings" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="text-[#363025]/40 hover:text-[#363025] transition-colors duration-300">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.3"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
           </a>
-          <a href="https://www.facebook.com/nicolweddingsandevents" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="text-[#363025]/40 hover:text-[#363025] transition-colors duration-300">
+          <a href="https://www.facebook.com/profile.php?id=61575687877661" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="text-[#363025]/40 hover:text-[#363025] transition-colors duration-300">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
           </a>
           <a href="https://www.tiktok.com/@nicolweddings" target="_blank" rel="noopener noreferrer" aria-label="TikTok" className="text-[#363025]/40 hover:text-[#363025] transition-colors duration-300">
@@ -126,7 +126,7 @@ export default function Navbar() {
             <a href="https://www.instagram.com/nicolweddings" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="text-[#363025]/40 hover:text-[#363025] transition-colors">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.3"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
             </a>
-            <a href="https://www.facebook.com/nicolweddingsandevents" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="text-[#363025]/40 hover:text-[#363025] transition-colors">
+            <a href="https://www.facebook.com/profile.php?id=61575687877661" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="text-[#363025]/40 hover:text-[#363025] transition-colors">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
             </a>
             <a href="https://www.tiktok.com/@nicolweddings" target="_blank" rel="noopener noreferrer" aria-label="TikTok" className="text-[#363025]/40 hover:text-[#363025] transition-colors">
