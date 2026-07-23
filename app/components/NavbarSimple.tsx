@@ -41,7 +41,7 @@ export default function NavbarSimple() {
       }`}
     >
       {/* Desktop */}
-      <div className="hidden md:flex items-center h-[72px] lg:h-[86px] 2xl:h-[76px] px-6 lg:px-10">
+      <div className="hidden md:flex items-center h-[72px] lg:h-[86px] 2xl:h-[64px] px-6 lg:px-10 2xl:px-16">
         {/* Bal: Logo */}
         <div className="w-1/4">
           <a href="/">
@@ -63,7 +63,7 @@ export default function NavbarSimple() {
             <li key={l.href}>
               <a
                 href={l.href}
-                className="relative group font-[family-name:var(--font-nunito)] text-[#363025]/70 text-[15px] tracking-[0.05em] uppercase hover:text-[#363025] transition-colors duration-300"
+                className="relative group font-[family-name:var(--font-nunito)] text-[#363025]/70 text-[15px] 2xl:text-[12px] tracking-[0.05em] uppercase hover:text-[#363025] transition-colors duration-300"
               >
                 {l.label}
                 <span className="absolute bottom-[-3px] left-0 h-px w-0 bg-[#363025]/50 group-hover:w-full transition-all duration-300" />
