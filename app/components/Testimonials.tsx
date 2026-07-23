@@ -16,7 +16,7 @@ const hardcoded: TestimonialItem[] = [
   {
     name: "Ani & Peti",
     photo: "/images/visszajelzes-ani-peti.jpg",
-    objectPosition: "center 20%",
+    objectPosition: "center 40%",
     quote: "Ha valaki elbizonytalanodna az esküvőszervező szükségessége miatt, szeretnénk megerősíteni abban, hogy óriási terhet vesz le az ember válláról.",
     text: "Végtelenül hálásak vagyunk azért a sok-sok segítségért, támogatásért, amit az elmúlt félévben Nicol nyújtott nekünk. Határozott, ugyanakkor mindig kedves volt velünk. Magabiztosan kezelte az esküvő napján is a különböző helyzeteket. Biztonságban éreztük magunkat, hiszen ott volt velünk az összes bejáráson, ruhapróbán, vagy fontosabb megbeszélésen. Pozitív kisugárzása mindig erőt és hitet adott, hogy a nagy napon minden rendben lesz. Ha valaki elbizonytalanodna az esküvőszervező szükségessége miatt, szeretnénk megerősíteni abban, hogy óriási terhet vesz le az ember válláról.",
   },
@@ -30,7 +30,7 @@ const hardcoded: TestimonialItem[] = [
   {
     name: "Orsi & Krisz",
     photo: "/images/visszajelzes-orsi-krisz.jpg",
-    objectPosition: "center 35%",
+    objectPosition: "center 55%",
     quote: "Aztán a saját bőrünkön tapasztaltuk meg, mekkora segítséget nyújt, és milyen hihetetlen terhet vesz le rólunk.",
     text: "Őszintén, mi először nem gondoltuk, hogy az esküvőszervező must have szolgáltató… Aztán a saját bőrünkön tapasztaltuk meg, mekkora segítséget nyújt, és milyen hihetetlen terhet vesz le rólunk. Nicol rengeteg kreatív ötlettel látott el minket már a legelején, amik hozzájárultak ahhoz, hogy a végeredmény ízléses, stílusos és teljesen ránk szabott legyen. Minden apró részletre gondolt, mindig kedves, figyelmes és határozott volt. Kéz a kézben készültünk a nagy napra, és amikor elérkezett a pillanat, teljesen elengedhettük magunkat. Hálásan köszönjük, Nicol!",
   },
