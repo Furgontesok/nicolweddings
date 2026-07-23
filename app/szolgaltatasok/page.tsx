@@ -280,7 +280,7 @@ export default function Szolgaltatasok() {
             <div className="hero-row-1 flex h-full">
               {[...heroImages, ...heroImages].map((src, i) => (
                 <div key={i} className="relative h-full flex-shrink-0" style={{ width: "28vw" }}>
-                  <Image src={src} alt="Esküvői fotó" fill className="object-cover object-center" sizes="28vw" priority={i < 4} />
+                  <Image src={src} alt="Esküvői szervezés és koordináció — Nicol Weddings" fill className="object-cover object-center" sizes="28vw" priority={i < 4} />
                 </div>
               ))}
             </div>
@@ -291,7 +291,7 @@ export default function Szolgaltatasok() {
             <div className="hero-row-1 flex h-full">
               {[...heroImages, ...heroImages].map((src, i) => (
                 <div key={i} className="hero-img-wrap relative flex-shrink-0 h-full" style={{ width: "55vw" }}>
-                  <Image src={src} alt="Esküvői fotó" fill className="object-cover object-center" sizes="55vw" priority={i < 4} />
+                  <Image src={src} alt="Esküvői szervezés és koordináció — Nicol Weddings" fill className="object-cover object-center" sizes="55vw" priority={i < 4} />
                 </div>
               ))}
             </div>

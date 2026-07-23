@@ -18,7 +18,7 @@ export default function Rolam() {
         <div className="relative overflow-hidden md:h-[55vh] h-[35vh]" style={{ minHeight: 200 }}>
           <Image
             src="/images/nicol-roli-15.jpg"
-            alt="Rólam"
+            alt="Gőz-Csongrádi Nicol esküvőszervező — Rólam oldal"
             fill
             className="object-cover"
             style={{ objectPosition: "center 88%" }}
@@ -151,7 +151,7 @@ export default function Rolam() {
             <div className="relative w-full overflow-hidden" style={{ aspectRatio: "3/4" }}>
               <Image
                 src="/images/egyeb-13.jpg"
-                alt="Esküvői dekoráció"
+                alt="Esküvői dekoráció részlet — Nicol Weddings and Events"
                 fill
                 className="object-cover"
                 style={{ objectPosition: "center 50%" }}
@@ -216,7 +216,7 @@ export default function Rolam() {
       <section className="relative pt-14 md:pt-28 pb-28 px-6 text-center overflow-hidden">
         <Image
           src="/images/rolam-hosszu-kep.jpg"
-          alt="Esküvői háttér"
+          alt="Esküvői helyszín — Nicol Weddings esküvőszervező Magyarország"
           fill
           className="object-cover object-bottom"
           sizes="100vw"

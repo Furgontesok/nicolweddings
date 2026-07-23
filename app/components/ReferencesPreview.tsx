@@ -42,7 +42,7 @@ function MobileSlider({ images, current, onAdvance, onBack, onGoTo }: {
               transition: "transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94)",
             }}
           >
-            <Image src={src} alt="Referencia" fill className="object-contain" sizes="100vw" />
+            <Image src={src} alt="Esküvői referencia fotó — Nicol Weddings" fill className="object-contain" sizes="100vw" />
           </div>
         ))}
       </div>
@@ -178,7 +178,7 @@ export default function ReferencesPreview() {
                 <div className="relative bg-[#F5F3ED] h-[560px]">
                   <Image
                     src={src}
-                    alt="Referencia"
+                    alt="Esküvői referencia fotó — Nicol Weddings"
                     fill
                     className="object-contain"
                     sizes="33vw"

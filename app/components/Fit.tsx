@@ -9,7 +9,7 @@ export default function Fit() {
         <div className="relative w-full md:w-1/2 h-[420px] md:h-auto shrink-0">
           <Image
             src="/images/proba/H88A4354b.jpg"
-            alt="Esküvői dekoráció"
+            alt="Esküvői dekoráció és helyszín — Nicol Weddings esküvőszervező"
             fill
             className="object-cover"
             style={{ objectPosition: "center 65%" }}

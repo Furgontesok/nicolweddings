@@ -45,7 +45,7 @@ export default function Home() {
         <Services />
         <Video />
         <About />
-        <ParallaxImage src="/images/fooldal-kep.jpg" />
+        <ParallaxImage src="/images/fooldal-kep.jpg" alt="Esküvői hangulat — Nicol Weddings esküvőszervező Magyarország" />
         <div className="h-6 md:h-16 bg-[#D6D8CA]" />
         <Testimonials />
         <ReferencesPreview />

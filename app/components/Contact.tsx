@@ -40,7 +40,7 @@ export default function Contact() {
           >
             <Image
               src="/images/egyeb-8.jpg"
-              alt="Esküvői pillanat"
+              alt="Gőz-Csongrádi Nicol esküvőszervező portréfotó — Nicol Weddings"
               fill
               className="object-cover object-center"
               sizes="160px"
@@ -99,7 +99,7 @@ export default function Contact() {
             >
               <Image
                 src="/images/egyeb-8.jpg"
-                alt="Esküvői pillanat"
+                alt="Gőz-Csongrádi Nicol esküvőszervező portréfotó — Nicol Weddings"
                 fill
                 className="object-cover object-center"
                 sizes="220px"

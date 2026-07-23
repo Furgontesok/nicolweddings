@@ -12,32 +12,37 @@ const links = [
   { label: "Blog", href: "/blog" },
 ];
 
-const slides: { left: string; right: string; mobileImg: string; mobilePos?: string; leftPos?: string; rightPos?: string; leftTransform?: string; rightTransform?: string }[] = [
+const slides: { left: string; right: string; mobileImg: string; alt: string; mobilePos?: string; leftPos?: string; rightPos?: string; leftTransform?: string; rightTransform?: string }[] = [
   {
     left: "/images/header2/fokep1-bal-uj.jpg",
     right: "/images/header2/fokep1-jobb-uj.jpg",
     mobileImg: "/images/hero-mobile-1.jpg",
+    alt: "Esküvői szertartás — Nicol Weddings esküvőszervező",
   },
   {
     left: "/images/header2/fokep2-bal-uj.jpg",
     right: "/images/header2/fokep2-jobb-uj.jpg",
     mobileImg: "/images/hero-mobile-2.jpg",
     mobilePos: "35% center",
+    alt: "Esküvői dekoráció és helyszín — Nicol Weddings",
   },
   {
     left: "/images/header2/fokep3-bal-uj.jpg",
     right: "/images/header2/fokep3-jobb-uj.jpg",
     mobileImg: "/images/hero-mobile-3b.jpg",
+    alt: "Esküvői pillanat — Nicol Weddings esküvőszervező Magyarország",
   },
   {
     left: "/images/header2/fokep4-bal-uj.jpg",
     right: "/images/header2/fokep4-jobb-uj.jpg",
     mobileImg: "/images/hero-mobile-4.jpg",
+    alt: "Menyasszony és vőlegény — Nicol Weddings koordinátor",
   },
   {
     left: "/images/header2/fokep5-bal-uj.jpg",
     right: "/images/header2/fokep5-jobb-uj.jpg",
     mobileImg: "/images/hero-mobile-5.jpg",
+    alt: "Esküvői hangulat — Nicol Weddings and Events",
   },
 ];
 
@@ -183,7 +188,7 @@ export default function Hero() {
             <div className="md:hidden absolute inset-0">
               <Image
                 src={slide.mobileImg}
-                alt="Esküvői fotó"
+                alt={slide.alt}
                 fill
                 priority={i === 0}
                 className="object-cover"
@@ -197,7 +202,7 @@ export default function Hero() {
             <div className="hidden md:block absolute inset-y-0 left-0 w-1/2">
               <Image
                 src={slide.left}
-                alt="Esküvői fotó"
+                alt={slide.alt}
                 fill
                 priority={i === 0}
                 className="object-cover"
@@ -210,7 +215,7 @@ export default function Hero() {
             <div className="hidden md:block absolute inset-y-0 right-0 left-1/2">
               <Image
                 src={slide.right}
-                alt="Esküvői fotó"
+                alt={slide.alt}
                 fill
                 priority={i === 0}
                 className="object-cover"

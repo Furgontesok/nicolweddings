@@ -3,7 +3,7 @@
 import { useRef, useEffect, useState } from "react";
 import Image from "next/image";
 
-export default function ParallaxImage({ src }: { src: string }) {
+export default function ParallaxImage({ src, alt = "Esküvői pillanat — Nicol Weddings and Events" }: { src: string; alt?: string }) {
   const ref = useRef<HTMLDivElement>(null);
   const [offset, setOffset] = useState(0);
 
@@ -27,7 +27,7 @@ export default function ParallaxImage({ src }: { src: string }) {
       >
         <Image
           src={src}
-          alt="Esküvői pillanat"
+          alt={alt}
           fill
           className="object-cover"
                   style={{ objectPosition: "center 70%" }}
