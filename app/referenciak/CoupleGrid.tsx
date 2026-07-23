@@ -78,8 +78,8 @@ export default function CoupleGrid() {
                 sizes="(max-width: 768px) 100vw, 33vw"
                 unoptimized={c.cover.startsWith("/")}
               />
-              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/35 transition-colors duration-500" />
-              <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+              <div className="absolute inset-0 bg-black/25 md:bg-black/0 md:group-hover:bg-black/35 transition-colors duration-500" />
+              <div className="absolute inset-0 flex items-center justify-center opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-500">
                 <h3 className="font-[family-name:var(--font-cormorant)] text-3xl text-white font-light tracking-wide">
                   {c.name}
                 </h3>
