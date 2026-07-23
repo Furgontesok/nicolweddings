@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function ReferencjakHero() {
   return (
-    <div className="pt-[72px] lg:pt-[92px] bg-white">
+    <div className="pt-[72px] lg:pt-[86px] 2xl:pt-[76px] bg-white">
       <div className="relative overflow-hidden h-[35vh] md:h-[50vh] lg:h-[55vh] 2xl:h-[62vh]" style={{ minHeight: 200 }}>
         <Image
           src="/images/referenciak-header.jpg"
