@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import { supabase } from "@/lib/supabase";
+import { adminDelete } from "@/lib/admin-delete";
 
 type Couple = {
   id: string;
@@ -109,11 +110,12 @@ export default function AdminReferenciak() {
   }
 
   async function deleteCouple() {
-    if (!supabase || !selected) return;
+    if (!selected) return;
     if (!confirm(`Törlöd: ${selected.name}? A Supabase-ben tárolt képek is törlődnek.`)) return;
-    await supabase.from("couple_images").delete().eq("couple_id", selected.id);
-    await supabase.from("couple_vendors").delete().eq("couple_id", selected.id);
-    await supabase.from("couples").delete().eq("id", selected.id);
+    await adminDelete("couple_images", selected.id, "couple_id");
+    await adminDelete("couple_vendors", selected.id, "couple_id");
+    const err = await adminDelete("couples", selected.id);
+    if (err) { alert("Törlés sikertelen: " + err); return; }
     setSelected(null);
     setImages([]);
     setVendors([]);
@@ -201,12 +203,12 @@ export default function AdminReferenciak() {
   }
 
   async function deleteImage(img: CoupleImage) {
-    if (!supabase) return;
     const urlPath = img.url.split("/referenciak/")[1];
-    if (urlPath && !img.url.startsWith("/")) {
+    if (urlPath && !img.url.startsWith("/") && supabase) {
       await supabase.storage.from("referenciak").remove([urlPath]);
     }
-    await supabase.from("couple_images").delete().eq("id", img.id);
+    const err = await adminDelete("couple_images", img.id);
+    if (err) { alert("Törlés sikertelen: " + err); return; }
     setImages(images.filter(i => i.id !== img.id));
   }
 
@@ -246,8 +248,8 @@ export default function AdminReferenciak() {
   }
 
   async function deleteVendor(id: string) {
-    if (!supabase) return;
-    await supabase.from("couple_vendors").delete().eq("id", id);
+    const err = await adminDelete("couple_vendors", id);
+    if (err) { alert("Törlés sikertelen: " + err); return; }
     setVendors(prev => prev.filter(v => v.id !== id));
   }
 

@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { supabase } from "@/lib/supabase";
+import { adminDelete } from "@/lib/admin-delete";
 
 type Proposal = {
   id: string;
@@ -119,14 +120,16 @@ export default function AdminAjanlatok() {
   }
 
   async function deleteProposal(id: string) {
-    if (!supabase || !confirm("Biztosan törlöd?")) return;
-    await supabase.from("proposals").delete().eq("id", id);
+    if (!confirm("Biztosan törlöd?")) return;
+    const err = await adminDelete("proposals", id);
+    if (err) { alert("Törlés sikertelen: " + err); return; }
     setProposals(prev => prev.filter(p => p.id !== id));
   }
 
   async function deleteAcceptance(id: string) {
-    if (!supabase || !confirm("Biztosan törlöd ezt az elfogadást?")) return;
-    await supabase.from("proposal_acceptances").delete().eq("id", id);
+    if (!confirm("Biztosan törlöd ezt az elfogadást?")) return;
+    const err = await adminDelete("proposal_acceptances", id);
+    if (err) { alert("Törlés sikertelen: " + err); return; }
     setAcceptances(prev => prev.filter(a => a.id !== id));
   }
 

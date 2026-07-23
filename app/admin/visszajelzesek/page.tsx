@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import { supabase } from "@/lib/supabase";
+import { adminDelete } from "@/lib/admin-delete";
 
 type Testimonial = {
   id: string;
@@ -79,8 +80,9 @@ export default function AdminVissza() {
   }
 
   async function deleteRow(id: string) {
-    if (!supabase || !confirm("Biztosan törlöd?")) return;
-    await supabase.from("testimonials").delete().eq("id", id);
+    if (!confirm("Biztosan törlöd?")) return;
+    const err = await adminDelete("testimonials", id);
+    if (err) { alert("Törlés sikertelen: " + err); return; }
     setRows(prev => prev.filter(r => r.id !== id));
   }
 

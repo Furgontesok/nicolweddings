@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { supabase, supabaseConfigured } from "@/lib/supabase";
+import { adminDelete } from "@/lib/admin-delete";
 
 type Submission = {
   id: string;
@@ -129,10 +130,9 @@ export default function AdminMegkeresesek() {
                   <button
                     onClick={async (e) => {
                       e.stopPropagation();
-                      if (!supabase || !confirm("Biztosan törlöd?")) return;
-                      const { error, count } = await supabase.from("contact_submissions").delete({ count: "exact" }).eq("id", row.id);
-                      if (error) { alert("Törlés sikertelen: " + error.message); return; }
-                      if (count === 0) { alert("Nem törölt sort (RLS policy tiltja)."); return; }
+                      if (!confirm("Biztosan törlöd?")) return;
+                      const err = await adminDelete("contact_submissions", row.id);
+                      if (err) { alert("Törlés sikertelen: " + err); return; }
                       setRows(prev => prev.filter(r => r.id !== row.id));
                       if (selected?.id === row.id) setSelected(null);
                     }}
@@ -181,10 +181,9 @@ export default function AdminMegkeresesek() {
               </a>
               <button
                 onClick={async () => {
-                  if (!supabase || !confirm("Biztosan törlöd?")) return;
-                  const { error, count } = await supabase.from("contact_submissions").delete({ count: "exact" }).eq("id", selected.id);
-                  if (error) { alert("Törlés sikertelen: " + error.message); return; }
-                  if (count === 0) { alert("Nem törölt sort (RLS policy tiltja)."); return; }
+                  if (!confirm("Biztosan törlöd?")) return;
+                  const err = await adminDelete("contact_submissions", selected.id);
+                  if (err) { alert("Törlés sikertelen: " + err); return; }
                   setRows(prev => prev.filter(r => r.id !== selected.id));
                   setSelected(null);
                 }}
