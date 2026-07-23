@@ -41,7 +41,7 @@ export default function RootLayout({
       lang="hu"
       className={`${italianno.variable} ${quicksand.variable} ${nunitoSans.variable} ${cormorant.variable}`}
     >
-      <body className="min-h-full flex flex-col">
+      <body className="min-h-full flex flex-col overflow-x-hidden">
         {children}
       </body>
     </html>
