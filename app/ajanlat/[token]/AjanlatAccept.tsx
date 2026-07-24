@@ -78,7 +78,7 @@ export default function AjanlatAccept({ token, packages }: Props) {
           {!open && (
             <button
               onClick={() => setOpen(true)}
-              className="inline-block border border-[#363025] text-[#363025] font-[family-name:var(--font-nunito)] text-[11px] tracking-[0.25em] uppercase w-80 py-4 text-center hover:bg-[#363025] hover:text-white transition-all duration-300"
+              className="inline-block border border-[#363025] text-[#363025] font-[family-name:var(--font-nunito)] text-[11px] tracking-[0.25em] uppercase w-full max-w-xs py-4 text-center hover:bg-[#363025] hover:text-white transition-all duration-300"
             >
               Elfogadom
             </button>
@@ -110,7 +110,7 @@ export default function AjanlatAccept({ token, packages }: Props) {
                     {packages.map((pkg) => (
                       <label
                         key={pkg.key}
-                        className={`flex items-center justify-between gap-4 px-5 py-4 cursor-pointer transition-all duration-300 ${
+                        className={`flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 sm:gap-4 px-4 py-4 cursor-pointer transition-all duration-300 ${
                           selectedPkg === pkg.key
                             ? "bg-[#363025] text-white"
                             : "bg-[#EEECEA] text-[#363025] hover:bg-[#E5E3E0]"
@@ -126,11 +126,11 @@ export default function AjanlatAccept({ token, packages }: Props) {
                             required
                             className="sr-only"
                           />
-<span className="font-[family-name:var(--font-nunito)] text-[11px] tracking-[0.15em] uppercase">
+                          <span className="font-[family-name:var(--font-nunito)] text-[11px] tracking-[0.12em] uppercase">
                             {pkg.title}
                           </span>
                         </div>
-                        <span className="font-[family-name:var(--font-cormorant)] text-lg font-light shrink-0">
+                        <span className="font-[family-name:var(--font-cormorant)] text-lg font-light sm:shrink-0 pl-0 sm:pl-0">
                           {pkg.price}
                         </span>
                       </label>

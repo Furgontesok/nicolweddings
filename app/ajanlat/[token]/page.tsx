@@ -87,24 +87,24 @@ async function getProposal(token: string) {
 
 function ServiceBlock({ svc, price }: { svc: typeof services.teljes & { note?: string; desc?: string; detailItems?: { title: string; desc: string }[] }; price?: string }) {
   return (
-    <div className="py-14 px-8 border-t border-[#363025]/8">
+    <div className="py-10 md:py-14 px-4 md:px-8 border-t border-[#363025]/8">
       <div className="max-w-6xl mx-auto">
 
         {/* Felső sor: kép + szöveg */}
-        <div className="flex flex-col md:flex-row gap-12">
+        <div className="flex flex-col md:flex-row gap-8 md:gap-12">
           {/* Bal: álló kép */}
           <div className="shrink-0 md:w-[36%]">
             <div className="relative w-full overflow-hidden" style={{ aspectRatio: "3/4" }}>
-              <Image src={svc.image} alt={svc.title} fill className="object-cover object-center" sizes="44vw" />
+              <Image src={svc.image} alt={svc.title} fill className="object-cover object-center" sizes="(max-width:768px) 100vw, 44vw" />
             </div>
           </div>
 
           {/* Jobb: szám + cím + leírás + ár (ha nincs detailItems) */}
           <div className="flex-1 flex flex-col">
-            <p className="font-[family-name:var(--font-cormorant)] text-[#363025]/15 text-6xl font-light leading-none mb-4 select-none">
+            <p className="font-[family-name:var(--font-cormorant)] text-[#363025]/15 text-5xl md:text-6xl font-light leading-none mb-3 select-none">
               {svc.num}
             </p>
-            <h3 className="font-[family-name:var(--font-cormorant)] text-[1.9rem] font-light text-[#363025] leading-tight mb-6 whitespace-nowrap">
+            <h3 className="font-[family-name:var(--font-cormorant)] text-[1.6rem] md:text-[1.9rem] font-light text-[#363025] leading-tight mb-5">
               {svc.title}
             </h3>
             {svc.desc && (
@@ -191,11 +191,11 @@ export default async function AjanlatPage({ params }: { params: Promise<{ token:
           <p className="font-[family-name:var(--font-nunito)] text-[13px] tracking-[0.5em] uppercase text-white/35 mb-6">
             Személyre szabott
           </p>
-          <h1 className="font-[family-name:var(--font-cormorant)] text-7xl md:text-8xl font-light text-white mb-10"
+          <h1 className="font-[family-name:var(--font-cormorant)] text-5xl md:text-8xl font-light text-white mb-10"
             style={{ letterSpacing: "0.06em" }}>
             ÁRAJÁNLAT
           </h1>
-          <p className="font-[family-name:var(--font-italianno)] text-4xl md:text-5xl text-white/75">
+          <p className="font-[family-name:var(--font-italianno)] text-3xl md:text-5xl text-white/75">
             {p.couple_name.replace(" & ", " &  ").replace(" and ", " and  ")}
           </p>
           {p.wedding_date && (
@@ -235,22 +235,16 @@ export default async function AjanlatPage({ params }: { params: Promise<{ token:
             Esküvő részletei
           </p>
           <div className="divide-y divide-white/10">
-            <div className="flex items-baseline gap-12 py-5">
-              <span className="font-[family-name:var(--font-nunito)] text-[11px] tracking-[0.2em] uppercase text-white/40 shrink-0 w-36">Pár neve</span>
-              <span className="font-[family-name:var(--font-cormorant)] text-xl font-light text-white/80">{p.couple_name}</span>
-            </div>
-            {p.wedding_date && (
-              <div className="flex items-baseline gap-12 py-5">
-                <span className="font-[family-name:var(--font-nunito)] text-[11px] tracking-[0.2em] uppercase text-white/40 shrink-0 w-36">Tervezett dátum</span>
-                <span className="font-[family-name:var(--font-cormorant)] text-xl font-light text-white/80">{p.wedding_date}</span>
+            {[
+              ["Pár neve", p.couple_name],
+              ...(p.wedding_date ? [["Tervezett dátum", p.wedding_date]] : []),
+              ...(p.guest_count ? [["Létszám", p.guest_count]] : []),
+            ].map(([label, value]) => (
+              <div key={label} className="py-5">
+                <span className="block font-[family-name:var(--font-nunito)] text-[10px] tracking-[0.2em] uppercase text-white/35 mb-1">{label}</span>
+                <span className="font-[family-name:var(--font-cormorant)] text-xl font-light text-white/80">{value}</span>
               </div>
-            )}
-            {p.guest_count && (
-              <div className="flex items-baseline gap-12 py-5">
-                <span className="font-[family-name:var(--font-nunito)] text-[11px] tracking-[0.2em] uppercase text-white/40 shrink-0 w-36">Létszám</span>
-                <span className="font-[family-name:var(--font-cormorant)] text-xl font-light text-white/80">{p.guest_count}</span>
-              </div>
-            )}
+            ))}
           </div>
         </div>
       </section>
@@ -286,8 +280,8 @@ export default async function AjanlatPage({ params }: { params: Promise<{ token:
               ["Szállás", "Budapesttől 50 km-nél távolabb eső helyszín esetén 30.000 Ft/éj szállásdíjjal szükséges számolni az előre egyeztetett napokra a megrendelés és annak kivitelezhetősége függvényében."],
               ["Érvényesség", `Az ajánlat ${validUntil.toLocaleDateString("hu-HU")}-ig érvényes.`],
             ].map(([title, text]) => (
-              <div key={title} className="flex gap-8 py-5">
-                <span className="font-[family-name:var(--font-nunito)] text-[11px] tracking-[0.4em] uppercase text-[#363025]/30 w-28 shrink-0 pt-0.5">{title}</span>
+              <div key={title} className="py-5">
+                <span className="block font-[family-name:var(--font-nunito)] text-[10px] tracking-[0.4em] uppercase text-[#363025]/30 mb-1.5">{title}</span>
                 <p className="font-[family-name:var(--font-quicksand)] text-[#363025]/60 text-[14px] leading-relaxed">{text}</p>
               </div>
             ))}
@@ -317,26 +311,26 @@ export default async function AjanlatPage({ params }: { params: Promise<{ token:
       />
 
       {/* 7. Zárólap */}
-      <section className="bg-[#363025] pt-12 pb-16 px-8">
-        <div className="max-w-6xl mx-auto flex flex-col md:flex-row gap-12 items-stretch">
+      <section className="bg-[#363025] pt-12 pb-16 px-6 md:px-8">
+        <div className="max-w-6xl mx-auto flex flex-col md:flex-row gap-10 md:gap-12 items-stretch">
 
           {/* Bal: Nicol fotója */}
           <div className="shrink-0 md:w-[26%]">
-            <div className="relative w-full overflow-hidden" style={{ height: "480px" }}>
+            <div className="relative w-full overflow-hidden" style={{ height: "340px" }}>
               <Image src="/images/R%C3%B3lam%20f%C5%91oldal.jpg" alt="Gőz-Csongrádi Nicol" fill
-                className="object-cover object-bottom" sizes="26vw" />
+                className="object-cover object-bottom" sizes="(max-width:768px) 100vw, 26vw" />
             </div>
           </div>
 
           {/* Jobb: logo + szöveg + kontaktok */}
-          <div className="flex-1 flex flex-col justify-center py-8 relative">
+          <div className="flex-1 flex flex-col justify-center py-4 md:py-8">
             <Image src="/images/horizontal_white.svg" alt="Nicol Weddings and Events"
-              width={150} height={45} className="absolute top-0 object-contain opacity-55" style={{ height: "auto" }} />
-            <p className="font-[family-name:var(--font-cormorant)] text-2xl font-light text-white/75 italic mb-6 leading-relaxed -mt-10">
+              width={130} height={40} className="object-contain opacity-55 mb-6" style={{ height: "auto" }} />
+            <p className="font-[family-name:var(--font-cormorant)] text-xl md:text-2xl font-light text-white/75 italic mb-6 leading-relaxed">
               Bízom benne, hogy ajánlatomat elnyeri tetszéseteket.<br />
               Szeretettel várom visszajelzéseteket!
             </p>
-            <p className="font-[family-name:var(--font-italianno)] text-3xl text-white/50 mb-3 mt-10">Gőz-Csongrádi Nicol</p>
+            <p className="font-[family-name:var(--font-italianno)] text-3xl text-white/50 mb-3 mt-4">Gőz-Csongrádi Nicol</p>
 
             {/* Elérhetőségek */}
             <div className="space-y-2 mb-3">
