@@ -80,8 +80,7 @@ export default async function BlogPostPage({
             alt={post.title}
             fill
             priority
-            className="object-cover"
-            style={{ objectPosition: "center 75%" }}
+            className="object-cover object-center"
             sizes="100vw"
           />
           <div className="absolute inset-0 bg-black/30" />
