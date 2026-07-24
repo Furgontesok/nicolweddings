@@ -149,8 +149,11 @@ export default function AjanlatAccept({ token, packages }: Props) {
                     className={inputClass} placeholder="Teljes név *" />
                   <input required type="text" value={szulHely} onChange={(e) => setSzulHely(e.target.value)}
                     className={inputClass} placeholder="Születési hely *" />
-                  <input required type="date" value={szulIdo} onChange={(e) => setSzulIdo(e.target.value)}
-                    className={inputClass} />
+                  <div>
+                    <p className="font-[family-name:var(--font-nunito)] text-[9px] tracking-[0.3em] uppercase text-[#363025]/40 mb-1 px-1">Születési idő *</p>
+                    <input required type="date" value={szulIdo} onChange={(e) => setSzulIdo(e.target.value)}
+                      className={inputClass} />
+                  </div>
                   <input required type="text" value={lakcim} onChange={(e) => setLakcim(e.target.value)}
                     className={inputClass} placeholder="Lakcím *" />
                   <input required type="tel" value={telefon} onChange={(e) => setTelefon(e.target.value)}

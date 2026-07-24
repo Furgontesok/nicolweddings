@@ -316,9 +316,9 @@ export default async function AjanlatPage({ params }: { params: Promise<{ token:
 
           {/* Bal: Nicol fotója */}
           <div className="shrink-0 md:w-[26%]">
-            <div className="relative w-full overflow-hidden" style={{ height: "340px" }}>
+            <div className="relative w-full overflow-hidden" style={{ height: "420px" }}>
               <Image src="/images/R%C3%B3lam%20f%C5%91oldal.jpg" alt="Gőz-Csongrádi Nicol" fill
-                className="object-cover object-bottom" sizes="(max-width:768px) 100vw, 26vw" />
+                className="object-cover object-top" sizes="(max-width:768px) 100vw, 26vw" />
             </div>
           </div>
 
@@ -327,8 +327,7 @@ export default async function AjanlatPage({ params }: { params: Promise<{ token:
             <Image src="/images/horizontal_white.svg" alt="Nicol Weddings and Events"
               width={130} height={40} className="object-contain opacity-55 mb-6" style={{ height: "auto" }} />
             <p className="font-[family-name:var(--font-cormorant)] text-xl md:text-2xl font-light text-white/75 italic mb-6 leading-relaxed">
-              Bízom benne, hogy ajánlatomat elnyeri tetszéseteket.<br />
-              Szeretettel várom visszajelzéseteket!
+              Bízom benne, hogy ajánlatom elnyeri tetszéseteket! Szeretettel várom visszajelzéseteket!
             </p>
             <p className="font-[family-name:var(--font-italianno)] text-3xl text-white/50 mb-3 mt-4">Gőz-Csongrádi Nicol</p>
 
