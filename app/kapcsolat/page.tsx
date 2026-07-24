@@ -21,13 +21,7 @@ export default function Kapcsolat() {
 
   return (
     <>
-      <style>{`
-        input[type="date"]::-webkit-datetime-edit { color: rgba(0,0,0,0.85); }
-        input[type="date"]::-webkit-datetime-edit-fields-wrapper { color: rgba(0,0,0,0.85); }
-        input[type="date"].has-value::-webkit-datetime-edit,
-        input[type="date"].has-value::-webkit-datetime-edit-fields-wrapper { color: #000000; }
-      `}</style>
-      <NavbarSimple />
+<NavbarSimple />
 
       <section className="bg-white pt-24 md:pt-36 pb-10 px-6">
         <div className="max-w-5xl mx-auto">
@@ -134,12 +128,11 @@ export default function Kapcsolat() {
                   <input required type="text" value={nev} onChange={(e) => setNev(e.target.value)} className={inputClass} placeholder="Teljes név *" />
                   <input required type="email" value={email} onChange={(e) => setEmail(e.target.value)} className={inputClass} placeholder="E-mail cím *" />
                   <input required type="tel" value={telefon} onChange={(e) => setTelefon(e.target.value)} className={inputClass} placeholder="Telefonszám *" />
-                  <div className="relative w-full overflow-hidden">
-                    <input required type="date" value={datum} onChange={(e) => setDatum(e.target.value)} className={`${inputClass} ${datum ? "has-value" : ""}`} style={{ width: "100%", colorScheme: "light" }} />
+                  <div className="relative w-full">
+                    <input required type="date" value={datum} onChange={(e) => setDatum(e.target.value)} className={inputClass}
+                      style={(datum ? { appearance: "auto" } : { appearance: "auto", color: "transparent" }) as React.CSSProperties} />
                     {!datum && (
-                      <div className="absolute inset-0 flex items-center px-4 pointer-events-none bg-[#EEECEA]">
-                        <span className="font-[family-name:var(--font-nunito)] text-[11px] tracking-[0.2em] uppercase text-[#000000]/50">Esküvő dátuma *</span>
-                      </div>
+                      <span className="absolute inset-0 flex items-center px-4 pointer-events-none font-[family-name:var(--font-nunito)] text-[11px] tracking-[0.2em] uppercase text-[#000000]/50">Esküvő dátuma *</span>
                     )}
                   </div>
                   <input type="text" inputMode="numeric" value={letszam} onChange={(e) => setLetszam(e.target.value)} className={inputClass} placeholder="Vendégek létszáma" />
