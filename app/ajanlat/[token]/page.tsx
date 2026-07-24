@@ -317,9 +317,9 @@ export default async function AjanlatPage({ params }: { params: Promise<{ token:
           {/* Bal: Nicol fotója */}
           <div className="shrink-0 md:w-[26%]">
             {/* Mobil: feljebb pozicionálva */}
-            <div className="md:hidden relative w-full overflow-hidden" style={{ height: "420px" }}>
+            <div className="md:hidden relative w-full overflow-hidden" style={{ height: "500px" }}>
               <Image src="/images/R%C3%B3lam%20f%C5%91oldal.jpg" alt="Gőz-Csongrádi Nicol" fill
-                className="object-cover" style={{ objectPosition: "50% 5%" }} sizes="100vw" />
+                className="object-cover" style={{ objectPosition: "50% 10%" }} sizes="100vw" />
             </div>
             {/* Desktop: eredeti */}
             <div className="hidden md:block relative w-full overflow-hidden" style={{ height: "480px" }}>
