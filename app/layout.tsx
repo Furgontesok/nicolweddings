@@ -29,7 +29,7 @@ const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
 });
 
-const BASE_URL = "https://www.nicolweddings.hu";
+const BASE_URL = "https://nicolweddings.hu";
 
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),

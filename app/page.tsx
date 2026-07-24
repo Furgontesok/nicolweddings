@@ -15,7 +15,7 @@ import ParallaxImage from "./components/ParallaxImage";
 export const metadata: Metadata = {
   title: "Nicol Weddings — Esküvőszervező Budapest és Magyarország",
   description: "Gőz-Csongrádi Nicol esküvőszervező Budapest és Magyarország szerte. Teljes körű esküvőszervezés, 30 napos koordináció, díjmentes konzultáció. Álmai esküvője valóra válik.",
-  alternates: { canonical: "https://www.nicolweddings.hu" },
+  alternates: { canonical: "https://nicolweddings.hu" },
 };
 
 const jsonLd = {
@@ -23,7 +23,7 @@ const jsonLd = {
   "@type": "LocalBusiness",
   name: "Nicol Weddings and Events",
   description: "Esküvőszervező és dekorátor szolgáltatások Magyarországon.",
-  url: "https://www.nicolweddings.hu",
+  url: "https://nicolweddings.hu",
   telephone: "+36305444676",
   email: "nicol.weddings@gmail.com",
   address: { "@type": "PostalAddress", addressCountry: "HU", addressLocality: "Budapest", addressRegion: "Budapest" },

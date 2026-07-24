@@ -6,7 +6,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Rólam — Gőz-Csongrádi Nicol esküvőszervező Budapest | Nicol Weddings",
   description: "Gőz-Csongrádi Nicol esküvőszervező és dekorátor, Budapest. 2022 óta segítem a párokat Magyarország szerte. Ismerj meg — díjmentes konzultáció.",
-  alternates: { canonical: "https://www.nicolweddings.hu/rolam" },
+  alternates: { canonical: "https://nicolweddings.hu/rolam" },
 };
 
 export default function Rolam() {

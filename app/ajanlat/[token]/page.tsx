@@ -345,7 +345,7 @@ export default async function AjanlatPage({ params }: { params: Promise<{ token:
               {[
                 ["nicol.weddings@gmail.com", "mailto:nicol.weddings@gmail.com"],
                 ["+36 30 544 4676", "tel:+36305444676"],
-                ["www.nicolweddings.hu", "https://www.nicolweddings.hu"],
+                ["nicolweddings.hu", "https://nicolweddings.hu"],
               ].map(([label, href]) => (
                 <a key={label} href={href}
                   className="block font-[family-name:var(--font-nunito)] text-[11px] tracking-[0.2em] text-white/35 hover:text-white/65 transition-colors">
