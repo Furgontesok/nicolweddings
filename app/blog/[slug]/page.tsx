@@ -81,7 +81,7 @@ export default async function BlogPostPage({
             fill
             priority
             className="object-cover"
-            style={{ objectPosition: "center 70%" }}
+            style={{ objectPosition: "center 62%" }}
             sizes="100vw"
           />
           <div className="absolute inset-0 bg-black/30" />
