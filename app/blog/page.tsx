@@ -63,7 +63,7 @@ export default function BlogPage() {
                   alt={post.title}
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-700"
-                  style={{ objectPosition: "center 60%" }}
+                  style={{ objectPosition: "center 75%" }}
                   sizes="(max-width: 768px) 100vw, 50vw"
                 />
               </div>
