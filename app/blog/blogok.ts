@@ -16,11 +16,11 @@ export const blogok: BlogPost[] = [
     description: `Felmerül a kérdés: kell-e esküvőszervező? Összefoglaltuk, mire számíthatsz, mikor érdemes szakembert fogadni, és miért mondja szinte minden pár, hogy megérte.`,
     date: "2026-07-08",
     cover: "/images/zsambek_wedding_styled_shoot-052_web.jpg",
-    intro: `Amikor az esküvőtervezés elkezdődik, az egyik legelső kérdés, ami felmerül: kell-e esküvőszervező? Sokan luxusnak tartják, mások már az első pillanattól fogva nélkülözhetetlennek. Az igazság valahol a kettő között van – de ha valaki egyszer megtapasztalja, mit jelent ez a fajta segítség, ritkán gondol vissza úgy, hogy felesleges volt.`,
+    intro: `Amikor az esküvőtervezés elkezdődik, az egyik legelső kérdés, ami felmerül: kell-e esküvőszervező? Sokan luxusnak tartják, mások már az első pillanattól fogva nélkülözhetetlennek. Az igazság valahol a kettő között van, de ha valaki egyszer megtapasztalja, mit jelent ez a fajta segítség, ritkán gondol vissza úgy, hogy felesleges volt.`,
     sections: [
       {
         heading: `Mi az esküvőszervező valódi feladata?`,
-        body: `Az esküvőszervező nem csak a virágokat rendeli meg és a helyszínt foglalja le. A pár képviselőjeként dolgozik: koordinálja a szolgáltatókat, vigyáz az időkeretre, kezeli az előre nem látható helyzeteket – és mindezt úgy, hogy a menyasszonynak és a vőlegénynek ne kelljen aggódni semmin.
+        body: `Az esküvőszervező a pár képviselőjeként dolgozik: koordinálja a szolgáltatókat, vigyáz az időkeretre, kezeli az előre nem látható helyzeteket, és mindezt úgy teszi, hogy a menyasszonynak és a vőlegénynek ne kelljen aggódni semmin.
 
 A feladatok néhány példája:
 • Helyszín- és szolgáltatókutatás, ajánlatbekérés
@@ -32,34 +32,34 @@ A feladatok néhány példája:
 Ha kíváncsi vagy, [milyen szolgáltatásokat kínálok](/szolgaltatasok), ott részletesen leírtam, mire számíthatsz.`,
       },
       {
-        heading: `"Minket is elbizonytalanított – de megérte"`,
-        body: `Ani és Peti, akiknek esküvőjét Nicol szervezte, így fogalmaztak: "Ha valaki elbizonytalanodna az esküvőszervező szükségessége miatt, szeretnénk megerősíteni abban, hogy óriási terhet vesz le az ember válláról."
+        heading: `"Minket is elbizonytalanított, de megérte"`,
+        body: `Az egyik pár, akikkel együtt dolgoztam, így fogalmazott: "Ha valaki elbizonytalanodna az esküvőszervező szükségessége miatt, szeretnénk megerősíteni abban, hogy óriási terhet vesz le az ember válláról."
 
-Ez a mondat sokaknak ismerős lehet – mert a bizonytalanság teljesen természetes. Az esküvőszervező egy plusz kiadásnak tűnik, főleg ha az ember még sosem szervezett esküvőt. Azonban ahogy Orsi és Krisz fogalmazták: "A saját bőrünkön tapasztaltuk meg, mekkora segítséget nyújt, és milyen hihetetlen terhet vesz le rólunk."`,
+Ez a mondat sokaknak ismerős lehet, mert a bizonytalanság teljesen természetes. Az esküvőszervező egy plusz kiadásnak tűnik, főleg ha az ember még sosem szervezett esküvőt. Azonban ahogy Orsi és Krisz fogalmazták: "A saját bőrünkön tapasztaltuk meg, mekkora segítséget nyújt, és milyen hihetetlen terhet vesz le rólunk."`,
       },
       {
         heading: `Mikor érdemes esküvőszervezőt fogadni?`,
         body: `Nincs egyetlen helyes válasz, de ezek a szempontok segíthetnek:
 
-• Ha 50 főnél több vendéget vártok – az összetettség ilyenkor már komoly koordinációt igényel
+• Ha 50 főnél több vendéget vártok: az összetettség ilyenkor már komoly koordinációt igényel
 • Ha mindketten dolgoztok és nincs időtök minden részletet intézni
 • Ha külföldi, különleges vagy több helyszínt érint az esküvő
-• Ha fontos, hogy az esküvő napján teljesen jelen lehessetek – ne szervezők, hanem menyasszony és vőlegény legyetek
+• Ha fontos, hogy az esküvő napján teljesen jelen lehessetek, ne szervezőként, hanem menyasszonyként és vőlegényként
 • Ha sok egyedi részletet, sok szolgáltatót szeretnétek összehangolni
 
-A lényeg: az esküvőszervező nem veszi el az élményt – épp ellenkezőleg, lehetővé teszi, hogy teljesen átadhassátok magatokat a napnak.`,
+A lényeg: az esküvőszervező nem veszi el az élményt. Épp ellenkezőleg: lehetővé teszi, hogy teljesen átadhassátok magatokat a napnak.`,
       },
       {
         heading: `Luxus? Inkább befektetés.`,
-        body: `Az esküvőszervező valóban nem a legolcsóbb tétel – de ha belegondolsz, hogy egy nem jól koordinált szolgáltató, egy elcsúszó időpont vagy egy félreértés hogyan tud tönkreteni egy életre szóló pillanatot, más megvilágításba kerül az ár. Ha konkrét számokat keresel, [ebben a cikkben összeszedtem, mennyibe kerül egy esküvőszervező Magyarországon](/blog/mennyibe-kerul-eskuvoszervezo-magyarorszagon).
+        body: `Az esküvőszervező valóban nem a legolcsóbb tétel, de ha belegondolsz, hogy egy nem jól koordinált szolgáltató, egy elcsúszó időpont vagy egy félreértés hogyan tud tönkreteni egy életre szóló pillanatot, más megvilágításba kerül az ár. Ha konkrét számokat keresel, [ebben a cikkben összeszedtem, mennyibe kerül egy esküvőszervező Magyarországon](/blog/mennyibe-kerul-eskuvoszervezo-magyarorszagon).
 
 Sokan utólag mondják: "Az esküvőszervező volt az egyetlen kiadás, amiért egy percig sem bántuk meg."
 
-Dr. Pozsonyi Petra így fogalmazott: "Nekünk, résztvevőknek csupán egy feladatunk volt: igazán jól érezni magunkat. Nem is kérdés, ha egyszer férjhez megyek, kire fogom rábízni az esküvőmet." [A többi visszajelzést itt olvashatod](/referenciak).`,
+[A többi visszajelzést itt olvashatod](/#velemenyek).`,
       },
       {
         heading: `Hogyan kezdjük el?`,
-        body: `Az első lépés egy személyes konzultáció, ahol átbeszéljük az elképzeléseiteket, az esküvő dátumát, helyszínét és azokat a területeket, ahol a legtöbb segítségre van szükségetek. Nincs kötelezettség – csak egy nyitott, őszinte beszélgetés arról, milyen esküvőt álmodtatok meg.
+        body: `Az első lépés egy személyes konzultáció, ahol átbeszéljük az elképzeléseiteket, az esküvő dátumát, helyszínét és azokat a területeket, ahol a legtöbb segítségre van szükségetek. Nincs kötelezettség, csak egy nyitott, őszinte beszélgetés arról, milyen esküvőt álmodtatok meg.
 
 [Írj nekem itt](/kapcsolat), és egyeztetünk egy időpontot. Ha előtte jobban meg szeretnél ismerni, [a Rólam oldalon](/rolam) mindent megtalálsz.`,
       },
