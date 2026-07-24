@@ -170,9 +170,9 @@ Az adatok és a számok sokat segítenek, de az esküvő végső soron egy érz�
 
 Három fő kategóriát érdemes megkülönböztetni:
 
-Kezdő szervező (tapasztalat alatt 2 év): 80.000 Ft-tól indul a koordinációs szolgáltatás, a teljes körű szervezés ritkán haladja meg a 300.000 Ft-ot. Az ár alacsonyabb, de a rutinszerzés folyamatban van.
+Kezdő szervező (tapasztalat alatt 2 év): 100.000 Ft-tól indul a koordinációs szolgáltatás, a teljes körű szervezés ritkán haladja meg a 300.000 Ft-ot. Az ár alacsonyabb, de a rutinszerzés folyamatban van.
 
-Tapasztalt szervező (2-5 év, referenciák): a koordináció 150.000 Ft körül kezdődik, a teljes körű szervezés 300.000-600.000 Ft között mozog. A legtöbb aktívan dolgozó esküvőszervező ebbe a kategóriába esik.
+Tapasztalt szervező (2-5 év, referenciák): a koordináció 180.000 Ft körül kezdődik, a teljes körű szervezés 300.000-600.000 Ft között mozog. A legtöbb aktívan dolgozó esküvőszervező ebbe a kategóriába esik.
 
 Prémium, elismert szervező: 600.000 Ft felett, sokszor 1.000.000 Ft közelében vagy felett. Általában kiemelkedő referenciák, szűk kapacitás és nagyon személyre szabott kiszolgálás jellemzi.
 
