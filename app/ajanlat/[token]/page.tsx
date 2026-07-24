@@ -318,7 +318,7 @@ export default async function AjanlatPage({ params }: { params: Promise<{ token:
           <div className="shrink-0 md:w-[26%]">
             <div className="relative w-full overflow-hidden" style={{ height: "420px" }}>
               <Image src="/images/R%C3%B3lam%20f%C5%91oldal.jpg" alt="Gőz-Csongrádi Nicol" fill
-                className="object-cover object-top" sizes="(max-width:768px) 100vw, 26vw" />
+                className="object-cover object-top md:object-bottom" sizes="(max-width:768px) 100vw, 26vw" />
             </div>
           </div>
 
