@@ -75,7 +75,7 @@ Sokan utólag mondják: "Az esküvőszervező volt az egyetlen kiadás, amiért 
     intro: `Az első személyes konzultáció egy nagyon fontos pillanat. Nemcsak azért, mert ekkor dől el, hogy valóban a megfelelő személyre bízzátok-e az egyik legfontosabb napotokat, hanem azért is, mert az ott feltett kérdések alapján sokkal biztosabbak lehettek a döntésetekben. Összeállítottam azokat a kérdéseket, amelyeket én magam is fontosnak tartok, hogy egy pár megkérdezzen, akár éppen engem, akár bármely más esküvőszervezőt.`,
     sections: [
       {
-        heading: `Milyen tapasztalatod van, és láthatok korábbi munkáiból?`,
+        heading: `Mesélj egy olyan esküvőről, amelyre igazán büszke vagy!`,
         body: `Az évek száma fontos, de önmagában nem minden. Inkább azt kérdezzétek meg, milyen típusú esküvőket szervezett már: kis létszámút vagy nagyot, beltérit vagy kültérit, egyszerűbbet vagy összetett, több helyszínes rendezvényt.
 
 Kérjetek referenciákat, nézzetek meg galériákat, és ha van rá lehetőség, olvassatok visszajelzéseket korábbi párjaitól. Az igazi tapasztalat nem csak a számokban mutatkozik meg, hanem abban is, ahogyan a szervező mesél a munkájáról. [Az én referenciáimat itt találjátok](/referenciak).`,
@@ -93,7 +93,7 @@ Fontos, hogy megértsétek, milyen az együttműködés a gyakorlatban: mikor é
 Egy jó esküvőszervező átlátható árazással dolgozik, és szívesen elmagyarázza, mit kaptok a pénzetekért. Ha kíváncsi vagy, mit szokott tartalmazni egy-egy csomag és mire számíthatsz árakban, [erről részletesen írtam ebben a cikkben](/blog/mennyibe-kerul-eskuvoszervezo-magyarorszagon).`,
       },
       {
-        heading: `Hogyan koordinálod a szolgáltatókat?`,
+        heading: `Van-e olyan szolgáltatói köröd, akikkel szívesen dolgozol együtt?`,
         body: `Az esküvőszervező egyik legfontosabb feladata, hogy összefogja a fotóst, a dekoratőrt, a catererst, a zenészt és az összes többi közreműködőt. Kérdezzétek meg, hogyan tartja a kapcsolatot velük a folyamat során, és ki veszi fel a kapcsolatot kivel, ha valami változik.
 
 Az is hasznos lehet tudni, hogy a szervező van-e kapcsolatban megbízható szolgáltatókkal, akiket ajánlani tud, vagy teljesen szabad kezet ad a keresésben.`,
