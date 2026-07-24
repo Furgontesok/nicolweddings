@@ -161,7 +161,7 @@ Az adatok és a számok sokat segítenek, de az esküvő végső soron egy érz�
     title: `Mennyibe kerül egy esküvőszervező Magyarországon? Átlátható útmutató`,
     description: `Sokan félnek megkérdezni az árat. Összeszedtem, mit kapsz a pénzedért, mi befolyásolja a díjat, és miért nem érdemes csak az árat nézni, amikor esküvőszervezőt választasz.`,
     date: "2026-07-24",
-    cover: "/images/zsambek_wedding_styled_shoot-021_web.jpg",
+    cover: "/images/Betti%20%26%20Levi/3.jpg",
     intro: `Az esküvőszervező ára az egyik első dolog, amit a párok keresnek, és az egyik, amiről a legkevesebbet beszélnek nyíltan. Én nem tartom titokban. Ebben a cikkben pontosan leírom, mire számíthatsz Magyarországon, mi van benne a különböző csomagokban, és milyen szempontok alapján érdemes összehasonlítani az ajánlatokat.`,
     sections: [
       {
