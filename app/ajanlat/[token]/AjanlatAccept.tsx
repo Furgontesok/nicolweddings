@@ -152,7 +152,8 @@ export default function AjanlatAccept({ token, packages }: Props) {
                   <div>
                     <p className="font-[family-name:var(--font-nunito)] text-[9px] tracking-[0.3em] uppercase text-[#363025]/40 mb-1 px-1">Születési idő *</p>
                     <input required type="date" value={szulIdo} onChange={(e) => setSzulIdo(e.target.value)}
-                      className={inputClass} />
+                      className="w-full bg-[#EEECEA] px-4 py-3 font-[family-name:var(--font-nunito)] text-[11px] text-[#363025] focus:outline-none focus:bg-[#E5E3E0] transition-colors duration-200 cursor-pointer"
+                      style={{ appearance: "auto", WebkitAppearance: "auto" }} />
                   </div>
                   <input required type="text" value={lakcim} onChange={(e) => setLakcim(e.target.value)}
                     className={inputClass} placeholder="Lakcím *" />
