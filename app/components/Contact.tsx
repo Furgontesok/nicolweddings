@@ -13,6 +13,7 @@ export default function Contact() {
   const [honnan, setHonnan] = useState("");
   const [uzenet, setUzenet] = useState("");
   const [sent, setSent] = useState(false);
+  const [datumFocused, setDatumFocused] = useState(false);
 
   const inputClass =
     "w-full bg-[#EEECEA] px-4 py-3 font-[family-name:var(--font-nunito)] text-[11px] tracking-[0.2em] uppercase text-[#000000] placeholder:text-[#000000]/50 focus:outline-none focus:bg-[#E5E3E0] transition-colors duration-200";
@@ -127,13 +128,16 @@ export default function Contact() {
                 <input required type="text" value={nev} onChange={(e) => setNev(e.target.value)} className={inputClass} placeholder="Teljes név *" />
                 <input required type="email" value={email} onChange={(e) => setEmail(e.target.value)} className={inputClass} placeholder="E-mail cím *" />
                 <input required type="tel" value={telefon} onChange={(e) => setTelefon(e.target.value)} className={inputClass} placeholder="Telefonszám *" />
-                <div className="relative w-full">
-                  <input required type="date" value={datum} onChange={(e) => setDatum(e.target.value)} className={inputClass}
-                    style={(datum ? { appearance: "auto" } : { appearance: "auto", color: "transparent" }) as React.CSSProperties} />
-                  {!datum && (
-                    <span className="absolute inset-0 flex items-center px-4 pointer-events-none font-[family-name:var(--font-nunito)] text-[11px] tracking-[0.2em] uppercase text-[#000000]/50">Esküvő dátuma *</span>
-                  )}
-                </div>
+                <input
+                  required
+                  type={datum || datumFocused ? "date" : "text"}
+                  value={datum}
+                  onChange={(e) => setDatum(e.target.value)}
+                  onFocus={() => setDatumFocused(true)}
+                  onBlur={() => setDatumFocused(false)}
+                  className={inputClass}
+                  placeholder="Esküvő dátuma *"
+                />
                 <input type="text" inputMode="numeric" value={letszam} onChange={(e) => setLetszam(e.target.value)} className={inputClass} placeholder="Vendégek létszáma" />
                 <select required value={szolgaltatas} onChange={(e) => setSzolgaltatas(e.target.value)} className={`${inputClass} cursor-pointer`} style={{ color: szolgaltatas ? "#363025" : "rgba(54,48,37,0.5)" }}>
                   <option value="" disabled>Szolgáltatás *</option>

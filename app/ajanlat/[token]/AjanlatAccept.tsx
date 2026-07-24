@@ -21,6 +21,7 @@ export default function AjanlatAccept({ token, packages }: Props) {
   const [selectedPkg, setSelectedPkg] = useState(packages.length === 1 ? packages[0].key : "");
   const [nev, setNev] = useState("");
   const [szulHely, setSzulHely] = useState("");
+  const [szulIdoFocused, setSzulIdoFocused] = useState(false);
   const [szulIdo, setSzulIdo] = useState("");
   const [lakcim, setLakcim] = useState("");
   const [telefon, setTelefon] = useState("");
@@ -149,16 +150,16 @@ export default function AjanlatAccept({ token, packages }: Props) {
                     className={inputClass} placeholder="Teljes név *" />
                   <input required type="text" value={szulHely} onChange={(e) => setSzulHely(e.target.value)}
                     className={inputClass} placeholder="Születési hely *" />
-                  <div className="relative">
-                    <input required type="date" value={szulIdo} onChange={(e) => setSzulIdo(e.target.value)}
-                      className={inputClass}
-                      style={(szulIdo ? { appearance: "auto" } : { appearance: "auto", color: "transparent" }) as React.CSSProperties} />
-                    {!szulIdo && (
-                      <span className="absolute inset-0 flex items-center px-4 pointer-events-none font-[family-name:var(--font-nunito)] text-[11px] tracking-[0.2em] uppercase text-[#363025]/40">
-                        Születési idő *
-                      </span>
-                    )}
-                  </div>
+                  <input
+                    required
+                    type={szulIdo || szulIdoFocused ? "date" : "text"}
+                    value={szulIdo}
+                    onChange={(e) => setSzulIdo(e.target.value)}
+                    onFocus={() => setSzulIdoFocused(true)}
+                    onBlur={() => setSzulIdoFocused(false)}
+                    className={inputClass}
+                    placeholder="Születési idő *"
+                  />
                   <input required type="text" value={lakcim} onChange={(e) => setLakcim(e.target.value)}
                     className={inputClass} placeholder="Lakcím *" />
                   <input required type="tel" value={telefon} onChange={(e) => setTelefon(e.target.value)}
