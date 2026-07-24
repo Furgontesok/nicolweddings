@@ -333,7 +333,7 @@ export default async function AjanlatPage({ params }: { params: Promise<{ token:
             <Image src="/images/horizontal_white.svg" alt="Nicol Weddings and Events"
               width={130} height={40} className="object-contain opacity-55 mb-6" style={{ height: "auto" }} />
             <p className="font-[family-name:var(--font-cormorant)] text-xl md:text-2xl font-light text-white/75 italic mb-6 leading-relaxed">
-              Bízom benne, hogy ajánlatom elnyeri tetszéseteket! Szeretettel várom visszajelzéseteket!
+              Bízom benne, hogy ajánlatom elnyeri tetszéseteket!<br className="hidden md:block" /> Szeretettel várom visszajelzéseteket!
             </p>
             <p className="font-[family-name:var(--font-italianno)] text-3xl text-white/50 mb-3 mt-4">Gőz-Csongrádi Nicol</p>
 
