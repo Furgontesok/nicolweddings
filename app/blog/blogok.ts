@@ -156,6 +156,112 @@ Az adatok és a számok sokat segítenek, de az esküvő végső soron egy érz�
     ],
     cta: { label: "Kérj személyes segítséget a helyszínválasztáshoz", href: "/kapcsolat" },
   },
+  {
+    slug: "mennyibe-kerul-eskuvoszervezo-magyarorszagon",
+    title: `Mennyibe kerül egy esküvőszervező Magyarországon? Átlátható útmutató`,
+    description: `Sokan félnek megkérdezni az árat. Összeszedtem, mit kapsz a pénzedért, mi befolyásolja a díjat, és miért nem érdemes csak az árat nézni, amikor esküvőszervezőt választasz.`,
+    date: "2026-07-24",
+    cover: "/images/zsambek_wedding_styled_shoot-021_web.jpg",
+    intro: `Az esküvőszervező ára az egyik első dolog, amit a párok keresnek, és az egyik, amiről a legkevesebbet beszélnek nyíltan. Én nem tartom titokban. Ebben a cikkben pontosan leírom, mire számíthatsz Magyarországon, mi van benne a különböző csomagokban, és milyen szempontok alapján érdemes összehasonlítani az ajánlatokat.`,
+    sections: [
+      {
+        heading: `Milyen árkategóriák léteznek Magyarországon?`,
+        body: `Az esküvőszervező díja Magyarországon széles sávban mozog, és ez nem véletlen. A különbség nem csak a névben van, hanem abban, mit kapsz valójában a pénzedért.
+
+Három fő kategóriát érdemes megkülönböztetni:
+
+Kezdő szervező (tapasztalat alatt 2 év): 80.000 Ft-tól indul a koordinációs szolgáltatás, a teljes körű szervezés ritkán haladja meg a 300.000 Ft-ot. Az ár alacsonyabb, de a rutinszerzés folyamatban van.
+
+Tapasztalt szervező (2-5 év, referenciák): a koordináció 150.000 Ft körül kezdődik, a teljes körű szervezés 300.000-600.000 Ft között mozog. A legtöbb aktívan dolgozó esküvőszervező ebbe a kategóriába esik.
+
+Prémium, elismert szervező: 600.000 Ft felett, sokszor 1.000.000 Ft közelében vagy felett. Általában kiemelkedő referenciák, szűk kapacitás és nagyon személyre szabott kiszolgálás jellemzi.
+
+Az ár önmagában nem mond semmit. Egy alacsony ár mögött lehet kevesebb tapasztalat, kevesebb beletett idő, vagy egyszerűen másfajta csomag.`,
+      },
+      {
+        heading: `Mit tartalmaz egy teljes körű esküvőszervezési csomag?`,
+        body: `A [teljes körű esküvőszervezés](/szolgaltatasok#service-01) azt jelenti, hogy az esküvőszervező az első találkozótól az utolsó tánclépésig veled van. De mit jelent ez konkrétan?
+
+A legtöbb ilyen csomagban benne szokott lenni:
+• Helyszínkutatás és bejárások, ajánlatkérés több opcióra
+• Szolgáltatók (fotós, dekoratőr, catering, zene) kiválasztásának segítése
+• Szerződések átnézése, ár- és feltételtárgyalások
+• Esküvői napirend elkészítése percre pontosan
+• Rendszeres egyeztetések a folyamat során
+• A nagy nap teljes koordinációja, a helyszínre érkezéstől az utolsó vendégig
+
+Ami néha nem szerepel az alapcsomagban: az utazási díj, ha a helyszín messze van; a dekoráció tényleges megvásárlása (az csak koordinálva van); egyes adminisztrációs feladatok, amelyeket a párnak kell intéznie.
+
+Mielőtt aláírsz, mindig kérd el a részletes feladatlistát. Egy jó [esküvőszervező átlátható árazással](/blog/mit-kerdezz-eskuvoszervezotol-elso-talalkozoan) dolgozik, és szívesen elmagyarázza, mi van benne és mi nincs.`,
+      },
+      {
+        heading: `A "30 nap a nagy napig" csomag — mikor éri meg?`,
+        body: `A [30 nap a nagy napig](/szolgaltatasok#service-02) csomag azoknak szól, akik a legtöbb szervezést maguk vállalják, de az utolsó egyenes előtt szeretnének egy tapasztalt kezet, aki átveszi a koordinációt.
+
+Ez a csomag általában a következőket foglalja magában:
+• Az összes addigi szervező tevékenység átvétele, átvilágítása
+• Szolgáltatókkal való egyeztetés, megerősítés
+• Pontos napirend elkészítése
+• Az esküvő napján teljes koordináció
+
+Ára Magyarországon jellemzően 150.000-350.000 Ft között mozog. Akkor a legjobb választás, ha van önbizalmad és időd az előzetes szervezéshez, de nem szeretnél az esküvőd napján is szervezőként dolgozni.`,
+      },
+      {
+        heading: `Az esküvői tanácsadás: a legolcsóbb belépő`,
+        body: `Az [esküvői tanácsadás](/szolgaltatasok#service-03) egy-két alkalmat jelent, ahol egy szakemberrel átnézitek a helyzetet, a terveket, az eddigi döntéseket, és kapsz konkrét útmutatást a következő lépésekre.
+
+Ára alkalmanként 15.000-30.000 Ft között szokott lenni. Nagyon hasznos lehet, ha:
+• Elakadtatok a szervezésben és nem tudjátok, hol tartsatok
+• Nem vagytok biztosak egy-egy döntésben (helyszín, büdzsé, sorrend)
+• Egyszer szeretnétek átbeszélni egy szakemberrel, de nem tervezitek a teljes szervezés kiszervezését
+
+A tanácsadás nem helyettesíti a koordinációt, de sok pár számára ez az első lépés, ami után döntik el, hogy tovább mennek-e együtt.`,
+      },
+      {
+        heading: `Mi befolyásolja az árat?`,
+        body: `Nem minden 200.000 Ft-os ajánlat ugyanannyit ér, és nem minden 500.000 Ft-os sem. Ezek a tényezők befolyásolják, hogy egy szervező mire kér ennyit:
+
+Tapasztalat és referenciák: egy esküvőszervező, aki 20-30 esküvőn van túl és [konkrét visszajelzéseket](/referenciak) tud mutatni, más minőséget képvisel, mint egy frissen induló kolléga.
+
+Helyszín és logisztika: ha a helyszín messze van, ha több helyszínt érint az esküvő, ha különleges koordinációt igényel, az emeli a díjat.
+
+Vendégszám: 30 és 200 fős esküvő szervezése egészen más terhelést jelent. Nagyobb esküvőnél több az egyeztetés, a logisztika, a nap alatti koordináció.
+
+Egyediség: ha nagyon speciális elképzeléseitek vannak, külföldi szolgáltatókat kerestek, vagy teljesen egyedi koncepciót szeretnétek, az több munkát jelent, amit az ár tükröz.`,
+      },
+      {
+        heading: `Mire figyeljetek az ajánlatok összehasonlításakor?`,
+        body: `Amikor több esküvőszervezőtől kaptok ajánlatot, ne csak a végösszeget nézzétek. Ezeket is érdemes összehasonlítani:
+
+Mi van pontosan benne? Néhány szervező sok mindent csak külön számol fel, ami másoknál benne van az árban. Egy látszólag olcsóbb ajánlat végül drágább is lehet.
+
+Hány személyes találkozót tartalmaz? Néhány csomagban csak online egyeztetés van, más szervező személyesen is elmegy veled a helyszínre, a virágoshoz, a ruhára.
+
+Mi történik, ha valami megváltozik? A jó szerződés tisztázza, mi van, ha elmarad az esküvő, ha változik a dátum, ha extra feladatok merülnek fel.
+
+Az [első találkozón](/blog/mit-kerdezz-eskuvoszervezotol-elso-talalkozoan) ezek mindegyikét érdemes megkérdezni. Ne félj pontos választ várni.`,
+      },
+      {
+        heading: `Megéri-e az ár?`,
+        body: `Ezt a kérdést sokszor megkapom. A válaszom mindig az, hogy attól függ, mit értékeltek.
+
+Ha az idő értékes nektek, ha fontos, hogy a nagy napon ne szervezőként dolgozzatok, ha olyan emberrel szeretnétek dolgozni, aki már volt ott és tudja, mi jöhet, akkor igen, megéri.
+
+A legtöbb pár, aki dolgozott már esküvőszervezővel, utólag azt mondja: ez volt az egyetlen kiadás, amit nem bántunk meg. Nem azért, mert olcsó volt, hanem azért, mert látszott az értéke minden pillanatban.
+
+Ha még nem vagy biztos benne, [olvass utána](/blog/eskuvoszervezo-luxus-vagy-szukseglet) mit mondanak azok, akik már átmentek ezen. Nem reklám, hanem valódi tapasztalat.`,
+      },
+      {
+        heading: `Mi a helyzet nálam?`,
+        body: `Én Budapest és Magyarország szerte dolgozom, és az áraimat mindig az adott pár igényeihez igazítom. Nem dolgozom rejtett költségekkel és nem kérek előre mindent.
+
+Ha szeretnéd tudni, hogy a ti esküvőtökre mi lenne az ideális megoldás, és mennyibe kerülne, [írj nekem](/kapcsolat) és egyeztetünk. Az első konzultáció díjmentes, és semmihez nem kötelez.
+
+Ha kíváncsi vagy, kik dolgoztunk már együtt és hogyan élték meg, [nézd meg a referenciáimat](/referenciak). Minden pár valódi, minden visszajelzés tényleges tapasztalat alapján született.`,
+      },
+    ],
+    cta: { label: "Kérj díjmentes konzultációt", href: "/kapcsolat" },
+  },
 ];
 
 export function getBlogPost(slug: string): BlogPost | undefined {

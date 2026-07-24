@@ -5,6 +5,13 @@ import type { Metadata } from "next";
 import NavbarSimple from "../../components/NavbarSimple";
 import Footer from "../../components/Footer";
 
+function parseBody(text: string): string {
+  return text.replace(
+    /\[([^\]]+)\]\(([^)]+)\)/g,
+    '<a href="$2" class="text-[#363025] underline underline-offset-2 hover:text-[#363025]/60 transition-colors">$1</a>'
+  );
+}
+
 export function generateStaticParams() {
   return blogok.map((p) => ({ slug: p.slug }));
 }
@@ -109,9 +116,8 @@ export default async function BlogPostPage({
               </h2>
               <div className="font-[family-name:var(--font-quicksand)] text-[15px] text-[#363025]/65 leading-relaxed space-y-3">
                 {s.body.split("\n\n").map((para, j) => (
-                  <p key={j} style={{ whiteSpace: "pre-line" }}>
-                    {para}
-                  </p>
+                  <p key={j} style={{ whiteSpace: "pre-line" }}
+                    dangerouslySetInnerHTML={{ __html: parseBody(para) }} />
                 ))}
               </div>
             </div>
