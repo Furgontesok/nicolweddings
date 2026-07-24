@@ -33,7 +33,7 @@ export default function Referenciak() {
         />
         <div className="absolute inset-0 bg-black/40" />
         <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-6">
-          <h2 className="font-[family-name:var(--font-cormorant)] text-5xl md:text-7xl font-light text-white mb-4 leading-tight tracking-[-0.02em]">
+          <h2 className="font-[family-name:var(--font-cormorant)] text-5xl md:text-5xl lg:text-7xl font-light text-white mb-4 leading-tight tracking-[-0.02em]">
             Váltsuk valóra álmaitok esküvőjét!
           </h2>
           <p className="font-[family-name:var(--font-quicksand)] text-white text-[16px] mb-10 max-w-xl">

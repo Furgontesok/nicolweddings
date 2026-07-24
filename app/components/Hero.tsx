@@ -74,7 +74,7 @@ export default function Hero() {
         className={`transition-opacity duration-300 ${heroVisible ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"}`}
       >
         {/* Desktop */}
-        <div className="hidden md:flex flex-col items-center gap-4 pt-8">
+        <div className="hidden lg:flex flex-col items-center gap-4 pt-8">
           <a href="/">
             <Image
               src="/images/horizontal_white.svg"
@@ -102,7 +102,7 @@ export default function Hero() {
         </div>
 
         {/* Mobil */}
-        <div className="md:hidden flex items-center justify-between px-5 pt-6">
+        <div className="lg:hidden flex items-center justify-between px-5 pt-6">
           <a href="/">
             <Image
               src="/images/horizontal_white.svg"
@@ -133,7 +133,7 @@ export default function Hero() {
 
         {/* Mobil full-screen menü */}
         {menuOpen && (
-          <div className="md:hidden fixed inset-0 bg-[#EDEDE1] z-50 flex flex-col items-center justify-center"
+          <div className="lg:hidden fixed inset-0 bg-[#EDEDE1] z-50 flex flex-col items-center justify-center"
             style={{ animation: "slideUp 0.35s cubic-bezier(0.16,1,0.3,1) both" }}>
           <style>{`@keyframes slideUp { from { transform: translateY(100%); } to { transform: translateY(0); } }`}</style>
             <button

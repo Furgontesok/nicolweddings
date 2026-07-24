@@ -39,7 +39,7 @@ export default function Navbar() {
       }`}
     >
       {/* Desktop */}
-      <div className="hidden md:flex items-center h-[92px] px-10">
+      <div className="hidden lg:flex items-center h-[92px] px-10">
         <div className="w-1/4">
           <a href="/">
             <Image
@@ -79,7 +79,7 @@ export default function Navbar() {
       </div>
 
       {/* Mobil */}
-      <div className="md:hidden flex items-center justify-between px-6 py-4">
+      <div className="lg:hidden flex items-center justify-between px-6 py-4">
         <a href="/">
           <Image
             src="/images/horizontal_black.svg"
@@ -102,7 +102,7 @@ export default function Navbar() {
       </div>
 
       {open && (
-        <div className="md:hidden fixed inset-0 bg-[#EDEDE1] z-50 flex flex-col items-center justify-center"
+        <div className="lg:hidden fixed inset-0 bg-[#EDEDE1] z-50 flex flex-col items-center justify-center"
           style={{ animation: "slideUp 0.35s cubic-bezier(0.16,1,0.3,1) both" }}>
           <style>{`@keyframes slideUp { from { transform: translateY(100%); } to { transform: translateY(0); } }`}</style>
           <button onClick={() => setOpen(false)} className="absolute top-6 right-6 text-[#363025]/60 hover:text-[#363025]" aria-label="Bezár">

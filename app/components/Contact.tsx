@@ -57,7 +57,7 @@ export default function Contact() {
 
         {/* Fejléc — desktop */}
         <div className="hidden md:block text-center mb-12">
-          <h2 className="font-[family-name:var(--font-cormorant)] italic text-[42px] md:text-[58px] font-light text-[#363025]">
+          <h2 className="font-[family-name:var(--font-cormorant)] italic text-[42px] md:text-[46px] lg:text-[58px] font-light text-[#363025]">
             Alig várom, hogy megismerjük egymást!
           </h2>
           <p className="md:hidden font-[family-name:var(--font-quicksand)] text-[#363025]/55 text-[16px] mt-5">
@@ -66,7 +66,7 @@ export default function Contact() {
         </div>
 
         {/* Desktop + form */}
-        <div className="flex flex-col md:flex-row gap-16 items-start">
+        <div className="flex flex-col md:flex-row gap-10 lg:gap-16 items-start">
 
           {/* Bal — info (desktop only) */}
           <div className="hidden md:block flex-shrink-0 md:w-[38%]">

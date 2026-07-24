@@ -4,7 +4,7 @@ export default function About() {
   return (
     <section id="rolam" className="bg-[#F5F3ED] pt-6 pb-8 md:py-24 px-6">
       <div className="max-w-5xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-1 md:gap-y-8 items-start">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 lg:gap-x-16 gap-y-1 md:gap-y-8 items-start">
 
           {/* 1. Heading + idézet — mobilon első, desktopon bal-felső */}
           <div className="order-1 md:col-start-1 md:row-start-1">
@@ -12,14 +12,14 @@ export default function About() {
             <h2 className="font-[family-name:var(--font-italianno)] text-4xl md:text-4xl text-[#363025] mb-1 leading-tight">
               Ismerj meg
             </h2>
-            <p className="font-[family-name:var(--font-cormorant)] text-[#363025]/80 text-[1.75rem] md:text-[2.5rem] text-balance" style={{ lineHeight: "1.15", letterSpacing: "-0.02em" }}>
+            <p className="font-[family-name:var(--font-cormorant)] text-[#363025]/80 text-[1.75rem] md:text-[2rem] lg:text-[2.5rem] text-balance" style={{ lineHeight: "1.15", letterSpacing: "-0.02em" }}>
               Hiszem, hogy az apró részletek formálják az esküvő egyediségét, ettől lesz minden utánozhatatlan.
             </p>
           </div>
 
           {/* 2. Kép — mobilon második, desktopon jobb (2 sort átfog) */}
           <div className="order-2 md:col-start-2 md:row-start-1 md:row-span-2 flex justify-center md:block my-6 md:my-0">
-            <div className="w-[90%] md:w-full max-w-[440px] h-[520px] md:h-[620px] relative overflow-hidden">
+            <div className="w-[90%] md:w-full max-w-[440px] h-[520px] md:h-[500px] lg:h-[620px] relative overflow-hidden">
               <Image
                 src="/images/R%C3%B3lam%20f%C5%91oldal.jpg"
                 alt="Nicol — esküvőszervező"

@@ -80,7 +80,7 @@ export default function Services() {
                 <h3 className="font-[family-name:var(--font-cormorant)] text-[22px] font-light text-white leading-snug mb-3">
                   {s.title}
                 </h3>
-                <p className="font-[family-name:var(--font-quicksand)] text-white/70 text-[13px] leading-relaxed overflow-hidden max-h-24 md:max-h-0 md:group-hover:max-h-24 md:transition-all md:duration-500">
+                <p className="font-[family-name:var(--font-quicksand)] text-white/70 text-[13px] leading-relaxed overflow-hidden max-h-24 lg:max-h-0 lg:group-hover:max-h-24 lg:transition-all lg:duration-500">
                   {s.desc}
                 </p>
               </div>

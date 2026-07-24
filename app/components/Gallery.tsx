@@ -35,7 +35,7 @@ export default function Gallery() {
           <div className="w-16 h-px bg-[#363025]/30 mx-auto mt-6" />
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 auto-rows-[200px] gap-3">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 auto-rows-[200px] gap-3">
           {photos.map((p, i) => (
             <div
               key={i}
