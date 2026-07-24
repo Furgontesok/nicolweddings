@@ -27,7 +27,9 @@ A feladatok néhány példája:
 • Szerződések átvizsgálása, tárgyalások
 • Esküvői napirend elkészítése percre pontosan
 • Próbajárások, ruhapróbák és fontos megbeszélések kísérése
-• Az esküvő napján teljes koordináció reggeltől az utolsó vendég távozásáig`,
+• Az esküvő napján teljes koordináció reggeltől az utolsó vendég távozásáig
+
+Ha kíváncsi vagy, [milyen szolgáltatásokat kínálok](/szolgaltatasok), ott részletesen leírtam, mire számíthatsz.`,
       },
       {
         heading: `"Minket is elbizonytalanított – de megérte"`,
@@ -49,15 +51,17 @@ A lényeg: az esküvőszervező nem veszi el az élményt – épp ellenkezőleg
       },
       {
         heading: `Luxus? Inkább befektetés.`,
-        body: `Az esküvőszervező valóban nem a legolcsóbb tétel – de ha belegondolsz, hogy egy nem jól koordinált szolgáltató, egy elcsúszó időpont vagy egy félreértés hogyan tud tönkreteni egy életre szóló pillanatot, más megvilágításba kerül az ár.
+        body: `Az esküvőszervező valóban nem a legolcsóbb tétel – de ha belegondolsz, hogy egy nem jól koordinált szolgáltató, egy elcsúszó időpont vagy egy félreértés hogyan tud tönkreteni egy életre szóló pillanatot, más megvilágításba kerül az ár. Ha konkrét számokat keresel, [ebben a cikkben összeszedtem, mennyibe kerül egy esküvőszervező Magyarországon](/blog/mennyibe-kerul-eskuvoszervezo-magyarorszagon).
 
 Sokan utólag mondják: "Az esküvőszervező volt az egyetlen kiadás, amiért egy percig sem bántuk meg."
 
-Dr. Pozsonyi Petra így fogalmazott: "Nekünk, résztvevőknek csupán egy feladatunk volt: igazán jól érezni magunkat. Nem is kérdés, ha egyszer férjhez megyek, kire fogom rábízni az esküvőmet."`,
+Dr. Pozsonyi Petra így fogalmazott: "Nekünk, résztvevőknek csupán egy feladatunk volt: igazán jól érezni magunkat. Nem is kérdés, ha egyszer férjhez megyek, kire fogom rábízni az esküvőmet." [A többi visszajelzést itt olvashatod](/referenciak).`,
       },
       {
         heading: `Hogyan kezdjük el?`,
-        body: `Az első lépés egy személyes konzultáció, ahol átbeszéljük az elképzeléseiteket, az esküvő dátumát, helyszínét és azokat a területeket, ahol a legtöbb segítségre van szükségetek. Nincs kötelezettség – csak egy nyitott, őszinte beszélgetés arról, milyen esküvőt álmodtatok meg.`,
+        body: `Az első lépés egy személyes konzultáció, ahol átbeszéljük az elképzeléseiteket, az esküvő dátumát, helyszínét és azokat a területeket, ahol a legtöbb segítségre van szükségetek. Nincs kötelezettség – csak egy nyitott, őszinte beszélgetés arról, milyen esküvőt álmodtatok meg.
+
+[Írj nekem itt](/kapcsolat), és egyeztetünk egy időpontot. Ha előtte jobban meg szeretnél ismerni, [a Rólam oldalon](/rolam) mindent megtalálsz.`,
       },
     ],
     cta: { label: "Foglalj időpontot konzultációra", href: "/kapcsolat" },
@@ -74,7 +78,7 @@ Dr. Pozsonyi Petra így fogalmazott: "Nekünk, résztvevőknek csupán egy felad
         heading: `Milyen tapasztalatod van, és láthatok korábbi munkáiból?`,
         body: `Az évek száma fontos, de önmagában nem minden. Inkább azt kérdezzétek meg, milyen típusú esküvőket szervezett már: kis létszámút vagy nagyot, beltérit vagy kültérit, egyszerűbbet vagy összetett, több helyszínes rendezvényt.
 
-Kérjetek referenciákat, nézzetek meg galériákat, és ha van rá lehetőség, olvassatok visszajelzéseket korábbi párjaitól. Az igazi tapasztalat nem csak a számokban mutatkozik meg, hanem abban is, ahogyan a szervező mesél a munkájáról.`,
+Kérjetek referenciákat, nézzetek meg galériákat, és ha van rá lehetőség, olvassatok visszajelzéseket korábbi párjaitól. Az igazi tapasztalat nem csak a számokban mutatkozik meg, hanem abban is, ahogyan a szervező mesél a munkájáról. [Az én referenciáimat itt találjátok](/referenciak).`,
       },
       {
         heading: `Hogyan szoktál dolgozni a párral a folyamat során?`,
@@ -86,7 +90,7 @@ Fontos, hogy megértsétek, milyen az együttműködés a gyakorlatban: mikor é
         heading: `Mit tartalmaz pontosan a csomag, és mi nem tartozik bele?`,
         body: `Ez az egyik leggyakrabban elhagyott kérdés, és utólag az egyik legnagyobb forrása a félreértéseknek. Kérdezzétek meg részletesen, hogy mi szerepel az árban: benne van-e az esküvő napján a teljes koordináció, vagy az csak külön kérhető? Hány bejárást, próbát, személyes egyeztetést tartalmaz a csomag?
 
-Egy jó esküvőszervező átlátható árazással dolgozik, és szívesen elmagyarázza, mit kaptok a pénzetekért.`,
+Egy jó esküvőszervező átlátható árazással dolgozik, és szívesen elmagyarázza, mit kaptok a pénzetekért. Ha kíváncsi vagy, mit szokott tartalmazni egy-egy csomag és mire számíthatsz árakban, [erről részletesen írtam ebben a cikkben](/blog/mennyibe-kerul-eskuvoszervezo-magyarorszagon).`,
       },
       {
         heading: `Hogyan koordinálod a szolgáltatókat?`,
@@ -104,7 +108,7 @@ A rugalmasság és a nyugodt jelenlét a nagy napon az egyik legértékesebb dol
         heading: `Hogyan érzem meg, hogy jó döntés-e?`,
         body: `Végül van egy szempont, amelyről ritkán beszélnek: a kémia. Az esküvőszervező hónapokon át kísér végig titeket egy nagyon személyes folyamaton. Fontos, hogy jól érezzétek magatokat a társaságában, hogy őszintén megoszthassátok az elképzeléseiteket, és hogy biztonságban érezzétek magatokat.
 
-Ha az első találkozó után azt érzitek, hogy megértettük egymást, hogy meghallgatott és valóban érdekli a ti történetetek, az egy nagyon jó jel. A szakmai tapasztalat fontos, de az emberi kapcsolat ugyanolyan nélkülözhetetlen.`,
+Ha az első találkozó után azt érzitek, hogy megértettük egymást, hogy meghallgatott és valóban érdekli a ti történetetek, az egy nagyon jó jel. A szakmai tapasztalat fontos, de az emberi kapcsolat ugyanolyan nélkülözhetetlen. Ha szeretnétek jobban megismerni, mielőtt felveszitek velem a kapcsolatot, [a Rólam oldalon](/rolam) többet megtudhattok rólam, [az elérhető szolgáltatásokról](/szolgaltatasok) pedig itt olvashattok.`,
       },
     ],
     cta: { label: "Foglalj időpontot konzultációra", href: "/kapcsolat" },
@@ -127,7 +131,7 @@ Egy túl nagy terem üresnek hat, egy túl kicsi nyomasztó lehet. Az ideális h
         heading: `2. Helyszín és megközelíthetőség`,
         body: `Gondoljatok a vendégeitek szemszögéből is: mennyire könnyen közelíthető meg a helyszín? Van-e elegendő parkoló? Ha sokan érkeznek vidékről vagy külföldről, milyen szálláslehetőségek vannak a közelben?
 
-Az is szempont lehet, hogy a helyszín mennyire illik a saját elképzeléseitekhez: egy romantikus vidéki kastély más hangulatot teremt, mint egy modern városi terasz.`,
+Az is szempont lehet, hogy a helyszín mennyire illik a saját elképzeléseitekhez: egy romantikus vidéki kastély más hangulatot teremt, mint egy modern városi terasz. [Esküvőszervezőként](/rolam) ezeket a szempontokat mindig együtt nézzük végig a párral.`,
       },
       {
         heading: `3. Hangulat és stílus`,
@@ -145,13 +149,13 @@ Kérdezzetek rá részletesen: mi az, ami benne van az árban, és mi az, ami k�
         heading: `5. Van-e saját koordinátor a helyszínen?`,
         body: `Sok helyszín biztosít saját eseménykoordinátort, aki az adott tér működését ismeri. Ez értékes, de fontos tudni: a helyszíni koordinátor a helyszín érdekeit képviseli, nem a ti érdeketeket. Ő azt nézi, hogy minden rendben legyen a teremben, de a ti teljes esküvőtöket, az összes szolgáltatóval együtt, nem feltétlenül ő vezeti végig.
 
-Ezért az esküvőszervező és a helyszíni koordinátor két különböző szerepkör, és nagyon jól ki tudják egészíteni egymást.`,
+Ezért az esküvőszervező és a helyszíni koordinátor két különböző szerepkör, és nagyon jól ki tudják egészíteni egymást. Ha nem vagy biztos benne, [mikor éri meg esküvőszervezőt fogadni](/blog/eskuvoszervezo-luxus-vagy-szukseglet), abban a cikkben részletesen végigvettem.`,
       },
       {
         heading: `Plusz egy: bízzatok az ösztönötökre`,
         body: `Az összes szempont végignézése után van még egy dolog, amelyet nem szabad figyelmen kívül hagyni: hogyan érzitek magatokat ott. Mikor beléptek egy helyszínre, és azt mondjátok egymásnak, hogy "igen, ez az", az egy nagyon fontos jel.
 
-Az adatok és a számok sokat segítenek, de az esküvő végső soron egy érzés. Válasszatok olyan helyet, ahol már pusztán a gondolattól is mosolyog az arcotok.`,
+Az adatok és a számok sokat segítenek, de az esküvő végső soron egy érzés. Válasszatok olyan helyet, ahol már pusztán a gondolattól is mosolyog az arcotok. Ha szeretnétek személyes segítséget a kereséshez, [írjatok nekem](/kapcsolat) és együtt nézzük végig a lehetőségeket. Azt is érdemes tudni, hogy [mit érdemes megkérdezni egy esküvőszervezőtől](/blog/mit-kerdezz-eskuvoszervezotol-elso-talalkozoan) az első találkozón.`,
       },
     ],
     cta: { label: "Kérj személyes segítséget a helyszínválasztáshoz", href: "/kapcsolat" },
