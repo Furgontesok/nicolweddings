@@ -94,7 +94,7 @@ Egy jó esküvőszervező átlátható árazással dolgozik, és szívesen elmag
       },
       {
         heading: `Van-e olyan szolgáltatói köröd, akikkel szívesen dolgozol együtt?`,
-        body: `Az esküvőszervező egyik legfontosabb feladata, hogy összefogja a fotóst, a dekoratőrt, a catererst, a zenészt és az összes többi közreműködőt. Kérdezzétek meg, hogyan tartja a kapcsolatot velük a folyamat során, és ki veszi fel a kapcsolatot kivel, ha valami változik.
+        body: `Az esküvőszervező egyik legfontosabb feladata, hogy összefogja a fotóst, a dekoratőrt, a cateringest, a zenészt és az összes többi közreműködőt. Kérdezzétek meg, hogyan tartja a kapcsolatot velük a folyamat során, és ki veszi fel a kapcsolatot kivel, ha valami változik.
 
 Az is hasznos lehet tudni, hogy a szervező van-e kapcsolatban megbízható szolgáltatókkal, akiket ajánlani tud, vagy teljesen szabad kezet ad a keresésben.`,
       },
