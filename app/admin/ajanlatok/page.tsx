@@ -207,9 +207,9 @@ export default function AdminAjanlatok() {
                 ))}
               </div>
               <form onSubmit={editingId ? update : create} className="grid grid-cols-1 md:grid-cols-2 gap-5">
-                <div><label className={labelCls}>Pár neve *</label>
+                <div><label className={labelCls}>{isEgyeb ? "Megrendelő neve *" : "Pár neve *"}</label>
                   <input required className={inputCls} value={form.couple_name} onChange={e => setForm(f => ({ ...f, couple_name: e.target.value }))} placeholder="Gréti & Domán" /></div>
-                <div><label className={labelCls}>Esküvő tervezett dátuma</label>
+                <div><label className={labelCls}>{isEgyeb ? "Rendezvény tervezett dátuma" : "Esküvő tervezett dátuma"}</label>
                   <input className={inputCls} value={form.wedding_date} onChange={e => setForm(f => ({ ...f, wedding_date: e.target.value }))} placeholder="2026. szeptember" /></div>
                 <div><label className={labelCls}>Vendégek létszáma</label>
                   <input className={inputCls} value={form.guest_count} onChange={e => setForm(f => ({ ...f, guest_count: e.target.value }))} placeholder="80–100 fő" /></div>
