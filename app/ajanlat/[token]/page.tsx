@@ -86,6 +86,7 @@ async function getProposal(token: string) {
 }
 
 function ServiceBlock({ svc, price, hideNum }: { svc: typeof services.teljes & { note?: string; desc?: string; detailItems?: { title: string; desc: string }[] }; price?: string; hideNum?: boolean }) {
+  const rowCount = svc.num === "02" ? 4 : svc.num === "03" ? 3 : Math.ceil((svc.detailItems?.length ?? 0) / 2);
   return (
     <div className="py-10 md:py-14 px-4 md:px-8 border-t border-[#363025]/8">
       <div className="max-w-6xl mx-auto">
@@ -141,7 +142,10 @@ function ServiceBlock({ svc, price, hideNum }: { svc: typeof services.teljes & {
                 Tartalma
               </span>
             </div>
-            <ul className="grid md:grid-cols-2 gap-x-12 pb-6">
+            <ul
+              className="pb-6 md:grid md:[grid-auto-flow:column] md:[grid-auto-columns:1fr] md:[grid-template-rows:repeat(var(--rows),auto)] gap-x-12"
+              style={{ '--rows': rowCount } as React.CSSProperties}
+            >
               {svc.detailItems.map((item, i) => (
                 <li key={i} className="flex gap-4 py-3.5 border-b border-[#363025]/8">
                   <span className="w-px shrink-0 bg-[#363025]/20 self-stretch" />
