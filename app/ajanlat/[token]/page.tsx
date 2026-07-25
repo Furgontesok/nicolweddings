@@ -209,22 +209,40 @@ export default async function AjanlatPage({ params }: { params: Promise<{ token:
       {/* 2. Üdvözlő */}
       <section className="max-w-2xl mx-auto pt-14 pb-24 px-8 text-center">
         <p className="font-[family-name:var(--font-nunito)] text-[12px] tracking-[0.4em] uppercase text-[#363025]/30 mb-8">
-          Gratulálok az eljegyzésetekhez!
+          {isEgyeb ? "Köszönöm a bizalmadat!" : "Gratulálok az eljegyzésetekhez!"}
         </p>
         <p className="font-[family-name:var(--font-cormorant)] text-2xl md:text-3xl font-light text-[#363025] leading-relaxed mb-8 italic">
-          Hatalmas öröm számomra, hogy életetek egyik legszebb időszakában találkozunk.
+          {isEgyeb
+            ? "Hatalmas öröm számomra, hogy ezt a különleges eseményt együtt álmodhatjuk meg."
+            : "Hatalmas öröm számomra, hogy életetek egyik legszebb időszakában találkozunk."}
         </p>
         <div className="w-10 h-px bg-[#363025]/15 mx-auto mb-8" />
         <div className="space-y-5">
-          <p className="font-[family-name:var(--font-quicksand)] text-[#363025]/60 text-[15px] leading-loose">
-            Az esküvőszervezés izgalmas, kreatív és érzelmekkel teli folyamat, amelynek minden lépése rólatok szól, arról, hogy biztonságban, inspiráltan és valódi támogatással élhessétek meg ezt a különleges utazást.
-          </p>
-          <p className="font-[family-name:var(--font-quicksand)] text-[#363025]/60 text-[15px] leading-loose">
-            Minden pár útja egyedi, és számomra fontos, hogy a szervezés során pontosan azt a ritmust kövessük, amely számotokra a legtermészetesebb. Lehet, hogy már most tele vagytok ötletekkel, vagy épp csak most kezditek megfogalmazni, hogyan is képzelitek ezt a napot. Mindkét esetben az a célom, hogy átlátható, nyugodt és örömteli legyen a folyamat.
-          </p>
-          <p className="font-[family-name:var(--font-quicksand)] text-[#363025]/60 text-[15px] leading-loose">
-            Szeretném, ha a közös munka során valódi bizalmi kapcsolat alakulna ki közöttünk, ahol minden kérdésetekre válasz születik, és minden döntés mögött ott van a szakmai támogatás és a figyelem. Bízom benne, hogy együtt olyan élményeket teremtünk, amelyek nemcsak a nagy napon, hanem már a készülődés hónapjaiban is örömet adnak.
-          </p>
+          {isEgyeb ? (
+            <>
+              <p className="font-[family-name:var(--font-quicksand)] text-[#363025]/60 text-[15px] leading-loose">
+                Egy rendezvény megszervezése izgalmas és kreatív folyamat, amelynek minden lépése rólad szól, arról, hogy az alkalom valóban különleges és emlékezetes legyen mindazok számára, akik ott lesznek.
+              </p>
+              <p className="font-[family-name:var(--font-quicksand)] text-[#363025]/60 text-[15px] leading-loose">
+                Fontos számomra, hogy a szervezés során pontosan azt a ritmust kövessük, amely neked a legtermészetesebb. Lehet, hogy már most tele vagy ötletekkel, vagy épp csak most kezded megfogalmazni, hogyan is képzeled ezt a napot. Mindkét esetben az a célom, hogy átlátható, nyugodt és örömteli legyen a folyamat.
+              </p>
+              <p className="font-[family-name:var(--font-quicksand)] text-[#363025]/60 text-[15px] leading-loose">
+                Szeretném, ha a közös munka során valódi bizalmi kapcsolat alakulna ki közöttünk, ahol minden kérdésedre válasz születik, és minden döntés mögött ott van a szakmai támogatás és a figyelem.
+              </p>
+            </>
+          ) : (
+            <>
+              <p className="font-[family-name:var(--font-quicksand)] text-[#363025]/60 text-[15px] leading-loose">
+                Az esküvőszervezés izgalmas, kreatív és érzelmekkel teli folyamat, amelynek minden lépése rólatok szól, arról, hogy biztonságban, inspiráltan és valódi támogatással élhessétek meg ezt a különleges utazást.
+              </p>
+              <p className="font-[family-name:var(--font-quicksand)] text-[#363025]/60 text-[15px] leading-loose">
+                Minden pár útja egyedi, és számomra fontos, hogy a szervezés során pontosan azt a ritmust kövessük, amely számotokra a legtermészetesebb. Lehet, hogy már most tele vagytok ötletekkel, vagy épp csak most kezditek megfogalmazni, hogyan is képzelitek ezt a napot. Mindkét esetben az a célom, hogy átlátható, nyugodt és örömteli legyen a folyamat.
+              </p>
+              <p className="font-[family-name:var(--font-quicksand)] text-[#363025]/60 text-[15px] leading-loose">
+                Szeretném, ha a közös munka során valódi bizalmi kapcsolat alakulna ki közöttünk, ahol minden kérdésetekre válasz születik, és minden döntés mögött ott van a szakmai támogatás és a figyelem. Bízom benne, hogy együtt olyan élményeket teremtünk, amelyek nemcsak a nagy napon, hanem már a készülődés hónapjaiban is örömet adnak.
+              </p>
+            </>
+          )}
         </div>
       </section>
 
@@ -232,11 +250,11 @@ export default async function AjanlatPage({ params }: { params: Promise<{ token:
       <section className="bg-[#363025] py-16 px-8">
         <div className="max-w-sm mx-auto">
           <p className="font-[family-name:var(--font-nunito)] text-[12px] tracking-[0.4em] uppercase text-white/40 mb-10 text-center">
-            Esküvő részletei
+            {isEgyeb ? "Rendezvény részletei" : "Esküvő részletei"}
           </p>
           <div className="divide-y divide-white/10">
             {[
-              ["Pár neve", p.couple_name],
+              [isEgyeb ? "Megrendelő neve" : "Pár neve", p.couple_name],
               ...(p.wedding_date ? [["Tervezett dátum", p.wedding_date]] : []),
               ...(p.guest_count ? [["Létszám", p.guest_count]] : []),
             ].map(([label, value]) => (
