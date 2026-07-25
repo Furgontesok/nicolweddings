@@ -134,7 +134,7 @@ export default function Contact() {
                     value={datum}
                     onChange={(e) => setDatum(e.target.value)}
                     className={inputClass}
-                    style={{ color: datum ? undefined : "transparent" }}
+                    style={{ color: datum ? undefined : "transparent", WebkitAppearance: "none", appearance: "none" } as React.CSSProperties}
                   />
                   {!datum && (
                     <span className="pointer-events-none absolute inset-0 flex items-center px-4 font-[family-name:var(--font-nunito)] text-[11px] tracking-[0.2em] uppercase text-[#000000]/50">
