@@ -188,7 +188,7 @@ export default async function AjanlatPage({ params }: { params: Promise<{ token:
 
       {/* 1. Borítólap */}
       <section className="min-h-screen flex flex-col items-center justify-center text-center px-8 relative overflow-hidden">
-        <Image src="/images/visszajelzes-pozsonyi-petra.jpg" alt="" fill
+        <Image src={isEgyeb ? "/images/visszajelzes-pozsonyi-petra.jpg" : "/images/egyeb-7.jpg"} alt="" fill
           className="object-cover" style={{ objectPosition: "center 40%" }} sizes="100vw" />
         <div className="absolute inset-0 bg-[#363025]/70" />
         <div className="relative z-10 flex flex-col items-center">
