@@ -196,7 +196,7 @@ function ServiceItem({ s, i }: { s: typeof services[0]; i: number }) {
               return (
                 <li
                   key={j}
-                  className="flex gap-4 py-3.5 border-b border-[#D6D6C9]/40 break-inside-avoid"
+                  className={`flex gap-4 py-3.5 border-b border-[#D6D6C9]/40 break-inside-avoid${j === 2 ? " break-after-column" : ""}`}
                   style={{
                     opacity: isOpen ? 1 : 0,
                     transform: isOpen ? "translateY(0)" : "translateY(8px)",
