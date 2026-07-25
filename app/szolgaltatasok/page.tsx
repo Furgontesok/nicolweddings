@@ -123,6 +123,9 @@ const faqs = [
 
 function ServiceItem({ s, i }: { s: typeof services[0]; i: number }) {
   const [isOpen, setIsOpen] = useState(false);
+  const rowCount = i === 0
+    ? Math.ceil(s.items.length / 2)
+    : i === 1 ? 4 : 3;
 
   return (
     <div id={`service-${s.num}`} className="border-t border-[#D6D6C9]">
@@ -188,7 +191,10 @@ function ServiceItem({ s, i }: { s: typeof services[0]; i: number }) {
           className="overflow-hidden transition-all duration-500 ease-in-out"
           style={{ maxHeight: isOpen ? "3000px" : "0px", opacity: isOpen ? 1 : 0 }}
         >
-          <ul className="pb-6 md:columns-2 gap-x-12">
+          <ul
+            className="pb-6 md:grid md:[grid-auto-flow:column] md:[grid-auto-columns:1fr] md:[grid-template-rows:repeat(var(--rows),auto)] gap-x-12"
+            style={{ '--rows': rowCount } as React.CSSProperties}
+          >
             {s.items.map((item, j) => {
               const parts = item.split(" — ");
               const keyword = parts[0];
@@ -196,7 +202,7 @@ function ServiceItem({ s, i }: { s: typeof services[0]; i: number }) {
               return (
                 <li
                   key={j}
-                  className={`flex gap-4 py-3.5 border-b border-[#D6D6C9]/40 break-inside-avoid${i === 1 && j === 3 ? " break-after-column" : i > 1 && j === 2 ? " break-after-column" : ""}`}
+                  className="flex gap-4 py-3.5 border-b border-[#D6D6C9]/40"
                   style={{
                     opacity: isOpen ? 1 : 0,
                     transform: isOpen ? "translateY(0)" : "translateY(8px)",
