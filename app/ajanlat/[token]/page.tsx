@@ -85,7 +85,7 @@ async function getProposal(token: string) {
   return data;
 }
 
-function ServiceBlock({ svc, price }: { svc: typeof services.teljes & { note?: string; desc?: string; detailItems?: { title: string; desc: string }[] }; price?: string }) {
+function ServiceBlock({ svc, price, hideNum }: { svc: typeof services.teljes & { note?: string; desc?: string; detailItems?: { title: string; desc: string }[] }; price?: string; hideNum?: boolean }) {
   return (
     <div className="py-10 md:py-14 px-4 md:px-8 border-t border-[#363025]/8">
       <div className="max-w-6xl mx-auto">
@@ -101,9 +101,11 @@ function ServiceBlock({ svc, price }: { svc: typeof services.teljes & { note?: s
 
           {/* Jobb: szám + cím + leírás + ár (ha nincs detailItems) */}
           <div className="flex-1 flex flex-col">
-            <p className="font-[family-name:var(--font-cormorant)] text-[#363025]/15 text-5xl md:text-6xl font-light leading-none mb-3 select-none">
-              {svc.num}
-            </p>
+            {!hideNum && (
+              <p className="font-[family-name:var(--font-cormorant)] text-[#363025]/15 text-5xl md:text-6xl font-light leading-none mb-3 select-none">
+                {svc.num}
+              </p>
+            )}
             <h3 className="font-[family-name:var(--font-cormorant)] text-[1.6rem] md:text-[1.9rem] font-light text-[#363025] leading-tight mb-5">
               {svc.title}
             </h3>
@@ -213,7 +215,7 @@ export default async function AjanlatPage({ params }: { params: Promise<{ token:
         </p>
         <p className="font-[family-name:var(--font-cormorant)] text-2xl md:text-3xl font-light text-[#363025] leading-relaxed mb-8 italic">
           {isEgyeb
-            ? "Hatalmas öröm számomra, hogy ezt a különleges eseményt együtt álmodhatjuk meg."
+            ? "Remélem, hogy ezt a különleges napot együtt tehetjük igazán emlékezetessé."
             : "Hatalmas öröm számomra, hogy életetek egyik legszebb időszakában találkozunk."}
         </p>
         <div className="w-10 h-px bg-[#363025]/15 mx-auto mb-8" />
@@ -221,13 +223,13 @@ export default async function AjanlatPage({ params }: { params: Promise<{ token:
           {isEgyeb ? (
             <>
               <p className="font-[family-name:var(--font-quicksand)] text-[#363025]/60 text-[15px] leading-loose">
-                Egy rendezvény megszervezése izgalmas és kreatív folyamat, amelynek minden lépése rólad szól, arról, hogy az alkalom valóban különleges és emlékezetes legyen mindazok számára, akik ott lesznek.
+                Egy rendezvény megszervezése sok figyelmet, kreativitást és egyeztetést igényel. Az a célom, hogy ez a folyamat számotokra minél gördülékenyebb és örömtelibb legyen, az első konzultációtól az esemény napjáig.
               </p>
               <p className="font-[family-name:var(--font-quicksand)] text-[#363025]/60 text-[15px] leading-loose">
-                Fontos számomra, hogy a szervezés során pontosan azt a ritmust kövessük, amely neked a legtermészetesebb. Lehet, hogy már most tele vagy ötletekkel, vagy épp csak most kezded megfogalmazni, hogyan is képzeled ezt a napot. Mindkét esetben az a célom, hogy átlátható, nyugodt és örömteli legyen a folyamat.
+                Fontos számomra, hogy a szervezés során pontosan azt a ritmust kövessük, amely nektek a legtermészetesebb. Lehet, hogy már most tele vagytok ötletekkel, vagy épp csak most kezditek megfogalmazni az elképzeléseiteket. Mindkét esetben az a célom, hogy átlátható és nyugodt legyen a folyamat.
               </p>
               <p className="font-[family-name:var(--font-quicksand)] text-[#363025]/60 text-[15px] leading-loose">
-                Szeretném, ha a közös munka során valódi bizalmi kapcsolat alakulna ki közöttünk, ahol minden kérdésedre válasz születik, és minden döntés mögött ott van a szakmai támogatás és a figyelem.
+                Szeretném, ha a közös munka során valódi bizalmi kapcsolat alakulna ki közöttünk, ahol minden kérdésetekre válasz születik, és minden döntés mögött ott van a szakmai figyelem és a tapasztalat.
               </p>
             </>
           ) : (
@@ -269,14 +271,16 @@ export default async function AjanlatPage({ params }: { params: Promise<{ token:
 
       {/* 4. Szolgáltatások */}
       <section className="max-w-6xl mx-auto">
-        <div className="text-center pt-20 pb-4 px-8">
-          <p className="font-[family-name:var(--font-nunito)] text-[12px] tracking-[0.4em] uppercase text-[#363025]/30">
-            Ismerd meg a szolgáltatásaim
-          </p>
-        </div>
+        {!isEgyeb && (
+          <div className="text-center pt-20 pb-4 px-8">
+            <p className="font-[family-name:var(--font-nunito)] text-[12px] tracking-[0.4em] uppercase text-[#363025]/30">
+              Ismerd meg a szolgáltatásaim
+            </p>
+          </div>
+        )}
 
         {isEgyeb ? (
-          <ServiceBlock svc={services.egyeb} price={p.price_egyeb} />
+          <ServiceBlock svc={services.egyeb} price={p.price_egyeb} hideNum />
         ) : (
           <>
             <ServiceBlock svc={services.teljes} price={p.price_teljes} />
