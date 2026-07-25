@@ -188,7 +188,7 @@ function ServiceItem({ s, i }: { s: typeof services[0]; i: number }) {
           className="overflow-hidden transition-all duration-500 ease-in-out"
           style={{ maxHeight: isOpen ? "3000px" : "0px", opacity: isOpen ? 1 : 0 }}
         >
-          <ul className="pb-6 grid md:grid-cols-2 gap-x-12">
+          <ul className="pb-6 md:columns-2 gap-x-12">
             {s.items.map((item, j) => {
               const parts = item.split(" — ");
               const keyword = parts[0];
@@ -196,7 +196,7 @@ function ServiceItem({ s, i }: { s: typeof services[0]; i: number }) {
               return (
                 <li
                   key={j}
-                  className="flex gap-4 py-3.5 border-b border-[#D6D6C9]/40"
+                  className="flex gap-4 py-3.5 border-b border-[#D6D6C9]/40 break-inside-avoid"
                   style={{
                     opacity: isOpen ? 1 : 0,
                     transform: isOpen ? "translateY(0)" : "translateY(8px)",
