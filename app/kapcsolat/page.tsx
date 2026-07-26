@@ -122,6 +122,11 @@ export default function Kapcsolat() {
                         nev, email, telefon, datum, letszam, szolgaltatas, honnan, uzenet, forras: "kapcsolat-oldal"
                       });
                     }
+                    fetch("/api/notify/contact", {
+                      method: "POST",
+                      headers: { "Content-Type": "application/json" },
+                      body: JSON.stringify({ nev, email, telefon, datum, letszam, szolgaltatas, honnan, uzenet }),
+                    }).catch(() => {});
                     setSent(true);
                   }}
                 >

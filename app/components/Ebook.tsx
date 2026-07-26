@@ -22,6 +22,12 @@ export default function Ebook() {
       await supabase.from("ebook_downloads").insert({ name, email });
     }
 
+    fetch("/api/notify/ebook", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ name, email }),
+    }).catch(() => {});
+
     // PDF letöltés trigger
     const link = document.createElement("a");
     link.href = "/helyszin-ajanlо.pdf";
