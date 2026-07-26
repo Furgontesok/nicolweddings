@@ -18,13 +18,7 @@ export default function DateInput({ value, onChange, placeholder, required, clas
     : "";
 
   return (
-    <div
-      className={`relative cursor-pointer ${className ?? ""}`}
-      onClick={() => {
-        inputRef.current?.showPicker?.();
-        inputRef.current?.focus();
-      }}
-    >
+    <div className={`relative cursor-pointer ${className ?? ""}`}>
       {/* Látható szöveg és ikon */}
       <div className="pointer-events-none flex items-center justify-between px-4 py-3">
         <span
