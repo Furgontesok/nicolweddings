@@ -172,6 +172,7 @@ export default function AjanlatAccept({ token, packages, coupleName }: Props) {
                     placeholder="Születési idő *"
                     required
                     className="w-full bg-[#EEECEA] focus-within:bg-[#E5E3E0] transition-colors duration-200"
+                    inputClassName="text-[#363025] placeholder:text-[#363025]/40"
                     textColor="#363025"
                   />
                   <input required type="text" value={lakcim} onChange={(e) => setLakcim(e.target.value)}

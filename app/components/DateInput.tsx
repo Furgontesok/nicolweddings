@@ -7,26 +7,50 @@ interface Props {
   placeholder: string;
   required?: boolean;
   className?: string;
+  inputClassName?: string;
   textColor?: string;
 }
 
-export default function DateInput({ value, onChange, placeholder, required, className, textColor = "#000000" }: Props) {
-  const inputRef = useRef<HTMLInputElement>(null);
+export default function DateInput({
+  value,
+  onChange,
+  placeholder,
+  required,
+  className,
+  inputClassName = "text-[#000000] placeholder:text-[#000000]/50",
+  textColor = "#000000",
+}: Props) {
+  const hiddenRef = useRef<HTMLInputElement>(null);
 
-  const displayValue = value
-    ? new Date(value + "T00:00:00").toLocaleDateString("hu-HU")
-    : "";
+  const handleCalendarPick = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (e.target.value) {
+      const d = new Date(e.target.value + "T00:00:00");
+      onChange(d.toLocaleDateString("hu-HU"));
+      e.target.value = "";
+    }
+  };
 
   return (
-    <div className={`relative cursor-pointer ${className ?? ""}`}>
-      {/* Látható szöveg és ikon */}
-      <div className="pointer-events-none flex items-center justify-between px-4 py-3">
-        <span
-          className="font-[family-name:var(--font-nunito)] text-[11px] tracking-[0.2em] uppercase"
-          style={{ color: value ? textColor : `${textColor}80` }}
-        >
-          {displayValue || placeholder}
-        </span>
+    <div className={`relative flex items-center ${className ?? ""}`}>
+      {/* Szöveges input — szabadon írható */}
+      <input
+        type="text"
+        value={value}
+        onChange={(e) => onChange(e.target.value)}
+        placeholder={placeholder}
+        required={required}
+        className={`w-full bg-transparent px-4 py-3 pr-10 font-[family-name:var(--font-nunito)] text-[11px] tracking-[0.2em] uppercase focus:outline-none ${inputClassName}`}
+      />
+
+      {/* Naptár ikon — rejtett date input nyit */}
+      <button
+        type="button"
+        tabIndex={-1}
+        onClick={() => hiddenRef.current?.showPicker?.()}
+        className="absolute right-4 top-1/2 -translate-y-1/2 cursor-pointer transition-opacity hover:opacity-80"
+        style={{ color: `${textColor}4d` }}
+        aria-label="Dátum kiválasztása"
+      >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="14"
@@ -37,24 +61,21 @@ export default function DateInput({ value, onChange, placeholder, required, clas
           strokeWidth="1.5"
           strokeLinecap="round"
           strokeLinejoin="round"
-          style={{ color: `${textColor}4d` }}
-          className="shrink-0 ml-2"
         >
           <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
           <line x1="16" y1="2" x2="16" y2="6" />
           <line x1="8" y1="2" x2="8" y2="6" />
           <line x1="3" y1="10" x2="21" y2="10" />
         </svg>
-      </div>
+      </button>
 
-      {/* Valódi date input — teljesen átlátszó, de kattintható */}
+      {/* Rejtett date input csak a pickerhez */}
       <input
-        ref={inputRef}
+        ref={hiddenRef}
         type="date"
-        value={value}
-        onChange={(e) => onChange(e.target.value)}
-        required={required}
-        className="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
+        onChange={handleCalendarPick}
+        className="absolute right-0 bottom-0 w-0 h-0 opacity-0 pointer-events-none"
+        tabIndex={-1}
         style={{ fontSize: "16px" }}
       />
     </div>
