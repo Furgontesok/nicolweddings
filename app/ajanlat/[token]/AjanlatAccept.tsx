@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import DateInput from "@/app/components/DateInput";
 
 interface Package {
   key: string;
@@ -22,7 +23,6 @@ export default function AjanlatAccept({ token, packages, coupleName }: Props) {
   const [selectedPkg, setSelectedPkg] = useState(packages.length === 1 ? packages[0].key : "");
   const [nev, setNev] = useState("");
   const [szulHely, setSzulHely] = useState("");
-  const [szulIdoFocused, setSzulIdoFocused] = useState(false);
   const [szulIdo, setSzulIdo] = useState("");
   const [lakcim, setLakcim] = useState("");
   const [telefon, setTelefon] = useState("");
@@ -166,15 +166,13 @@ export default function AjanlatAccept({ token, packages, coupleName }: Props) {
                     className={inputClass} placeholder="Teljes név *" />
                   <input required type="text" value={szulHely} onChange={(e) => setSzulHely(e.target.value)}
                     className={inputClass} placeholder="Születési hely *" />
-                  <input
-                    required
-                    type={szulIdo || szulIdoFocused ? "date" : "text"}
+                  <DateInput
                     value={szulIdo}
-                    onChange={(e) => setSzulIdo(e.target.value)}
-                    onFocus={() => setSzulIdoFocused(true)}
-                    onBlur={() => setSzulIdoFocused(false)}
-                    className={inputClass}
+                    onChange={setSzulIdo}
                     placeholder="Születési idő *"
+                    required
+                    className="w-full bg-[#EEECEA] focus-within:bg-[#E5E3E0] transition-colors duration-200"
+                    textColor="#363025"
                   />
                   <input required type="text" value={lakcim} onChange={(e) => setLakcim(e.target.value)}
                     className={inputClass} placeholder="Lakcím *" />
