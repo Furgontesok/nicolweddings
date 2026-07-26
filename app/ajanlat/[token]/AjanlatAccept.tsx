@@ -11,12 +11,13 @@ interface Package {
 interface Props {
   token: string;
   packages: Package[];
+  coupleName: string;
 }
 
 const inputClass =
   "w-full bg-[#EEECEA] px-4 py-3 font-[family-name:var(--font-nunito)] text-[11px] tracking-[0.2em] uppercase text-[#363025] placeholder:text-[#363025]/40 focus:outline-none focus:bg-[#E5E3E0] transition-colors duration-200";
 
-export default function AjanlatAccept({ token, packages }: Props) {
+export default function AjanlatAccept({ token, packages, coupleName }: Props) {
   const [open, setOpen] = useState(false);
   const [selectedPkg, setSelectedPkg] = useState(packages.length === 1 ? packages[0].key : "");
   const [nev, setNev] = useState("");
@@ -47,6 +48,21 @@ export default function AjanlatAccept({ token, packages }: Props) {
         megjegyzes,
       });
     }
+    fetch("/api/notify/acceptance", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        coupleName,
+        selectedPackage: selectedPkg,
+        nev,
+        szuletesiHely: szulHely,
+        szuletesiIdo: szulIdo,
+        lakcim,
+        telefon,
+        email,
+        megjegyzes,
+      }),
+    }).catch(() => {});
     setSent(true);
     setLoading(false);
   };

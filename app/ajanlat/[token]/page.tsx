@@ -325,6 +325,7 @@ export default async function AjanlatPage({ params }: { params: Promise<{ token:
       {/* 6. Elfogadás */}
       <AjanlatAccept
         token={token}
+        coupleName={p.couple_name}
         packages={
           isEgyeb
             ? (p.price_egyeb ? [{ key: "egyeb", title: services.egyeb.title, price: p.price_egyeb }] : [])
