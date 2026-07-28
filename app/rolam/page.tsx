@@ -140,7 +140,7 @@ export default function Rolam() {
                 Hiszek abban, hogy minden esküvő egyedi, és a párok történetéhez kell illeszkednie. Számomra ugyanolyan fontosak az apró részletek, mint a nagy pillanatok, mert ezek együtt teszik a napot harmonikussá és felejthetetlenné.
               </p>
               <p>
-                A saját esküvőm szervezése közben tanultam meg igazán, mennyit számít egy támogató, nyugodt jelenlét a háttérben. Ezért ma már nemcsak szervezőként, hanem biztonságot adó társaként kísérem végig a párokat – a legelső ötlettől az utolsó táncig.
+                A saját esküvőm szervezése közben tanultam meg igazán, mennyit számít egy támogató, nyugodt jelenlét a háttérben. Ezért ma már nemcsak szervezőként, hanem biztonságot adó társként kísérem végig a párokat – a legelső ötlettől az utolsó táncig.
               </p>
             </div>
             <div className="w-10 h-px bg-[#363025]/20 mt-7 mb-5" />
