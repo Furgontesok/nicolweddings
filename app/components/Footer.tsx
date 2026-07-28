@@ -1,12 +1,12 @@
 import Image from "next/image";
 
 const igPreviews = [
-  { src: "/images/Bia%20%26%20Bence/3.jpg", alt: "Bia & Bence esküvői fotó — Nicol Weddings" },
-  { src: "/images/Betti%20%26%20Levi/4.jpg", alt: "Betti & Levi esküvői fotó — Nicol Weddings" },
-  { src: "/images/Nicol%20%26%20Roli/5.-min.jpg", alt: "Nicol & Roli esküvői fotó — Nicol Weddings" },
-  { src: "/images/Vivi%20%26%20Bence/2..jpg", alt: "Vivi & Bence esküvői fotó — Nicol Weddings" },
-  { src: "/images/Panni%20%26%20Sanyi/6.jpg", alt: "Panni & Sanyi esküvői fotó — Nicol Weddings" },
-  { src: "/images/R%C3%A9ka%20%26%20%C3%81d%C3%A1m/7.jpg", alt: "Réka & Ádám esküvői fotó — Nicol Weddings" },
+  { src: "/images/insta/1.jpg", alt: "Esküvői fotó — Nicol Weddings", pos: "center center" },
+  { src: "/images/insta/2.jpg", alt: "Esküvői fotó — Nicol Weddings", pos: "center 25%" },
+  { src: "/images/insta/3.jpg", alt: "Esküvői fotó — Nicol Weddings", pos: "center center" },
+  { src: "/images/insta/4.jpg", alt: "Esküvői fotó — Nicol Weddings", pos: "center 25%" },
+  { src: "/images/insta/5.jpg", alt: "Esküvői fotó — Nicol Weddings", pos: "center center" },
+  { src: "/images/insta/6.jpg", alt: "Esküvői fotó — Nicol Weddings", pos: "center 25%" },
 ];
 
 const navLinks = [
@@ -44,6 +44,7 @@ export default function Footer() {
                 alt={item.alt}
                 fill
                 className="object-cover group-hover:scale-105 transition-transform duration-500"
+                style={{ objectPosition: item.pos }}
                 sizes="(max-width: 768px) 33vw, 17vw"
               />
               <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300" />
