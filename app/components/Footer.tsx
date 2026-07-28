@@ -2,11 +2,11 @@ import Image from "next/image";
 
 const igPreviews = [
   { src: "/images/insta/1.jpg", alt: "Esküvői fotó — Nicol Weddings", pos: "center center" },
-  { src: "/images/insta/2.jpg", alt: "Esküvői fotó — Nicol Weddings", pos: "center 65%" },
+  { src: "/images/insta/2.jpg", alt: "Esküvői fotó — Nicol Weddings", pos: "center 80%" },
   { src: "/images/insta/3.jpg", alt: "Esküvői fotó — Nicol Weddings", pos: "center center" },
-  { src: "/images/insta/4.jpg", alt: "Esküvői fotó — Nicol Weddings", pos: "center 25%" },
-  { src: "/images/insta/5.jpg", alt: "Esküvői fotó — Nicol Weddings", pos: "center center" },
-  { src: "/images/insta/6.jpg", alt: "Esküvői fotó — Nicol Weddings", pos: "center 25%" },
+  { src: "/images/insta/4.jpg", alt: "Esküvői fotó — Nicol Weddings", pos: "center 65%" },
+  { src: "/images/insta/5.jpg", alt: "Esküvői fotó — Nicol Weddings", pos: "center 65%" },
+  { src: "/images/insta/6.jpg", alt: "Esküvői fotó — Nicol Weddings", pos: "center 75%" },
 ];
 
 const navLinks = [
