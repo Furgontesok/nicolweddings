@@ -194,11 +194,11 @@ export default function Rolam() {
           {/* Q&A 2 oszlop */}
           <div className="grid md:grid-cols-2 gap-x-16">
             {[
-              { q: "Mi az, ami nélkül nem tudnék élni?", a: "A rendszerezés. Számomra ez nemcsak rendet jelent, hanem szabadságot: ha minden a helyén van, a fejemben is tisztább lesz." },
-              { q: "Egy apró érdekesség magamról", a: "Három lánytestvér közül a középső vagyok, ami valószínűleg megmagyarázza, miért vagyok annyira jó a békítésben és a kompromisszumokban." },
-              { q: "Kedvenc helyem a világon?", a: "Zanzibár mindig különleges hely marad számomra. Ott töltöttük a nászutunkat, és az a varázslat máig velem van." },
-              { q: "Mi az, ami feltölt egy hosszú nap után?", a: "Ha pihenésre vágyom, olvasok. Egy jó könyv mindig kikapcsol, bárhogy telt is a napom." },
-              { q: "Mi az, amit mindig magammal viszek?", a: "Kézfertőtlenítő, szájfény és egy kis cukorka. Az élet apró meglepetéseire mindig felkészülten várok." },
+              { q: "Mi az, ami nélkül nem tudnék élni?", a: "A rendszerezés. Számomra ez nemcsak rendet jelent, hanem azt is, hogy átlátom a dolgaimat, minden a helyére kerül, és ettől nyugodtabbnak érzem magam." },
+              { q: "Egy apró érdekesség magamról.", a: "Három lánytestvér közül a középső vagyok, így egyszerre lehetek húg és nővér. Pont ettől érzem igazán értékesnek a helyemet a családomban." },
+              { q: "Kedvenc helyem a világon?", a: "Zanzibár mindig különleges hely marad számomra, hiszen itt töltöttük a nászutunkat. Az óceán, a színek, az illatok egy teljesen más világba repítettek, amilyet addig sosem ismertem." },
+              { q: "Mi az, ami feltölt egy hosszú nap után?", a: "Ha pihenésre vágyom, olvasok. Egy jó könyv mindig kikapcsol." },
+              { q: "Mi az, amit mindig magammal viszek?", a: "Mindig van a táskámban kézfertőtlenítő, szájfény és egy kis édesség, vészhelyzet esetére." },
             ].map((item, i) => (
               <div key={i} className="py-6 border-t border-[#363025]/10">
                 <p className="font-[family-name:var(--font-nunito)] text-sm tracking-[0.1em] uppercase text-[#363025]/50 mb-2 font-semibold">
