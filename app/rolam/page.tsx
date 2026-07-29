@@ -194,11 +194,11 @@ export default function Rolam() {
           {/* Q&A 2 oszlop */}
           <div className="grid md:grid-cols-2 gap-x-16">
             {[
-              { q: "Mi az, ami nélkül nem tudnék élni?", a: "A rendszerezés. Számomra ez nemcsak rendet jelent, hanem azt is, hogy átlátom a dolgaimat, minden a helyére kerül, és ettől nyugodtabbnak érzem magam." },
-              { q: "Egy apró érdekesség magamról.", a: "Három lánytestvér közül a középső vagyok, így egyszerre lehetek húg és nővér. Pont ettől érzem igazán értékesnek a helyemet a családomban." },
-              { q: "Kedvenc helyem a világon?", a: "Zanzibár mindig különleges hely marad számomra, hiszen itt töltöttük a nászutunkat. Az óceán, a színek, az illatok egy teljesen más világba repítettek, amilyet addig sosem ismertem." },
-              { q: "Mi az, ami feltölt egy hosszú nap után?", a: "Ha pihenésre vágyom, olvasok. Egy jó könyv mindig kikapcsol." },
-              { q: "Mi az, amit mindig magammal viszek?", a: "Mindig van a táskámban kézfertőtlenítő, szájfény és egy kis édesség, vészhelyzet esetére." },
+              { q: "Ami nélkül nem tudnék élni", a: "A rendszerezés. Mindig is fontos része volt az életemnek, hiszen számomra a rendezettség biztonságot és nyugalmat ad. Szeretem, amikor minden átlátható, minden részletnek megvan a helye, és egy jól kialakított rendszer segít abban, hogy magabiztosan haladjak előre." },
+              { q: "Egy hely, ami örökre a szívemben maradt", a: "Zanzibár. Egy hely, amely örökre a szívemhez nőtt, hiszen itt töltöttük a nászutunkat. Az óceán, a lenyűgöző színek és a sziget különleges hangulata egy olyan élményt adott, amit mindig magammal viszek." },
+              { q: "A kis dolgok, amik mindig velem vannak", a: "Kézfertőtlenítő, szájfény és valami édes. Ezek az apró dolgok szinte sosem hiányozhatnak a táskámból. Talán kis dolgoknak tűnnek, mégis sokszor éppen ezek azok, amelyek egy hosszú nap során jól jönnek." },
+              { q: "Egy apró érdekesség rólam", a: "Három lánytestvér közül én vagyok a középső. Egy különleges szerep ez számomra: egyszerre tapasztalhatom meg, milyen valakire felnézni és milyen valaki mellett támaszt nyújtani. Talán ennek is köszönhető, hogy mindig fontos volt számomra a kapcsolódás és az egymásra figyelés." },
+              { q: "Ami feltölt egy hosszú nap után", a: "Az olvasás. Egy hosszú, eseménydús nap után szeretek egy kicsit lelassulni, elcsendesedni, és elmerülni egy jó könyv világában. Számomra ez az egyik legjobb módja a feltöltődésnek." },
             ].map((item, i) => (
               <div key={i} className="py-6 border-t border-[#363025]/10">
                 <p className="font-[family-name:var(--font-nunito)] text-sm tracking-[0.1em] uppercase text-[#363025]/50 mb-2 font-semibold">
