@@ -18,8 +18,8 @@ export default function Fit() {
         </div>
 
         {/* Jobb: szöveg */}
-        <div className="flex flex-col justify-center flex-1 px-10 md:px-16 pt-6 pb-14 md:py-14">
-<h2 className="font-[family-name:var(--font-cormorant)] text-[#363025] text-[1.7rem] md:text-4xl font-light mb-10 leading-snug whitespace-nowrap">
+        <div className="flex flex-col justify-center flex-1 min-w-0 px-10 md:px-10 lg:px-16 pt-6 pb-14 md:py-14">
+<h2 className="font-[family-name:var(--font-cormorant)] text-[#363025] text-[1.7rem] md:text-[1.85rem] lg:text-4xl font-light mb-10 leading-snug">
             Tökéletesen összeillünk, ha…
           </h2>
 
