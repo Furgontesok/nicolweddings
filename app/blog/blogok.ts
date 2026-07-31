@@ -278,7 +278,7 @@ Ha kíváncsi vagy, kik dolgoztunk már együtt és hogyan élték meg, [nézd m
     sections: [
       {
         heading: `Erősítsd meg az összes szolgáltatót`,
-        body: `Az utolsó 30 napban minden szerződéses partnerrel érdemes felvenni a kapcsolatot és megerősíteni az időpontot, a pontos programot és a teendőket. Ez vonatkozik a fotósra, a videósra, a zenészre, a cateringesre, a virágosra, a sminkes-fodrász párosra és természetesen a helyszínre is.
+        body: `Az utolsó 30 napban minden szerződéses partnerrel érdemes felvenni a kapcsolatot és megerősíteni az időpontot, a pontos programot és a teendőket. Ez vonatkozik a fotósra, a videósra, a zenészre, a cateringesre, a dekorosra, a sminkes-fodrász párosra és természetesen a helyszínre is.
 
 Ne feltételezd, hogy mert le van szerződve, mindenki pontosan emlékszik a részletekre. Egy rövid egyeztetés most sok fejfájástól kímél meg a nagy napon. Ha a szervező ilyenkor már részt vesz a folyamatban, ezt az átvilágítást ő végzi el helyetted, és ha valahol hiányosságot talál, még van idő rendezni.`,
       },
@@ -292,43 +292,43 @@ Ne feltételezd, hogy mert le van szerződve, mindenki pontosan emlékszik a ré
         heading: `A napirend, ami tényleg működik`,
         body: `A legtöbb esküvőn van napirend. A legtöbb esküvőn ez a napirend az első órában csúszik. Ez nem feltétlenül baj, ha van valaki, aki látja az egészet és tud alkalmazkodni.
 
-A jó napirend nem csak az időpontokat tartalmazza, hanem azt is, hogy ki hol tartózkodik, ki kit kísér, melyik szolgáltató mikor érkezik a helyszínre, és mi az, ami nem látszik a vendégek számára, de a háttérben pontosan ütemezve kell lennie. Az elkészítéséhez szükség van arra, hogy mindenki visszajelezzen: a helyszín, a pap vagy anyakönyvvezető, az összes közreműködő. Ha ezt még nem kérdezted le, most van itt az ideje.
+A jó napirend nem csak az időpontokat tartalmazza, hanem azt is, hogy ki hol tartózkodik, ki kit kísér, melyik szolgáltató mikor érkezik a helyszínre, és mi az, ami nem látszik a vendégek számára, de a háttérben pontosan ütemezve kell lennie. Az elkészítéséhez szükség van arra, hogy mindenki visszajelezzen: a helyszín, a pap vagy szertartásvezető, az összes közreműködő. Ha ezt még nem kérdezted le, most van itt az ideje.
 
 Ha kíváncsi vagy, [mit érdemes megkérdezni a szervezőtől az első találkozón](/blog/mit-kerdezz-eskuvoszervezotol-elso-talalkozoan), ott a napirend is szóba kerül.`,
       },
       {
         heading: `Próbák és utolsó bejárás`,
-        body: `Az utolsó hónapban általában sorra kerül a menyasszonyi ruha utolsó próbája, a vőlegény öltönyének átvétele, és ideális esetben egy helyszínbejárás is, ahol a dekorátor, az esküvőszervező és a pár együtt végigjárja a teret.
+        body: `Az utolsó hónapban általában sorra kerül a menyasszonyi ruha utolsó próbája, a vőlegény öltönyének átvétele, és ideális esetben egy helyszínbejárás is, ahol a dekoros, az esküvőszervező és a pár együtt végigjárja a teret.
 
-Ez a bejárás nem formális: inkább arról szól, hogy mindenki fejében legyen egy közös kép arról, hogyan fog nézni ki a nap. Hol áll az asztalsor, melyik bejárón jön be a menyasszony, hol lesz a fotózás helyszíne a ceremónia után, hol lesznek a gyerekek, ha megfáradnak. Az ilyen apróságok sokszor az utolsó pillanatban kerülnek elő, ha nem gondolkodtunk rajtuk előre.`,
+Ez a bejárás nem formális: inkább arról szól, hogy mindenki fejében legyen egy közös kép arról, hogyan fog kinézni a nap. Hogy lesznek elrendezve az asztalok, melyik ajtón vonul be a menyasszony, hol lesz a fotózás helyszíne, hol lesz a gyereksarok. Az ilyen apróságok sokszor az utolsó pillanatban kerülnek elő, ha nem gondolkodtunk rajtuk előre.`,
       },
       {
         heading: `Praktikus teendők, amikről sokan megfeledkeznek`,
         body: `Az utolsó hónapban ezek szoktak még előkerülni:
 
-• Borravaló előkészítése borítékokban a szolgáltatóknak
-• Esküvői programfüzet vagy ültetési rend kinyomtatása
+• Kifizetések előkészítése borítékokba a szolgáltatóknak
+• Esküvői forgatókönyv és ültetési rend kinyomtatása
 • Autó, szállás és transzfer szervezése a násznépnek
-• Kiküldjük az utolsó visszajelzési kérést azoknak, akik még nem jeleztek
-• Méricskéljük, hogy az étkezési igények (vegetáriánus, allergia) le vannak-e egyeztetve a cateringessel
+• A végleges vendéglista és létszám leadása a helyszínnek
+• A cateringnek leadni az étkezési igényeket (vegetáriánus, allergia)
 • A nászút csomagolása és a dokumentumok ellenőrzése
-• Az utolsó hétre: ki gyűjti össze a nászajándékokat, ki viszi vissza a kölcsönzött dolgokat
+• A kölcsönzött dolgok visszavitele és az ajándékok átadásának megszervezése
 
 Ezek önmagában mind aprók, de ha egyszerre érkeznek, könnyen elveszik valamelyik.`,
       },
       {
         heading: `Miért választják sokan az utolsó hónapot arra, hogy bevonnak egy szervezőt?`,
-        body: `Sokszor hallon, hogy a párok az elejétől fogva egyedül szerveznek, de az utolsó hónapban döntenek úgy, hogy kell valaki, aki átveszi a stafétát. Ez teljesen érthető döntés, és erre van is egy kifejezetten erre a helyzetre kialakított megoldás.
+        body: `Sokszor hallani, hogy a párok az elejétől fogva egyedül szerveznek, de az utolsó hónapban döntenek úgy, hogy kell valaki, aki átveszi a stafétát. Ez teljesen érthető döntés, és van egy kifejezetten erre a helyzetre kialakított megoldás.
 
-A [30 nap a nagy napig csomag](/szolgaltatasok) pontosan ezt a helyzetet kezeli: valaki, aki átveszi az addig összeszedett szálakat, ellenőrzi a hiányosságokat, elkészíti vagy pontosítja a napirendet, egyeztet a szolgáltatókkal, és ott van a nagy napon, hogy semmi ne csússzon el.
+A [30 nap a nagy napig csomag](/szolgaltatasok#service-02) pontosan ezt a helyzetet kezeli: valaki, aki átveszi az addig összeszedett szálakat, ellenőrzi a hiányosságokat, elkészíti vagy pontosítja a napirendet, egyeztet a szolgáltatókkal, és ott van a nagy napon, hogy semmi ne csússzon el.
 
-Ha eddig egyedül csináltátok és jól halad, ez a csomag nem azt jelenti, hogy eddig rosszul dolgoztatok. Inkább azt, hogy az utolsó szakaszt már nem kell egyedül cipelni. [Ebben a cikkben részletesen összeszedtem, mennyibe kerül egy ilyen csomag](/blog/mennyibe-kerul-eskuvoszervezo-magyarorszagon), ha szeretnéd átlátni a számokat.`,
+Ha eddig magatok szerveztetek és jól boldogultatok, ez a csomag nem kritika. Azt jelenti, hogy az utolsó egyenesen már nem kell egyedül hajtani. [Ebben a cikkben részletesen összeszedtem, mennyibe kerül egy ilyen csomag](/blog/mennyibe-kerul-eskuvoszervezo-magyarorszagon), ha szeretnéd átlátni a számokat.`,
       },
       {
         heading: `Az utolsó hét`,
         body: `Az esküvő előtti utolsó hét már nem a szervezésről szól. Erre az időre az összes teendőnek rendezettnek kell lennie, hogy te valóban jelen lehess. Pihenhess, a párododdal lehess, és ne egy Excel-táblát bámulj hajnalig.
 
-Ha ez így hangzik, mint egy szép terv, ami a valóságban ritkán valósul meg, akkor talán érdemes elgondolkodni azon, hogy ki az, aki ezt az utolsó hetet tehermentesíti melletted. [Nézd meg a referenciáimat](/referenciak), ott konkrét párokat és visszajelzéseket találsz, akikkel együtt dolgoztam. Ha pedig szeretnéd, hogy ez a te esküvőd előtti hónap is rendezett legyen, [írj nekem](/kapcsolat) és megnézzük, miben tudok segíteni.`,
+Az utolsó hét nem a szervezésről szól. Ha valaki gondoskodik arról, hogy addigra minden a helyére kerüljön, az az egyik legnagyobb dolog, amit magatoknak adhattok. [Nézd meg a referenciáimat](/referenciak), ott konkrét párokat és visszajelzéseket találsz, akikkel együtt dolgoztam. Ha pedig szeretnéd, hogy a te esküvőd előtti hónap is rendezett legyen, [írj nekem](/kapcsolat) és megnézzük, miben tudok segíteni.`,
       },
     ],
     cta: { label: "Kérdezz rá a 30 napos csomagra", href: "/kapcsolat" },
