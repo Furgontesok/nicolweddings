@@ -17,7 +17,7 @@ export const blogok: BlogPost[] = [
     description: `Felmerül a kérdés: kell-e esküvőszervező? Összefoglaltuk, mire számíthatsz, mikor érdemes szakembert fogadni, és miért mondja szinte minden pár, hogy megérte.`,
     date: "2026-07-08",
     cover: "/images/zsambek_wedding_styled_shoot-052_web.jpg",
-    coverPosition: "center 30%",
+    coverPosition: "center 45%",
     intro: `Amikor az esküvőtervezés elkezdődik, az egyik legelső kérdés, ami felmerül: kell-e esküvőszervező? Sokan luxusnak tartják, mások már az első pillanattól fogva nélkülözhetetlennek. Az igazság valahol a kettő között van, de ha valaki egyszer megtapasztalja, mit jelent ez a fajta segítség, ritkán gondol vissza úgy, hogy felesleges volt.`,
     sections: [
       {
