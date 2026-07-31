@@ -4,6 +4,7 @@ export type BlogPost = {
   description: string;
   date: string;
   cover: string;
+  coverPosition?: string;
   intro: string;
   sections: { heading: string; body: string }[];
   cta?: { label: string; href: string };
@@ -272,6 +273,7 @@ Ha kíváncsi vagy, kik dolgoztunk már együtt és hogyan élték meg, [nézd m
     description: `Az utolsó hónap az esküvő előtt a legsűrűbb. Összeszedtem, mi az, ami biztosan előkerül, mire érdemes figyelni, és miért választják sokan ezt az időszakot arra, hogy egy koordinátort vonjanak be.`,
     date: "2026-07-29",
     cover: "/images/insta/3.jpg",
+    coverPosition: "center 25%",
     intro: `Az esküvő előtti utolsó 30 nap az az időszak, amikor a legtöbb pár azt érzi: minden egyszerre van, és semmi sem áll még rendesen a helyén. Megerősítések, próbák, ültetési rend, utolsó egyeztetések, visszajelzések, és közben az ember azt szeretné, hogy ez az időszak valahogyan öröm is legyen, ne csak teher. Összeszedtem, mi az, ami szinte minden esküvőnél előkerül az utolsó hónapban, és hogyan lehet ezt jól csinálni.`,
     sections: [
       {
