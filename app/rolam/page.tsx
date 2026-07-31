@@ -32,7 +32,7 @@ export default function Rolam() {
           />
         </div>
         <div className="text-center relative z-10 -mt-[2rem] md:-mt-[5rem] pb-4">
-          <h1 className="font-[family-name:var(--font-cormorant)] text-[2.5rem] md:text-[4rem] lg:text-[6.3rem] font-light text-[#363025] tracking-[0.01em] uppercase">
+          <h1 className="font-[family-name:var(--font-cormorant)] text-[2.5rem] md:text-[6.3rem] font-light text-[#363025] tracking-[0.01em] uppercase">
             Rólam
           </h1>
         </div>
