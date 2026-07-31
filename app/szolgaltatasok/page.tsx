@@ -280,7 +280,7 @@ export default function Szolgaltatasok() {
 
       <div className="pt-16 bg-[#F5F3ED]">
         {/* Képsáv — desktop: 1 sor, mobil: 2 sor */}
-        <div className="relative overflow-hidden">
+        <div className="relative overflow-hidden bg-[#F5F3ED]">
           {/* Desktop: 1 sor */}
           <div className="hidden md:block" style={{ height: "55vh", minHeight: 360 }}>
             <div className="hero-row-1 flex h-full">
