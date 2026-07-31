@@ -42,10 +42,10 @@ export default function Ebook() {
 
   return (
     <section className="bg-[#363025] py-16 px-6 overflow-hidden">
-      <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-10 md:gap-20">
+      <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-10 md:gap-10 lg:gap-20">
 
         {/* Ebook mockup */}
-        <div className="shrink-0 flex items-center justify-center" style={{ width: 320, paddingRight: 40 }}>
+        <div className="shrink-0 flex items-center justify-center md:pl-8 lg:pl-0" style={{ width: 320, paddingRight: 40 }}>
           <div className="relative" style={{ transform: "rotate(-4deg)" }}>
             <div
               className="absolute bg-[#2a2318]"
