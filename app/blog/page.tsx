@@ -38,7 +38,7 @@ export default function BlogPage() {
             />
             <div
               className="pointer-events-none absolute inset-x-0 bottom-0 z-10"
-              style={{ height: "40%", background: "linear-gradient(to bottom, transparent, rgba(245,243,237,0.9))" }}
+              style={{ height: "40%", background: "linear-gradient(to bottom, transparent, rgba(245,243,237,0.6))" }}
             />
           </div>
           <div className="text-center relative z-10 -mt-[2rem] md:-mt-[5rem] pb-4">
