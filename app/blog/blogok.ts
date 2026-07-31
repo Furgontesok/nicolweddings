@@ -300,7 +300,7 @@ Ha kíváncsi vagy, [mit érdemes megkérdezni a szervezőtől az első találko
         heading: `Próbák és utolsó bejárás`,
         body: `Az utolsó hónapban általában sorra kerül a menyasszonyi ruha utolsó próbája, a vőlegény öltönyének átvétele, és ideális esetben egy helyszínbejárás is, ahol a dekoros, az esküvőszervező és a pár együtt végigjárja a teret.
 
-Ez a bejárás nem formális: inkább arról szól, hogy mindenki fejében legyen egy közös kép arról, hogyan fog kinézni a nap. Hogy lesznek elrendezve az asztalok, melyik ajtón vonul be a menyasszony, hol lesz a fotózás helyszíne, hol lesz a gyereksarok. Az ilyen apróságok sokszor az utolsó pillanatban kerülnek elő, ha nem gondolkodtunk rajtuk előre.`,
+Ez a bejárás nem formális: inkább arról szól, hogy mindenki fejében legyen egy közös kép arról, hogyan fog kinézni a nap. Hol áll az asztalsor, melyik ajtón jön be a menyasszony, hol lesz a fotózás helyszíne a ceremónia után, hol lesznek a gyerekek, ha megfáradnak. Az ilyen apróságok sokszor az utolsó pillanatban kerülnek elő, ha nem gondolkodtunk rajtuk előre.`,
       },
       {
         heading: `Praktikus teendők, amikről sokan megfeledkeznek`,
@@ -309,7 +309,7 @@ Ez a bejárás nem formális: inkább arról szól, hogy mindenki fejében legye
 • Kifizetések előkészítése borítékokba a szolgáltatóknak
 • Esküvői forgatókönyv és ültetési rend kinyomtatása
 • Autó, szállás és transzfer szervezése a násznépnek
-• A végleges vendéglista és létszám leadása a helyszínnek
+• Kiküldjük az utolsó visszajelzési kérést azoknak, akik még nem jeleztek
 • A cateringnek leadni az étkezési igényeket (vegetáriánus, allergia)
 • A nászút csomagolása és a dokumentumok ellenőrzése
 • A kölcsönzött dolgok visszavitele és az ajándékok átadásának megszervezése
@@ -328,7 +328,7 @@ Ha eddig magatok szerveztetek és jól boldogultatok, ez a csomag nem kritika. A
         heading: `Az utolsó hét`,
         body: `Az esküvő előtti utolsó hét már nem a szervezésről szól. Erre az időre az összes teendőnek rendezettnek kell lennie, hogy te valóban jelen lehess. Pihenhess, a párododdal lehess, és ne egy Excel-táblát bámulj hajnalig.
 
-Az utolsó hét nem a szervezésről szól. Ha valaki gondoskodik arról, hogy addigra minden a helyére kerüljön, az az egyik legnagyobb dolog, amit magatoknak adhattok. [Nézd meg a referenciáimat](/referenciak), ott konkrét párokat és visszajelzéseket találsz, akikkel együtt dolgoztam. Ha pedig szeretnéd, hogy a te esküvőd előtti hónap is rendezett legyen, [írj nekem](/kapcsolat) és megnézzük, miben tudok segíteni.`,
+Ha valaki gondoskodik arról, hogy addigra minden a helyére kerüljön, az az egyik legnagyobb ajándék, amit magatoknak adhattok. [Nézd meg a referenciáimat](/referenciak), ott konkrét párokat és visszajelzéseket találsz, akikkel együtt dolgoztam. Ha pedig szeretnéd, hogy a te esküvőd előtti hónap is rendezett legyen, [írj nekem](/kapcsolat) és megnézzük, miben tudok segíteni.`,
       },
     ],
     cta: { label: "Kérdezz rá a 30 napos csomagra", href: "/kapcsolat" },
