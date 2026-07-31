@@ -312,7 +312,7 @@ Ez a bejárás nem formális: inkább arról szól, hogy mindenki fejében legye
 • A végleges vendéglista és létszám leadása a helyszínnek és a cateringnek
 • A cateringnek leadni az étkezési igényeket (vegetáriánus, allergia)
 • A nászút csomagolása és a dokumentumok ellenőrzése
-• A kölcsönzött dolgok visszavitele és az ajándékok átadásának megszervezése
+• A nászajándékok hazaszállítása és a kölcsönzött tárgyak visszavitele
 
 Ezek önmagában mind aprók, de ha egyszerre érkeznek, könnyen elveszik valamelyik.`,
       },
