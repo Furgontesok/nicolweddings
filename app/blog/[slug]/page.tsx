@@ -81,10 +81,10 @@ export default async function BlogPostPage({
             fill
             priority
             className="object-cover"
-            style={{ objectPosition: post.coverPosition ?? "center 20%" }}
+            style={{ objectPosition: post.coverPosition ?? "center 62%" }}
             sizes="100vw"
           />
-          <div className="absolute inset-0 bg-black/30" />
+          <div className="absolute inset-0 bg-black/10" />
         </div>
 
         {/* Tartalom */}
