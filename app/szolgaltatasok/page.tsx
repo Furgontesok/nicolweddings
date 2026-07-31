@@ -306,7 +306,7 @@ export default function Szolgaltatasok() {
           {/* Gradient */}
           <div
             className="pointer-events-none absolute inset-x-0 bottom-0 z-10"
-            style={{ height: "28%", background: "linear-gradient(to bottom, transparent, #F5F3ED)" }}
+            style={{ height: "40%", background: "linear-gradient(to bottom, transparent, #F5F3ED 85%, #F5F3ED)" }}
           />
         </div>
 
