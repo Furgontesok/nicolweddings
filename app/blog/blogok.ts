@@ -17,7 +17,6 @@ export const blogok: BlogPost[] = [
     description: `Felmerül a kérdés: kell-e esküvőszervező? Összefoglaltuk, mire számíthatsz, mikor érdemes szakembert fogadni, és miért mondja szinte minden pár, hogy megérte.`,
     date: "2026-07-08",
     cover: "/images/zsambek_wedding_styled_shoot-052_web.jpg",
-    coverPosition: "center 75%",
     intro: `Amikor az esküvőtervezés elkezdődik, az egyik legelső kérdés, ami felmerül: kell-e esküvőszervező? Sokan luxusnak tartják, mások már az első pillanattól fogva nélkülözhetetlennek. Az igazság valahol a kettő között van, de ha valaki egyszer megtapasztalja, mit jelent ez a fajta segítség, ritkán gondol vissza úgy, hogy felesleges volt.`,
     sections: [
       {
@@ -74,7 +73,6 @@ Sokan utólag mondják: "Az esküvőszervező volt az egyetlen kiadás, amiért 
     description: `Az első konzultáció nem csak bemutatkozás. Ez az a pillanat, amikor eldől, hogy valóban rátaláltatok-e a megfelelő emberre. Összegyűjtöttem a legfontosabb kérdéseket, amelyeket érdemes feltenni.`,
     date: "2026-07-14",
     cover: "/images/fooldal-referenciak/8..jpg",
-    coverPosition: "center 75%",
     intro: `Az első személyes konzultáció egy nagyon fontos pillanat. Nemcsak azért, mert ekkor dől el, hogy valóban a megfelelő személyre bízzátok-e az egyik legfontosabb napotokat, hanem azért is, mert az ott feltett kérdések alapján sokkal biztosabbak lehettek a döntésetekben. Összeállítottam azokat a kérdéseket, amelyeket én magam is fontosnak tartok, hogy egy pár megkérdezzen, akár éppen engem, akár bármely más esküvőszervezőt.`,
     sections: [
       {
@@ -122,7 +120,6 @@ Ha az első találkozó után azt érzitek, hogy megértettük egymást, hogy me
     description: `A helyszín az esküvő alapköve. Minden más ehhez igazodik. Összeszedtem az 5 szempontot, amelyet esküvőszervezőként mindig megnézünk, mielőtt javaslatot teszünk egy párnak.`,
     date: "2026-07-20",
     cover: "/images/fooldal-referenciak/3..jpeg",
-    coverPosition: "center 75%",
     intro: `A helyszín az esküvő alapköve. A dekoráció, a catering, a fotós látásmódja, az esti hangulat mind ehhez igazodik. Ezért a helyszínválasztás az egyik első és legfontosabb döntés, amit meg kell hoznotok. Összeszedtem azt az 5 szempontot, amelyet mi esküvőszervezőként mindig végiggondolunk, mielőtt egy párt helyszínbejárásra viszünk.`,
     sections: [
       {
@@ -170,7 +167,6 @@ Az adatok és a számok sokat segítenek, de az esküvő végső soron egy érz�
     description: `Sokan félnek megkérdezni az árat. Összeszedtem, mit kapsz a pénzedért, mi befolyásolja a díjat, és miért nem érdemes csak az árat nézni, amikor esküvőszervezőt választasz.`,
     date: "2026-07-24",
     cover: "/images/Betti%20%26%20Levi/1.jpg",
-    coverPosition: "center 75%",
     intro: `Az esküvőszervező ára az egyik első dolog, amit a párok keresnek, és az egyik, amiről a legkevesebbet beszélnek nyíltan. Én nem tartom titokban. Ebben a cikkben pontosan leírom, mire számíthatsz Magyarországon, mi van benne a különböző csomagokban, és milyen szempontok alapján érdemes összehasonlítani az ajánlatokat.`,
     sections: [
       {
