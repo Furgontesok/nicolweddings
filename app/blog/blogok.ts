@@ -334,6 +334,67 @@ Ha valaki gondoskodik arról, hogy addigra minden a helyére kerüljön, az az e
     ],
     cta: { label: "Kérdezz rá a 30 napos csomagra", href: "/kapcsolat" },
   },
+  {
+    slug: "eskuvoi-nap-a-szervezo-szemevel",
+    title: `Hogyan néz ki az esküvői napod a szervező szemével?`,
+    description: `Amit ti nem láttok, de éreztetek: a háttérben folyamatosan dolgozik valaki, hogy minden a helyére kerüljön. Mutatom, hogyan telik egy esküvői nap az én oldalamról.`,
+    date: "2026-08-22",
+    cover: "/images/egyeb-12.jpg",
+    coverPosition: "center 40%",
+    intro: `Sok pár megkérdezi tőlem az esküvő után: "De te mikor ettél egyáltalán?" Vagy: "Hol voltál, amikor a virágos késett?" A válasz: ott voltam, és közben jártam, telefonáltam, mosolyogtam, és gondoskodtam arról, hogy ti semmit ne érezzetek abból, ami a háttérben zajlott. Ez a cikk nem arról szól, amit ti megéltek a nagy napon. Ez arról szól, ami közben történik, csak máshonnan nézve.`,
+    sections: [
+      {
+        heading: `Reggel, jóval azelőtt, hogy a menyasszony felébred`,
+        body: `A nagy napon én általában a legelsők között vagyok talpon. Az első telefonhívás néha még reggel 7 előtt érkezik, mert valamelyik szolgáltató egy kérdéssel nyit. Ez rendben van, erre vagyok ott.
+
+Ellenőrzöm a napirendet, még egyszer végigmegyek a listán:
+• Hány órakor érkezik a dekoratőr?
+• Mikor jön a tortás?
+• Van-e bármi, ami az előző nap óta változott?
+
+Ha bármelyik szolgáltatónak kérdése van, vagy valami késik, én intézem el, mielőtt az bárkit megzavarna.`,
+      },
+      {
+        heading: `A helyszínen: mielőtt megérkeznek a vendégek`,
+        body: `Amikor megérkezem a helyszínre, elkezdődik az egyik legfontosabb rész: az ellenőrzés. Végigmegyek a teremen, megnézem, hogy az asztalok a napirend szerinti elrendezésben állnak-e, a névkártyák a helyükön vannak-e, a dekoráció úgy néz-e ki, ahogyan megálmodtátok.
+
+Ezt nem azért teszem, mert nem bízom a helyszín csapatában. Hanem azért, mert az én szemem arra van beállítva, hogy meglássa azt a két összecserélt névsort az asztal sarkán, a kicsit félrecsúszott széket a díszített asztalsorban, vagy azt az eltérést, amelyet ti biztosan megláttatok volna a fotókon.`,
+      },
+      {
+        heading: `A szertartás`,
+        body: `A szertartás előtt én vagyok az, aki összegyűjti a tanúkat, megmutatja a félénk nagymamának, hova üljön, és visszavezeti a virágszóró gyereket a helyére.
+
+Közben figyelek az időre. Ha a szertartás 5 percet csúszik, az még rendben van. Ha 15-öt, már számolom, hogy a vacsera időzítésébe belefér-e, és ha kell, szólok a helyszínnek.
+
+A szertartás alatt én általában hátul állok vagy az oldalon. Ti nem láttok, de én látom az egészet. Azt is, amikor a virágos csendben odakúszik még egy szálat az oltárhoz, mert valami nem volt tökéletes. Ezek a pillanatok nem kerülnek a képekre, de ezért van ott valaki.`,
+      },
+      {
+        heading: `Az átmenet: a szertartástól a vacsoráig`,
+        body: `Ez az egyik legnehezebb rész, amit a legtöbb pár nem is észlel.
+
+Miután a szertartás véget ért, elkezdődik a fotózás, a köszöntések, a konfetti, a nevetés. Közben én koordinálom, hogy mikor kezdődjön a fogadó ital, mikor vonul be a pár a vacsorahelyiségbe, és hogyan zajlik az átmenet anélkül, hogy bárki eltévedjen vagy várakozzon.
+
+Ha a fotós kér még 20 percet, én szólok a helyszínnek, hogy tolják az étkezés kezdetét. Ha valamelyik vendég nem találja a helyét, én megmutatom. Ezek apróságok, de épp ezek azok, amelyek összetartják a napot.`,
+      },
+      {
+        heading: `Vacsora, felköszöntők, este`,
+        body: `A vacsera alatt én akkor nyugszom meg egy kicsit, ha látom, hogy mindenki jól van, a felszolgálás gördülékenyen megy, és a felköszöntők listája kész van a kezemnél.
+
+Közben figyelek, hogy a tortabevonulás időzítése illeszkedik-e a zene üteméhez, hogy a DJ tudja-e, mikor kell váltani, és hogy a meglepetések, ha vannak, pontosan akkor történjenek, amikor terveztük.
+
+Az esti program alatt én a háttérben vagyok. Ha minden rendben megy, szinte észrevétlen. De ha valami nem stimmel, ott vagyok.`,
+      },
+      {
+        heading: `Az utolsó tánc után`,
+        body: `Amikor az utolsó vendég elköszön, és ti már csak egymást látjátok, én még ott vagyok egy kicsit. Összeszedem a személyes tárgyaitokat, átadom az ajándékborítékokat, és egyeztetem a helyszínnel, hogy másnap hogyan zajlik a bontás.
+
+Csak ezután megyek haza.
+
+Ti nem láttatok sokat ebből. De én ott voltam az egész nap alatt, és pontosan ez a dolgom. [Ha kíváncsi vagy, milyen csomagokban érhető el ez a fajta jelenlét, itt mindent megtalálsz](/szolgaltatasok). [A korábbi párok visszajelzéseit pedig itt olvashatod](/referenciak), akik átélték ezt a napot a saját szemszögükből.`,
+      },
+    ],
+    cta: { label: "Kérdezz rá a lehetőségekre", href: "/kapcsolat" },
+  },
 ];
 
 export function getBlogPost(slug: string): BlogPost | undefined {
