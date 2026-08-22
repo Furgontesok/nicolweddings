@@ -358,15 +358,15 @@ Ha bármelyik szolgáltatónak kérdése van, vagy valami késik, én intézem e
         heading: `A helyszínen: mielőtt megérkeznek a vendégek`,
         body: `Amikor megérkezem a helyszínre, elkezdődik az egyik legfontosabb rész: az ellenőrzés. Végigmegyek a helyszínen, megnézem, hogy az asztalok a napirend szerinti elrendezésben állnak-e, a dekoráció úgy néz-e ki, ahogyan megálmodtátok.
 
-Ezt nem azért teszem, mert nem bízom a helyszín csapatában. Hanem azért, mert az én szemem arra van beállítva, hogy meglássa azt a két összecserélt poharat az asztalnál, a kicsit félrecsúszott széket a díszített asztalsorban, vagy azt az apróságot, ami egy nagy napon igenis számít.`,
+Ezt nem azért teszem, mert nem bízom a szolgáltatókban. Hanem azért, mert az én szemem arra van beállítva, hogy meglássa a kicsit félrecsúszott széket a díszített asztalsorban, a megfeledkezett gyertyát a sarokban, vagy azt az apróságot, ami egy nagy napon igenis számít.`,
       },
       {
         heading: `A szertartás`,
-        body: `A szertartás előtt én vagyok az, aki összegyűjti a tanúkat, megmutatja a félénk nagymamának, hova üljön, és visszavezeti a virágszóró gyereket a helyére.
+        body: `A szertartás előtt én már a helyszínen vagyok, jelzem a szolgáltatóknak, hogy minden a menetrendnek megfelelően alakul, és gondoskodom arról, hogy a pár nyugodtan, felkészülten érjen a pillanathoz.
 
-Közben figyelek az időre. Ha a szertartás 5 percet csúszik, az még rendben van. Ha 15-öt, már számolom, hogy a vacsera időzítésébe belefér-e, és ha kell, szólok a helyszínnek.
+Közben figyelek az időre. Ha a szertartás 5 percet csúszik, az még rendben van. Ha 15-öt, már számolom, hogy a vacsora időzítésébe belefér-e, és ha kell, szólok a cateringnek.
 
-A szertartás alatt én általában hátul állok vagy az oldalon. Ti nem láttok, de én látom az egészet. Azt is, amikor a virágos csendben odakúszik még egy szálat az oltárhoz, mert valami nem volt tökéletes. Ezek a pillanatok nem kerülnek a képekre, de ezért van ott valaki.`,
+A szertartás alatt én a háttérben vagyok. Ti azt érzitek, hogy minden magától megy. Ez az érzés nem a véletlennek köszönhető.`,
       },
       {
         heading: `Az átmenet: a szertartástól a vacsoráig`,
