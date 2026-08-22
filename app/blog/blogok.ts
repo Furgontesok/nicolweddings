@@ -349,16 +349,16 @@ Ha valaki gondoskodik arról, hogy addigra minden a helyére kerüljön, az az e
 
 Ellenőrzöm a napirendet, még egyszer végigmegyek a listán:
 • Hány órakor érkezik a dekoros?
-• Mikor jön a tortás?
+• Mikor jön a ceremóniamester?
 • Van-e bármi, ami az előző nap óta változott?
 
 Ha bármelyik szolgáltatónak kérdése van, vagy valami késik, én intézem el, mielőtt az bárkit megzavarna.`,
       },
       {
         heading: `A helyszínen: mielőtt megérkeznek a vendégek`,
-        body: `Amikor megérkezem a helyszínre, elkezdődik az egyik legfontosabb rész: az ellenőrzés. Végigmegyek a teremen, megnézem, hogy az asztalok a napirend szerinti elrendezésben állnak-e, a névkártyák a helyükön vannak-e, a dekoráció úgy néz-e ki, ahogyan megálmodtátok.
+        body: `Amikor megérkezem a helyszínre, elkezdődik az egyik legfontosabb rész: az ellenőrzés. Végigmegyek a helyszínen, megnézem, hogy az asztalok a napirend szerinti elrendezésben állnak-e, a dekoráció úgy néz-e ki, ahogyan megálmodtátok.
 
-Ezt nem azért teszem, mert nem bízom a helyszín csapatában. Hanem azért, mert az én szemem arra van beállítva, hogy meglássa azt a két összecserélt névsort az asztal sarkán, a kicsit félrecsúszott széket a díszített asztalsorban, vagy azt az eltérést, amelyet ti biztosan megláttatok volna a fotókon.`,
+Ezt nem azért teszem, mert nem bízom a helyszín csapatában. Hanem azért, mert az én szemem arra van beállítva, hogy meglássa azt a két összecserélt poharat az asztalnál, a kicsit félrecsúszott széket a díszített asztalsorban, vagy azt az apróságot, ami egy nagy napon igenis számít.`,
       },
       {
         heading: `A szertartás`,
