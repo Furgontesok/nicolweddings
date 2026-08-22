@@ -341,7 +341,7 @@ Ha valaki gondoskodik arról, hogy addigra minden a helyére kerüljön, az az e
     date: "2026-08-22",
     cover: "/images/egyeb-12.jpg",
     coverPosition: "center 40%",
-    intro: `Sok pár megkérdezi tőlem az esküvő után: "De te mikor ettél egyáltalán?" Vagy: "Hol voltál, amikor a virágos késett?" A válasz: ott voltam, és közben jártam, telefonáltam, mosolyogtam, és gondoskodtam arról, hogy ti semmit ne érezzetek abból, ami a háttérben zajlott. Ez a cikk nem arról szól, amit ti megéltek a nagy napon. Ez arról szól, ami közben történik, csak máshonnan nézve.`,
+    intro: `Sok pár megkérdezi tőlem az esküvő után: "De te mikor ettél egyáltalán?" Vagy: "Hol voltál, amikor bevonultunk?" A válasz: ott voltam, és közben jártam, telefonáltam, mosolyogtam, és gondoskodtam arról, hogy ti semmit ne érezzetek abból, ami a háttérben zajlott. Ez a cikk nem arról szól, amit ti megéltek a nagy napon. Ez arról szól, ami közben történik, csak máshonnan nézve.`,
     sections: [
       {
         heading: `Reggel, jóval azelőtt, hogy a menyasszony felébred`,
