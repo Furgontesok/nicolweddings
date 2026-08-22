@@ -377,8 +377,8 @@ Miután a szertartás véget ért, elkezdődik a fotózás, az ölelések, a gra
 Ha a fotós kér még 10 percet, én szólok a cateringnek, hogy toljuk kicsit a vacsora kezdetét. Ha valamelyik vendég nem találja a helyét, én megmutatom. Ezek apróságok, de épp ezek azok, amelyek összetartják a napot.`,
       },
       {
-        heading: `Vacsora, felköszöntők, este`,
-        body: `A vacsera alatt én akkor nyugszom meg egy kicsit, ha látom, hogy mindenki jól van, a felszolgálás gördülékenyen megy, és a beszédek listája kész van a kezemnél.
+        heading: `Vacsora, beszédek, este`,
+        body: `A vacsora alatt én akkor nyugszom meg egy kicsit, ha látom, hogy mindenki jól van, a felszolgálás gördülékenyen megy, és a beszédek listája kész van a kezemnél.
 
 Közben figyelek, hogy a tortabevonulás időzítése illeszkedik-e a zene üteméhez, hogy a DJ tudja-e, mikor kell váltani, és hogy a meglepetések, ha vannak, pontosan akkor történjenek, amikor terveztük.
 
