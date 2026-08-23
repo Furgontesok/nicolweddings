@@ -372,7 +372,7 @@ A szertartás alatt én a háttérben vagyok. Ti azt érzitek, hogy minden magá
         heading: `Az átmenet: a szertartástól a vacsoráig`,
         body: `Ez az egyik legnehezebb rész, amit a legtöbb pár nem is észlel.
 
-Miután a szertartás véget ért, elkezdődik a fotózás, az ölelések, a gratulációk. Közben én koordinálom, hogy mikor induljon a buli, mikor vonul be a pár a vacsorahelyiségbe, és hogyan zajlik az átmenet anélkül, hogy bárki eltévedjen vagy várakozzon.
+Miután a szertartás véget ért, elkezdődik a fotózás, az ölelések, a gratulációk. Közben én koordinálom, hogy mikor induljanak a vendégek a fogadásra, mikor vonul be a pár a vacsorahelyiségbe, és hogyan zajlik az átmenet anélkül, hogy bárki eltévedjen vagy várakozzon.
 
 Ha a fotós kér még 10 percet, én szólok a cateringnek, hogy toljuk kicsit a vacsora kezdetét. Ha valamelyik vendég nem találja a helyét, én megmutatom. Ezek apróságok, de épp ezek azok, amelyek összetartják a napot.`,
       },
