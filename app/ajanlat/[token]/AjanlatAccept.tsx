@@ -13,12 +13,53 @@ interface Props {
   token: string;
   packages: Package[];
   coupleName: string;
+  lang?: "hu" | "en";
 }
 
 const inputClass =
   "w-full bg-[#EEECEA] px-4 py-3 font-[family-name:var(--font-nunito)] text-[11px] tracking-[0.2em] uppercase text-[#363025] placeholder:text-[#363025]/40 focus:outline-none focus:bg-[#E5E3E0] transition-colors duration-200";
 
-export default function AjanlatAccept({ token, packages, coupleName }: Props) {
+const acceptT = {
+  hu: {
+    decided: "Döntésre jutottatok?",
+    accept: "Elfogadom az ajánlatot",
+    acceptBtn: "Elfogadom",
+    selectedPkg: "Kért csomag *",
+    personalData: "Személyes adatok",
+    fullName: "Teljes név *",
+    birthPlace: "Születési hely *",
+    birthDate: "Születési idő *",
+    address: "Lakcím *",
+    phone: "Telefonszám *",
+    email: "E-mail cím *",
+    note: "Megjegyzés (opcionális)",
+    sending: "Küldés...",
+    finalize: "Ajánlat véglegesítése",
+    thankYou: "Köszönöm!",
+    followUp: "Hamarosan felveszem veled a kapcsolatot a következő lépésekkel kapcsolatban.",
+  },
+  en: {
+    decided: "Have you made your decision?",
+    accept: "I accept the proposal",
+    acceptBtn: "Accept",
+    selectedPkg: "Selected package *",
+    personalData: "Personal information",
+    fullName: "Full name *",
+    birthPlace: "Place of birth *",
+    birthDate: "Date of birth *",
+    address: "Address *",
+    phone: "Phone number *",
+    email: "E-mail address *",
+    note: "Notes (optional)",
+    sending: "Sending...",
+    finalize: "Finalise proposal",
+    thankYou: "Thank you!",
+    followUp: "I will be in touch shortly with the next steps.",
+  },
+};
+
+export default function AjanlatAccept({ token, packages, coupleName, lang = "hu" }: Props) {
+  const t = acceptT[lang];
   const [open, setOpen] = useState(false);
   const [selectedPkg, setSelectedPkg] = useState(packages.length === 1 ? packages[0].key : "");
   const [nev, setNev] = useState("");
@@ -70,9 +111,9 @@ export default function AjanlatAccept({ token, packages, coupleName }: Props) {
   if (sent) {
     return (
       <section className="bg-[#F5F3ED] pt-14 pb-24 px-8 text-center">
-        <p className="font-[family-name:var(--font-italianno)] text-6xl text-[#363025] mb-5">Köszönöm!</p>
+        <p className="font-[family-name:var(--font-italianno)] text-6xl text-[#363025] mb-5">{t.thankYou}</p>
         <p className="font-[family-name:var(--font-quicksand)] text-[#363025]/55 text-[15px]">
-          Hamarosan felveszem veled a kapcsolatot a következő lépésekkel kapcsolatban.
+          {t.followUp}
         </p>
       </section>
     );
@@ -85,10 +126,10 @@ export default function AjanlatAccept({ token, packages, coupleName }: Props) {
         {/* Fejléc + gomb — mindig látszik */}
         <div className="text-center mb-6">
           <p className="font-[family-name:var(--font-nunito)] text-[10px] tracking-[0.35em] uppercase text-[#363025]/40 mb-5">
-            Döntésre jutottatok?
+            {t.decided}
           </p>
           <h2 className="font-[family-name:var(--font-cormorant)] text-4xl md:text-5xl font-light text-[#363025] italic mb-3 leading-snug">
-            Elfogadom az ajánlatot
+            {t.accept}
           </h2>
 
           {/* Gomb */}
@@ -97,7 +138,7 @@ export default function AjanlatAccept({ token, packages, coupleName }: Props) {
               onClick={() => setOpen(true)}
               className="inline-block border border-[#363025] text-[#363025] font-[family-name:var(--font-nunito)] text-[11px] tracking-[0.25em] uppercase w-full max-w-xs py-4 text-center hover:bg-[#363025] hover:text-white transition-all duration-300"
             >
-              Elfogadom
+              {t.acceptBtn}
             </button>
           )}
         </div>
@@ -121,7 +162,7 @@ export default function AjanlatAccept({ token, packages, coupleName }: Props) {
               {packages.length >= 1 && (
                 <div>
                   <p className="font-[family-name:var(--font-nunito)] text-[10px] tracking-[0.35em] uppercase text-[#363025]/40 mb-3">
-                    Kért csomag *
+                    {t.selectedPkg}
                   </p>
                   <div className="space-y-2">
                     {packages.map((pkg) => (
@@ -159,32 +200,32 @@ export default function AjanlatAccept({ token, packages, coupleName }: Props) {
               {/* Személyes adatok */}
               <div>
                 <p className="font-[family-name:var(--font-nunito)] text-[10px] tracking-[0.35em] uppercase text-[#363025]/40 mb-3">
-                  Személyes adatok
+                  {t.personalData}
                 </p>
                 <div className="space-y-2">
                   <input required type="text" value={nev} onChange={(e) => setNev(e.target.value)}
-                    className={inputClass} placeholder="Teljes név *" />
+                    className={inputClass} placeholder={t.fullName} />
                   <input required type="text" value={szulHely} onChange={(e) => setSzulHely(e.target.value)}
-                    className={inputClass} placeholder="Születési hely *" />
+                    className={inputClass} placeholder={t.birthPlace} />
                   <DateInput
                     value={szulIdo}
                     onChange={setSzulIdo}
-                    placeholder="Születési idő *"
+                    placeholder={t.birthDate}
                     required
                     className="w-full bg-[#EEECEA] focus-within:bg-[#E5E3E0] transition-colors duration-200"
                     inputClassName="text-[#363025] placeholder:text-[#363025]/40"
                     textColor="#363025"
                   />
                   <input required type="text" value={lakcim} onChange={(e) => setLakcim(e.target.value)}
-                    className={inputClass} placeholder="Lakcím *" />
+                    className={inputClass} placeholder={t.address} />
                   <input required type="tel" value={telefon} onChange={(e) => setTelefon(e.target.value)}
-                    className={inputClass} placeholder="Telefonszám *" />
+                    className={inputClass} placeholder={t.phone} />
                   <input required type="email" value={email} onChange={(e) => setEmail(e.target.value)}
-                    className={inputClass} placeholder="E-mail cím *" />
+                    className={inputClass} placeholder={t.email} />
                   <textarea value={megjegyzes} onChange={(e) => setMegjegyzes(e.target.value)}
                     className={`${inputClass} resize-none normal-case tracking-normal`}
                     rows={3}
-                    placeholder="Megjegyzés (opcionális)" />
+                    placeholder={t.note} />
                 </div>
               </div>
 
@@ -193,7 +234,7 @@ export default function AjanlatAccept({ token, packages, coupleName }: Props) {
                 disabled={loading || !selectedPkg}
                 className="w-full bg-[#363025] text-white font-[family-name:var(--font-nunito)] text-[11px] tracking-[0.3em] uppercase py-4 hover:bg-[#363025]/80 transition-colors duration-300 disabled:opacity-40"
               >
-                {loading ? "Küldés..." : "Ajánlat véglegesítése"}
+                {loading ? t.sending : t.finalize}
               </button>
             </form>
           </div>
