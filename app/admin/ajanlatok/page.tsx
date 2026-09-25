@@ -54,6 +54,7 @@ const emptyForm = {
   price_tanacsadas: "",
   price_egyeb: "",
   custom_note: "",
+  custom_note_en: "",
 };
 
 export default function AdminAjanlatok() {
@@ -95,7 +96,8 @@ export default function AdminAjanlatok() {
     setEditingId(p.id);
     setForm({ couple_name: p.couple_name ?? "", wedding_date: p.wedding_date ?? "", guest_count: p.guest_count ?? "",
       service: p.service ?? "standard", price_teljes: p.price_teljes ?? "", price_30nap: p.price_30nap ?? "",
-      price_tanacsadas: p.price_tanacsadas ?? "", price_egyeb: p.price_egyeb ?? "", custom_note: p.custom_note ?? "" });
+      price_tanacsadas: p.price_tanacsadas ?? "", price_egyeb: p.price_egyeb ?? "",
+      custom_note: p.custom_note ?? "", custom_note_en: (p as unknown as Record<string, string>).custom_note_en ?? "" });
     setShowForm(true); setNewToken(null);
     window.scrollTo({ top: 0, behavior: "smooth" });
   }
@@ -105,7 +107,7 @@ export default function AdminAjanlatok() {
     const baseSlug = toSlug(form.couple_name);
     const { data: existing } = await supabase.from("proposals").select("token").like("token", `${baseSlug}%`);
     const token = existing && existing.length > 0 ? `${baseSlug}-${existing.length + 1}` : baseSlug;
-    const { data } = await supabase.from("proposals").insert({ ...form, token }).select().single();
+    const { data } = await supabase.from("proposals").insert({ ...form, token, custom_note_en: form.custom_note_en || null }).select().single();
     if (data) { setNewToken(data.token); setForm(emptyForm); setShowForm(false); load(); }
     setSaving(false);
   }
@@ -115,7 +117,8 @@ export default function AdminAjanlatok() {
     await supabase.from("proposals").update({ couple_name: form.couple_name, wedding_date: form.wedding_date,
       guest_count: form.guest_count, service: form.service, price_teljes: form.price_teljes,
       price_30nap: form.price_30nap, price_tanacsadas: form.price_tanacsadas,
-      price_egyeb: form.price_egyeb, custom_note: form.custom_note }).eq("id", editingId);
+      price_egyeb: form.price_egyeb, custom_note: form.custom_note,
+      custom_note_en: form.custom_note_en || null }).eq("id", editingId);
     setShowForm(false); setEditingId(null); setForm(emptyForm); load(); setSaving(false);
   }
 
@@ -228,8 +231,10 @@ export default function AdminAjanlatok() {
                   <div><label className={labelCls}>Egyéb rendezvény díja</label>
                     <input className={inputCls} value={form.price_egyeb} onChange={e => setForm(f => ({ ...f, price_egyeb: e.target.value }))} placeholder="pl. egyedi árazás alapján" /></div>
                 )}
-                <div className="md:col-span-2"><label className={labelCls}>Személyes megjegyzés (opcionális)</label>
+                <div className="md:col-span-2"><label className={labelCls}>Személyes megjegyzés — magyar (opcionális)</label>
                   <textarea className={`${inputCls} resize-none`} rows={3} value={form.custom_note} onChange={e => setForm(f => ({ ...f, custom_note: e.target.value }))} placeholder="Különleges megjegyzés, egyedi feltételek..." /></div>
+                <div className="md:col-span-2"><label className={labelCls}>Személyes megjegyzés — angol (opcionális, csak ha a pár angolul is látja)</label>
+                  <textarea className={`${inputCls} resize-none`} rows={3} value={form.custom_note_en} onChange={e => setForm(f => ({ ...f, custom_note_en: e.target.value }))} placeholder="Personal note in English..." /></div>
                 <div className="md:col-span-2 flex gap-4 items-center">
                   <button type="submit" disabled={saving}
                     className="font-[family-name:var(--font-nunito)] text-[11px] tracking-[0.2em] uppercase px-10 py-3 bg-[#363025] text-white hover:bg-[#363025]/80 transition-colors disabled:opacity-50">

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 import AjanlatAccept from "./AjanlatAccept";
 
@@ -47,7 +47,7 @@ const T = {
     introEgyeb1: "Planning an event requires attention, creativity and coordination. My goal is to make this process as smooth and enjoyable as possible for you, from the first consultation to the day of the event.",
     introEgyeb2: "It is important to me that we follow exactly the pace that feels most natural to you. Perhaps you already have plenty of ideas, or you are just starting to shape your vision. In either case, my goal is for the process to be clear and calm.",
     introEgyeb3: "I would love for our collaboration to build a genuine relationship of trust, where every question is answered and every decision is backed by professional care and experience.",
-    introEskuvo1: "Wedding planning is an exciting, creative and emotionally rich process — every step of it is about you, so you can experience this special journey with confidence, inspiration and real support.",
+    introEskuvo1: "Wedding planning is an exciting, creative and emotionally rich process, and every step of it is about you, so you can experience this special journey with confidence, inspiration and real support.",
     introEskuvo2: "Every couple's journey is unique, and it is important to me that we follow exactly the pace that feels most natural to you. Perhaps you already have plenty of ideas, or you are just starting to imagine what this day will look like. In either case, my goal is for the process to be clear, calm and joyful.",
     introEskuvo3: "I would love for our collaboration to build a genuine relationship of trust, where every question is answered and every decision is backed by professional care and attention. I believe that together we will create experiences that bring joy not only on the big day, but throughout the months of preparation as well.",
     detailsEgyeb: "Event details",
@@ -140,7 +140,7 @@ const services = {
       num: "01",
       title: "Full wedding planning",
       image: "/images/szolgaltatas-01-teljes-koru.jpg",
-      desc: "Planning a wedding is full of excitement, dreaming and countless decisions. Details you may not have thought of at first become important — and it is precisely these that create the special, personal atmosphere that makes the day truly yours. At the same time, the many meetings, timelines and tasks can easily make the preparations feel stressful. That is why it helps to have someone by your side who not only brings experience and great ideas, but guides you through the whole planning journey — so you can focus on what matters most: each other and the experience.",
+      desc: "Planning a wedding is full of excitement, dreaming and countless decisions. Details you may not have thought of at first become important, and it is precisely these that create the special, personal atmosphere that makes the day truly yours. At the same time, the many meetings, timelines and tasks can easily make the preparations feel stressful. That is why it helps to have someone by your side who not only brings experience and great ideas, but guides you through the whole planning journey, so you can focus on what matters most: each other and the experience.",
       detailItems: [
         { title: "Free initial consultation", desc: "We get to know each other in a personal or online meeting and discuss your vision." },
         { title: "Personalised quote", desc: "I prepare a tailored proposal based on your needs." },
@@ -158,7 +158,7 @@ const services = {
       num: "02",
       title: "30 days to the big day",
       image: "/images/szolgaltatas-02-30nap.jpg",
-      desc: "The 1-month wedding coordination package is the perfect choice for couples who have been planning their own wedding but would like an experienced professional by their side for the big day. I step in during the final month before the wedding: I help finalise the detailed timeline, liaise with vendors and coordinate all remaining tasks. On the day itself I am present throughout, keeping track of the schedule, managing any situations that arise, and making sure everything unfolds exactly as you planned — so you can truly live in the moment while I take care of the smooth running behind the scenes.",
+      desc: "The 1-month wedding coordination package is the perfect choice for couples who have been planning their own wedding but would like an experienced professional by their side for the big day. I step in during the final month before the wedding: I help finalise the detailed timeline, liaise with vendors and coordinate all remaining tasks. On the day itself I am present throughout, keeping track of the schedule, managing any situations that arise, and making sure everything unfolds exactly as you planned, so you can truly live in the moment while I take care of the smooth running behind the scenes.",
       detailItems: [
         { title: "Initial consultation", desc: "We meet in person or online to get acquainted and discuss the key plans for your wedding." },
         { title: "Proposal acceptance", desc: "Once the proposal is accepted, our collaboration begins." },
@@ -285,19 +285,37 @@ interface Proposal {
   price_tanacsadas?: string;
   price_egyeb?: string;
   custom_note?: string;
+  custom_note_en?: string;
   created_at: string;
 }
 
 export default function AjanlatClient({ proposal }: { proposal: Proposal }) {
   const [lang, setLang] = useState<Lang>("hu");
+  const [toggleVisible, setToggleVisible] = useState(true);
+  const coverRef = useRef<HTMLElement>(null);
   const t = T[lang];
   const svc = services[lang];
+
+  useEffect(() => {
+    const el = coverRef.current;
+    if (!el) return;
+    const obs = new IntersectionObserver(
+      ([entry]) => setToggleVisible(entry.isIntersecting),
+      { threshold: 0.05 }
+    );
+    obs.observe(el);
+    return () => obs.disconnect();
+  }, []);
 
   const isEgyeb = proposal.service === "egyeb";
   const createdDate = new Date(proposal.created_at);
   const validUntil = new Date(createdDate);
   validUntil.setDate(validUntil.getDate() + 14);
   const validUntilStr = validUntil.toLocaleDateString(lang === "hu" ? "hu-HU" : "en-GB");
+
+  const displayGuestCount = lang === "en" && proposal.guest_count
+    ? proposal.guest_count.replace(/\s*fő$/i, " guests").replace(/\s*fő\b/gi, " guests")
+    : proposal.guest_count;
 
   const packages = isEgyeb
     ? (proposal.price_egyeb ? [{ key: "egyeb", title: svc.egyeb.title, price: proposal.price_egyeb }] : [])
@@ -310,8 +328,11 @@ export default function AjanlatClient({ proposal }: { proposal: Proposal }) {
   return (
     <div className="bg-[#F5F3ED] min-h-screen">
 
-      {/* Language toggle — fixed top-right */}
-      <div className="fixed top-4 right-4 z-50 flex bg-white/20 backdrop-blur-sm rounded-full p-1 gap-1 shadow-sm">
+      {/* Language toggle — only visible over cover section */}
+      <div
+        className="fixed top-4 right-4 z-50 flex bg-white/20 backdrop-blur-sm rounded-full p-1 gap-1 shadow-sm transition-all duration-300"
+        style={{ opacity: toggleVisible ? 1 : 0, pointerEvents: toggleVisible ? "auto" : "none" }}
+      >
         {(["hu", "en"] as Lang[]).map(l => (
           <button key={l} onClick={() => setLang(l)}
             className="px-3 py-1 rounded-full text-[11px] font-bold tracking-widest uppercase transition-all duration-200"
@@ -326,7 +347,7 @@ export default function AjanlatClient({ proposal }: { proposal: Proposal }) {
       </div>
 
       {/* 1. Cover */}
-      <section className="min-h-screen flex flex-col items-center justify-center text-center px-8 relative overflow-hidden">
+      <section ref={coverRef} className="min-h-screen flex flex-col items-center justify-center text-center px-8 relative overflow-hidden">
         <Image src={isEgyeb ? "/images/visszajelzes-pozsonyi-petra.jpg" : "/images/egyeb-7.jpg"} alt="" fill
           className="object-cover" style={{ objectPosition: "center 40%" }} sizes="100vw" />
         <div className="absolute inset-0 bg-[#363025]/70" />
@@ -389,7 +410,7 @@ export default function AjanlatClient({ proposal }: { proposal: Proposal }) {
             {[
               [isEgyeb ? t.clientName : t.coupleName, proposal.couple_name],
               ...(proposal.wedding_date ? [[t.plannedDate, proposal.wedding_date]] : []),
-              ...(proposal.guest_count ? [[t.guestCount, proposal.guest_count]] : []),
+              ...(displayGuestCount ? [[t.guestCount, displayGuestCount]] : []),
             ].map(([label, value]) => (
               <div key={label} className="py-5">
                 <span className="block font-[family-name:var(--font-nunito)] text-[10px] tracking-[0.2em] uppercase text-white/35 mb-1">{label}</span>
@@ -438,12 +459,17 @@ export default function AjanlatClient({ proposal }: { proposal: Proposal }) {
               </div>
             ))}
           </div>
-          {proposal.custom_note && (
-            <div className="mt-8 border-l-2 border-[#363025]/15 pl-6 py-2">
-              <p className="font-[family-name:var(--font-nunito)] text-[11px] tracking-[0.4em] uppercase text-[#363025]/30 mb-2">{t.personalNote}</p>
-              <p className="font-[family-name:var(--font-quicksand)] text-[#363025]/65 text-[14px] leading-relaxed italic">{proposal.custom_note}</p>
-            </div>
-          )}
+          {(() => {
+            const note = lang === "en"
+              ? (proposal.custom_note_en || null)
+              : (proposal.custom_note || null);
+            return note ? (
+              <div className="mt-8 border-l-2 border-[#363025]/15 pl-6 py-2">
+                <p className="font-[family-name:var(--font-nunito)] text-[11px] tracking-[0.4em] uppercase text-[#363025]/30 mb-2">{t.personalNote}</p>
+                <p className="font-[family-name:var(--font-quicksand)] text-[#363025]/65 text-[14px] leading-relaxed italic">{note}</p>
+              </div>
+            ) : null;
+          })()}
         </div>
       </section>
 
