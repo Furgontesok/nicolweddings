@@ -73,7 +73,7 @@ Sokan utólag mondják: "Az esküvőszervező volt az egyetlen kiadás, amiért 
     title: `Mit kérdezz meg a leendő esküvőszervezőtől az első találkozón?`,
     description: `Az első konzultáció nem csak bemutatkozás. Ez az a pillanat, amikor eldől, hogy valóban rátaláltatok-e a megfelelő emberre. Összegyűjtöttem a legfontosabb kérdéseket, amelyeket érdemes feltenni.`,
     date: "2026-07-14",
-    cover: "/images/fooldal-referenciak/8..jpg",
+    cover: "/images/fooldal-referenciak/8.jpg",
     intro: `Az első személyes konzultáció egy nagyon fontos pillanat. Nemcsak azért, mert ekkor dől el, hogy valóban a megfelelő személyre bízzátok-e az egyik legfontosabb napotokat, hanem azért is, mert az ott feltett kérdések alapján sokkal biztosabbak lehettek a döntésetekben. Összeállítottam azokat a kérdéseket, amelyeket én magam is fontosnak tartok, hogy egy pár megkérdezzen, akár éppen engem, akár bármely más esküvőszervezőt.`,
     sections: [
       {
@@ -120,7 +120,7 @@ Ha az első találkozó után azt érzitek, hogy megértettük egymást, hogy me
     title: `Hogyan válassz esküvői helyszínt? Az 5 legfontosabb szempont`,
     description: `A helyszín az esküvő alapköve. Minden más ehhez igazodik. Összeszedtem az 5 szempontot, amelyet esküvőszervezőként mindig megnézünk, mielőtt javaslatot teszünk egy párnak.`,
     date: "2026-07-20",
-    cover: "/images/fooldal-referenciak/3..jpeg",
+    cover: "/images/fooldal-referenciak/3.jpeg",
     intro: `A helyszín az esküvő alapköve. A dekoráció, a catering, a fotós látásmódja, az esti hangulat mind ehhez igazodik. Ezért a helyszínválasztás az egyik első és legfontosabb döntés, amit meg kell hoznotok. Összeszedtem azt az 5 szempontot, amelyet mi esküvőszervezőként mindig végiggondolunk, mielőtt egy párt helyszínbejárásra viszünk.`,
     sections: [
       {

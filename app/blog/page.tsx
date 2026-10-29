@@ -29,7 +29,7 @@ export default function BlogPage() {
         <div className="pt-16 bg-[#F5F3ED]">
           <div className="relative overflow-hidden md:h-[55vh] h-[25vh]" style={{ minHeight: 150 }}>
             <Image
-              src="/images/fooldal-referenciak/5..jpg"
+              src="/images/fooldal-referenciak/5.jpg"
               alt="Nicol Weddings blog — Esküvőszervezési tippek és inspiráció"
               fill
               className="object-cover object-center"
