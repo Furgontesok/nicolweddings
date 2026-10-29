@@ -63,6 +63,7 @@ export default function DateInput({
           onChange={handleCalendarPick}
           className="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
           tabIndex={-1}
+          form="nicol-datepicker-disassociated"
           style={{ fontSize: "16px" }}
         />
       </div>
