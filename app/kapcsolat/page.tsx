@@ -133,9 +133,9 @@ export default function Kapcsolat() {
                     setSent(true);
                   }}
                 >
-                  <input required type="text" value={nev} onChange={(e) => setNev(e.target.value)} className={inputClass} placeholder="Teljes név *" />
-                  <input required type="email" value={email} onChange={(e) => setEmail(e.target.value)} className={inputClass} placeholder="E-mail cím *" />
-                  <input required type="tel" value={telefon} onChange={(e) => setTelefon(e.target.value)} className={inputClass} placeholder="Telefonszám *" />
+                  <input type="text" value={nev} onChange={(e) => setNev(e.target.value)} className={inputClass} placeholder="Teljes név *" />
+                  <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} className={inputClass} placeholder="E-mail cím *" />
+                  <input type="tel" value={telefon} onChange={(e) => setTelefon(e.target.value)} className={inputClass} placeholder="Telefonszám *" />
                   <DateInput
                     value={datum}
                     onChange={setDatum}
@@ -143,15 +143,15 @@ export default function Kapcsolat() {
                     className="w-full bg-[#EEECEA] focus-within:bg-[#E5E3E0] transition-colors duration-200"
                   />
                   <input type="text" inputMode="numeric" value={letszam} onChange={(e) => setLetszam(e.target.value)} className={inputClass} placeholder="Vendégek létszáma" />
-                  <select required value={szolgaltatas} onChange={(e) => setSzolgaltatas(e.target.value)} className={`${inputClass} cursor-pointer`} style={{ color: szolgaltatas ? "#000000" : "rgba(0,0,0,0.5)" }}>
-                    <option value="" disabled>Szolgáltatás *</option>
+                  <select value={szolgaltatas} onChange={(e) => setSzolgaltatas(e.target.value)} className={`${inputClass} cursor-pointer`} style={{ color: szolgaltatas ? "#000000" : "rgba(0,0,0,0.5)" }}>
+                    <option value="">Szolgáltatás *</option>
                     <option value="teljes">Teljes körű esküvőszervezés</option>
                     <option value="30nap">30 nap a nagy napig</option>
                     <option value="tanacsadas">Esküvői tanácsadás</option>
                     <option value="egyeb">Egyéb rendezvények</option>
                   </select>
-                  <select required value={honnan} onChange={(e) => setHonnan(e.target.value)} className={`${inputClass} cursor-pointer`} style={{ color: honnan ? "#000000" : "rgba(0,0,0,0.5)" }}>
-                    <option value="" disabled>Honnan hallottál rólam? *</option>
+                  <select value={honnan} onChange={(e) => setHonnan(e.target.value)} className={`${inputClass} cursor-pointer`} style={{ color: honnan ? "#000000" : "rgba(0,0,0,0.5)" }}>
+                    <option value="">Honnan hallottál rólam? *</option>
                     <option value="instagram">Instagram</option>
                     <option value="facebook">Facebook</option>
                     <option value="google">Google</option>
@@ -159,7 +159,7 @@ export default function Kapcsolat() {
                     <option value="szolgaltato">Szolgáltató ajánlott</option>
                     <option value="egyeb">Egyéb</option>
                   </select>
-                  <textarea required rows={5} value={uzenet} onChange={(e) => setUzenet(e.target.value)} className={`${inputClass} resize-none`} placeholder="Üzenet — meséljetek az elképzeléseitekről... *" />
+                  <textarea rows={5} value={uzenet} onChange={(e) => setUzenet(e.target.value)} className={`${inputClass} resize-none`} placeholder="Üzenet — meséljetek az elképzeléseitekről... *" />
                   <p className="font-[family-name:var(--font-quicksand)] text-[#363025]/35 text-[13px] leading-relaxed pt-1">
                     Az űrlap beküldésével elfogadod az adatkezelési tájékoztatót.
                   </p>
