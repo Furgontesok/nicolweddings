@@ -117,12 +117,14 @@ export default function Kapcsolat() {
                   className="space-y-3"
                   onSubmit={async (e) => {
                     e.preventDefault();
-                    const { supabase } = await import("@/lib/supabase");
-                    if (supabase) {
-                      await supabase.from("contact_submissions").insert({
-                        nev, email, telefon, datum, letszam, szolgaltatas, honnan, uzenet, forras: "kapcsolat-oldal"
-                      });
-                    }
+                    try {
+                      const { supabase } = await import("@/lib/supabase");
+                      if (supabase) {
+                        await supabase.from("contact_submissions").insert({
+                          nev, email, telefon, datum, letszam, szolgaltatas, honnan, uzenet, forras: "kapcsolat-oldal"
+                        });
+                      }
+                    } catch { /* silent */ }
                     fetch("/api/notify/contact", {
                       method: "POST",
                       headers: { "Content-Type": "application/json" },
@@ -137,8 +139,7 @@ export default function Kapcsolat() {
                   <DateInput
                     value={datum}
                     onChange={setDatum}
-                    placeholder="Esküvő dátuma *"
-                    required
+                    placeholder="Esküvő tervezett dátuma"
                     className="w-full bg-[#EEECEA] focus-within:bg-[#E5E3E0] transition-colors duration-200"
                   />
                   <input type="text" inputMode="numeric" value={letszam} onChange={(e) => setLetszam(e.target.value)} className={inputClass} placeholder="Vendégek létszáma" />
