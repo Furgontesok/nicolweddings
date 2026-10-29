@@ -21,7 +21,7 @@ export default function About() {
           <div className="order-2 md:col-start-2 md:row-start-1 md:row-span-2 flex justify-center md:block my-6 md:my-0">
             <div className="w-[90%] md:w-full max-w-[440px] h-[520px] md:h-[500px] lg:h-[620px] relative overflow-hidden">
               <Image
-                src="/images/R%C3%B3lam%20f%C5%91oldal.jpg"
+                src="/images/rolam-fooldal.jpg"
                 alt="Nicol — esküvőszervező"
                 fill
                 className="object-cover"

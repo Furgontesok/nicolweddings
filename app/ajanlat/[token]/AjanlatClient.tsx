@@ -481,11 +481,11 @@ export default function AjanlatClient({ proposal }: { proposal: Proposal }) {
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row gap-10 md:gap-12 items-stretch">
           <div className="shrink-0 md:w-[26%]">
             <div className="md:hidden relative w-full overflow-hidden" style={{ height: "600px" }}>
-              <Image src="/images/R%C3%B3lam%20f%C5%91oldal.jpg" alt="Gőz-Csongrádi Nicol" fill
+              <Image src="/images/rolam-fooldal.jpg" alt="Gőz-Csongrádi Nicol" fill
                 className="object-cover" style={{ objectPosition: "50% 10%" }} sizes="100vw" />
             </div>
             <div className="hidden md:block relative w-full overflow-hidden" style={{ height: "480px" }}>
-              <Image src="/images/R%C3%B3lam%20f%C5%91oldal.jpg" alt="Gőz-Csongrádi Nicol" fill
+              <Image src="/images/rolam-fooldal.jpg" alt="Gőz-Csongrádi Nicol" fill
                 className="object-cover object-bottom" sizes="26vw" />
             </div>
           </div>
