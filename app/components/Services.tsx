@@ -22,7 +22,7 @@ const services = [
     title: "Esküvői tanácsadás",
     desc: "Elakadtatok a szervezésben? Egy konzultáció alatt eligazítalak benneteket a teendők között, és gyakorlati tippekkel segítem tovább az utatokat.",
     href: "/szolgaltatasok#service-03",
-    img: "/images/Vivi%20%26%20Bence/11..jpg",
+    img: "/images/vivi-bence/11.jpg",
     objectPosition: "center 40%",
   },
   {

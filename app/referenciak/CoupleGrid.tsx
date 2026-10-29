@@ -13,8 +13,8 @@ type CoupleItem = {
 };
 
 const fallback: CoupleItem[] = [
-  { name: "Bia & Bence", cover: "/images/Bia%20%26%20Bence/1.jpg", slug: "bia-bence" },
-  { name: "Betti & Levi", cover: "/images/Betti%20%26%20Levi/1.jpg", slug: "betti-levi", objectPosition: "center 80%" },
+  { name: "Bia & Bence", cover: "/images/galeria-bia-bence.jpg", slug: "bia-bence" },
+  { name: "Betti & Levi", cover: "/images/galeria-betti-levi.jpg", slug: "betti-levi", objectPosition: "center 80%" },
   { name: "Nicol & Roli", cover: "/images/galeria-nicol-roli.jpg", slug: "nicol-roli" },
   { name: "Vivi & Bence", cover: "/images/galeria-vivi-bence.jpg", slug: "vivi-bence" },
   { name: "Panni & Sanyi", cover: "/images/galeria-panni-sanyi.jpg", slug: "panni-sanyi" },

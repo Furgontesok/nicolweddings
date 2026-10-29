@@ -46,7 +46,7 @@ export default function Rolam() {
           <div className="shrink-0 w-full md:w-[38%] order-last md:order-none">
             <div className="relative w-full overflow-hidden" style={{ aspectRatio: "1/2" }}>
               <Image
-                src="/images/R%C3%B3lam%20mell%C3%A9k1.jpg"
+                src="/images/rolam-mellek1.jpg"
                 alt="Gőz-Csongrádi Nicol"
                 fill
                 className="object-cover object-top"
@@ -174,7 +174,7 @@ export default function Rolam() {
               style={{ width: 120, height: 160, borderRadius: "50%" }}
             >
               <Image
-                src="/images/R%C3%B3lam%20mell%C3%A9k3.jpg"
+                src="/images/rolam-mellek3.jpg"
                 alt="Nicol"
                 fill
                 className="object-cover object-top"

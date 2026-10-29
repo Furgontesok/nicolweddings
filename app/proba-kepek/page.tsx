@@ -11,7 +11,7 @@ const allOptions: ImgOpt[] = [
   { src: "/images/egyeb-18.jpg", label: "eredeti-03" },
   { src: "/images/egyeb-11.jpg", label: "eredeti-04" },
   // Vivi & Bence
-  { src: "/images/Vivi%20%26%20Bence/11..jpg", label: "Vivi-Bence-11" },
+  { src: "/images/vivi-bence/11.jpg", label: "Vivi-Bence-11" },
   // Weboldal próba
   ...["H88A2251","H88A2488-2","H88A3995-3","H88A4354","H88A4354b","H88A4432","H88A4451copy","H88A4476","H88A4519-2","H88A4720","H88A4720copy","H88A4819","H88A4879","H88A5021copy","H88A5023copy","JE5A3867","JE5A3912","JE5A3961","JE5A4187","JE5A4508","JE5A4508copy"].map(n => ({ src: `/images/proba/${n}.jpg`, label: n })),
   // Szerus & Andris

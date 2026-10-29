@@ -24,7 +24,7 @@ const coupleData: Record<string, {
   "bia-bence": {
     name: "Bia & Bence",
     headerImage: "/images/header-bia-bence.jpg",
-    folder: "Bia%20%26%20Bence",
+    folder: "bia-bence",
     count: 26,
     ext: ".jpg",
     vendors: [
@@ -49,7 +49,7 @@ const coupleData: Record<string, {
   "betti-levi": {
     name: "Betti & Levi",
     headerImage: "/images/header-betti-levi.jpg",
-    folder: "Betti%20%26%20Levi",
+    folder: "betti-levi",
     count: 21,
     ext: ".jpg",
     vendors: [
@@ -71,7 +71,7 @@ const coupleData: Record<string, {
     name: "Nicol & Roli",
     headerImage: "/images/header-nicol-roli.jpg",
     headerPosition: "center 80%",
-    folder: "Nicol%20%26%20Roli",
+    folder: "nicol-roli-galeria",
     count: 26,
     ext: ".-min.jpg",
     vendors: [
@@ -94,9 +94,9 @@ const coupleData: Record<string, {
   "vivi-bence": {
     name: "Vivi & Bence",
     headerImage: "/images/header-vivi-bence.jpg",
-    folder: "Vivi%20%26%20Bence",
+    folder: "vivi-bence",
     count: 19,
-    ext: "..jpg",
+    ext: ".jpg",
     vendors: [
       { label: "Helyszín", plain: "Zsámbéki Romtemplom" },
       { label: "Fotó", handle: "zoltan.tarnavolgyi.weddings" },
@@ -120,7 +120,7 @@ const coupleData: Record<string, {
     name: "Panni & Sanyi",
     headerImage: "/images/header-panni-sanyi.jpg",
     headerPosition: "center 30%",
-    folder: "Panni%20%26%20Sanyi",
+    folder: "panni-sanyi",
     count: 22,
     ext: ".jpg",
     vendors: [
@@ -139,7 +139,7 @@ const coupleData: Record<string, {
   "ani-peti": {
     name: "Ani & Peti",
     headerImage: "/images/header-ani-peti.jpg",
-    folder: "Ani%20%26%20Peti%20esk%C3%BCv%C5%91%20referenci%C3%A1k%20album",
+    folder: "ani-peti",
     count: 17,
     ext: ".jpg",
     vendors: [
@@ -161,7 +161,7 @@ const coupleData: Record<string, {
   "reka-adam": {
     name: "Réka & Ádám",
     headerImage: "/images/header-reka-adam.jpg",
-    folder: "R%C3%A9ka%20%26%20%C3%81d%C3%A1m",
+    folder: "reka-adam-galeria",
     count: 23,
     ext: ".jpg",
     vendors: [
